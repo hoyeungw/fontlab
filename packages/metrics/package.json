@@ -1,0 +1,43 @@
+{
+  "name": "@fontlab/metrics",
+  "version": "0.0.16",
+  "description": "a function to handle fontlab metrics file",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "test": "node -r @babel/register test/test.index.js"
+  },
+  "dependencies": {
+    "@analys/convert": "^0.5.2",
+    "@analys/crostab": "^0.5.3",
+    "@vect/object-mapper": "^0.4.10",
+    "@vect/object-init": "^0.4.10",
+    "@vect/matrix-init": "^0.4.10",
+    "@vect/object-select": "^0.4.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyeungw/ject.git"
+  },
+  "keywords": [
+    "ject",
+    "function",
+    "metrics"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Hoyeung Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoyeungw/ject"
+  },
+  "homepage": "https://github.com/hoyeungw/ject#readme"
+}
