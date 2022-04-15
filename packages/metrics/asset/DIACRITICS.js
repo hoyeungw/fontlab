@@ -1,4 +1,4 @@
-export const LETTER_VARIATIONS = [
+export const DIACRITICS = [
   'acute',
   'caron',
   'breve',
