@@ -15,12 +15,15 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@analys/convert": "^0.5.2",
-    "@analys/crostab": "^0.5.3",
-    "@vect/object-mapper": "^0.4.10",
-    "@vect/object-init": "^0.4.10",
-    "@vect/matrix-init": "^0.4.10",
-    "@vect/object-select": "^0.4.10"
+    "@analys/convert": "^0.5.6",
+    "@analys/crostab": "^0.5.6",
+    "@vect/matrix-init": "^0.5.3",
+    "@vect/object-init": "^0.5.3",
+    "@vect/object-mapper": "^0.5.3",
+    "@vect/object-select": "^0.5.3"
+  },
+  "devDependencies": {
+    "@spare/csv": "^0.13.3"
   },
   "repository": {
     "type": "git",
