@@ -17,12 +17,15 @@
   "dependencies": {
     "@analys/convert": "^0.5.6",
     "@analys/crostab": "^0.5.6",
+    "@vect/vector-init": "^0.5.3",
     "@vect/matrix-init": "^0.5.3",
     "@vect/object-init": "^0.5.3",
     "@vect/object-mapper": "^0.5.3",
     "@vect/object-select": "^0.5.3"
   },
   "devDependencies": {
+    "@spare/translator": "^0.13.4",
+    "@acq/path": "^0.3.11",
     "@spare/csv": "^0.13.3"
   },
   "repository": {
