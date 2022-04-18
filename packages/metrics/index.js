@@ -1,1 +1,1 @@
-export { metrics } from './src/metrics'
+export { MetricsReader } from './src/MetricsReader'
