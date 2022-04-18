@@ -2,8 +2,10 @@
   "name": "@fontlab/metrics",
   "version": "0.0.17",
   "description": "a function to handle fontlab metrics file",
-  "type": "module",
-  "exports": "./dist/index.js",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
   "files": [
     "dist"
   ],
@@ -25,8 +27,8 @@
   },
   "devDependencies": {
     "@acq/path": "^0.3.11",
-    "@spare/csv": "^0.13.3",
-    "@spare/translator": "^0.13.4"
+    "@spare/csv": "^0.13.5",
+    "@spare/translator": "^0.13.5"
   },
   "repository": {
     "type": "git",
