@@ -28,7 +28,7 @@ const extractSimplyAlphabetsByLayers = async (src, dest) => {
   //   says[layer](decoCrostab(crostab))
   // }
 
-  const crostab = metricsReader.simplyAlphabetsByLayers(json)
+  const crostab = metricsReader.alphabetsByLayers(json)
   says[FONTLAB](decoCrostab(crostab))
   await promises.writeFile(`${dest}/${base}.csv`, Csv.table(crostab.toTable(base)))
 }
