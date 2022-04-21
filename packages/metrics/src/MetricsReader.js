@@ -1,10 +1,8 @@
 import { CrosTab }       from '@analys/crostab'
 import { round }         from '@aryth/math'
 import { mapToObject }   from '@vect/object-init'
-import { firstValue }    from '@vect/object-select'
 import { init }          from '@vect/vector-init'
 import { shortenWeight } from './shortenWeight.js'
-
 
 export class MetricsReader {
   alphabets
@@ -14,22 +12,11 @@ export class MetricsReader {
     this.diacritics = diacritics
   }
 
-  /**
-   *
-   * @param {VFMJson} json
-   * @returns {Array<string>}
-   */
-  static getLayers(json) {
-    /** @type {FontlabMetrics} */
-    const firstMetric = firstValue(json.metrics)
-    return Object.keys(firstMetric.layers)
-  }
-
   matchAlphabetAndDiacritic(name) {
-    if (this.alphabets.includes(name)) return [ name, '_' ]
+    if (this.alphabets.includes(name)) return [name, '_']
     for (const alphabet of this.alphabets) {
       for (const diacritic of this.diacritics) {
-        if (name === alphabet + diacritic) return [ alphabet, diacritic ]
+        if (name === alphabet + diacritic) return [alphabet, diacritic]
       }
     }
     return null
@@ -42,23 +29,22 @@ export class MetricsReader {
 
   /**
    *
-   * @param {VFMJson} json
+   * @param {VFM} vfm
    * @returns {CrosTab}
    */
-  alphabetsByLayers(json) {
-    const layers = MetricsReader.getLayers(json)
-    const side = this.alphabets.slice()
-    const head = init(layers.length * 2, (i) => !(i % 2) ? layers[i / 2] + '.L' : layers[(i - 1) / 2] + '.R')
-    const crostab = CrosTab.from({ side, head, title: 'metrics', })
+  alphabetsByLayers(vfm) {
+    const layers = vfm.layers
+    const crostab = CrosTab.from({
+      side: this.alphabets.slice(),
+      head: init(layers.length * 2, (i) => !(i % 2) ? layers[i / 2] + '.L' : layers[(i - 1) / 2] + '.R'),
+      title: 'metrics',
+    })
 
-    /** @type {FontlabMetrics} */ const metrics = json.metrics
-    for (const [ glyph, fontlabMetric ] of Object.entries(metrics)) {
-      if (this.matchAlphabet(glyph)) {
-        for (const [ layer, metricParams ] of Object.entries(fontlabMetric.layers)) {
-          const { lsb, rsb } = metricParams
-          crostab.setCell(glyph, layer + '.L', round(lsb))
-          crostab.setCell(glyph, layer + '.R', round(rsb))
-        }
+    for (const [glyph, layerToMetrics] of Object.entries(vfm.glyphLayerToMetrics)) {
+      if (this.matchAlphabet(glyph)) for (const [layer, metrics] of Object.entries(layerToMetrics)) {
+        const { lsb, rsb } = metrics
+        crostab.setCell(glyph, layer + '.L', round(lsb))
+        crostab.setCell(glyph, layer + '.R', round(rsb))
       }
     }
     crostab.mapBanner(shortenWeight)
@@ -67,11 +53,11 @@ export class MetricsReader {
 
   /**
    *
-   * @param {VFMJson} json
+   * @param {FontlabJson} json
    * @returns {Object<string,CrosTab>}
    */
   byLayersAlphabetsByDiacritics(json) {
-    const crostabHead = [ '_', ...this.diacritics ]
+    const crostabHead = ['_', ...this.diacritics]
     const crostabCollection = mapToObject(MetricsReader.getLayers(json), layer => CrosTab.from({
       side: this.alphabets.slice(),
       head: crostabHead.slice(),
@@ -80,13 +66,13 @@ export class MetricsReader {
     const metrics = json.metrics
     let match, alphabet, diacritic
     for (let name in metrics) {
-      if ((match = this.matchAlphabetAndDiacritic(name)) && ([ alphabet, diacritic ] = match)) {
-        /** @type {FontlabMetrics} */ const metric = metrics[name]
+      if ((match = this.matchAlphabetAndDiacritic(name)) && ([alphabet, diacritic] = match)) {
+        /** @type {GlyphToFontlabMetrics} */ const metric = metrics[name]
         const layers = metric?.layers
         for (let layer in layers) {
           const { lsb, rsb } = layers[layer]
           const crostab = crostabCollection[layer] // logger(Xr().glyph(glyph).variation(variation).info(deco({ lsb, rsb })))
-          crostab.setCell(alphabet, diacritic, [ lsb, rsb ])
+          crostab.setCell(alphabet, diacritic, [lsb, rsb])
         }
       }
     }
