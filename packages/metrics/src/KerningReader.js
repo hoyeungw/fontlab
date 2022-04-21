@@ -13,7 +13,7 @@ export class KerningReader {
 
   /**
    *
-   * @param {VFMJson} json
+   * @param {FontlabJson} json
    * @returns {CrosTab}
    */
   byLayersAlphabetsByLayers(json) {
