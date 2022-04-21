@@ -1,11 +1,9 @@
 .idea
 temp
 node_modules
-static/books
 target
 dist
-static/source
-static/target
+static/*
 .yarn/*
 #!.yarn/cache
 !.yarn/patches

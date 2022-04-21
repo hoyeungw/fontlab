@@ -1,35 +1,67 @@
+import { says } from '@spare/logger'
+import { time } from '@valjoux/timestamp-pretty'
+
 export { ALPHABETS_UPPER, ALPHABETS_LOWER } from './ALPHABETS'
 export { DIACRITICS }                       from './DIACRITICS'
 export { WEIGHTS, WEIGHTS_TO_INITIALS }     from './WEIGHTS'
+export const FONTLAB = '>> fontlab'
+says[FONTLAB].attach(time)
 
 /**
  * @typedef {{
- *    datatype:string,
- *    masters:FontlabMasters,
- *    metrics:FontlabMetrics,
+ *    dataType:string,
+ *    masters:LayerToFontlabKerning,
+ *    metrics:GlyphToFontlabMetrics,
  *    upm:number
- * }} VFMJson
+ * }} FontlabJson
+ */
+
+// LayerToFontlabKerning
+//  - FontlabKerning
+//    - FontlabKerningDefinition
+//    - FontlabKerningPair
+
+/**
+ * @typedef {Object<string,FontlabKerning>|{
+ *   [Light]: FontlabKerning,
+ *   [Regular]: FontlabKerning,
+ *   [Bold]: FontlabKerning,
+ * }} LayerToFontlabKerning - layer name as key
  *
- * @typedef {
- *   Object.<string,{
- *     kerningClasses:Array<FontlabKerningClass>,
- *     pairs:FontlabKerningPairs
- *   }>
- * } FontlabMasters - layer name as key
+ * @typedef {{
+ *     kerningClasses: FontlabKerningDefinition[],
+ *     pairs: GlyphToFontlabKerningPair
+ * }} FontlabKerning
  *
  * @typedef {{
  *    '1st':boolean,
+ *    '2nd':boolean,
  *    name:string,
  *    names:Array<string>
- * }} FontlabKerningClass
+ * }} FontlabKerningDefinition
  *
- * @typedef {Object<string,FontlabKerningPair> } FontlabKerningPairs - '@[glyph]' as key
+ * @typedef {Object<string, FontlabKerningPair>|{
+ *   [A]: FontlabKerningPair,
+ *   [B]: FontlabKerningPair,
+ *   [C]: FontlabKerningPair,
+ * }} GlyphToFontlabKerningPair
  *
- * @typedef {Object<string,string|number>} FontlabKerningPair
+ * @typedef {Object<string,string|number>|{
  *
- * @typedef {
- *   Object.<string,{
- *     layers:{
+ * }} FontlabKerningPair
+ */
+
+// GlyphToFontlabMetrics
+
+
+/**
+ * @typedef {Object<string, {layers:LayerToMetricParams}>|{
+ *    [A]: {layers:LayerToMetricParams},
+ *    [B]: {layers:LayerToMetricParams},
+ *    [C]: {layers:LayerToMetricParams},
+ * }} GlyphToFontlabMetrics
+ *
+ * @typedef {{
  *       [Hairline]: MetricsParams,
  *       [Thin]: MetricsParams,
  *       [ExtraLight]: MetricsParams,
@@ -39,9 +71,7 @@ export { WEIGHTS, WEIGHTS_TO_INITIALS }     from './WEIGHTS'
  *       [SemiBold]: MetricsParams,
  *       [Bold]: MetricsParams,
  *       [Black]: MetricsParams,
- *     }
- *   }>
- * } FontlabMetrics
+ * }} LayerToMetricParams
  *
  * @typedef {{
  *    lsb: number,
