@@ -1,17 +1,14 @@
-import { decoCrostab, ros, says } from '@spare/logger'
-import { Csv }                    from '@spare/csv'
-import { promises }               from 'fs'
-import { ALPHABETS_UPPER }        from '../asset/ALPHABETS.js'
-import { DIACRITICS }             from '../asset/DIACRITICS.js'
-import { MetricsReader }          from '../src/MetricsReader.js'
-import { time }                   from '@valjoux/timestamp-pretty'
-import { parsePath, subFiles }    from '@acq/path'
+import { decoCrostab, ros, says }               from '@spare/logger'
+import { Csv }                                  from '@spare/csv'
+import { promises }                             from 'fs'
+import { ALPHABETS_UPPER, DIACRITICS, FONTLAB } from '../asset'
+import { MetricsReader }                        from '../src/MetricsReader.js'
+import { parsePath, subFiles }                  from '@acq/path'
+import { VFM }                                  from '../src/VFM'
 // ABChanel-PB-Regular-L.json
 // ABChanelPB M Capital.json
-const SRC = process.cwd() + '/../static/metrics'
-const DEST = process.cwd() + '/../static/output'
-const FONTLAB = '>> fontlab'
-says[FONTLAB].attach(time)
+const SRC = process.cwd() + '/packages/metrics/static/metrics'
+const DEST = process.cwd() + '/packages/metrics/static/output'
 
 const extractSimplyAlphabetsByLayers = async (src, dest) => {
   const { dir, base, ext } = parsePath(src)
@@ -27,8 +24,8 @@ const extractSimplyAlphabetsByLayers = async (src, dest) => {
   // for (const [layer, crostab] of Object.entries(crostabCollection)) {
   //   says[layer](decoCrostab(crostab))
   // }
-
-  const crostab = metricsReader.alphabetsByLayers(json)
+  const vfm = VFM.build(json)
+  const crostab = metricsReader.alphabetsByLayers(vfm)
   says[FONTLAB](decoCrostab(crostab))
   await promises.writeFile(`${dest}/${base}.csv`, Csv.table(crostab.toTable(base)))
 }
