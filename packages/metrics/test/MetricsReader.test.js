@@ -20,10 +20,6 @@ const extractSimplyAlphabetsByLayers = async (src, dest) => {
 
   const json = JSON.parse(text)
 
-  // const crostabCollection = metricsReader.byLayersAlphabetsByDiacritics(json)
-  // for (const [layer, crostab] of Object.entries(crostabCollection)) {
-  //   says[layer](decoCrostab(crostab))
-  // }
   const vfm = VFM.build(json)
   const crostab = metricsReader.alphabetsByLayers(vfm)
   says[FONTLAB](decoCrostab(crostab))
