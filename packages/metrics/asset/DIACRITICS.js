@@ -1,19 +1,26 @@
 export const DIACRITICS = [
   'acute',
-  'caron',
   'breve',
+  'cedilla',
   'circumflex',
   'dieresis',
   'grave',
   'macron',
-  'ogonek',
-  'ring',
   'tilde',
 
   'bar',
+  'caron',
+  'croat',
+  'commaaccent',
   'dot',
   'dotaccent',
-  'commaaccent',
-  'cedilla',
+  'hungarumlaut',
+  'ogonek',
+  'ring',
   'ringacute',
+  'slash',
 ]
+
+// ae
+// oe
+// ij
