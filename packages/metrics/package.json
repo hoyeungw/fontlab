@@ -23,7 +23,8 @@
     "@vect/object-init": "^0.5.3",
     "@vect/object-mapper": "^0.5.3",
     "@vect/object-select": "^0.5.3",
-    "@vect/vector-init": "^0.5.3"
+    "@vect/vector-init": "^0.5.3",
+    "@vect/vector-merge": "^0.5.3"
   },
   "devDependencies": {
     "@acq/path": "^0.3.11",
