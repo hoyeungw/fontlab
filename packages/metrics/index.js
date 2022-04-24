@@ -1,1 +1,1 @@
-export { MetricsReader } from './src/MetricsReader'
+export { MetricsReader } from './src/readers/MetricsReader'
