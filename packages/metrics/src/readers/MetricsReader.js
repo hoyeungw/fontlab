@@ -2,7 +2,7 @@ import { CrosTab }       from '@analys/crostab'
 import { round }         from '@aryth/math'
 import { mapToObject }   from '@vect/object-init'
 import { init }          from '@vect/vector-init'
-import { shortenWeight } from './shortenWeight.js'
+import { shortenWeight } from '../../util/shortenWeight.js'
 
 export class MetricsReader {
   alphabets

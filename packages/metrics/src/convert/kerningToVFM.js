@@ -1,6 +1,5 @@
 import { mapper } from '@vect/object-mapper'
 
-
 export const DEFAULT_OPTIONS = { kerningClasses: true, pairs: true, metrics: true }
 /***
  *
