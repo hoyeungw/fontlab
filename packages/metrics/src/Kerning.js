@@ -1,19 +1,22 @@
 import { AVERAGE }                              from '@analys/enum-pivot-mode'
 import { Table }                                from '@analys/table'
-import { distinct }                             from '@aryth/distinct-vector'
 import { round }                                from '@aryth/math'
-import { deco, decoTable, logger, says }        from '@spare/logger'
 import { nullish }                              from '@typen/nullish'
 import { parseNum }                             from '@typen/numeral'
-import { mapToObject }                          from '@vect/object-init'
-import { Category }                             from '../asset/Category'
-import { KERNING_CLASS_SCHEME_CHALENE }         from '../scheme/kerningClassScheme.chalene'
-import { stringAscending }                      from '../util/stringAscending'
-import { stringValue }                          from '../util/stringValue'
-import { DEFAULT_OPTIONS, kerningToJson }       from './convert/kerningToVFM'
-import { GL }                                   from './GL'
-import { KerningClass }                         from './KerningClass'
+import { head, indexed, side }          from '@vect/nested'
+import { Scope }                        from '../asset/Scope'
+import { KERNING_GROUP_SCHEME_CHALENE }   from '../asset/KERNING_GROUP_SCHEME_CHALENE'
+import { stringValue }                    from '../../latin/util/stringValue'
+import { DEFAULT_OPTIONS, kerningToJson } from './convert/kerningToVFM'
+import { Latin }                          from '../../latin/src/Latin'
+import { KerningClass }                   from './KerningClass'
 import { schemeToDictRecto, schemeToDictVerso } from './scheme/schemeToDict'
+
+const KERNING_CROSTAB_OPTIONS = {
+  scope: { x: Scope.Upper, y: Scope.Upper },
+  spec: { x: 'group.v', y: 'group.r', mode: AVERAGE },
+  groupScheme: KERNING_GROUP_SCHEME_CHALENE,
+}
 
 export class Kerning {
   kerningClasses
@@ -26,58 +29,51 @@ export class Kerning {
     this.pairs = kerning.pairs
   }
   static build(fontlabKerning) { return new Kerning(fontlabKerning) }
-  versos(category) { return GL.filter(Object.keys(this.pairs), category) }
-  rectos(category) { return GL.filter(distinct(Object.values(this.pairs).map(Object.keys).flat()), category) }
-  versosCompressed(category) { return distinct(this.versos(category).map(GL.glyph)).sort(stringAscending) }
-  rectosCompressed(category) { return distinct(this.rectos(category).map(GL.glyph)).sort(stringAscending) }
+  versos(category) { return Latin.filter(side(this.pairs), category) }
+  rectos(category) { return Latin.filter(head(this.pairs), category) }
   classes() { return this.kerningClasses.map(kerningClass => kerningClass.toObject()) }
-  pairsToTable(groupKerningClasses = KERNING_CLASS_SCHEME_CHALENE) {
-    const versoDict = schemeToDictVerso(groupKerningClasses)
-    const rectoDict = schemeToDictRecto(groupKerningClasses)
+
+  pairsToTable({
+                 scope = { x: Scope.Upper, y: Scope.Upper },
+                 groupScheme = KERNING_GROUP_SCHEME_CHALENE
+               } = {}) {
+    const dictV = schemeToDictVerso(groupScheme)
+    const dictR = schemeToDictRecto(groupScheme)
+    const enumerator = indexed(this.pairs, {
+      by: (verso, recto, kern) => true,
+      to: (verso, recto, kern) => [verso, recto, parseNum(kern), Latin.glyph(verso), Latin.glyph(recto)]
+    })
     const table = Table.from({
-      head: ['verso', 'recto', 'kerning', 'alpha.v', 'alpha.r', 'group.v', 'group.r'],
-      rows: [],
+      head: ['glyph.v', 'glyph.r', 'kerning', 'letter.v', 'letter.r'],
+      rows: [...enumerator],
       title: 'pairs'
     })
-    if (!this.pairs) return table
-    for (let [verso, definition] of Object.entries(this.pairs)) {
-      if (!definition) continue
-      for (let [recto, value] of Object.entries(definition)) {
-        table.pushRow([verso, recto, parseNum(value), GL.glyph(verso), GL.glyph(recto), versoDict[verso], rectoDict[recto]])
-      }
-    }
+    table.filter([
+      { field: 'letter.v', filter: Latin.make(scope.x), },
+      { field: 'letter.r', filter: Latin.make(scope.y), },
+    ], { mutate: true })
+    table.proliferateColumn([
+      { key: 'letter.v', to: x => dictV[x], as: 'group.v' },
+      { key: 'letter.r', to: x => dictR[x], as: 'group.r' }
+    ], { nextTo: 'letter.r', mutate: true })
+    // table  |> decoTable  |> logger
     return table
   }
-  regroupClasses(classScheme) {
 
-
-    let targetClasses = []
-    for (let kerningClass of this.kerningClasses) {
-
-    }
-    for (let glyphs of this.versos(Category.Upper)) {
-
-
-    }
-  }
-  pairsCrostabs(versoCategory, rectoCategory) {
-    this.versos(versoCategory)  |> deco  |> says['versos']
-    this.versosCompressed(versoCategory)  |> deco  |> says['versos'].br('compressed')
-    this.rectos(rectoCategory)  |> deco  |> says['rectos']
-    this.rectosCompressed(rectoCategory)  |> deco  |> says['rectos'].br('compressed')
-    const table = this.pairsToTable()
-    // table  |> decoTable  |> logger
+  crostab({ scope, spec, groupScheme } = KERNING_CROSTAB_OPTIONS) {
+    // this.versos(scope.x)  |> deco  |> says['versos']
+    // this.rectos(scope.y)  |> deco  |> says['rectos']
+    const table = this.pairsToTable({ scope, groupScheme })
     const crostab = table.crosTab({
-      side: 'group.v',
-      banner: 'group.r',
-      field: { 'kerning': AVERAGE },
-      formula: kerning => round(kerning.value)
+      side: spec.x,
+      banner: spec.y,
+      field: { kerning: spec.mode },
+      formula: spec.mode === AVERAGE ? ({ value }) => round(value) : round
     })
-    crostab.side[0] = '-'
-    crostab.head[0] = '-'
-    // if (nullish(crostab.head[0])) crostab.shiftColumn()
-    // if (nullish(crostab.side[0])) crostab.shiftRow()
+    if (nullish(crostab.head[0])) crostab.shiftColumn()
+    if (nullish(crostab.side[0])) crostab.shiftRow()
     return crostab
   }
+
   toVFM(options = DEFAULT_OPTIONS) { return kerningToJson(this, options) }
 }

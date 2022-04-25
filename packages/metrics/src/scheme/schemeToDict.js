@@ -1,5 +1,5 @@
 export const schemeToDictVerso = (classes) => {
-  const o = {}
+  const o = { '-': '-' }
   for (let { name, names } of classes.filter((_) => _['1st'])) {
     for (let alphabet of names) o[alphabet] = name
   }
@@ -7,7 +7,7 @@ export const schemeToDictVerso = (classes) => {
 }
 
 export const schemeToDictRecto = (classes) => {
-  const o = {}
+  const o = { '-': '-' }
   for (let { name, names } of classes.filter((_) => _['2nd'])) {
     for (let alphabet of names) o[alphabet] = name
   }

@@ -1,7 +1,7 @@
 import { CrosTab }       from '@analys/crostab'
 import { round }         from '@aryth/math'
 import { init }          from '@vect/vector-init'
-import { shortenWeight } from '../../util/shortenWeight'
+import { shortenWeight } from '../../../latin/util/shortenWeight'
 
 export class KerningReader {
   alphabets

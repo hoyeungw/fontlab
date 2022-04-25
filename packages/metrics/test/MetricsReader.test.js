@@ -3,7 +3,7 @@ import { Csv }                      from '@spare/csv'
 import { decoCrostab, says }        from '@spare/logger'
 import { promises }                 from 'fs'
 import { ALPHABETS_UPPER, FONTLAB } from '../asset'
-import { VFM }                      from '../src/VFM'
+import { Profile }                  from '../src/Profile'
 // ABChanel-PB-Regular-L.json
 // ABChanelPB M Capital.json
 const SRC = process.cwd() + '/packages/metrics/static/metrics'
@@ -11,7 +11,7 @@ const DEST = process.cwd() + '/packages/metrics/static/output'
 
 const extractSimplyAlphabetsByLayers = async (src, dest) => {
   const { dir, base, ext } = parsePath(src)
-  const vfm = await VFM.fromFile(src)
+  const vfm = await Profile.fromFile(src)
   const alphabetsByLayers = vfm.alphabetsByLayers(ALPHABETS_UPPER)
   alphabetsByLayers |> decoCrostab  |> says[FONTLAB]
   await promises.writeFile(`${dest}/${base}.csv`, Csv.table(alphabetsByLayers.toTable(base)))
