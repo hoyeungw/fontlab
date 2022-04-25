@@ -11,8 +11,8 @@ const DEST = process.cwd() + '/packages/metrics/static/output'
 
 const extractSimplyAlphabetsByLayers = async (src, dest) => {
   const { dir, base, ext } = parsePath(src)
-  const vfm = await Profile.fromFile(src)
-  const alphabetsByLayers = vfm.alphabetsByLayers(ALPHABETS_UPPER)
+  const profile = await Profile.fromFile(src)
+  const alphabetsByLayers = profile.alphabetsByLayers(ALPHABETS_UPPER)
   alphabetsByLayers |> decoCrostab  |> says[FONTLAB]
   await promises.writeFile(`${dest}/${base}.csv`, Csv.table(alphabetsByLayers.toTable(base)))
 }

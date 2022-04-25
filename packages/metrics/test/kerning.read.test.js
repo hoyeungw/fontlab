@@ -1,26 +1,27 @@
 import { AVERAGE }                                      from '@analys/enum-pivot-mode'
+import { Scope }                                        from '@fontlab/latin'
 import { deco, decoCrostab, decoSamples, logger, says } from '@spare/logger'
-import { FONTLAB }           from '../asset'
-import { CATEGORIES, Scope } from '../asset/Scope'
-import { Profile }           from '../src/Profile'
+import { FONTLAB }                                      from '../asset'
+import { CATEGORIES }                                   from '../asset/Scope'
+import { Profile }                                      from '../src/Profile'
 
 const SRC = process.cwd() + '/packages/metrics/static/metrics'
 const DEST = process.cwd() + '/packages/metrics/static/output'
 
 // const FILE = 'DolceFut.vfm'
-// const FILE = 'LoVirgil.vfm'
-const FILE = 'Chalene.vfm'
+const FILE = 'LoVirgil.vfm'
+// const FILE = 'Chalene.vfm'
 
 export const test = async () => {
-  const vfm = await Profile.fromFile(SRC + '/' + FILE)
+  const profile = await Profile.fromFile(SRC + '/' + FILE)
 
-  vfm.kerningClasses().map(o => o.toObject()) |> decoSamples  |> says[FONTLAB]
+  profile.kerningClasses().map(o => o.toObject()) |> decoSamples  |> says[FONTLAB]
 
-  vfm.alphabetsByLayers() |> decoCrostab  |> says[FONTLAB]
+  profile.alphabetsByLayers() |> decoCrostab  |> says[FONTLAB]
 
-  vfm.alphabetGroups() |> deco |> says[FONTLAB]
+  profile.alphabetGroups() |> deco |> says[FONTLAB]
 
-  const kerning = vfm.layerToKerning[vfm.defaultLayer]
+  const kerning = profile.layerToKerning[profile.defaultLayer]
 
   kerning.versos(Scope.Upper)  |> deco  |> says[FONTLAB].p('1st').p(Scope.Upper)
   kerning.versos(Scope.Lower)  |> deco  |> says[FONTLAB].p('1st').p(Scope.Lower)
@@ -48,7 +49,7 @@ export const test = async () => {
   }
 
 
-  await vfm.save(DEST + '/' + FILE, { kerningClasses: true })
+  await profile.save(DEST + '/' + FILE, { kerningClasses: true })
 }
 
 test().then()

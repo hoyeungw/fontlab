@@ -1,8 +1,19 @@
-import { makeReplaceable }     from '@spare/translator'
-import { WEIGHTS_TO_INITIALS } from '@fontlab/metrics/asset/WEIGHTS.js'
+import { makeReplaceable } from '@spare/translator'
+
+export const WEIGHTS_TO_INITIALS = {
+  Hairline: 'HL',
+  Thin: 'Th',
+  ExtraLight: 'ExtLt',
+  Light: 'Light',
+  Regular: 'Reg',
+  Medium: 'Med',
+  SemiBold: 'SemBd',
+  Bold: 'Bold',
+  Black: 'Black',
+}
 
 const REPLACEABLE = Object.entries(WEIGHTS_TO_INITIALS)
-  .map(([ k, v ]) => [ new RegExp(k, 'gi'), v ]) |> makeReplaceable
+  .map(([k, v]) => [new RegExp(k, 'gi'), v]) |> makeReplaceable
 
 export const shortenWeight = (weight) => {
   weight = weight.replace(/\s+/g, '')

@@ -1,8 +1,8 @@
 import { CrosTab }       from '@analys/crostab'
 import { round }         from '@aryth/math'
+import { shortenWeight } from '@fontlab/latin'
 import { mapToObject }   from '@vect/object-init'
 import { init }          from '@vect/vector-init'
-import { shortenWeight } from '../../../latin/util/shortenWeight.js'
 
 export class MetricsReader {
   alphabets
@@ -29,18 +29,18 @@ export class MetricsReader {
 
   /**
    *
-   * @param {Profile} vfm
+   * @param {Profile} profile
    * @returns {CrosTab}
    */
-  alphabetsByLayers(vfm) {
-    const layers = vfm.layers
+  alphabetsByLayers(profile) {
+    const layers = profile.layers
     const crostab = CrosTab.from({
       side: this.alphabets.slice(),
       head: init(layers.length * 2, (i) => !(i % 2) ? layers[i / 2] + '.L' : layers[(i - 1) / 2] + '.R'),
       title: 'metrics',
     })
 
-    for (const [glyph, layerToMetrics] of Object.entries(vfm.glyphLayerToMetrics)) {
+    for (const [glyph, layerToMetrics] of Object.entries(profile.glyphLayerToMetrics)) {
       if (this.matchAlphabet(glyph)) for (const [layer, metrics] of Object.entries(layerToMetrics)) {
         const { lsb, rsb } = metrics
         crostab.setCell(glyph, layer + '.L', round(lsb))

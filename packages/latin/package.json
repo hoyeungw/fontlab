@@ -24,20 +24,20 @@
     "@aryth/distinct-vector": "^0.4.10",
     "@typen/nullish": "^0.1.17",
     "@typen/numeral": "^0.1.17",
-    "@vect/matrix-init": "^0.5.6",
-    "@vect/nested": "^0.5.6",
-    "@vect/object-init": "^0.5.6",
-    "@vect/object-mapper": "^0.5.6",
-    "@vect/object-select": "^0.5.6",
-    "@vect/vector-init": "^0.5.6",
-    "@vect/vector-merge": "^0.5.6"
+    "@vect/matrix-init": "^0.5.8",
+    "@vect/nested": "^0.5.8",
+    "@vect/object-init": "^0.5.8",
+    "@vect/object-mapper": "^0.5.8",
+    "@vect/object-select": "^0.5.8",
+    "@vect/vector-init": "^0.5.8",
+    "@vect/vector-merge": "^0.5.8"
   },
   "devDependencies": {
     "@acq/path": "^0.3.11",
     "@spare/csv": "^0.13.5",
     "@spare/translator": "^0.13.5",
-    "@vect/vector-algebra": "^0.5.6",
-    "@spare/verse": "^0.5.6"
+    "@spare/verse": "^0.13.5",
+    "@vect/vector-algebra": "^0.5.8"
   },
   "repository": {
     "type": "git",

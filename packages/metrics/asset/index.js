@@ -1,11 +1,5 @@
-import { says } from '@spare/logger'
-import { time } from '@valjoux/timestamp-pretty'
-
-export { ALPHABETS_UPPER, ALPHABETS_LOWER } from '../../latin/asset/ALPHABET_LOWER'
-export { DIACRITICS }                       from '../../latin/asset/DIACRITICS'
-export { WEIGHTS, WEIGHTS_TO_INITIALS }     from './WEIGHTS'
+export { WEIGHTS, WEIGHTS_TO_INITIALS } from './WEIGHTS'
 export const FONTLAB = '>> fontlab'
-says[FONTLAB].attach(time)
 
 /**
  * @typedef {{

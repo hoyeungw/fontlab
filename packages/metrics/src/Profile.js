@@ -1,21 +1,16 @@
-import { parsePath }                                 from '@acq/path'
-import { CrosTab }                                   from '@analys/crostab'
-import { round }                                     from '@aryth/math'
-import { ros, says }                                 from '@spare/logger'
-import { indexedIterate }                            from '@vect/nested'
-import { mapToObject }                               from '@vect/object-init'
-import { iterate, mapper }                           from '@vect/object-mapper'
-import { firstKey, selectObject }                    from '@vect/object-select'
-import { init }                                      from '@vect/vector-init'
-import { merge }                                     from '@vect/vector-merge'
-import { promises }                                  from 'fs'
-import { Latin }                                     from '../../latin/src/Latin'
-import { shortenWeight }                             from '../../latin/util/shortenWeight'
-import { stringAscending }                           from '../../latin/util/stringAscending'
-import { ALPHABETS_LOWER, ALPHABETS_UPPER, FONTLAB } from '../asset'
-import { DEFAULT_OPTIONS, vfmToJson }                from './convert/kerningToVFM'
-import { Kerning }                                   from './Kerning'
-import { Metrics }                                   from './Metrics'
+import { parsePath }                                             from '@acq/path'
+import { CrosTab }                                               from '@analys/crostab'
+import { round }                                                 from '@aryth/math'
+import { ALPHABET_UPPER, Latin, shortenWeight, stringAscending } from '@fontlab/latin'
+// import { ros, says }                                                             from '@spare/logger'
+import { indexedIterate }                                        from '@vect/nested'
+import { iterate, mapper }                                       from '@vect/object-mapper'
+import { firstKey, selectObject }                                from '@vect/object-select'
+import { init }                                                  from '@vect/vector-init'
+import { promises }                                              from 'fs'
+import { DEFAULT_OPTIONS, profileToJson }                        from './convert/kerningToJson'
+import { Kerning }                                               from './Kerning'
+import { Metrics }                                               from './Metrics'
 
 const LAYERS_PRIORITY = ['Regular', 'Roman', 'Medium', 'Semi Bold', 'Semi', 'Demi', 'Light']
 
@@ -28,20 +23,20 @@ export class Profile {
   upm
 
   /**
-   * @param {FontlabJson} vfm
+   * @param {FontlabJson} profile
    */
-  constructor(vfm) {
-    this.dataType = vfm.dataType
-    vfm.dataType  |> says[FONTLAB]
-    if (vfm.masters) this.layerToKerning = mapper(vfm.masters, Kerning.build)
-    if (vfm.metrics) this.glyphLayerToMetrics = mapper(vfm.metrics, glyphsToMetrics => mapper(glyphsToMetrics.layers, Metrics.build))
-    this.upm = vfm.upm
+  constructor(profile) {
+    this.dataType = profile.dataType
+    // profile.dataType  |> says[FONTLAB]
+    if (profile.masters) this.layerToKerning = mapper(profile.masters, Kerning.build)
+    if (profile.metrics) this.glyphLayerToMetrics = mapper(profile.metrics, glyphsToMetrics => mapper(glyphsToMetrics.layers, Metrics.build))
+    this.upm = profile.upm
   }
   static build(fontlabJson) { return new Profile(fontlabJson) }
   static async fromFile(filePath) {
-    says[FONTLAB](`loading ${ros(filePath)}`)
+    // says[FONTLAB](`loading ${ros(filePath)}`)
     const buffer = await promises.readFile(filePath, 'utf8')
-    says[FONTLAB](`loaded ${ros(filePath)}`)
+    // says[FONTLAB](`loaded ${ros(filePath)}`)
     const fontlabJson = await JSON.parse(buffer.toString())
     return Profile.build(fontlabJson)
   }
@@ -52,7 +47,7 @@ export class Profile {
       if (metrics) suffix += 'Metrics'
     }
     const target = dir + '/' + base + suffix + ext
-    const json = JSON.stringify(this.toVFM({ kerningClasses, pairs, metrics }))
+    const json = JSON.stringify(this.toJson({ kerningClasses, pairs, metrics }))
     await promises.writeFile(target, json)
   }
 
@@ -62,24 +57,23 @@ export class Profile {
     return firstKey(this.layerToKerning)
   }
 
-  toVFM(options = DEFAULT_OPTIONS) { return vfmToJson(this, options) }
+  toJson(options = DEFAULT_OPTIONS) { return profileToJson(this, options) }
 
   /** @returns {KerningClass[]} */
   kerningClasses(layer = this.defaultLayer) { return this.layerToKerning[layer].kerningClasses }
   metrics(layer = this.defaultLayer) { return mapper(this.glyphLayerToMetrics, layerToMetrics => layerToMetrics[layer]) }
   alphabetGroups() {
-    const alphabets = merge(ALPHABETS_UPPER, ALPHABETS_LOWER)
-    const o = mapToObject(alphabets, () => [])
+    const o = {}
+    let letter
     Object.keys(this.glyphLayerToMetrics)
       .sort(stringAscending)
       .forEach((glyph) => {
-        if (Latin.isUpper(glyph)) o[glyph[0]].push(glyph)
-        if (Latin.isLower(glyph)) o[glyph[0]].push(glyph)
+        if ((letter = Latin.letter(glyph)) !== '-') (o[letter] ?? (o[letter] = [])).push(glyph)
       })
     iterate(o, vec => vec.sort(stringAscending))
     return o
   }
-  alphabetsByLayers(alphabets = ALPHABETS_UPPER) {
+  alphabetsByLayers(alphabets = ALPHABET_UPPER) {
     const { layers } = this, glyphLayerToMetrics = selectObject(this.glyphLayerToMetrics, alphabets)
     const crostab = CrosTab.from({
       side: alphabets.slice(),

@@ -1,8 +1,4 @@
-export class Scope {
-  static Upper = 'upper'
-  static Lower = 'lower'
-  static Other = 'other'
-}
+import { Scope } from '@fontlab/latin'
 
 export const CATEGORIES = [Scope.Upper, Scope.Lower, Scope.Other]
 

@@ -3,15 +3,15 @@ import { mapper } from '@vect/object-mapper'
 export const DEFAULT_OPTIONS = { kerningClasses: true, pairs: true, metrics: true }
 /***
  *
- * @param {Profile} vfm
+ * @param {Profile} profile
  * @param options
  * @returns {{dataType: (string|string|string|*)}}
  */
-export function vfmToJson(vfm, options = DEFAULT_OPTIONS) {
-  const o = { dataType: vfm.dataType, }
-  if (options.kerningClasses || options.pairs) o.masters = mapper(vfm.layerToKerning, kerning => kerningToJson(kerning, options))
-  if (options.metrics) o.metrics = mapper(vfm.glyphLayerToMetrics, layerToMetrics => ({ layers: layerToMetrics }))
-  o.upm = vfm.upm
+export function profileToJson(profile, options = DEFAULT_OPTIONS) {
+  const o = { dataType: profile.dataType, }
+  if (options.kerningClasses || options.pairs) o.masters = mapper(profile.layerToKerning, kerning => kerningToJson(kerning, options))
+  if (options.metrics) o.metrics = mapper(profile.glyphLayerToMetrics, layerToMetrics => ({ layers: layerToMetrics }))
+  o.upm = profile.upm
   return o
 }
 

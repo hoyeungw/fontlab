@@ -1,15 +1,13 @@
 import { AVERAGE }                              from '@analys/enum-pivot-mode'
 import { Table }                                from '@analys/table'
 import { round }                                from '@aryth/math'
+import { Latin, Scope, stringValue }            from '@fontlab/latin'
 import { nullish }                              from '@typen/nullish'
 import { parseNum }                             from '@typen/numeral'
-import { head, indexed, side }          from '@vect/nested'
-import { Scope }                        from '../asset/Scope'
-import { KERNING_GROUP_SCHEME_CHALENE }   from '../asset/KERNING_GROUP_SCHEME_CHALENE'
-import { stringValue }                    from '../../latin/util/stringValue'
-import { DEFAULT_OPTIONS, kerningToJson } from './convert/kerningToVFM'
-import { Latin }                          from '../../latin/src/Latin'
-import { KerningClass }                   from './KerningClass'
+import { head, indexed, side }                  from '@vect/nested'
+import { KERNING_GROUP_SCHEME_CHALENE }         from '../asset/KERNING_GROUP_SCHEME_CHALENE'
+import { DEFAULT_OPTIONS, kerningToJson }       from './convert/kerningToJson'
+import { KerningClass }                         from './KerningClass'
 import { schemeToDictRecto, schemeToDictVerso } from './scheme/schemeToDict'
 
 const KERNING_CROSTAB_OPTIONS = {
@@ -29,29 +27,25 @@ export class Kerning {
     this.pairs = kerning.pairs
   }
   static build(fontlabKerning) { return new Kerning(fontlabKerning) }
-  versos(category) { return Latin.filter(side(this.pairs), category) }
-  rectos(category) { return Latin.filter(head(this.pairs), category) }
+  versos(scope) { return side(this.pairs).filter(Latin.filterFactory(scope)) }
+  rectos(scope) { return head(this.pairs).filter(Latin.filterFactory(scope)) }
   classes() { return this.kerningClasses.map(kerningClass => kerningClass.toObject()) }
 
   pairsToTable({
                  scope = { x: Scope.Upper, y: Scope.Upper },
                  groupScheme = KERNING_GROUP_SCHEME_CHALENE
                } = {}) {
-    const dictV = schemeToDictVerso(groupScheme)
-    const dictR = schemeToDictRecto(groupScheme)
+    const [dictV, dictR] = [schemeToDictVerso(groupScheme), schemeToDictRecto(groupScheme)]
+    const [filterV, filterR] = [Latin.filterFactory(scope.x), Latin.filterFactory(scope.y)]
     const enumerator = indexed(this.pairs, {
-      by: (verso, recto, kern) => true,
-      to: (verso, recto, kern) => [verso, recto, parseNum(kern), Latin.glyph(verso), Latin.glyph(recto)]
+      by: (verso, recto, kern) => filterV(verso) && filterR(recto),
+      to: (verso, recto, kern) => [verso, recto, parseNum(kern), Latin.letter(verso), Latin.letter(recto)]
     })
     const table = Table.from({
       head: ['glyph.v', 'glyph.r', 'kerning', 'letter.v', 'letter.r'],
       rows: [...enumerator],
       title: 'pairs'
     })
-    table.filter([
-      { field: 'letter.v', filter: Latin.make(scope.x), },
-      { field: 'letter.r', filter: Latin.make(scope.y), },
-    ], { mutate: true })
     table.proliferateColumn([
       { key: 'letter.v', to: x => dictV[x], as: 'group.v' },
       { key: 'letter.r', to: x => dictR[x], as: 'group.r' }
@@ -64,6 +58,7 @@ export class Kerning {
     // this.versos(scope.x)  |> deco  |> says['versos']
     // this.rectos(scope.y)  |> deco  |> says['rectos']
     const table = this.pairsToTable({ scope, groupScheme })
+    // table  |> decoTable  |> logger
     const crostab = table.crosTab({
       side: spec.x,
       banner: spec.y,
@@ -75,5 +70,5 @@ export class Kerning {
     return crostab
   }
 
-  toVFM(options = DEFAULT_OPTIONS) { return kerningToJson(this, options) }
+  toJson(options = DEFAULT_OPTIONS) { return kerningToJson(this, options) }
 }
