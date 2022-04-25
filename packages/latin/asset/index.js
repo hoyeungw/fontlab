@@ -1,0 +1,7 @@
+export { ALPHABET_LOWER }     from './ALPHABET_LOWER'
+export { ALPHABET_UPPER }     from './ALPHABET_UPPER'
+export { DIACRITICS }         from './DIACRITICS'
+export { GROUP_SCHEME_UPPER } from './GROUP_SCHEME_UPPER'
+export { GROUP_SCHEME_LOWER } from './GROUP_SCHEME_LOWER'
+export { ORTHO_FRENCH }       from './ORTHO_FRENCH'
+export { ORTHO_ITALIAN }      from './ORTHO_ITALIAN'
