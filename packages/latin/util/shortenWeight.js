@@ -1,5 +1,5 @@
 import { makeReplaceable }     from '@spare/translator'
-import { WEIGHTS_TO_INITIALS } from '../asset/WEIGHTS.js'
+import { WEIGHTS_TO_INITIALS } from '@fontlab/metrics/asset/WEIGHTS.js'
 
 const REPLACEABLE = Object.entries(WEIGHTS_TO_INITIALS)
   .map(([ k, v ]) => [ new RegExp(k, 'gi'), v ]) |> makeReplaceable
