@@ -15,7 +15,7 @@
     "watch-specific": "lerna exec --scope=kalorie -- rollup -c ../../rollup.config.mjs -w"
   },
   "devDependencies": {
-    "@analys/crostab": "^0.5.6",
+    "@analys/crostab": "^0.5.9",
     "@aryth/math": "^0.4.10",
     "@aryth/rand": "^0.4.10",
     "@babel/core": "^7.17.9",
@@ -35,12 +35,13 @@
     "@foba/vector": "^0.5.0",
     "@foba/vector-number": "^0.5.0",
     "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.2.1",
     "@spare/deco-func": "^0.13.5",
     "@spare/logger": "^0.13.5",
     "@spare/tap": "^0.13.5",
+    "@spare/verse": "^0.13.5",
     "@spare/xr": "^0.13.5",
     "@typen/num-strict": "^0.1.17",
     "@valjoux/strategies": "^0.3.10",
