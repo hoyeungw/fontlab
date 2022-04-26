@@ -1,4 +1,4 @@
 export { Profile }      from './src/Profile'
-export { Kerning }      from './src/Kerning'
-export { KerningClass } from './src/KerningClass'
-export { Metrics }      from './src/Metrics'
+export { Master }  from './src/Master'
+export { Group }   from './src/Group'
+export { Metrics } from './src/Metrics'

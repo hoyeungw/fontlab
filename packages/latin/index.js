@@ -7,6 +7,7 @@ export {
   GROUP_SCHEME_LOWER,
   GROUP_SCHEME_UPPER,
   Scope,
+  scopeName
 } from './asset/index'
 
 export { Latin } from './src/Latin'

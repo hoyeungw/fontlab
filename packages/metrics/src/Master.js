@@ -6,8 +6,9 @@ import { nullish }                              from '@typen/nullish'
 import { parseNum }                             from '@typen/numeral'
 import { head, indexed, side }                  from '@vect/nested'
 import { KERNING_GROUP_SCHEME_CHALENE }         from '../asset/KERNING_GROUP_SCHEME_CHALENE'
-import { DEFAULT_OPTIONS, kerningToJson }       from './convert/kerningToJson'
-import { KerningClass }                         from './KerningClass'
+import { DEFAULT_OPTIONS }                      from './convert/DEFAULT_OPTIONS'
+import { masterToJson }                         from './convert/masterToJson'
+import { Group }                                from './Group'
 import { schemeToDictRecto, schemeToDictVerso } from './scheme/schemeToDict'
 
 const KERNING_CROSTAB_OPTIONS = {
@@ -16,26 +17,28 @@ const KERNING_CROSTAB_OPTIONS = {
   groupScheme: KERNING_GROUP_SCHEME_CHALENE,
 }
 
-export class Kerning {
-  kerningClasses
+export class Master {
+  groups
   pairs
   constructor(kerning) {
     const classes = (kerning.kerningClasses ?? [])
-      .map(KerningClass.build)
+      .map(Group.build)
       .sort(({ name: a }, { name: b }) => stringValue(a) - stringValue(b))
-    this.kerningClasses = [...classes.filter(({ _1st }) => _1st), ...classes.filter(({ _2nd }) => _2nd)]
+    this.groups = [...classes.filter(({ _1st }) => _1st), ...classes.filter(({ _2nd }) => _2nd)]
     this.pairs = kerning.pairs
   }
-  static build(fontlabKerning) { return new Kerning(fontlabKerning) }
+  static build(fontlabKerning) { return new Master(fontlabKerning) }
+
+  get kerningClasses() { return this.groups }
+  classes() { return this.groups.map(group => group.toObject()) }
   versos(scope) { return side(this.pairs).filter(Latin.filterFactory(scope)) }
   rectos(scope) { return head(this.pairs).filter(Latin.filterFactory(scope)) }
-  classes() { return this.kerningClasses.map(kerningClass => kerningClass.toObject()) }
 
   pairsToTable({
                  scope = { x: Scope.Upper, y: Scope.Upper },
                  groupScheme = KERNING_GROUP_SCHEME_CHALENE
                } = {}) {
-    const [dictV, dictR] = [schemeToDictVerso(groupScheme), schemeToDictRecto(groupScheme)]
+    const [groupV, groupR] = [schemeToDictVerso(groupScheme), schemeToDictRecto(groupScheme)]
     const [filterV, filterR] = [Latin.filterFactory(scope.x), Latin.filterFactory(scope.y)]
     const enumerator = indexed(this.pairs, {
       by: (verso, recto, kern) => filterV(verso) && filterR(recto),
@@ -47,8 +50,8 @@ export class Kerning {
       title: 'pairs'
     })
     table.proliferateColumn([
-      { key: 'letter.v', to: x => dictV[x], as: 'group.v' },
-      { key: 'letter.r', to: x => dictR[x], as: 'group.r' }
+      { key: 'letter.v', to: x => groupV[x] ?? '-', as: 'group.v' },
+      { key: 'letter.r', to: x => groupR[x] ?? '-', as: 'group.r' }
     ], { nextTo: 'letter.r', mutate: true })
     // table  |> decoTable  |> logger
     return table
@@ -70,5 +73,5 @@ export class Kerning {
     return crostab
   }
 
-  toJson(options = DEFAULT_OPTIONS) { return kerningToJson(this, options) }
+  toJson(options = DEFAULT_OPTIONS) { return masterToJson(this, options) }
 }

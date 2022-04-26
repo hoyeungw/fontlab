@@ -5,3 +5,9 @@ export class Scope {
   static Other = 0b1000
   static get Letter() { return Scope.Lower | Scope.Upper }
 }
+
+export const scopeName = scope => {
+  for (let k in Scope) {
+    if (Scope[k] === scope) return k
+  }
+}

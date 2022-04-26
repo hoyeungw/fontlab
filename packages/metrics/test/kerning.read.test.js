@@ -1,8 +1,11 @@
 import { AVERAGE }                                      from '@analys/enum-pivot-mode'
 import { Scope }                                        from '@fontlab/latin'
+import { scopeName }                                    from '@fontlab/latin'
 import { deco, decoCrostab, decoSamples, logger, says } from '@spare/logger'
+import { Verse }                                        from '@spare/verse'
+import { promises }                                     from 'fs'
 import { FONTLAB }                                      from '../asset'
-import { CATEGORIES }                                   from '../asset/Scope'
+import { SCOPES }                                       from '../asset/Scope'
 import { Profile }                                      from '../src/Profile'
 
 const SRC = process.cwd() + '/packages/metrics/static/metrics'
@@ -35,21 +38,21 @@ export const test = async () => {
   // const SPEC_MAX = { x: 'group.v', y: 'group.r', mode: MAX }
   // const SPEC_MIN = { x: 'group.v', y: 'group.r', mode: MIN }
   // const SPEC_COUNT = { x: 'group.v', y: 'group.r', mode: COUNT }
-  for (let x of CATEGORIES) {
-    for (let y of CATEGORIES) {
-      kerning.crostab({
+  for (let x of SCOPES) {
+    for (let y of SCOPES) {
+      const crostab = kerning.crostab({
         scope: { x, y },
         spec: SPEC_AVERAGE
-      })  |> decoCrostab  |> says[FONTLAB].p(`[average] (${x} x ${y})`)
+      })
+      crostab |> decoCrostab  |> says[FONTLAB].p(`[average] (${x} x ${y})`)
+      await promises.writeFile(`${DEST}/${scopeName(x)}_${scopeName(y)}.js`, 'export const CROSTAB = ' + Verse.crostab(crostab))
       // kerning.crostab({ scope: { x, y }, spec: SPEC_MAX })  |> decoCrostab  |> says[FONTLAB].br('MAX').br(x).br(y)
       // kerning.crostab({ scope: { x, y }, spec: SPEC_MIN })  |> decoCrostab  |> says[FONTLAB].br('MIN').br(x).br(y)
       // kerning.crostab({ scope: { x, y }, spec: SPEC_COUNT })  |> decoCrostab  |> says[FONTLAB].br('#').br(x).br(y)
       ''  |> logger
     }
   }
-
-
-  await profile.save(DEST + '/' + FILE, { kerningClasses: true })
+  await profile.save(DEST + '/' + FILE, { groups: true })
 }
 
 test().then()
