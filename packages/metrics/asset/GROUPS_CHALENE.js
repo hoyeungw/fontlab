@@ -1,4 +1,4 @@
-export const KERNING_GROUP_SCHEME_CHALENE = [
+export const GROUPS_CHALENE = [
 
   { '1st': true, name: 'A1', names: ['A', 'AE'] },
   { '1st': true, name: 'C1', names: ['C', 'G'] },
