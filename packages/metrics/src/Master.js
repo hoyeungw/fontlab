@@ -52,7 +52,27 @@ export class Master {
   versos(scope) { return side(this.pairs).filter(Latin.filterFactory(scope)) }
   rectos(scope) { return head(this.pairs).filter(Latin.filterFactory(scope)) }
 
-  update(groups) {
+  granularPairs() {
+    const source = this.pairs
+    const versos = Object.fromEntries(this.groups.filter(is1st).map(({ name, names }) => [name, names]))
+    const rectos = Object.fromEntries(this.groups.filter(is2nd).map(({ name, names }) => [name, names]))
+    const target = {}
+    const fake = []
+    let xGr, yGr
+    for (let [xEl, yEl, v] of indexed(source)) {
+      if ((xEl[0] === '@') && (xGr = xEl.slice(1))) {
+        if ((yEl[0] === '@') && (yGr = yEl.slice(1))) {
+          for (let x of (versos[xGr] ?? fake)) for (let y of (rectos[yGr] ?? fake)) update.call(target, x, y, v)
+        } else {
+          for (let x of (versos[xGr] ?? fake)) update.call(target, x, yEl, v)
+        }
+      } else {
+        if ((yEl[0] === '@') && (yGr = yEl.slice(1))) {
+          for (let y of (rectos[yGr] ?? fake)) update.call(target, xEl, y, v)
+        } else {
+          update.call(target, xEl, yEl, v)
+        }
+      }
 
   }
 
