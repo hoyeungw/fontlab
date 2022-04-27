@@ -23,7 +23,7 @@ export const FONTLAB = '>> fontlab'
  * }} LayerToFontlabKerning - layer name as key
  *
  * @typedef {{
- *     kerningClasses: FontlabKerningDefinition[],
+ *     master: FontlabKerningDefinition[],
  *     pairs: GlyphToFontlabKerningPair
  * }} FontlabKerning
  *
