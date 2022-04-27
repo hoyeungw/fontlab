@@ -1,6 +1,5 @@
 import { AVERAGE }                                      from '@analys/enum-pivot-mode'
-import { Scope }                                        from '@fontlab/latin'
-import { scopeName }                                    from '@fontlab/latin'
+import { Scope, scopeName }                             from '@fontlab/latin'
 import { deco, decoCrostab, decoSamples, logger, says } from '@spare/logger'
 import { Verse }                                        from '@spare/verse'
 import { promises }                                     from 'fs'
@@ -18,13 +17,13 @@ const FILE = 'LoVirgil.vfm'
 export const test = async () => {
   const profile = await Profile.fromFile(SRC + '/' + FILE)
 
-  profile.kerningClasses().map(o => o.toObject()) |> decoSamples  |> says[FONTLAB]
+  profile.masterGroups().map(o => o.toObject()) |> decoSamples  |> says[FONTLAB]
 
   profile.alphabetsByLayers() |> decoCrostab  |> says[FONTLAB]
 
   profile.alphabetGroups() |> deco |> says[FONTLAB]
 
-  const kerning = profile.layerToKerning[profile.defaultLayer]
+  const kerning = profile.layerToMaster[profile.defaultLayer]
 
   kerning.versos(Scope.Upper)  |> deco  |> says[FONTLAB].p('1st').p(Scope.Upper)
   kerning.versos(Scope.Lower)  |> deco  |> says[FONTLAB].p('1st').p(Scope.Lower)
