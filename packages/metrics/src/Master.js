@@ -74,6 +74,55 @@ export class Master {
         }
       }
 
+    }
+    return target
+  }
+
+  regroup(nextGroupScheme) {
+    const NEXT_GROUP = 'next' + GROUP
+    function groupTable(currGroups, nextGroupScheme, side) {
+      const nextLetterToGroup = groupsToSurject(nextGroupScheme, side)
+      const letterToGroup = letter => letter in nextLetterToGroup ? ('@' + nextLetterToGroup[letter]) : letter
+      const table = Table
+        .from({
+          head: [GLYPH, GROUP],
+          rows: Object.entries(groupsToSurject(currGroups, side)),
+          title: GROUP
+        })
+        .proliferateColumn({ key: GLYPH, to: Latin.letter, as: LETTER }, { nextTo: GLYPH, mutate: true })
+        .proliferateColumn({ key: LETTER, to: letterToGroup, as: NEXT_GROUP }, { nextTo: GROUP, mutate: true })
+      table  |> decoTable|> logger
+      return table
+    }
+    const tableVerso = groupTable(this.groups, nextGroupScheme, Side.Verso)
+    const tableRecto = groupTable(this.groups, nextGroupScheme, Side.Recto)
+    const versoGlyphToNextGroup = tableVerso.lookupTable(GLYPH, NEXT_GROUP, true)
+    const rectoGlyphToNextGroup = tableRecto.lookupTable(GLYPH, NEXT_GROUP, true)
+    const groups = merge(
+      Object.entries(surjectToGrouped(versoGlyphToNextGroup))
+        .map(([name, names]) => Group.build({ side: Side.Verso, name: name.replace(/@/g, ''), names })),
+      Object.entries(surjectToGrouped(rectoGlyphToNextGroup))
+        .map(([name, names]) => Group.build({ side: Side.Verso, name: name.replace(/@/g, ''), names }))
+    )
+    const target = {}
+    const granularPairs = this.granularPairs()
+    indexedMutate(granularPairs, (verso, recto, kern) => {
+      const nextVerso = versoGlyphToNextGroup[verso] ?? verso
+      const nextRecto = rectoGlyphToNextGroup[recto] ?? recto
+      append.call(target, nextVerso, nextRecto, kern)
+    })
+    // target  |> deco  |> logger
+    indexedMutate(target, (verso, recto, list) => {
+      const { min, dif } = bound(list)
+      if (dif === 0) {
+        return min
+      } else {
+        // `[verso] (${ros(verso)}) [recto] (${ros(recto)}) [list] (${list}) `  |> logger
+        return min
+      }
+    })
+    target  |> deco  |> logger
+    return new Master({ groups, pairs: target })
   }
 
   pairsToTable(options = DEFAULT_MASTER_ANALYTICS_OPTIONS) { return pairsToTable(this.pairs, options) }
