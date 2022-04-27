@@ -12,12 +12,12 @@ import { profileToJson }                                         from './convert
 import { Master }                                                from './Master'
 import { Metrics }                                               from './Metrics'
 
-const LAYERS_PRIORITY = ['Regular', 'Roman', 'Medium', 'Semi Bold', 'Semi', 'Demi', 'Light']
+const LAYERS_PRIORITY = ['Regular', 'Roman', 'Medium', 'SemiBold', 'Semi', 'Demi', 'Light']
 
 export class Profile {
   dataType = 'com.fontlab.metrics'
   /** @type {Object<string,Master>} */
-  layerToKerning // LayersToKerning
+  layerToMaster // LayersToKerning
   /** @type {Object<string,Object<string,Metrics>>} */
   glyphLayerToMetrics // GlyphsToLayersToMetrics
   upm
@@ -28,7 +28,7 @@ export class Profile {
   constructor(profile) {
     this.dataType = profile.dataType
     // profile.dataType  |> says[FONTLAB]
-    if (profile.masters) this.layerToKerning = mapper(profile.masters, Master.build)
+    if (profile.masters) this.layerToMaster = mapper(profile.masters, Master.build)
     if (profile.metrics) this.glyphLayerToMetrics = mapper(profile.metrics, glyphsToMetrics => mapper(glyphsToMetrics.layers, Metrics.build))
     this.upm = profile.upm
   }
@@ -47,21 +47,21 @@ export class Profile {
       if (metrics) suffix += 'Metrics'
     }
     const target = dir + '/' + base + suffix + ext
-    const json = JSON.stringify(this.toJson({ kerningClasses: groups, pairs, metrics }))
+    const json = JSON.stringify(this.toJson({ groups, pairs, metrics }))
     await promises.writeFile(target, json)
   }
 
-  get layers() { return Object.keys(this.layerToKerning) }
+  get layers() { return Object.keys(this.layerToMaster) }
   get defaultLayer() {
-    for (let layer in LAYERS_PRIORITY) if (layer in this.layerToKerning) return layer
-    return firstKey(this.layerToKerning)
+    for (let layer in LAYERS_PRIORITY) if (layer in this.layerToMaster) return layer
+    return firstKey(this.layerToMaster)
   }
 
   toJson(options = DEFAULT_OPTIONS) { return profileToJson(this, options) }
 
-  /** @returns {KerningClass[]} */
-  kerningClasses(layer = this.defaultLayer) { return this.layerToKerning[layer].kerningClasses }
-  metrics(layer = this.defaultLayer) { return mapper(this.glyphLayerToMetrics, layerToMetrics => layerToMetrics[layer]) }
+  master(layer = this.defaultLayer) { return this.layerToMaster[layer] }
+  masterGroups(layer = this.defaultLayer) { return this.layerToMaster[layer].groups }
+  glyphToMetrics(layer = this.defaultLayer) { return mapper(this.glyphLayerToMetrics, layerToMetrics => layerToMetrics[layer]) }
   alphabetGroups() {
     const o = {}
     let letter
