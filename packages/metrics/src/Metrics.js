@@ -21,6 +21,6 @@ export class Metrics {
   }
   static build(metrics) { return new Metrics(metrics) }
   toString() {
-    return `[sideBearing] (${this.lsb},${this.rsb}) [width] (${this.width}) [extreme] ({ xmin:${this.xmin},xmax:${this.xmax},ymin:${this.ymin},ymax:${this.ymax})`
+    return `[sb] (${this.lsb},${this.rsb}) [wd] (${this.width}) [bound] ({ xmin:${this.xmin},xmax:${this.xmax},ymin:${this.ymin},ymax:${this.ymax})`
   }
 }

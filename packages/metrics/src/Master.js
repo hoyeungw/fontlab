@@ -3,7 +3,7 @@ import { Table }                                      from '@analys/table'
 import { bound }                                      from '@aryth/bound-vector'
 import { round }                                      from '@aryth/math'
 import { Latin, Scope, stringAscending }              from '@fontlab/latin'
-import { deco, decoTable, logger }                    from '@spare/logger'
+// import { deco, decoTable, logger }                    from '@spare/logger'
 import { head, indexed, indexedMutate, side, update } from '@vect/nested'
 import { ob }                                         from '@vect/object-init'
 import { merge }                                      from '@vect/vector-merge'
@@ -28,6 +28,7 @@ export function append(x, y, v) {
   const list = temp[y] ?? (temp[y] = [])
   list.push(v)
 }
+
 function surjectToGrouped(surject) {
   const o = {}
   for (let x in surject) {
@@ -91,7 +92,7 @@ export class Master {
         })
         .proliferateColumn({ key: GLYPH, to: Latin.letter, as: LETTER }, { nextTo: GLYPH, mutate: true })
         .proliferateColumn({ key: LETTER, to: letterToGroup, as: NEXT_GROUP }, { nextTo: GROUP, mutate: true })
-      table  |> decoTable|> logger
+      // table  |> decoTable|> logger
       return table
     }
     const tableVerso = groupTable(this.groups, nextGroupScheme, Side.Verso)
@@ -121,7 +122,7 @@ export class Master {
         return min
       }
     })
-    target  |> deco  |> logger
+    // target  |> deco  |> logger
     return new Master({ groups, pairs: target })
   }
 
