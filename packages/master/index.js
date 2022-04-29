@@ -1,0 +1,1 @@
+export { Master } from './src/Master'

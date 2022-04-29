@@ -1,0 +1,1 @@
+export const DEFAULT_OPTIONS = { groups: true, pairs: true, metrics: true }
