@@ -1,9 +1,9 @@
+import { groupedToSurject }                              from '@analys/convert'
 import { GROUP_SCHEME_LOWER, GROUP_SCHEME_UPPER, Scope } from '../asset'
-import { schemeToLex }                                   from './schemeToLex'
 
 export class Latin {
-  static #lexLower = schemeToLex(GROUP_SCHEME_LOWER)
-  static #lexUpper = schemeToLex(GROUP_SCHEME_UPPER)
+  static #lexLower = groupedToSurject(GROUP_SCHEME_LOWER)
+  static #lexUpper = groupedToSurject(GROUP_SCHEME_UPPER)
 
   static letter(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? null }
 
