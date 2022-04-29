@@ -1,6 +1,5 @@
 import { stringAscending }    from '@fontlab/latin'
 import { is1st, is2nd, Side } from '../asset/Side'
-import { groupToJson }        from './convert/groupToJson'
 
 export class Group {
   /** @type {number} */ side = 0
@@ -13,6 +12,8 @@ export class Group {
     this.names = body.names.sort(stringAscending)
   }
   static build(body) { return new Group(body) }
+  static initVerso(name, names) { return new Group({ side: Side.Verso, name, names }) }
+  static initRecto(name, names) { return new Group({ side: Side.Recto, name, names }) }
   is1st() { return Boolean(this.side & 1) }
   is2nd() { return Boolean(this.side & 2) }
   toObject() { return { side: this.side, name: this.name, names: this.names } }

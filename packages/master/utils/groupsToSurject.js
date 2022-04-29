@@ -1,6 +1,5 @@
 import { mutate }             from '@vect/vector-mapper'
-import { is1st, is2nd, Side } from '../../asset/Side'
-import { Group }              from '../Group'
+import { is1st, is2nd, Side } from '../asset/Side'
 
 export const groupsToSurject = (groups, side) => {
   if (!groups?.length) return {}
