@@ -1,25 +1,26 @@
-import { parsePath }                                             from '@acq/path'
-import { CrosTab }                                               from '@analys/crostab'
-import { round }                                                 from '@aryth/math'
-import { ALPHABET_UPPER, Latin, shortenWeight, stringAscending } from '@fontlab/latin'
-import { indexedIterate }                                        from '@vect/nested'
-import { iterate, mapper }                                       from '@vect/object-mapper'
-import { firstKey, selectObject }                                from '@vect/object-select'
-import { init }                                                  from '@vect/vector-init'
-import { promises }                                              from 'fs'
-import { DEFAULT_OPTIONS }                                       from './convert/DEFAULT_OPTIONS'
-import { profileToJson }                                         from './convert/profileToJson'
-import { Master }                                                from './Master'
-import { Metrics }                                               from './Metrics'
+import { CrosTab }                                                      from '@analys/crostab'
+import { AVERAGE }                                                      from '@analys/enum-pivot-mode'
+import { tableCollectionToWorkbook }                                    from '@analys/table-to-excel'
+import { round }                                                        from '@aryth/math'
+import { ALPHABET_UPPER, Latin, Scope, shortenWeight, stringAscending } from '@fontlab/latin'
+import { filterIndexed }                                                from '@vect/nested'
+import { iterateValues, mapper, mapValues }                             from '@vect/object-mapper'
+import { firstKey }                                                     from '@vect/object-select'
+import { GROUPS_CHALENE }                                               from '../../master/asset/GROUPS_CHALENE'
+import { Master }                                                       from '../../master/src/Master'
+import { profileToJson }                                                from './convert/classToJson'
+import { DEFAULT_OPTIONS }                                              from './convert/DEFAULT_OPTIONS'
+import { fileToProfile, profileToFile }                                 from './convert/profileAndFile'
+import { Metric }                                                       from './Metric'
 
-const LAYERS_PRIORITY = ['Regular', 'Roman', 'Medium', 'SemiBold', 'Semi', 'Demi', 'Light']
+const LAYERS_PRIORITY = [ 'Regular', 'Roman', 'Medium', 'SemiBold', 'Semi', 'Demi', 'Light' ]
 
 export class Profile {
   dataType = 'com.fontlab.metrics'
   /** @type {Object<string,Master>} */
   layerToMaster // LayersToKerning
-  /** @type {Object<string,Object<string,Metrics>>} */
-  glyphLayerToMetrics // GlyphsToLayersToMetrics
+  /** @type {Object<string,Object<string,Metric>>} */
+  glyphLayerToMetric // GlyphsToLayersToMetrics
   upm
 
   /**
@@ -29,28 +30,11 @@ export class Profile {
     this.dataType = profile.dataType
     // profile.dataType  |> says[FONTLAB]
     if (profile.masters) this.layerToMaster = mapper(profile.masters, Master.build)
-    if (profile.metrics) this.glyphLayerToMetrics = mapper(profile.metrics, glyphsToMetrics => mapper(glyphsToMetrics.layers, Metrics.build))
+    if (profile.metrics) this.glyphLayerToMetric = mapper(profile.metrics, glyphsToMetrics => mapper(glyphsToMetrics.layers, Metric.build))
     this.upm = profile.upm
   }
   static build(fontlabJson) { return new Profile(fontlabJson) }
-  static async fromFile(filePath) {
-    // says[FONTLAB](`loading ${ros(filePath)}`)
-    const buffer = await promises.readFile(filePath, 'utf8')
-    // says[FONTLAB](`loaded ${ros(filePath)}`)
-    const fontlabJson = await JSON.parse(buffer.toString())
-    return Profile.build(fontlabJson)
-  }
-  async save(file, { groups, pairs, metrics, suffix } = DEFAULT_OPTIONS) {
-    const { dir, base, ext } = parsePath(file)
-    if ((!groups || !pairs || !metrics) && !suffix) {
-      suffix = groups && !pairs ? 'Classes' : !groups && pairs ? 'Pairs' : groups && pairs ? 'Masters' : ''
-      if (metrics) suffix += 'Metrics'
-    }
-    const target = dir + '/' + base + suffix + ext
-    const json = JSON.stringify(this.toJson({ groups, pairs, metrics }))
-    await promises.writeFile(target, json)
-  }
-
+  static async fromFile(filePath) { return (await fileToProfile(filePath))|> Profile.build }
   get layers() { return Object.keys(this.layerToMaster) }
   get defaultLayer() {
     for (let layer in LAYERS_PRIORITY) if (layer in this.layerToMaster) return layer
@@ -60,30 +44,41 @@ export class Profile {
   toJson(options = DEFAULT_OPTIONS) { return profileToJson(this, options) }
 
   master(layer = this.defaultLayer) { return this.layerToMaster[layer] }
-  masterGroups(layer = this.defaultLayer) { return this.layerToMaster[layer].groups }
-  glyphToMetrics(layer = this.defaultLayer) { return mapper(this.glyphLayerToMetrics, layerToMetrics => layerToMetrics[layer]) }
+  glyphToMetric(layer = this.defaultLayer) { return mapValues(this.glyphLayerToMetric, layerToMetric => layerToMetric[layer]) }
+
   alphabetGroups() {
-    const o = {}
-    let letter
-    Object.keys(this.glyphLayerToMetrics)
-      .sort(stringAscending)
-      .forEach((glyph) => {
-        if ((letter = Latin.letter(glyph)) !== '-') (o[letter] ?? (o[letter] = [])).push(glyph)
-      })
-    iterate(o, vec => vec.sort(stringAscending))
-    return o
+    const grouped = {}
+    const glyphs = Object.keys(this.glyphLayerToMetric).sort(stringAscending)
+    for (let glyph of glyphs) {
+      const letter = Latin.letter(glyph)
+      if (!letter) continue;
+      (grouped[letter] ?? (grouped[letter] = [])).push(glyph)
+    }
+    iterateValues(grouped, list => list.sort(stringAscending))
+    return grouped
   }
-  alphabetsByLayers(alphabets = ALPHABET_UPPER) {
-    const { layers } = this, glyphLayerToMetrics = selectObject(this.glyphLayerToMetrics, alphabets)
+  alphabetByLayer(alphabet = ALPHABET_UPPER) {
     const crostab = CrosTab.from({
-      side: alphabets.slice(),
-      head: init(layers.length * 2, (i) => !(i % 2) ? layers[i / 2] + '.L' : layers[(i - 1) / 2] + '.R'),
+      side: alphabet.slice(),
+      head: this.layers.map(layer => [ layer + '.L', layer + '.R' ]).flat(),
       title: 'metrics',
     })
-    indexedIterate(glyphLayerToMetrics, (glyph, layer, metrics) => {
-      crostab.setCell(glyph, layer + '.L', round(metrics.lsb))
-      crostab.setCell(glyph, layer + '.R', round(metrics.rsb))
-    })
+    const enumerator = filterIndexed(this.glyphLayerToMetric, (glyph, layer, metric) => alphabet.includes(glyph))
+    for (let [ glyph, layer, metric ] of enumerator) {
+      crostab.setCell(glyph, layer + '.L', round(metric.lsb))
+      crostab.setCell(glyph, layer + '.R', round(metric.rsb))
+    }
     return crostab.mutateBanner(shortenWeight)
   }
+
+  async exportMastersToXlsx(layer) {
+    const tableCollection = this.master(layer).crostab({
+      scope: { x: Scope.Upper, y: Scope.Upper },
+      spec: { x: 'group.v', y: 'group.r', mode: AVERAGE },
+      groups: GROUPS_CHALENE,
+    })
+    tableCollectionToWorkbook()
+  }
+  // { groups, pairs, metrics, suffix }
+  async save(file, options = DEFAULT_OPTIONS) { await profileToFile.call(this, file, options) }
 }

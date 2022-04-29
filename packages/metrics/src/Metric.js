@@ -1,4 +1,4 @@
-export class Metrics {
+export class Metric {
   lsb
   rsb
   metricsLeft
@@ -19,7 +19,7 @@ export class Metrics {
     this.ymax = metrics.ymax
     this.ymin = metrics.ymin
   }
-  static build(metrics) { return new Metrics(metrics) }
+  static build(metrics) { return new Metric(metrics) }
   toString() {
     return `[sb] (${this.lsb},${this.rsb}) [wd] (${this.width}) [bound] ({ xmin:${this.xmin},xmax:${this.xmax},ymin:${this.ymin},ymax:${this.ymax})`
   }

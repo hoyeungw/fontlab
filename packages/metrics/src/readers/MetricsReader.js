@@ -40,7 +40,7 @@ export class MetricsReader {
       title: 'metrics',
     })
 
-    for (const [glyph, layerToMetrics] of Object.entries(profile.glyphLayerToMetrics)) {
+    for (const [glyph, layerToMetrics] of Object.entries(profile.glyphLayerToMetric)) {
       if (this.matchAlphabet(glyph)) for (const [layer, metrics] of Object.entries(layerToMetrics)) {
         const { lsb, rsb } = metrics
         crostab.setCell(glyph, layer + '.L', round(lsb))

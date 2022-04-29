@@ -1,4 +1,5 @@
 export { WEIGHTS, WEIGHTS_TO_INITIALS } from './WEIGHTS'
+
 export const FONTLAB = '>> fontlab'
 
 /**

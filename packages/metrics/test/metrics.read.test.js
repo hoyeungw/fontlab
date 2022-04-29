@@ -1,29 +1,28 @@
-import { parsePath, subFiles } from '@acq/path'
-import { ALPHABET_UPPER }      from '@fontlab/latin'
-import { Csv }                 from '@spare/csv'
-import { decoCrostab, says }   from '@spare/logger'
-import { promises }            from 'fs'
-import { FONTLAB }             from '../asset'
-import { Profile }             from '../src/Profile'
-// ABChanel-PB-Regular-L.json
-// ABChanelPB M Capital.json
-const SRC = process.cwd() + '/packages/metrics/static/metrics'
-const DEST = process.cwd() + '/packages/metrics/static/output'
+import { parsePath, subFiles }          from '@acq/path'
+import { ALPHABET_UPPER }               from '@fontlab/latin'
+import { Csv }                          from '@spare/csv'
+import { deco, decoCrostab, ros, says } from '@spare/logger'
+import { promises }                     from 'fs'
+import { FONTLAB }                      from '../asset'
+import { Profile }                      from '../src/Profile'
 
-const extractSimplyAlphabetsByLayers = async (src, dest) => {
-  const { dir, base, ext } = parsePath(src)
-  const profile = await Profile.fromFile(src)
-  const alphabetsByLayers = profile.alphabetsByLayers(ALPHABET_UPPER)
-  alphabetsByLayers |> decoCrostab  |> says[FONTLAB]
-  await promises.writeFile(`${dest}/${base}.csv`, Csv.table(alphabetsByLayers.toTable(base)))
+const SRC = process.cwd() + '/packages/metrics/static/metrics/custom'
+const DEST = process.cwd() + '/packages/metrics/static/output/metrics'
+
+const readAlphabetByLayer = async (file, dest) => {
+  const { dir, base, ext } = parsePath(file)
+  const profile = await Profile.fromFile(file)
+  const alphabetByLayer = profile.alphabetByLayer(ALPHABET_UPPER)
+  profile.alphabetGroups()  |> deco  |> says[FONTLAB].br(ros('alphabetGroups'))
+  alphabetByLayer |> decoCrostab  |> says[FONTLAB].br(ros('alphabetByLayer'))
+  await promises.writeFile(`${dest}/${base}.csv`, Csv.table(alphabetByLayer.toTable(base)))
 }
 
-const extractSimplyAlphabetsByLayersUnderFolder = async (folder, dest) => {
+const batchReadAlphabetByLayer = async (folder, dest) => {
   for (let file of await subFiles(folder)) {
-    await extractSimplyAlphabetsByLayers(folder + '/' + file, dest)
+    await readAlphabetByLayer(folder + '/' + file, dest)
     console.log()
   }
 }
 
-
-extractSimplyAlphabetsByLayersUnderFolder(SRC, DEST).then()
+batchReadAlphabetByLayer(SRC, DEST).then()

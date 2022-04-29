@@ -17,9 +17,9 @@ const FILE = 'LoVirgil.vfm'
 export const test = async () => {
   const profile = await Profile.fromFile(SRC + '/' + FILE)
 
-  profile.masterGroups().map(o => o.toObject()) |> decoSamples  |> says[FONTLAB]
+  profile.master().groups.map(o => o.toObject()) |> decoSamples  |> says[FONTLAB]
 
-  profile.alphabetsByLayers() |> decoCrostab  |> says[FONTLAB]
+  profile.alphabetByLayer() |> decoCrostab  |> says[FONTLAB]
 
   profile.alphabetGroups() |> deco |> says[FONTLAB]
 
