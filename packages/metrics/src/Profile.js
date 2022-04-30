@@ -3,17 +3,15 @@ import { AVERAGE }                                                      from '@a
 import { tableCollectionToWorkbook }                                    from '@analys/table-to-excel'
 import { round }                                                        from '@aryth/math'
 import { ALPHABET_UPPER, Latin, Scope, shortenWeight, stringAscending } from '@fontlab/latin'
+import { GROUPS_CHALENE, Master }                                       from '@fontlab/master'
 import { filterIndexed }                                                from '@vect/nested'
 import { iterateValues, mapper, mapValues }                             from '@vect/object-mapper'
 import { firstKey }                                                     from '@vect/object-select'
-import { GROUPS_CHALENE }                                               from '../../master/asset/GROUPS_CHALENE'
-import { Master }                                                       from '../../master/src/Master'
+import { CONVERT_OPTIONS, LAYERS_PRIORITY }                             from '../asset'
 import { profileToJson }                                                from './convert/classToJson'
-import { DEFAULT_OPTIONS }                                              from './convert/DEFAULT_OPTIONS'
 import { fileToProfile, profileToFile }                                 from './convert/profileAndFile'
 import { Metric }                                                       from './Metric'
 
-const LAYERS_PRIORITY = [ 'Regular', 'Roman', 'Medium', 'SemiBold', 'Semi', 'Demi', 'Light' ]
 
 export class Profile {
   dataType = 'com.fontlab.metrics'
@@ -29,8 +27,8 @@ export class Profile {
   constructor(profile) {
     this.dataType = profile.dataType
     // profile.dataType  |> says[FONTLAB]
-    if (profile.masters) this.layerToMaster = mapper(profile.masters, Master.build)
-    if (profile.metrics) this.glyphLayerToMetric = mapper(profile.metrics, glyphsToMetrics => mapper(glyphsToMetrics.layers, Metric.build))
+    if (profile.masters) this.layerToMaster = mapValues(profile.masters, Master.build)
+    if (profile.metrics) this.glyphLayerToMetric = mapValues(profile.metrics, glyphsToMetrics => mapValues(glyphsToMetrics.layers, Metric.build))
     this.upm = profile.upm
   }
   static build(fontlabJson) { return new Profile(fontlabJson) }
@@ -41,7 +39,7 @@ export class Profile {
     return firstKey(this.layerToMaster)
   }
 
-  toJson(options = DEFAULT_OPTIONS) { return profileToJson(this, options) }
+  toJson(options = CONVERT_OPTIONS) { return profileToJson(this, options) }
 
   master(layer = this.defaultLayer) { return this.layerToMaster[layer] }
   glyphToMetric(layer = this.defaultLayer) { return mapValues(this.glyphLayerToMetric, layerToMetric => layerToMetric[layer]) }
@@ -80,5 +78,5 @@ export class Profile {
     tableCollectionToWorkbook()
   }
   // { groups, pairs, metrics, suffix }
-  async save(file, options = DEFAULT_OPTIONS) { await profileToFile.call(this, file, options) }
+  async save(file, options = CONVERT_OPTIONS) { await profileToFile(this, file, options) }
 }
