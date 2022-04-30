@@ -1,22 +1,29 @@
-import { stringAscending }    from '@fontlab/latin'
-import { is1st, is2nd, Side } from '../asset/Side'
+import { stringAscending } from '@fontlab/latin'
+import { Side, side }      from '../asset'
+import { groupToJson }     from '../utils'
 
-export class Group {
+export class Group extends Array {
   /** @type {number} */ side = 0
   /** @type {string} */ name
-  /** @type {Array<string>} */ names
-  constructor(body) {
-    if (is1st(body)) this.side |= Side.Verso
-    if (is2nd(body)) this.side |= Side.Recto
-    this.name = body.name
-    this.names = body.names.sort(stringAscending)
+  constructor(side, name, list) {
+    // `[side] (${side}) [name] (${name}) [list] (${list})`  |> says['group.initialize']
+    if (list) { super(...list) } else { super() }
+    this.side = side
+    this.name = name
+    this.sort(stringAscending)
+    // `[side] (${this.side}) [name] (${this.name}) [list] (${this.names})`  |> says['group.initialize']
+    // this.slice() |> deco |> says['group.initialize'].br('constructed')
   }
-  static build(body) { return new Group(body) }
-  static initVerso(name, names) { return new Group({ side: Side.Verso, name, names }) }
-  static initRecto(name, names) { return new Group({ side: Side.Recto, name, names }) }
+  static build(body) {
+    return new Group(body|> side, body.name, Array.isArray(body) ? body : Array.isArray(body.names) ? body.names : [])
+  }
+  static initVerso(name, names) { return new Group(Side.Verso, name, names) }
+  static initRecto(name, names) { return new Group(Side.Recto, name, names) }
+  get names() { return this.slice() }
   is1st() { return Boolean(this.side & 1) }
   is2nd() { return Boolean(this.side & 2) }
-  toObject() { return { side: this.side, name: this.name, names: this.names } }
+  toObject() { return { side: this.side, name: this.name, names: this.slice() } }
   toJson() { return groupToJson(this) }
-  toString() { return `[side] (${this.side}) [key] (${this.name}) [glyphs] (${this.names})` }
+  toString() { return `[side] (${this.side}) [key] (${this.name}) [glyphs] (${this.slice()})` }
 }
+
