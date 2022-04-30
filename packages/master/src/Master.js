@@ -1,140 +1,89 @@
-import { surjectToGrouped }                                           from '@analys/convert'
-import { AVERAGE }                                                    from '@analys/enum-pivot-mode'
-import { Table }                                                      from '@analys/table'
-import { bound }                                                      from '@aryth/bound-vector'
-import { round }                                                      from '@aryth/math'
-import { Latin, Scope, stringAscending }                              from '@fontlab/latin'
-import { deco, logger }                                               from '@spare/logger'
-import { appendCell, head, indexed, indexedMutate, side, updateCell } from '@vect/nested'
-import { ob }                                                         from '@vect/object-init'
-import { mappedIndexed }                                              from '@vect/object-mapper'
-import { GLYPH, GROUP, LETTER }                                       from '../asset/constants'
-import { DEFAULT_OPTIONS }                                            from '../asset/DEFAULT_OPTIONS'
-import { GROUPS_CHALENE }                                             from '../asset/GROUPS_CHALENE'
-import { Side }                                                       from '../asset/Side'
-import { masterToJson }                                               from '../utils/convert'
-import { groupsToSurject }                                            from '../utils/groupsToSurject'
-import { pairsToTable }                                               from '../utils/pairsToTable'
-import { Group }                                                      from './Group'
+import { surjectToGrouped }                from '@analys/convert'
+import { AVERAGE }                         from '@analys/enum-pivot-mode'
+import { bound }                           from '@aryth/bound-vector'
+import { round }                           from '@aryth/math'
+import { head, indexed, side, updateCell } from '@vect/nested'
+import { ob }                              from '@vect/object-init'
+import { mapEntries }                      from '@vect/object-mapper'
 
-const DEFAULT_MASTER_ANALYTICS_OPTIONS = {
-  scope: { x: Scope.Upper, y: Scope.Upper },
-  spec: { x: 'group.v', y: 'group.r', mode: AVERAGE },
-  groups: GROUPS_CHALENE,
-}
+import { CONVERT_OPTIONS, Side, TABULAR_OPTIONS } from '../asset'
 
-
-
-
+import { lookupRegroup, masterToJson, pairsToTable } from '../utils'
+import { Group }                                     from './Group'
+import { Grouped }                                   from './Grouped'
 
 
 export class Master {
-  groups
+  /** @type {Object<string,Group>} */
+  grouped
+  /** @type {Object<string,Object<string,string|number>>} */
   pairs
-  constructor(master) {
-    this.groups = (master.kerningClasses ?? master.groups ?? [])
-      .map(Group.build)
-      .sort((a, b) => a.side === b.side ? stringAscending(a.name, b.name) : a.side - b.side)
-    this.pairs = master.pairs
+  constructor(grouped, pairs) {
+    this.grouped = grouped
+    // this.grouped  |> deco  |> says['this.grouped']
+    this.pairs = pairs
   }
-  static build(fontlabKerning) { return new Master(fontlabKerning) }
+  static build({ kerningClasses = [], pairs = {} } = {}) {
+    return new Master(Grouped.fromSamples(kerningClasses), pairs)
+  }
 
-  get kerningClasses() { return this.groups }
-  versos(scope) { return side(this.pairs).filter(Latin.filterFactory(scope)) }
-  rectos(scope) { return head(this.pairs).filter(Latin.filterFactory(scope)) }
+  get kerningClasses() { return Object.values(this.grouped) }
+  get pairsSide() { return side(this.pairs) }
+  get pairsHead() { return head(this.pairs) }
 
   granularPairs() {
-    const versos = ob(...this.groups.filter(is1st).map(({ name, names }) => [ name, names ]))
-    const rectos = ob(...this.groups.filter(is2nd).map(({ name, names }) => [ name, names ]))
+    const groupedV = Grouped.select(this.grouped, Side.Verso)
+    const groupedR = Grouped.select(this.grouped, Side.Recto)
     const target = {}
     const fake = []
-    let xGr, yGr
-    for (let [ xEl, yEl, v ] of indexed(this.pairs)) {
-      if ((xEl[0] === '@') && (xGr = xEl.slice(1))) {
-        if ((yEl[0] === '@') && (yGr = yEl.slice(1))) {
-          for (let x of (versos[xGr] ?? fake)) for (let y of (rectos[yGr] ?? fake)) updateCell.call(target, x, y, v)
+    let xg, yg
+    for (let [ xn, yn, v ] of indexed(this.pairs)) {
+      if ((xn[0] === '@') && (xg = xn.slice(1))) {
+        if ((yn[0] === '@') && (yg = yn.slice(1))) {
+          for (let x of (groupedV[xg] ?? fake)) for (let y of (groupedR[yg] ?? fake)) updateCell.call(target, x, y, v)
         } else {
-          for (let x of (versos[xGr] ?? fake)) updateCell.call(target, x, yEl, v)
+          for (let x of (groupedV[xg] ?? fake)) updateCell.call(target, x, yn, v)
         }
       } else {
-        if ((yEl[0] === '@') && (yGr = yEl.slice(1))) {
-          for (let y of (rectos[yGr] ?? fake)) updateCell.call(target, xEl, y, v)
+        if ((yn[0] === '@') && (yg = yn.slice(1))) {
+          for (let y of (groupedR[yg] ?? fake)) updateCell.call(target, xn, y, v)
         } else {
-          updateCell.call(target, xEl, yEl, v)
+          updateCell.call(target, xn, yn, v)
         }
       }
     }
+
     return target
   }
 
-  regroup(nextGroupScheme) {
-    const CURR = 'curr', NEXT = 'next'
-    const NEXT_GROUP = NEXT + GROUP
-    function groupTable(currGroups, nextGroupScheme, side) {
-      const letterToGroupNext = groupsToSurject(nextGroupScheme, side)
-      const letterToGroup = letter => letter in letterToGroupNext ? ('@' + letterToGroupNext[letter]) : letter
-      return Table
-        .from({
-          head: [ GLYPH, LETTER, CURR, NEXT ],
-          rows: [ ...mappedIndexed(groupsToSurject(currGroups, side), (glyph, group) => {
-            const letter = Latin.letter(glyph)
-            return [ glyph, letter, group, letterToGroup(letter) ]
-          }) ],
-          title: GROUP
-        })
-    }
-    const groupV = groupTable(this.groups, nextGroupScheme, Side.Verso)
-    const groupR = groupTable(this.groups, nextGroupScheme, Side.Recto)
-    const glyphToNextV = groupV.lookupTable(GLYPH, NEXT, true)
-    const glyphToNextR = groupR.lookupTable(GLYPH, NEXT, true)
-    const groups = [
-      ...mappedIndexed(surjectToGrouped(glyphToNextV), (glyph, names) => Group.initVerso(glyph.replace(/@/g, ''), names)),
-      ...mappedIndexed(surjectToGrouped(glyphToNextR), (glyph, names) => Group.initVerso(glyph.replace(/@/g, ''), names)),
-    ]
-    const pairs = {}
-    const granularPairs = this.granularPairs()
-    for (let [ verso, recto, kern ] of indexed(granularPairs)) {
-      if (verso in glyphToNextV) {
-        if (recto in glyphToNextR) {
-
-        } else {
-
-        }
-      } else {
-        if (recto in glyphToNextR) {
-
-        } else {
-
-        }
-      }
-      const versoNext = glyphToNextV[verso] ?? verso
-      const rectoNext = glyphToNextR[recto] ?? recto
-      appendCell.call(pairs, versoNext, rectoNext, kern)
-      if ((verso in glyphToNextV) && (recto in glyphToNextR)) {
-        delete granularPairs[verso][recto]
-      } else {
-      }
-    }
-    for (let k in granularPairs) if (isEmpty(granularPairs[k])) delete granularPairs[k]
-    granularPairs  |> deco  |> logger
-    // target  |> deco  |> logger
-    indexedMutate(pairs, (verso, recto, list) => {
+  regroup(regroupScheme) {
+    const regrouped = regroupScheme|> Grouped.fromSamples
+    const dictV = Grouped.makeGlyphToRegroup(Grouped.select(this.grouped, Side.Verso), Grouped.select(regrouped, Side.Verso))
+    const dictR = Grouped.makeGlyphToRegroup(Grouped.select(this.grouped, Side.Recto), Grouped.select(regrouped, Side.Recto))
+    const pairs = lookupRegroup(this.granularPairs(), dictV, dictR, list => {
       const { min, dif } = bound(list)
-      if (dif === 0) {
-        return min
-      } else {
-        // `[verso] (${ros(verso)}) [recto] (${ros(recto)}) [list] (${list}) `  |> logger
-        return min
-      }
+      return dif === 0 ? min : min
     })
-    // target  |> deco  |> logger
-    return new Master({ groups, pairs })
+    return new Master(
+      {
+        ...mapEntries(surjectToGrouped(dictV), ([ name, list ]) => [ name = name.replace(/@/g, ''), new Group(Side.Verso, name, list) ]),
+        ...mapEntries(surjectToGrouped(dictR), ([ name, list ]) => [ name = name.replace(/@/g, ''), new Group(Side.Recto, name, list) ]),
+      },
+      pairs
+    )
   }
 
-  pairsToTable(options = DEFAULT_MASTER_ANALYTICS_OPTIONS) { return pairsToTable(this.pairs, options) }
+  updatePairs(newPairs) {
+    for (let [ x, y, v ] of indexed(newPairs)) {
+      updateCell.call(this.pairs, x, y, v)
+    }
+    return this
+  }
+
+  pairsToTable(options = TABULAR_OPTIONS) { return pairsToTable(this.pairs, options) }
 
   // { scope, spec, groups }
-  crostab(options = DEFAULT_MASTER_ANALYTICS_OPTIONS) {
+  crostab(options = TABULAR_OPTIONS) {
     const filter = tx => tx !== '-'
     const table = this.pairsToTable(options)
     const { spec: { x, y, mode } } = options
@@ -147,5 +96,5 @@ export class Master {
     })
   }
 
-  toJson(options = DEFAULT_OPTIONS) { return masterToJson(this, options) }
+  toJson(options = CONVERT_OPTIONS) { return masterToJson(this, options) }
 }
