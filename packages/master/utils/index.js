@@ -1,0 +1,6 @@
+export { groupsToSurject }              from './groupsToSurject'
+export { masterToJson, groupToJson }    from './json'
+export { pairsToTable }                 from './pairsToTable'
+export { isEmpty }                      from './isEmpty'
+export { lookupRegroup, mappedRegroup } from './regroupNested'
+export { decoKerningClasses }           from './decoKerningClasses'
