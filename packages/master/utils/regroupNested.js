@@ -1,30 +1,39 @@
-import { appendCell, indexed } from '@vect/nested'
+import { appendCell, indexed, simpleIndexed, updateCell } from '@vect/nested'
 
-export const regroupNested = (nested, xToG, yToG) => {
-  const GG = {}, GU = {}, UG = {}, UU = {}
+export const lookupRegroup = (nested, groupX, groupY, indicator) => {
+  const GG = {}, GS = {}, SG = {}, SS = {}
   for (let [ x, y, v ] of indexed(nested)) {
-    if (x in xToG) {
-      if (y in yToG) {
-        const xg = xToG[x], yg = yToG[y]
-        delete GG[xg][yg]
-        appendCell.call(GG, xToG[x], yToG[y], v)
+    if (x in groupX) {
+      if (y in groupY) {
+        appendCell.call(GG, groupX[x], groupY[y], v)
       } else {
-
+        appendCell.call(GS, groupX[x], y, v)
       }
     } else {
-      if (y in yToG) {
-
+      if (y in groupY) {
+        appendCell.call(SG, x, groupY[y], v)
       } else {
-        appendCell.call(UU, x, y, v)
+        updateCell.call(SS, x, y, v)
       }
-    }
-
-    const nextX = xToG[x] ?? x
-    const nextY = yToG[y] ?? y
-
-    if ((x in xToG) && (y in yToG)) {
-      delete nested[x][y]
-    } else {
     }
   }
+  const target = {}
+  for (let [ x, y, v ] of simpleIndexed(GG)) updateCell.call(target, x, y, indicator(v))
+  for (let [ x, y, v ] of simpleIndexed(GS)) updateCell.call(target, x, y, indicator(v))
+  for (let [ x, y, v ] of simpleIndexed(SG)) updateCell.call(target, x, y, indicator(v))
+  for (let [ x, y, v ] of simpleIndexed(SS)) updateCell.call(target, x, y, v)
+  return target
 }
+
+export const mappedRegroup = (nested, assortX, assortY, indicator) => {
+  const groupedNested = {}
+  for (let [ x, y, v ] of indexed(nested)) {
+    appendCell.call(groupedNested, assortX(x), assortY(y), v)
+  }
+  for (let [ xg, yg, list ] of indexed(groupedNested)) {
+    groupedNested[xg][yg] = indicator(list)
+  }
+  return groupedNested
+}
+
+// `[x] (${ros(x)}) [y] (${ros(y)}) [list] (${list}) `  |> logger
