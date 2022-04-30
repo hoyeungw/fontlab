@@ -1,0 +1,1 @@
+export const CONVERT_OPTIONS = { groups: true, pairs: true, metrics: true }

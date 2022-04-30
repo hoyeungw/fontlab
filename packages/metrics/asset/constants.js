@@ -3,4 +3,5 @@ export const
   LETTER = 'letter',
   GROUP = 'group',
   LAYER = 'layer',
-  KERNING = 'kerning'
+  KERNING = 'kerning',
+  FONTLAB = 'fontlab'
