@@ -1,6 +1,7 @@
-import { deco, decoFlat, decoSamples, DecoVector, logger } from '@spare/logger'
-import { GROUPS_CHALENE }                                  from '../../master/asset/GROUPS_CHALENE'
-import { Profile }                                         from '../src/Profile'
+import { decoKerningClasses, GROUPS_CHALENE } from '@fontlab/master'
+import { deco, ros, says }                    from '@spare/logger'
+import { FONTLAB }                            from '../asset'
+import { Profile }                            from '../src/Profile'
 
 const SRC = process.cwd() + '/packages/metrics/static/metrics/custom'
 const DEST = process.cwd() + '/packages/metrics/static/output/masters'
@@ -12,10 +13,11 @@ const FILE = 'Chalene.vfm'
 export const test = async () => {
   const profile = await Profile.fromFile(SRC + '/' + FILE)
   const master = profile.master('Regular')
-  const master2 = master.regroup(GROUPS_CHALENE)
-  master2.groups  |> DecoVector({ read: decoFlat })  |> logger
+  // GROUPS_CHALENE  |> deco  |> logger
+  const master2 = master.regroup2(GROUPS_CHALENE)
+  master2.kerningClasses |> decoKerningClasses |> says[FONTLAB].br(ros('groups'))
   // master2.groups  |> decoSamples  |> logger
-  master2.pairs  |> deco  |> logger
+  master2.pairs  |> deco |> says[FONTLAB].br(ros('pairs'))
   for (let key in profile.layerToMaster) {
     profile.layerToMaster[key] = master2
   }
