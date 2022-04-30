@@ -8,19 +8,22 @@ export class Side {
 
 export function is1st(group) { return group[_1ST] ?? Boolean(group.side & 1) }
 export function is2nd(group) { return group[_2ND] ?? Boolean(group.side & 2) }
+export function side(group) {
+  let v = 0
+  if (is1st(group)) v |= Side.Verso
+  if (is2nd(group)) v |= Side.Recto
+  return v
+}
 
-// 1, 2, 4, 8, 16
+export class SideUtil {
+  static filterFactory(side) {
+    if (side === Side.Verso) return SideUtil.is1st
+    if (side === Side.Recto) return SideUtil.is2nd
+    return () => true
+  }
+  static is1st = is1st
+  static is2nd = is2nd
+  static side = side
+}
 
-// const test = () => {
-//   const { Verso, Recto } = Side
-//   let none = 0, combo = 0
-//   combo |= Verso
-//   combo |= Recto;
-//
-//   `[None] (${none}) [ None & 0b1 ] (${none & 1}) [ None & 0b10 ] (${none & 2})`  |> console.log;
-//   `[Verso] (${Verso}) [ Verso & 0b1 ] (${Verso & 1}) [ Verso & 0b10 ] (${Verso & 2})`  |> console.log;
-//   `[Recto] (${Recto}) [ Recto & 0b1 ] (${Recto & 1}) [ Recto & 0b10 ] (${Recto & 2})`  |> console.log;
-//   `[Combo] (${combo}) [ Combo & 0b1 ] (${combo & 1}) [ Combo & 0b10 ] (${combo & 2})`  |> console.log
-// }
-//
-// test()
+
