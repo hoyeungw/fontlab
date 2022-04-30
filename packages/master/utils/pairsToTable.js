@@ -1,19 +1,21 @@
-import { Table }           from '@analys/table'
-import { Latin, Scope }    from '@fontlab/latin'
-import { parseNum }        from '@typen/numeral'
-import { indexed }         from '@vect/nested'
-import { GROUPS_CHALENE }  from '../asset/GROUPS_CHALENE'
-import { Side }            from '../asset/Side'
-import { groupsToSurject } from './groupsToSurject'
+import { groupedToSurject }     from '@analys/convert'
+import { Table }                from '@analys/table'
+import { Latin, Scope }         from '@fontlab/latin'
+import { parseNum }             from '@typen/numeral'
+import { indexed }              from '@vect/nested'
+import { GROUPS_CHALENE, Side } from '../asset'
+import { Grouped }              from '../src/Grouped'
 
-export function pairsToTable(source, {
+export function pairsToTable(pairs, {
   scope = { x: Scope.Upper, y: Scope.Upper },
   groupScheme = GROUPS_CHALENE
 } = {}) {
-  const [ groupV, groupR ] = [ groupsToSurject(groupScheme, Side.Verso), groupsToSurject(groupScheme, Side.Recto) ]
+  const regrouped = Grouped.fromSamples(groupScheme)
+  const [ groupedV, groupedR ] = [ Grouped.select(regrouped, Side.Verso), Grouped.select(regrouped, Side.Recto) ]
+  const [ surjectV, surjectR ] = [ groupedToSurject(groupedV), groupedToSurject(groupedR) ]
   const [ filterV, filterR ] = [ Latin.filterFactory(scope.x), Latin.filterFactory(scope.y) ]
 
-  const enumerator = indexed(source, {
+  const enumerator = indexed(pairs, {
     by: (verso, recto, kern) => filterV(verso) && filterR(recto),
     to: (verso, recto, kern) => [ verso, recto, parseNum(kern), Latin.letter(verso), Latin.letter(recto) ]
   })
@@ -25,8 +27,8 @@ export function pairsToTable(source, {
   })
 
   table.proliferateColumn([
-    { key: 'letter.v', to: x => groupV[x] ?? '-', as: 'group.v' },
-    { key: 'letter.r', to: x => groupR[x] ?? '-', as: 'group.r' }
+    { key: 'letter.v', to: x => surjectV[x] ?? '', as: 'group.v' },
+    { key: 'letter.r', to: x => surjectR[x] ?? '', as: 'group.r' }
   ], { nextTo: 'letter.r', mutate: true })
 
   return table
