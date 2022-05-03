@@ -13,32 +13,32 @@ const SRC = './resources'
 const DEST = './static'
 
 export class PhenoPairsIO {
-  static async exportPairs(sourceVfm, targetXlsx) {
-    const { base } = parsePath(sourceVfm)
-    const profile = await Pheno.fromFile(sourceVfm)
+  static async exportPairs(srcVfm, destXlsx) {
+    const { base } = parsePath(srcVfm)
+    const pheno = await Pheno.fromFile(srcVfm)
     const target = DEST + '/' + base + '.xlsx'
-    MasterIO.savePairsToExcel(profile.master(LAYER), targetXlsx);
+    MasterIO.savePairsToExcel(pheno.master(LAYER), destXlsx);
     `[saved] (${target})` |> console.log
   }
-  static async importPairs(targetVfm, sourceXlsx) {
-    const profile = await Pheno.fromFile(targetVfm)
-    const crostabs = readCrostabCollection(sourceXlsx)
-    for (let [ key, crostab ] of indexed(crostabs)) profile.updatePairsByCrostab(crostab)
+  static async importPairs(destVfm, srcXlsx) {
+    const pheno = await Pheno.fromFile(destVfm)
+    const crostabs = readCrostabCollection(srcXlsx)
+    for (let [ key, crostab ] of indexed(crostabs)) pheno.updatePairsByCrostab(crostab)
     for (let [ key, crostab ] of indexed(crostabs)) {
       const [ scopeX, scopeY ] = key.split('_')
       if (crostab.height <= 48 && crostab.width <= 24) {
         crostab |> decoCrostab |> says[camelToSnake('excelToMasterPairs')].br(ros(scopeX) + '_' + ros(scopeY))
       }
     }
-    await profile.save(targetVfm, { groups: true, pairs: true, metrics: true })
+    await pheno.save(destVfm, { groups: true, pairs: true, metrics: true })
   }
-  static async separateVfm(sourceVfm) {
-    const { dir, base, ext } = parsePath(sourceVfm)
-    const profile = await Pheno.fromFile(sourceVfm)
+  static async separateVfm(srcVfm) {
+    const { dir, base, ext } = parsePath(srcVfm)
+    const pheno = await Pheno.fromFile(srcVfm)
     await promises.mkdir(dir + '/' + base)
-    await profile.save(dir + '/' + base + '/' + base + '-groups' + ext, { groups: true })
-    await profile.save(dir + '/' + base + '/' + base + '-pairs' + ext, { pairs: true })
-    await profile.save(dir + '/' + base + '/' + base + '-metrics' + ext, { metrics: true })
+    await pheno.save(dir + '/' + base + '/' + base + '-groups' + ext, { groups: true })
+    await pheno.save(dir + '/' + base + '/' + base + '-pairs' + ext, { pairs: true })
+    await pheno.save(dir + '/' + base + '/' + base + '-metrics' + ext, { metrics: true })
   }
 }
 
