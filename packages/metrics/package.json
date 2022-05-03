@@ -26,7 +26,7 @@
     "@aryth/distinct-vector": "^0.5.6",
     "@fontlab/latin": "^0.0.23",
     "@fontlab/master": "^0.0.23",
-    "@spare/logger": "^0.13.9",
+    "@spare/logger": "^0.13.12",
     "@typen/nullish": "^0.1.19",
     "@typen/numeral": "^0.1.19",
     "@vect/matrix-init": "^0.5.22",
@@ -40,8 +40,8 @@
   },
   "devDependencies": {
     "@acq/path": "^0.3.13",
-    "@spare/csv": "^0.13.9",
-    "@spare/translator": "^0.13.9"
+    "@spare/csv": "^0.13.12",
+    "@spare/translator": "^0.13.12"
   },
   "repository": {
     "type": "git",

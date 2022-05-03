@@ -14,7 +14,7 @@ export const test = async () => {
   const profile = await Profile.fromFile(SRC + '/' + FILE)
   const master = profile.master('Regular')
   // GROUPS_CHALENE  |> deco  |> logger
-  const master2 = master.regroup2(GROUPS_CHALENE)
+  const master2 = master.regroup(GROUPS_CHALENE)
   master2.kerningClasses |> decoKerningClasses |> says[FONTLAB].br(ros('groups'))
   // master2.groups  |> decoSamples  |> logger
   master2.pairs  |> deco |> says[FONTLAB].br(ros('pairs'))
