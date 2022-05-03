@@ -34,7 +34,7 @@ export function pairsToTableRegrouped(pairs, {
   const filterY = Latin.filterFactory(scope.y)
   const enumerator = indexed(pairs, {
     by: (verso, recto, kern) => filterX(verso) && filterY(recto),
-    to: (verso, recto, kern) => [ verso, recto, parseNum(kern), Latin.letter(verso), Latin.letter(recto) ]
+    to: (verso, recto, kern) => [ verso, recto, parseNum(kern), Latin.letterOrSelf(verso), Latin.letterOrSelf(recto) ]
   })
 
   const table = Table.from({
