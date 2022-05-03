@@ -1,0 +1,54 @@
+{
+  "name": "@fontlab/pheno",
+  "version": "0.0.23",
+  "description": "a function to handle fontlab metrics file",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@acq/path": "^0.3.13",
+    "@analys/excel": "^0.6.1",
+    "@fontlab/latin": "^0.0.23",
+    "@fontlab/master": "^0.0.23",
+    "@fontlab/metric": "^0.0.23",
+    "@spare/logger": "^0.13.14",
+    "@texting/phrasing": "^0.1.2",
+    "@vect/object-mapper": "^0.5.22",
+    "@analys/crostab": "^0.6.1",
+    "@analys/crostab-indexed": "^0.6.1",
+    "@aryth/math": "^0.5.6",
+    "@spare/xr": "^0.13.14",
+    "@typen/nullish": "^0.1.19",
+    "@vect/nested": "^0.5.22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "test": "node -r @babel/register test/test.index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyeungw/ject.git"
+  },
+  "keywords": [
+    "ject",
+    "function",
+    "metrics"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Hoyeung Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoyeungw/ject"
+  },
+  "homepage": "https://github.com/hoyeungw/ject#readme",
+  "gitHead": "4ec4dab0cf1636fa4a01dfd3651c62e8b4ac8d75"
+}

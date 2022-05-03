@@ -1,0 +1,151 @@
+{
+  "dataType": "com.fontlab.metrics",
+  "masters": {
+    "Light": {
+      "kerningClasses": [
+        {
+          "1st": true,
+          "name": "A",
+          "names": [
+            "A",
+            "a"
+          ]
+        }
+      ],
+      "pairs": {
+        "@A": {
+          "@C2": "-15",
+          "@T2": "-40",
+          "@V2": "-25",
+          "@W2": "-20",
+          "@Y2": "-60"
+        }
+      }
+    },
+    "Regular": {
+      "kerningClasses": [
+        {
+          "1st": true,
+          "name": "A",
+          "names": [
+            "A",
+            "a"
+          ]
+        }
+      ],
+      "pairs": {
+        "@A": {
+          "@C2": "-15",
+          "@T2": "-40",
+          "@V2": "-25",
+          "@W2": "-20",
+          "@Y2": "-60"
+        }
+      }
+    },
+    "SemiBold": {
+      "kerningClasses": [
+        {
+          "1st": true,
+          "name": "A",
+          "names": [
+            "A",
+            "a"
+          ]
+        }
+      ],
+      "pairs": {
+        "@A": {
+          "@C2": "-15",
+          "@T2": "-40",
+          "@V2": "-25",
+          "@W2": "-20",
+          "@Y2": "-60"
+        }
+      }
+    }
+  },
+  "metrics": {
+    "A": {
+      "layers": {
+        "Light": {
+          "lsb": 6,
+          "rsb": 6
+        },
+        "Regular": {
+          "lsb": 6,
+          "rsb": 6
+        },
+        "SemiBold": {
+          "lsb": 18,
+          "rsb": 18
+        }
+      }
+    },
+    "B": {
+      "layers": {
+        "Light": {
+          "lsb": 130,
+          "rsb": 85
+        },
+        "Regular": {
+          "lsb": 130,
+          "rsb": 85
+        },
+        "SemiBold": {
+          "lsb": 134,
+          "rsb": 89
+        }
+      }
+    },
+    "C": {
+      "layers": {
+        "Light": {
+          "lsb": 84,
+          "rsb": 54
+        },
+        "Regular": {
+          "lsb": 84,
+          "rsb": 54
+        },
+        "SemiBold": {
+          "lsb": 88,
+          "rsb": 67
+        }
+      }
+    },
+    "D": {
+      "layers": {
+        "Light": {
+          "lsb": 130,
+          "rsb": 84
+        },
+        "Regular": {
+          "lsb": 130,
+          "rsb": 84
+        },
+        "SemiBold": {
+          "lsb": 134,
+          "rsb": 88
+        }
+      }
+    },
+    "E": {
+      "layers": {
+        "Light": {
+          "lsb": 130,
+          "rsb": 92
+        },
+        "Regular": {
+          "lsb": 130,
+          "rsb": 92
+        },
+        "SemiBold": {
+          "lsb": 134,
+          "rsb": 95
+        }
+      }
+    }
+  },
+  "upm": 1000
+}
