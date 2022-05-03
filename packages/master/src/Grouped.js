@@ -15,6 +15,6 @@ export class Grouped {
   static glyphsToSurject(glyphs, letterGrouped) {
     const letterToNextGroup = letterGrouped|> groupedToSurject
     const toGroup = letter => valid(letterToNextGroup[letter]) ? ('@' + letterToNextGroup[letter]) : letter
-    return vectorToObject(glyphs, glyph => glyph|> Latin.letter|> toGroup)
+    return vectorToObject(glyphs, glyph => glyph|> Latin.letterOrSelf|> toGroup)
   }
 }

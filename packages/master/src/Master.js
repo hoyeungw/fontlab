@@ -1,12 +1,15 @@
 import { groupedToSurject, surjectToGrouped }                        from '@analys/convert'
+import { filterIndexed }                                             from '@analys/crostab-indexed'
 import { AVERAGE }                                                   from '@analys/enum-pivot-mode'
 import { bound }                                                     from '@aryth/bound-vector'
-import { round }                                                     from '@aryth/math'
+import { almostEqual, round }                                        from '@aryth/math'
+import { $, ros, says }                                              from '@spare/xr'
+import { nullish }                                                   from '@typen/nullish'
 import { head as rectoKeys, indexed, side as versoKeys, updateCell } from '@vect/nested'
 import { ob }                                                        from '@vect/object-init'
 import { mapEntries }                                                from '@vect/object-mapper'
 
-import { CONVERT_OPTIONS, Side, TABULAR_OPTIONS } from '../asset'
+import { CONVERT_OPTIONS, LAYER, Side, TABULAR_OPTIONS } from '../asset'
 
 import { lookupRegroup, masterToJson, pairsToTable } from '../utils'
 import { trimToGlyph }                               from '../utils/trimToGlyph'
@@ -20,18 +23,23 @@ function unionAcquire(vector, list) {
 
 // noinspection JSBitwiseOperatorUsage
 export class Master {
-  /** @type {Object<string,Group>} */
-  grouped
-  /** @type {Object<string,Object<string,string|number>>} */
-  pairs
-  constructor(grouped, pairs) {
+  /** @type {string}                                      */ name
+  /** @type {Object<string,Group>}                        */ grouped
+  /** @type {Object<string,Object<string,string|number>>} */ pairs
+
+  constructor(name, grouped, pairs) {
+    this.name = name
     this.grouped = grouped
-    // this.grouped  |> deco  |> says['this.grouped']
     this.pairs = pairs
   }
-  static build({ kerningClasses = [], pairs = {} } = {}) {
-    return new Master(Grouped.fromSamples(kerningClasses), pairs)
+  static build(name, grouped, body) { return new Master(name, grouped, body) }
+  static fromEntry(name, { kerningClasses = [], pairs = {} } = {}) {
+    return new Master(name, Grouped.fromSamples(kerningClasses), pairs)
   }
+  static from({ name, kerningClasses = [], pairs = {} } = {}) {
+    return new Master(name, Grouped.fromSamples(kerningClasses), pairs)
+  }
+
 
   get kerningClasses() { return Object.values(this.grouped) }
   pairKeys(side) {
@@ -98,6 +106,20 @@ export class Master {
       updateCell.call(this.pairs, x, y, v)
     }
     return this
+  }
+  updatePairsByCrostab(crostab) {
+    const layer = this.name ?? 'master'
+    const pairs = this.pairs
+    let num = 0
+    for (let [ x, y, val ] of filterIndexed(crostab, (x, y, v) => !almostEqual(v, 0, 0.1))) {
+      const raw = (pairs[x] ?? {})[y] ?? null
+      if (nullish(val) || almostEqual(val, 0, 0.1) || raw === val) continue
+      num++
+      if (layer === 'Regular') `layer ( ${ros(layer)} ) cell( ${x}, ${y} ) = (${raw}) -> (${val})` |> says['Profile'].br('updatePairsByCrostab')
+      updateCell.call(pairs, x, y, val)
+    }
+    $[LAYER](ros(layer))['updatedPairs'](num) |> says['Profile'].br('updatePairsByCrostab')
+    // `layer ( ${ros(layer)} ) updated (${num}) pairs` |> says['Pheno'].br(ros(camelToSnake('updatePairsByCrostab')))
   }
 
   pairsToTable(scopeX, scopeY) { return pairsToTable.call(this, scopeX, scopeY) }
