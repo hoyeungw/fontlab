@@ -1,10 +1,10 @@
-import { parsePath }              from '@acq/path'
-import { readCrostabCollection }  from '@analys/excel'
-import { MasterIO }               from '@fontlab/master'
-import { decoCrostab, ros, says } from '@spare/logger'
-import { camelToSnake }           from '@texting/phrasing'
-import { indexed }                from '@vect/object-mapper'
-import { Profile }                from '../src/Profile'
+import { parsePath }             from '@acq/path'
+import { readCrostabCollection } from '@analys/excel'
+import { MasterIO }              from '@fontlab/master'
+import { decoCrostab }           from '@spare/logger'
+import { ros, says }             from '@spare/xr'
+import { indexed }               from '@vect/object-mapper'
+import { Pheno }                 from 'packages/pheno/src/Pheno'
 
 const SRC = process.cwd() + '/packages/metrics/static/metrics/custom'
 const DEST = process.cwd() + '/packages/metrics/static/output/masters'
@@ -13,7 +13,7 @@ const LAYER = 'Regular'
 
 export const regroupMastersAndExportKerningPairs = async (regroups, { file, dest }) => {
   const { base } = parsePath(file)
-  const profile = await Profile.fromFile(file)
+  const profile = await Pheno.fromFile(file)
   profile.regroupMasters(regroups)
   MasterIO.savePairsToExcel(profile.master(LAYER), dest + '/' + base + '.xlsx')
 
@@ -24,12 +24,12 @@ export const regroupMastersAndExportKerningPairs = async (regroups, { file, dest
 
 export const updatePairsByCrostab = async ({ file, dest, version }) => {
   const { dir, base } = parsePath(file)
-  const profile = await Profile.fromFile(file)
+  const profile = await Pheno.fromFile(file)
   const crostabs = readCrostabCollection(dir + '/' + base + '.xlsx')
   for (let [ key, crostab ] of indexed(crostabs)) {
     const [ scopeX, scopeY ] = key.split('_')
     if (crostab.height <= 48 && crostab.width <= 26) {
-      crostab |> decoCrostab |> says[camelToSnake('excelToMasterPairs')].br(ros(scopeX) + '_' + ros(scopeY))
+      crostab |> decoCrostab |> says['excelToMasterPairs'].br(ros(scopeX) + '_' + ros(scopeY))
     }
     profile.updatePairsByCrostab(crostab)
   }
@@ -37,7 +37,7 @@ export const updatePairsByCrostab = async ({ file, dest, version }) => {
   for (let [ key, crostab ] of indexed(crostabs)) {
     const [ scopeX, scopeY ] = key.split('_')
     if (crostab.height <= 48 && crostab.width <= 24) {
-      crostab |> decoCrostab |> says[camelToSnake('excelToMasterPairs')].br(ros(scopeX) + '_' + ros(scopeY))
+      crostab |> decoCrostab |> says['excelToMasterPairs'].br(ros(scopeX) + '_' + ros(scopeY))
     }
   }
 

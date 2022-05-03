@@ -4,4 +4,4 @@ export const
   GROUP = 'group',
   LAYER = 'layer',
   KERNING = 'kerning',
-  FONTLAB = 'fontlab'
+  FONTLAB = '>> fontlab'

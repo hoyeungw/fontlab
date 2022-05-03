@@ -1,7 +1,7 @@
 export { WEIGHTS, WEIGHTS_TO_INITIALS }                  from './WEIGHTS'
 export { CONVERT_OPTIONS }                               from './CONVERT_OPTIONS'
 export { GLYPH, LETTER, GROUP, LAYER, KERNING, FONTLAB } from './constants'
-export { LAYERS_PRIORITY }                               from './LAYERS_PRIORITY'
+export { LAYERS_PRIORITY, getFace }                      from './LAYERS_PRIORITY'
 
 /**
  * @typedef {{

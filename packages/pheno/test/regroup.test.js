@@ -1,7 +1,7 @@
 import { decoKerningClasses, GROUPS_CHALENE } from '@fontlab/master'
 import { deco, ros, says }                    from '@spare/logger'
 import { FONTLAB }                            from '../asset'
-import { Profile }                            from '../src/Profile'
+import { Pheno }                              from 'packages/pheno/src/Pheno'
 
 const SRC = process.cwd() + '/packages/metrics/static/metrics/custom'
 const DEST = process.cwd() + '/packages/metrics/static/output/masters'
@@ -11,7 +11,7 @@ const DEST = process.cwd() + '/packages/metrics/static/output/masters'
 const FILE = 'Chalene.vfm'
 
 export const test = async () => {
-  const profile = await Profile.fromFile(SRC + '/' + FILE)
+  const profile = await Pheno.fromFile(SRC + '/' + FILE)
   const master = profile.master('Regular')
   // GROUPS_CHALENE  |> deco  |> logger
   const master2 = master.regroup(GROUPS_CHALENE)

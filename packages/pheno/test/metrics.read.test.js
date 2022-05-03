@@ -4,16 +4,16 @@ import { Csv }                          from '@spare/csv'
 import { deco, decoCrostab, ros, says } from '@spare/logger'
 import { promises }                     from 'fs'
 import { FONTLAB }                      from '../asset'
-import { Profile }                      from '../src/Profile'
+import { Pheno }                        from '../src/Pheno'
 
-const SRC = process.cwd() + '/packages/metrics/static/metrics/custom'
+const SRC = process.cwd() + '/packages/metric/static/metrics/custom'
 const DEST = process.cwd() + '/packages/metrics/static/output/metrics'
 
 const readAlphabetByLayer = async (file, dest) => {
   const { dir, base, ext } = parsePath(file)
-  const profile = await Profile.fromFile(file)
-  const alphabetByLayer = profile.alphabetByLayer(ALPHABET_UPPER)
-  profile.alphabetGroups()  |> deco  |> says[FONTLAB].br(ros('alphabetGroups'))
+  const pheno = await Pheno.fromFile(file)
+  const alphabetByLayer = pheno.sidebearingTable(ALPHABET_UPPER)
+  pheno.alphabetGroups()  |> deco  |> says[FONTLAB].br(ros('alphabetGroups'))
   alphabetByLayer |> decoCrostab  |> says[FONTLAB].br(ros('alphabetByLayer'))
   await promises.writeFile(`${dest}/${base}.csv`, Csv.table(alphabetByLayer.toTable(base)))
 }
