@@ -14,5 +14,7 @@ static/**
 yarn.lock
 yarn-error.log
 dezeen
+resources/*
+static/*
 
 /packages/metrics/static/
