@@ -5,7 +5,8 @@ export class Latin {
   static #lexLower = groupedToSurject(GROUP_SCHEME_LOWER)
   static #lexUpper = groupedToSurject(GROUP_SCHEME_UPPER)
 
-  static letter(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? glyph }
+  static letterOrSelf(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? glyph }
+  static letterOrNull(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? null }
 
   static filterFactory(scope) {
     if (scope === Scope.Upper) return Latin.isUpper

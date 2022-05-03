@@ -34,9 +34,9 @@
   },
   "devDependencies": {
     "@acq/path": "^0.3.13",
-    "@spare/csv": "^0.13.12",
-    "@spare/translator": "^0.13.12",
-    "@spare/verse": "^0.13.12",
+    "@spare/csv": "^0.13.14",
+    "@spare/translator": "^0.13.14",
+    "@spare/verse": "^0.13.14",
     "@vect/vector-algebra": "^0.5.22"
   },
   "repository": {
