@@ -13,7 +13,7 @@ const LAYER = 'Regular'
 
 export const regroupMastersAndExportKerningPairs = async (regroups, { file, dest }) => {
   const { base } = parsePath(file)
-  const profile = await Pheno.fromFile(file)
+  const profile = await PhenoIO.readPheno(file)
   profile.regroupMasters(regroups)
   MasterIO.savePairsToExcel(profile.master(LAYER), dest + '/' + base + '.xlsx')
 
@@ -24,7 +24,7 @@ export const regroupMastersAndExportKerningPairs = async (regroups, { file, dest
 
 export const updatePairsByCrostab = async ({ file, dest, version }) => {
   const { dir, base } = parsePath(file)
-  const profile = await Pheno.fromFile(file)
+  const profile = await PhenoIO.readPheno(file)
   const crostabs = readCrostabCollection(dir + '/' + base + '.xlsx')
   for (let [ key, crostab ] of indexed(crostabs)) {
     const [ scopeX, scopeY ] = key.split('_')

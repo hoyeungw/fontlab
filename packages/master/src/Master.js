@@ -8,13 +8,11 @@ import { nullish }                                                   from '@type
 import { head as rectoKeys, indexed, side as versoKeys, updateCell } from '@vect/nested'
 import { ob }                                                        from '@vect/object-init'
 import { mapEntries }                                                from '@vect/object-mapper'
-
-import { CONVERT_OPTIONS, LAYER, Side, TABULAR_OPTIONS } from '../asset'
-
-import { lookupRegroup, masterToJson, pairsToTable } from '../utils'
-import { trimToGlyph }                               from '../utils/trimToGlyph'
-import { Group }                                     from './Group'
-import { Grouped }                                   from './Grouped'
+import { CONVERT_OPTIONS, LAYER, Side, TABULAR_OPTIONS }             from '../asset'
+import { lookupRegroup, masterToJson, pairsToTable }                 from '../utils'
+import { trimToGlyph }                                               from '../utils/trimToGlyph'
+import { Group }                                                     from './Group'
+import { Grouped }                                                   from './Grouped'
 
 function unionAcquire(vector, list) {
   for (let x of list) if (!vector.includes(x)) vector.push(x)
@@ -101,8 +99,8 @@ export class Master {
     )
   }
 
-  updatePairs(newPairs) {
-    for (let [ x, y, v ] of indexed(newPairs)) {
+  updatePairs(indexed) {
+    for (let [ x, y, v ] of indexed) {
       updateCell.call(this.pairs, x, y, v)
     }
     return this

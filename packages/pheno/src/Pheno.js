@@ -10,9 +10,7 @@ import { camelToSnake }                                          from '@texting/
 import { nullish }                                               from '@typen/nullish'
 import { filterIndexed, transpose, updateCell }                  from '@vect/nested'
 import { iterateValues, mapKeyValue, mapValues }                 from '@vect/object-mapper'
-import { CONVERT_OPTIONS, getFace, LAYER }                       from '../asset'
-import { profileToJson }                                         from './convert/classToJson'
-import { fileToProfile, profileToFile }                          from './convert/profileAndFile'
+import { getFace, LAYER }                                        from '../asset'
 
 export class Pheno {
   dataType = 'com.fontlab.metrics'
@@ -33,14 +31,13 @@ export class Pheno {
   }
   static build(fontlabJson) { return new Pheno(fontlabJson) }
 
-  static async fromFile(filePath) { return (await fileToProfile(filePath))|> Pheno.build }
-  async save(file, options = CONVERT_OPTIONS) { await profileToFile(this, file, options) }
+  // static async fromFile(filePath) { return (await fileToProfile(filePath))|> Pheno.build }
+  // async save(file, options = CONVERT_OPTIONS) { await profileToFile(this, file, options) }
+  // toJson(options = CONVERT_OPTIONS) { return profileToJson(this, options) }
 
   get layers() { return Object.keys(this.layerToMaster) }
   get face() { return getFace(this.layerToMaster) }
   get glyphLayerToMetric() { return this.layerToMetrics |> transpose }
-
-  toJson(options = CONVERT_OPTIONS) { return profileToJson(this, options) }
 
   /** @return {Master} */
   master(layer) { return this.layerToMaster[layer ?? this.face] }

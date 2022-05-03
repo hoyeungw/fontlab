@@ -11,7 +11,7 @@ const DEST = process.cwd() + '/packages/metrics/static/output/masters'
 const FILE = 'Chalene.vfm'
 
 export const test = async () => {
-  const profile = await Pheno.fromFile(SRC + '/' + FILE)
+  const profile = await PhenoIO.readPheno(SRC + '/' + FILE)
   const master = profile.master('Regular')
   // GROUPS_CHALENE  |> deco  |> logger
   const master2 = master.regroup(GROUPS_CHALENE)
