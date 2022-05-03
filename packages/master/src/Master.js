@@ -1,18 +1,24 @@
-import { surjectToGrouped }                from '@analys/convert'
-import { AVERAGE }                         from '@analys/enum-pivot-mode'
-import { bound }                           from '@aryth/bound-vector'
-import { round }                           from '@aryth/math'
-import { head, indexed, side, updateCell } from '@vect/nested'
-import { ob }                              from '@vect/object-init'
-import { mapEntries }                      from '@vect/object-mapper'
+import { groupedToSurject, surjectToGrouped }                        from '@analys/convert'
+import { AVERAGE }                                                   from '@analys/enum-pivot-mode'
+import { bound }                                                     from '@aryth/bound-vector'
+import { round }                                                     from '@aryth/math'
+import { head as rectoKeys, indexed, side as versoKeys, updateCell } from '@vect/nested'
+import { ob }                                                        from '@vect/object-init'
+import { mapEntries }                                                from '@vect/object-mapper'
 
 import { CONVERT_OPTIONS, Side, TABULAR_OPTIONS } from '../asset'
 
 import { lookupRegroup, masterToJson, pairsToTable } from '../utils'
+import { trimToGlyph }                               from '../utils/trimToGlyph'
 import { Group }                                     from './Group'
 import { Grouped }                                   from './Grouped'
 
+function unionAcquire(vector, list) {
+  for (let x of list) if (!vector.includes(x)) vector.push(x)
+  return vector
+}
 
+// noinspection JSBitwiseOperatorUsage
 export class Master {
   /** @type {Object<string,Group>} */
   grouped
@@ -28,8 +34,18 @@ export class Master {
   }
 
   get kerningClasses() { return Object.values(this.grouped) }
-  get pairsSide() { return side(this.pairs) }
-  get pairsHead() { return head(this.pairs) }
+  pairKeys(side) {
+    const list = []
+    if (side & 1) unionAcquire(list, versoKeys(this.pairs))
+    if (side & 2) unionAcquire(list, rectoKeys(this.pairs))
+    return list
+  }
+  pairGlyphs(side) {
+    let glyphs = Grouped.select(this.grouped, side)|> groupedToSurject |> Object.keys
+    if (side & 1) unionAcquire(glyphs, versoKeys(this.pairs).map(trimToGlyph))
+    if (side & 2) unionAcquire(glyphs, versoKeys(this.pairs).map(trimToGlyph))
+    return glyphs
+  }
 
   granularPairs() {
     const groupedV = Grouped.select(this.grouped, Side.Verso)
@@ -55,19 +71,23 @@ export class Master {
 
     return target
   }
-
+  /**
+   * @param {{['1st']:boolean,['2nd']:boolean,name,names}[]} regroupScheme
+   * @return {Master}
+   */
   regroup(regroupScheme) {
     const regrouped = regroupScheme|> Grouped.fromSamples
-    const dictV = Grouped.makeGlyphToRegroup(Grouped.select(this.grouped, Side.Verso), Grouped.select(regrouped, Side.Verso))
-    const dictR = Grouped.makeGlyphToRegroup(Grouped.select(this.grouped, Side.Recto), Grouped.select(regrouped, Side.Recto))
+    const dictV = Grouped.glyphsToSurject(this.pairGlyphs(Side.Verso), Grouped.select(regrouped, Side.Verso))
+    const dictR = Grouped.glyphsToSurject(this.pairGlyphs(Side.Recto), Grouped.select(regrouped, Side.Recto))
+    // filter(dictV, Latin.isLetter) |> decoObject|> says['regroup'].br('glyphToPrevGroup'|> camelToSnake |> ros).br('verso')
     const pairs = lookupRegroup(this.granularPairs(), dictV, dictR, list => {
       const { min, dif } = bound(list)
       return dif === 0 ? min : min
     })
     return new Master(
       {
-        ...mapEntries(surjectToGrouped(dictV), ([ name, list ]) => [ name = name.replace(/@/g, ''), new Group(Side.Verso, name, list) ]),
-        ...mapEntries(surjectToGrouped(dictR), ([ name, list ]) => [ name = name.replace(/@/g, ''), new Group(Side.Recto, name, list) ]),
+        ...mapEntries(surjectToGrouped(dictV), ([ name, list ]) => [ name = trimToGlyph(name), new Group(Side.Verso, name, list) ]),
+        ...mapEntries(surjectToGrouped(dictR), ([ name, list ]) => [ name = trimToGlyph(name), new Group(Side.Recto, name, list) ]),
       },
       pairs
     )
@@ -80,19 +100,19 @@ export class Master {
     return this
   }
 
-  pairsToTable(options = TABULAR_OPTIONS) { return pairsToTable(this.pairs, options) }
+  pairsToTable(scopeX, scopeY) { return pairsToTable.call(this, scopeX, scopeY) }
 
   // { scope, spec, groups }
   crostab(options = TABULAR_OPTIONS) {
-    const filter = tx => tx !== '-'
-    const table = this.pairsToTable(options)
-    const { spec: { x, y, mode } } = options
+    const valid = tx => tx?.length
+    const { scope, spec } = options
+    const table = this.pairsToTable(scope.x, scope.y)
     return table.crosTab({
-      side: x,
-      banner: y,
-      field: { kerning: mode },
-      filter: ob([ x, filter ], [ y, filter ]),
-      formula: mode === AVERAGE ? ({ value }) => round(value) : round
+      side: spec.x,
+      banner: spec.y,
+      field: { kerning: spec.mode },
+      filter: ob([ spec.x, valid ], [ spec.y, valid ]),
+      formula: spec.mode === AVERAGE ? ({ value }) => round(value) : round
     })
   }
 
