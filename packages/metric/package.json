@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/metric",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "a function to handle fontlab metrics file",
   "exports": {
     "import": "./dist/index.mjs",
@@ -28,8 +28,8 @@
     "@aryth/bound-vector": "^0.5.6",
     "@aryth/distinct-vector": "^0.5.6",
     "@aryth/math": "^0.5.6",
-    "@fontlab/latin": "^0.0.23",
-    "@fontlab/master": "^0.0.23",
+    "@fontlab/latin": "^0.0.24",
+    "@fontlab/master": "^0.0.24",
     "@spare/logger": "^0.13.14",
     "@spare/xr": "^0.13.14",
     "@texting/phrasing": "^0.1.2",

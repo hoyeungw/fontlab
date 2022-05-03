@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/pheno",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "a function to handle fontlab metrics file",
   "exports": {
     "import": "./dist/index.mjs",
@@ -11,19 +11,19 @@
   ],
   "dependencies": {
     "@acq/path": "^0.3.13",
-    "@analys/excel": "^0.6.1",
-    "@fontlab/latin": "^0.0.23",
-    "@fontlab/master": "^0.0.23",
-    "@fontlab/metric": "^0.0.23",
-    "@spare/logger": "^0.13.14",
-    "@texting/phrasing": "^0.1.2",
-    "@vect/object-mapper": "^0.5.22",
     "@analys/crostab": "^0.6.1",
     "@analys/crostab-indexed": "^0.6.1",
+    "@analys/excel": "^0.6.1",
     "@aryth/math": "^0.5.6",
+    "@fontlab/latin": "^0.0.24",
+    "@fontlab/master": "^0.0.24",
+    "@fontlab/metric": "^0.0.24",
+    "@spare/logger": "^0.13.14",
     "@spare/xr": "^0.13.14",
+    "@texting/phrasing": "^0.1.2",
     "@typen/nullish": "^0.1.19",
-    "@vect/nested": "^0.5.22"
+    "@vect/nested": "^0.5.22",
+    "@vect/object-mapper": "^0.5.22"
   },
   "publishConfig": {
     "access": "public"
