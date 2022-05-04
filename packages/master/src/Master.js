@@ -78,7 +78,7 @@ export class Master {
     return target
   }
   /**
-   * @param {{['1st']:boolean,['2nd']:boolean,name,names}[]} regroupScheme
+   * @param {{['1st'],['2nd'],name,names}[]} regroupScheme
    * @return {Master}
    */
   regroup(regroupScheme) {
@@ -90,7 +90,8 @@ export class Master {
       const { min, dif } = bound(list)
       return dif === 0 ? min : min
     })
-    return new Master(
+    return Master.build(
+      this.name,
       {
         ...mapEntries(surjectToGrouped(dictV), ([ name, list ]) => [ name = trimToGlyph(name), new Group(Side.Verso, name, list) ]),
         ...mapEntries(surjectToGrouped(dictR), ([ name, list ]) => [ name = trimToGlyph(name), new Group(Side.Recto, name, list) ]),
