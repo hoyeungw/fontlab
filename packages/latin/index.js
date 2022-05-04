@@ -16,6 +16,6 @@ export { Latin } from './src/Latin'
 
 export {
   shortenWeight,
-  stringAscending,
+  asc, stringAscending,
   stringValue,
 } from './util/index'

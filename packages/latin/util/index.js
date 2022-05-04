@@ -1,3 +1,3 @@
-export { shortenWeight }   from './shortenWeight'
-export { stringAscending } from './stringAscending'
-export { stringValue }     from './stringValue'
+export { shortenWeight }               from './shortenWeight'
+export { asc, asc as stringAscending } from './asc'
+export { stringValue }                 from './stringValue'
