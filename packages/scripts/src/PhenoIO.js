@@ -20,7 +20,7 @@ export class PhenoIO {
 
   /***
    * @param {Pheno} pheno
-   * @param options
+   * @param {{groups:*,pairs:*,metrics:*}} options
    * @returns {{dataType: (string|string|string|*)}}
    */
   static phenoToJson(pheno, options = CONVERT_OPTIONS) {
