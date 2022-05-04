@@ -14,7 +14,7 @@ const readAlphabetByLayer = async (file, dest) => {
   const { dir, base, ext } = parsePath(file)
   const pheno = await PhenoIO.readPheno(file)
   const alphabetByLayer = pheno.sidebearingTable(ALPHABET_UPPER)
-  pheno.alphabetGroups()  |> deco  |> says[FONTLAB].br(ros('alphabetGroups'))
+  pheno.alphabetGrouped()  |> deco  |> says[FONTLAB].br(ros('alphabetGroups'))
   alphabetByLayer |> decoCrostab  |> says[FONTLAB].br(ros('alphabetByLayer'))
   await promises.writeFile(`${dest}/${base}.csv`, Csv.table(alphabetByLayer.toTable(base)))
 }

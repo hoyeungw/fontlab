@@ -27,8 +27,8 @@
     "@aryth/distinct-vector": "^0.5.6",
     "@aryth/math": "^0.5.6",
     "@fontlab/latin": "^0.0.25",
-    "@spare/logger": "^0.13.14",
-    "@spare/xr": "^0.13.14",
+    "@spare/logger": "^0.13.16",
+    "@spare/xr": "^0.13.16",
     "@texting/phrasing": "^0.1.2",
     "@typen/literal": "^0.1.19",
     "@typen/nullish": "^0.1.19",
@@ -45,9 +45,9 @@
   },
   "devDependencies": {
     "@acq/path": "^0.3.13",
-    "@spare/csv": "^0.13.14",
-    "@spare/translator": "^0.13.14",
-    "@spare/verse": "^0.13.14",
+    "@spare/csv": "^0.13.16",
+    "@spare/translator": "^0.13.16",
+    "@spare/verse": "^0.13.16",
     "@vect/vector-algebra": "^0.5.23"
   },
   "repository": {
