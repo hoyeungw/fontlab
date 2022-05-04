@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/master",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "a function to handle fontlab metrics file",
   "exports": {
     "import": "./dist/index.mjs",
@@ -26,7 +26,7 @@
     "@aryth/bound-vector": "^0.5.6",
     "@aryth/distinct-vector": "^0.5.6",
     "@aryth/math": "^0.5.6",
-    "@fontlab/latin": "^0.0.25",
+    "@fontlab/latin": "^0.0.26",
     "@spare/logger": "^0.13.16",
     "@spare/xr": "^0.13.16",
     "@texting/phrasing": "^0.1.2",
