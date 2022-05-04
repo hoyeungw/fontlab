@@ -3,12 +3,11 @@ import { almostEqual, round }                        from '@aryth/math'
 import { ALPHABET_UPPER, asc, Latin, shortenWeight } from '@fontlab/latin'
 import { Master }                                    from '@fontlab/master'
 import { Metric }                                    from '@fontlab/metric'
-import { $, says }                                   from '@spare/xr'
 import { valid }                                     from '@typen/nullish'
 import { filterIndexed, transpose, updateCell }      from '@vect/nested'
 import { mapKeyValue, mapValues, mutate }            from '@vect/object-mapper'
 import { appendValue }                               from '@vect/object-update'
-import { getFace, LAYER }                            from '../asset'
+import { getFace }                                   from '../asset'
 
 // noinspection CommaExpressionJS
 export class Pheno {
@@ -65,17 +64,13 @@ export class Pheno {
   mutateRegroup(regroupScheme) { return mutate(this.layerToMaster, m => m.regroup(regroupScheme)), this }
   mutatePairs(nextPairs) {
     function zero(v) { return almostEqual(v, 0, 0.1) }
-    function val(x, y) { return (this[x] ?? {})[y] }
-    for (let [ layer, { pairs } ] of this.layerToMaster) {
-      let num = 0
-      for (let [ x, y, v ] of filterIndexed(nextPairs,
-        (nx, ny, nv) => valid(nv) && !zero(nv) && val.call(pairs, nx, ny) !== nv)) {
-        num++
-        // if (layer === 'Regular') `layer ( ${ros(layer)} ) cell( ${x}, ${y} ) = (${raw}) -> (${v})` |> says['Pheno'].br('mutatePairs')
-        updateCell.call(pairs, x, y, v)
-      }
-      $[LAYER](layer)['updated'](num) |> says['Pheno'].br('mutatePairs')
-    }
-    return this
+    function val(x, y) { return this[x] ? this[x][y] : null }
+    return mapValues(this.layerToMaster, ({ pairs }) => {
+      let count = 0
+      for (let [ x, y, v ] of filterIndexed(nextPairs, (nx, ny, nv) => valid(nv) && !zero(nv) && val.call(pairs, nx, ny) !== nv)) {
+        count++, updateCell.call(pairs, x, y, v)
+      } // if (layer === 'Regular') `layer ( ${ros(layer)} ) cell( ${x}, ${y} ) = (${raw}) -> (${v})` |> says['Pheno'].br('mutatePairs')
+      return count // $[LAYER](layer)['updated'](num) |> says['Pheno'].br('mutatePairs')
+    })
   }
 }
