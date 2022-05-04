@@ -8,8 +8,7 @@ const BASE = 'Chalene'
 const SRC_VFM = SRC + '/' + BASE + '.vfm'
 
 const workflow = async () => {
-
-  await PhenoPairsIO.exportPairs(SRC_VFM, DEST)
+  // await PhenoPairsIO.exportPairs(SRC_VFM, DEST)
   await PhenoPairsIO.importPairs(SRC_VFM, DEST + '/' + BASE + '.xlsx')
 }
 
