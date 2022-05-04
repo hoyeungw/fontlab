@@ -1,48 +1,38 @@
-import { parsePath }              from '@acq/path'
-import { readCrostabCollection }  from '@analys/excel'
-import { MasterIO }               from '@fontlab/master'
-import { decoCrostab, ros, says } from '@spare/logger'
-import { camelToSnake }           from '@texting/phrasing'
-import { indexed }                from '@vect/object-mapper'
-import { promises }               from 'fs'
-import { PhenoIO }                from './PhenoIO'
+import { parsePath }             from '@acq/path'
+import { crostabToNested }       from '@analys/convert'
+import { readCrostabCollection } from '@analys/excel'
+import { FONTLAB }               from '@fontlab/pheno'
+import { decoCrostab, says }     from '@spare/logger'
+import { $ }                     from '@spare/xr'
+import { indexed }               from '@vect/object-mapper'
+import { existsSync, promises }  from 'fs'
+import { MasterIO }              from './MasterIO'
+import { PhenoIO }               from './PhenoIO'
 
-const LAYER = 'Regular'
-const SRC = './resources'
-const DEST = './static'
+const REGULAR = 'Regular'
+const CLASS = 'PhenoPairsIO'
 
 export class PhenoPairsIO {
-  static async exportPairs(srcVfm, destXlsx) {
+  static async exportPairs(srcVfm, dest) {
     const { base } = parsePath(srcVfm)
     const pheno = await PhenoIO.readPheno(srcVfm)
-    const target = DEST + '/' + base + '.xlsx'
-    MasterIO.savePairsToExcel(pheno.master(LAYER), destXlsx);
-    `[saved] (${target})` |> console.log
+    const target = dest + '/' + base + '.xlsx'
+    MasterIO.savePairs(pheno.master(REGULAR), dest + '/' + base + '.xlsx')
+    $['saved'](target) |> says[FONTLAB].br(CLASS).br('exportPairs')
   }
+
   static async importPairs(destVfm, srcXlsx) {
     const pheno = await PhenoIO.readPheno(destVfm)
     const crostabs = readCrostabCollection(srcXlsx)
-    for (let [ key, crostab ] of indexed(crostabs)) pheno.updatePairsByCrostab(crostab)
+    for (let [ key, crostab ] of indexed(crostabs)) pheno.mutatePairs(crostab|> crostabToNested)
     for (let [ key, crostab ] of indexed(crostabs)) {
       const [ scopeX, scopeY ] = key.split('_')
       if (crostab.height <= 48 && crostab.width <= 24) {
-        crostab |> decoCrostab |> says[camelToSnake('excelToMasterPairs')].br(ros(scopeX) + '_' + ros(scopeY))
+        crostab |> decoCrostab |> says[FONTLAB].br(CLASS).br('importPairs').br(scopeX).br(scopeY)
       }
     }
-    await pheno.save(destVfm, { groups: true, pairs: true, metrics: true })
-  }
-  static async separateVfm(srcVfm) {
-    const { dir, base, ext } = parsePath(srcVfm)
-    const pheno = await PhenoIO.readPheno(srcVfm)
-    await promises.mkdir(dir + '/' + base)
-    await pheno.save(dir + '/' + base + '/' + base + '-groups' + ext, { groups: true })
-    await pheno.save(dir + '/' + base + '/' + base + '-pairs' + ext, { pairs: true })
-    await pheno.save(dir + '/' + base + '/' + base + '-metrics' + ext, { metrics: true })
+    await PhenoIO.savePheno(pheno, destVfm, { groups: true, pairs: true, metrics: true })
   }
 }
 
 
-const BASE = 'Chalene'
-// Scripts.separateVfm(SRC + '/' + BASE + '.vfm').then()
-PhenoPairsIO.exportPairs(SRC + '/' + BASE + '.vfm', DEST + '/' + BASE + '.xlsx').then()
-// Scripts.importPairs(SRC + '/' + BASE + '.vfm', DEST + '/' + BASE + '.xlsx').then()
