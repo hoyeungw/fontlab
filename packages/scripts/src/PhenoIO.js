@@ -1,8 +1,12 @@
-import { parsePath }              from '@acq/path'
-import { masterToJson }           from '@fontlab/master'
-import { CONVERT_OPTIONS, Pheno } from '@fontlab/pheno'
-import { mapValues }              from '@vect/object-mapper'
-import { existsSync, promises }   from 'fs'
+import { parsePath }                       from '@acq/path'
+import { masterToJson }                    from '@fontlab/master'
+import { CONVERT_OPTIONS, FONTLAB, Pheno } from '@fontlab/pheno'
+import { decoFlat, decoString }            from '@spare/logger'
+import { says }                            from '@spare/xr'
+import { mapValues }                       from '@vect/object-mapper'
+import { existsSync, promises }            from 'fs'
+
+const CLASS = 'PhenoIO'
 
 export class PhenoIO {
   static async readPheno(filePath) {
@@ -10,12 +14,20 @@ export class PhenoIO {
     const json = await JSON.parse(buffer.toString())
     return Pheno.build(json)
   }
-  static async savePheno(pheno, file, { groups, pairs, metrics, suffix = '' } = CONVERT_OPTIONS) {
+  /**
+   *
+   * @param {Pheno} pheno
+   * @param {string} file
+   * @param {{ [groups], [pairs], [metrics], [suffix] }} options
+   * @returns {Promise<void>}
+   */
+  static async savePheno(pheno, file, options = CONVERT_OPTIONS) {
     const { dir, base, ext } = parsePath(file)
-    const target = dir + '/' + base + suffix + ext
-    const json = PhenoIO.phenoToJson(pheno, { groups, pairs, metrics })
+    const target = dir + '/' + base + (options.suffix ?? '') + ext
+    const json = PhenoIO.phenoToJson(pheno, options)
     const string = JSON.stringify(json)
-    await promises.writeFile(target, string)
+    await promises.writeFile(target, string);
+    `[saved] (${options |> decoFlat}) [dest] (${file |> decoString})` |> says[FONTLAB].br(CLASS).br('savePheno')
   }
 
   static async separateVfm(srcVfm) {
