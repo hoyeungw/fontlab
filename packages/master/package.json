@@ -33,14 +33,14 @@
     "@typen/literal": "^0.1.19",
     "@typen/nullish": "^0.1.19",
     "@typen/numeral": "^0.1.19",
-    "@vect/matrix-init": "^0.5.22",
-    "@vect/nested": "^0.5.22",
-    "@vect/object-init": "^0.5.22",
-    "@vect/object-mapper": "^0.5.22",
-    "@vect/object-select": "^0.5.22",
-    "@vect/vector-index": "^0.5.22",
-    "@vect/vector-init": "^0.5.22",
-    "@vect/vector-merge": "^0.5.22",
+    "@vect/matrix-init": "^0.5.23",
+    "@vect/nested": "^0.5.23",
+    "@vect/object-init": "^0.5.23",
+    "@vect/object-mapper": "^0.5.23",
+    "@vect/object-select": "^0.5.23",
+    "@vect/vector-index": "^0.5.23",
+    "@vect/vector-init": "^0.5.23",
+    "@vect/vector-merge": "^0.5.23",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
@@ -48,7 +48,7 @@
     "@spare/csv": "^0.13.14",
     "@spare/translator": "^0.13.14",
     "@spare/verse": "^0.13.14",
-    "@vect/vector-algebra": "^0.5.22"
+    "@vect/vector-algebra": "^0.5.23"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
-import { stringAscending } from '@fontlab/latin'
-import { Side, side }      from '../asset'
+import { asc }        from '@fontlab/latin'
+import { Side, side } from '../asset'
 import { groupToJson }     from '../utils'
 
 export class Group extends Array {
@@ -10,7 +10,7 @@ export class Group extends Array {
     if (list) { super(...list) } else { super() }
     this.side = side
     this.name = name
-    this.sort(stringAscending)
+    this.sort(asc)
     // `[side] (${this.side}) [name] (${this.name}) [list] (${this.names})`  |> says['group.initialize']
     // this.slice() |> deco |> says['group.initialize'].br('constructed')
   }

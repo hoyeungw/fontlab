@@ -118,7 +118,7 @@ export class Master {
       updateCell.call(pairs, x, y, val)
     }
     $[LAYER](ros(layer))['updatedPairs'](num) |> says['Profile'].br('updatePairsByCrostab')
-    // `layer ( ${ros(layer)} ) updated (${num}) pairs` |> says['Pheno'].br(ros(camelToSnake('updatePairsByCrostab')))
+    // `layer ( ${ros(layer)} ) updated (${num}) pairs` |> says['Pheno'].br(ros(camelToSnake('mutatePairs')))
   }
 
   pairsToTable(scopeX, scopeY) { return pairsToTable.call(this, scopeX, scopeY) }
