@@ -1,6 +1,6 @@
 import { CrosTab }       from '@analys/crostab'
 import { round }         from '@aryth/math'
-import { shortenWeight } from '@fontlab/latin'
+import { weightToShort } from '@fontlab/latin'
 import { mapToObject }   from '@vect/object-init'
 import { init }          from '@vect/vector-init'
 
@@ -47,7 +47,7 @@ export class MetricsReader {
         crostab.setCell(glyph, layer + '.R', round(rsb))
       }
     }
-    crostab.mapBanner(shortenWeight)
+    crostab.mapBanner(weightToShort)
     return crostab
   }
 
