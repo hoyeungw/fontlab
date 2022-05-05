@@ -10,10 +10,13 @@
     "dist"
   ],
   "dependencies": {
-    "@acq/path": "^0.3.13",
-    "@analys/crostab": "^0.6.1",
-    "@analys/crostab-indexed": "^0.6.1",
-    "@analys/excel": "^0.6.1",
+    "@acq/path": "^0.3.15",
+    "@analys/crostab": "^0.6.2",
+    "@analys/crostab-indexed": "^0.6.2",
+    "@analys/enum-join-modes": "^0.6.2",
+    "@analys/excel": "^0.6.2",
+    "@analys/table": "^0.6.2",
+    "@analys/table-join": "^0.6.2",
     "@aryth/math": "^0.5.6",
     "@fontlab/latin": "^0.0.26",
     "@fontlab/master": "^0.0.26",

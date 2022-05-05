@@ -1,13 +1,16 @@
-import { CrosTab }                                   from '@analys/crostab'
-import { almostEqual, round }                        from '@aryth/math'
-import { ALPHABET_UPPER, asc, Latin, shortenWeight } from '@fontlab/latin'
-import { Master }                                    from '@fontlab/master'
-import { Metric }                                    from '@fontlab/metric'
-import { valid }                                     from '@typen/nullish'
-import { filterIndexed, transpose, updateCell }      from '@vect/nested'
-import { mapKeyValue, mapValues, mutate }            from '@vect/object-mapper'
-import { appendValue }                               from '@vect/object-update'
-import { getFace }                                   from '../asset'
+import { UNION }                                                              from '@analys/enum-join-modes'
+import { Table }                                                              from '@analys/table'
+import { merge }                                                              from '@analys/table-join'
+import { almostEqual }                                                        from '@aryth/math'
+import { asc, Latin, Scope, shortToWeight, weightToShort }                    from '@fontlab/latin'
+import { Master }                                                             from '@fontlab/master'
+import { Metric }                                                             from '@fontlab/metric'
+import { valid }                                                              from '@typen/nullish'
+import { filterIndexed, transpose, updateCell }                               from '@vect/nested'
+import { vectorToObject }                                                     from '@vect/object-init'
+import { filterMappedIndexed, mapKeyValue, mappedIndexed, mapValues, mutate } from '@vect/object-mapper'
+import { appendValue }                                                        from '@vect/object-update'
+import { getFace, GLYPH, LETTER }                                             from '../asset'
 
 // noinspection CommaExpressionJS
 export class Pheno {
@@ -33,44 +36,72 @@ export class Pheno {
   // toJson(options = CONVERT_OPTIONS) { return profileToJson(this, options) }
 
   get layers() { return Object.keys(this.layerToMaster) }
+  get shortenLayers() { return this.layers.map(weightToShort) }
   get face() { return getFace(this.layerToMaster) }
   get glyphLayerToMetric() { return this.layerToMetrics|> transpose }
 
-  /** @return {Master} */
+  /**
+   * @param {string} [layer]
+   * @return {Master}
+   */
   master(layer) { return this.layerToMaster[layer ?? this.face] }
+  /**
+   * @param {string} [layer]
+   * @return {Object<string,Metric>}
+   */
   metrics(layer) { return this.layerToMetrics[layer ?? this.face] }
   glyphs(layer) { return Object.keys(this.metrics(layer ?? this.face)).sort(asc) }
 
   alphabetGrouped(layer) {
     let grouped = {}, x
     for (let g of this.glyphs(layer)) if ((x = Latin.letterOrNull(g))) appendValue.call(grouped, x, g)
-    for (let x of grouped) grouped[x].sort(asc)
+    for (let x in grouped) grouped[x].sort(asc)
     return grouped
   }
-  sidebearingTable(alphabet = ALPHABET_UPPER) {
-    const crostab = CrosTab.draft({
-      side: alphabet.slice(),
-      head: this.layers.map(layer => [ `${layer}.L`, `${layer}.R` ]).flat(),
-      value: '',
-      title: 'metrics',
-    })
-    for (let [ layer, glyph, metric ] of filterIndexed(this.layerToMetrics, (layer, glyph, metric) => alphabet.includes(glyph))) {
-      crostab.setCell(glyph, `${layer}.L`, round(metric.lsb))
-      crostab.setCell(glyph, `${layer}.R`, round(metric.rsb))
-    }
-    return crostab.mutateBanner(shortenWeight)
+  sidebearingTable(scope = Scope.Upper) {
+    function getRow(glyph, metric) { return [ glyph, metric.relLSB, metric.relRSB ] }
+    const JOIN_SPEC = { fields: [ GLYPH ], joinType: UNION, fillEmpty: '' }
+    const table = merge.call(JOIN_SPEC, ...mappedIndexed(this.layerToMetrics, (name, metrics) =>
+      Table.from({
+        head: [ GLYPH, name + '.L', name + '.R' ],
+        rows: [ ...filterMappedIndexed(metrics, Latin.filterFactory(scope), getRow) ],
+        title: name,
+      })))
+    return Table.from(table)
+      .mutateHead(weightToShort)
+      .proliferateColumn({ key: GLYPH, to: Latin.letterOrEmpty, as: LETTER }, { nextTo: GLYPH, mutate: true })
   }
 
-  mutateRegroup(regroupScheme) { return mutate(this.layerToMaster, m => m.regroup(regroupScheme)), this }
+  mutateGroups(regroups) { return mutate(this.layerToMaster, m => m.regroup(regroups)), this }
   mutatePairs(nextPairs) {
     function zero(v) { return almostEqual(v, 0, 0.1) }
-    function val(x, y) { return this[x] ? this[x][y] : null }
+    function cell(x, y) { return this[x] ? this[x][y] : null }
     return mapValues(this.layerToMaster, ({ pairs }) => {
       let count = 0
-      for (let [ x, y, v ] of filterIndexed(nextPairs, (nx, ny, nv) => valid(nv) && !zero(nv) && val.call(pairs, nx, ny) !== nv)) {
+      for (let [ x, y, v ] of filterIndexed(nextPairs, (x, y, v) => valid(v) && !zero(v) && cell.call(pairs, x, y) !== v)) {
         count++, updateCell.call(pairs, x, y, v)
       } // if (layer === 'Regular') `layer ( ${ros(layer)} ) cell( ${x}, ${y} ) = (${raw}) -> (${v})` |> says['Pheno'].br('mutatePairs')
       return count // $[LAYER](layer)['updated'](num) |> says['Pheno'].br('mutatePairs')
     })
+  }
+
+  /**
+   * @param {Table} nextTable
+   * @returns {Pheno}
+   */
+  mutateSidebearings(nextTable) {
+    const counts = vectorToObject(this.shortenLayers, () => ({ lsb: 0, rsb: 0 }))
+    for (let name of this.shortenLayers) {
+      const table = nextTable.select([ GLYPH, name + '.L', name + '.R' ])
+      const metrics = this.metrics(shortToWeight(name))
+      if (!metrics || table?.height < 1 || table?.width < 3) continue
+      for (let [ glyph, lsb, rsb ] of table.rows) {
+        const metric = metrics[glyph]
+        if (!metrics) continue
+        if (lsb?.trim()?.length && metric.relLSB !== lsb) { counts[name].lsb++, metric.relLSB = lsb }
+        if (rsb?.trim()?.length && metric.relRSB !== rsb) { counts[name].rsb++, metric.relRSB = rsb }
+      }
+    }
+    return counts
   }
 }
