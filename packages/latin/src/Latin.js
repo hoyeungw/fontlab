@@ -7,7 +7,9 @@ export class Latin {
 
   static letterOrSelf(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? glyph }
   static letterOrNull(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? null }
+  static letterOrEmpty(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? '' }
 
+  /** @returns {(function(*): boolean)} */
   static filterFactory(scope) {
     if (scope === Scope.Upper) return Latin.isUpper
     if (scope === Scope.Lower) return Latin.isLower
