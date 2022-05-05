@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/scripts",
-  "version": "0.0.26",
+  "version": "0.1.0",
   "description": "a function to handle fontlab metrics file",
   "exports": {
     "import": "./dist/index.mjs",
@@ -17,10 +17,10 @@
     "@analys/enum-pivot-mode": "^0.6.2",
     "@analys/excel": "^0.6.2",
     "@aryth/math": "^0.5.6",
-    "@fontlab/latin": "^0.0.26",
-    "@fontlab/master": "^0.0.26",
-    "@fontlab/metric": "^0.0.26",
-    "@fontlab/pheno": "^0.0.26",
+    "@fontlab/latin": "^0.1.0",
+    "@fontlab/master": "^0.1.0",
+    "@fontlab/metric": "^0.1.0",
+    "@fontlab/pheno": "^0.1.0",
     "@spare/csv": "^0.13.16",
     "@spare/logger": "^0.13.16",
     "@spare/xr": "^0.13.16",
