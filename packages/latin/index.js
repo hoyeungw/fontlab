@@ -15,7 +15,7 @@ export {
 export { Latin } from './src/Latin'
 
 export {
-  shortenWeight,
+  weightToShort, shortToWeight,
   asc, stringAscending,
   stringValue,
 } from './util/index'
