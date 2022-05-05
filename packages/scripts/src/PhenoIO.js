@@ -10,7 +10,8 @@ const CLASS = 'PhenoIO'
 
 export class PhenoIO {
   static async readPheno(filePath) {
-    const buffer = await promises.readFile(filePath, 'utf8')
+    const buffer = await promises.readFile(filePath, 'utf8');
+    `[read] (${filePath |> decoString})` |> says[FONTLAB].br(CLASS).br('readPheno')
     const json = await JSON.parse(buffer.toString())
     return Pheno.build(json)
   }

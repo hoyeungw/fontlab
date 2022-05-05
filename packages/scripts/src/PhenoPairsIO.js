@@ -13,6 +13,7 @@ import { PhenoIO }                                            from './PhenoIO'
 
 const REGULAR = 'Regular'
 const CLASS = 'PhenoPairsIO'
+// const size=({size:[h,w]})=>({ h, w })
 
 // noinspection CommaExpressionJS
 export class PhenoPairsIO {

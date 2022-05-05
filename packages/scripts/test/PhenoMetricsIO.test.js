@@ -2,14 +2,15 @@ import { PhenoMetricsIO } from '../src/PhenoMetricsIO'
 
 const SRC = './resources/custom'
 const DEST = './static/custom'
-const FILE = 'Chalene.vfm'
+const FILE = 'DolceFut'
 
-// PhenoMetricsIO.saveSidebearingTable(SRC + '/' + FILE, DEST).then()
-PhenoMetricsIO.readAlphabetGroups(SRC + '/' + FILE).then()
+PhenoMetricsIO.exportSidebearings(SRC + '/' + FILE + '.vfm', DEST).then()
+// PhenoMetricsIO.importSidebearings(SRC + '/' + FILE + '.vfm', DEST + '/' + FILE + '-sidebearings.xlsx').then()
+// PhenoMetricsIO.readAlphabetGroups(SRC + '/' + FILE + '.vfm').then()
 
 // const throughFolder = async (folder, dest) => {
 //   for (let file of await subFiles(folder)) {
-//     await PhenoMetricsIO.saveSidebearingTable(folder + '/' + file, dest)
+//     await PhenoMetricsIO.exportSidebearings(folder + '/' + file, dest)
 //     console.log()
 //   }
 // }
