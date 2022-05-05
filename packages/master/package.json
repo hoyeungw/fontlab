@@ -17,12 +17,12 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@analys/convert": "^0.6.1",
-    "@analys/crostab": "^0.6.1",
-    "@analys/crostab-indexed": "^0.6.1",
-    "@analys/enum-pivot-mode": "^0.6.1",
-    "@analys/excel": "^0.6.1",
-    "@analys/table": "^0.6.1",
+    "@analys/convert": "^0.6.2",
+    "@analys/crostab": "^0.6.2",
+    "@analys/crostab-indexed": "^0.6.2",
+    "@analys/enum-pivot-mode": "^0.6.2",
+    "@analys/excel": "^0.6.2",
+    "@analys/table": "^0.6.2",
     "@aryth/bound-vector": "^0.5.6",
     "@aryth/distinct-vector": "^0.5.6",
     "@aryth/math": "^0.5.6",
@@ -44,7 +44,7 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@acq/path": "^0.3.13",
+    "@acq/path": "^0.3.15",
     "@spare/csv": "^0.13.16",
     "@spare/translator": "^0.13.16",
     "@spare/verse": "^0.13.16",

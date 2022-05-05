@@ -78,11 +78,11 @@ export class Master {
     return target
   }
   /**
-   * @param {{['1st'],['2nd'],name,names}[]} regroupScheme
+   * @param {{['1st'],['2nd'],name,names}[]} regroups
    * @return {Master}
    */
-  regroup(regroupScheme) {
-    const regrouped = regroupScheme|> Grouped.fromSamples
+  regroup(regroups) {
+    const regrouped = regroups|> Grouped.fromSamples
     const dictV = Grouped.glyphsToSurject(this.pairGlyphs(Side.Verso), Grouped.select(regrouped, Side.Verso))
     const dictR = Grouped.glyphsToSurject(this.pairGlyphs(Side.Recto), Grouped.select(regrouped, Side.Recto))
     // filter(dictV, Latin.isLetter) |> decoObject|> says['regroup'].br('glyphToPrevGroup'|> camelToSnake |> ros).br('verso')
