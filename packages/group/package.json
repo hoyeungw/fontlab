@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/group",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a function to handle fontlab kerning class",
   "exports": {
     "import": "./dist/index.mjs",
@@ -17,9 +17,9 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@fontlab/enum-side": "^0.1.0",
     "@analys/convert": "^0.6.2",
-    "@fontlab/latin": "^0.1.0",
+    "@fontlab/enum-side": "^0.1.1",
+    "@fontlab/latin": "^0.1.1",
     "@typen/nullish": "^0.1.19",
     "@vect/object-select": "^0.5.23"
   },
