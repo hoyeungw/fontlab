@@ -1,6 +1,8 @@
-export { Group }                                            from './src/Group'
-export { Master }                                           from './src/Master'
-export { masterToJson }                                     from './utils/index'
-export { GROUPS_CHALENE, CONVERT_OPTIONS, TABULAR_OPTIONS } from './asset/index'
-export { Side, SideUtil, _1ST, _2ND }                       from './asset/index'
-export { decoKerningClasses }                               from './utils/index'
+export { Master }                           from './src/Master'
+export { CONVERT_OPTIONS, TABULAR_OPTIONS } from './asset/index'
+
+
+export {
+  isEmpty, unionAcquire,
+  AT, glyphTrim, glyphTrimBeta, glyphTrimLeft,
+} from './utils'

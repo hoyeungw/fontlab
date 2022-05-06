@@ -17,9 +17,13 @@
     "@analys/excel": "^0.6.2",
     "@analys/table": "^0.6.2",
     "@analys/table-join": "^0.6.2",
-    "@aryth/math": "^0.5.6",
+    "@aryth/calculator": "^0.5.8",
+    "@aryth/math": "^0.5.8",
     "@fontlab/latin": "^0.1.0",
     "@fontlab/master": "^0.1.0",
+    "@fontlab/enum-scope": "^0.1.0",
+    "@fontlab/enum-side": "^0.1.0",
+    "@fontlab/group": "^0.1.0",
     "@fontlab/metric": "^0.1.0",
     "@spare/logger": "^0.13.16",
     "@spare/xr": "^0.13.16",
@@ -27,6 +31,7 @@
     "@typen/nullish": "^0.1.19",
     "@vect/nested": "^0.5.23",
     "@vect/object-mapper": "^0.5.23",
+    "@vect/object-select": "^0.5.23",
     "@vect/object-update": "^0.5.23"
   },
   "publishConfig": {

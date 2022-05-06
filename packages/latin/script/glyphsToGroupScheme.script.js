@@ -2,21 +2,21 @@ import { subFileInfos }      from '@acq/path'
 import { deco, ros, says }   from '@spare/logger'
 import { Verse }             from '@spare/verse'
 import { mapToObject }       from '@vect/object-init'
-import { mapEntries }        from '@vect/object-mapper'
+import { mapKeyValue }       from '@vect/object-mapper'
 import { difference, union } from '@vect/vector-algebra'
 import { promises }          from 'fs'
 
 const SRC = process.cwd() + '/packages/latin/script/asset'
 const DEST = process.cwd() + '/packages/latin/script/target'
-const LATIN = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',]
-const GREEK = ['Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi',]
-const IDIOS = ['Eth', 'Eng', 'Thorn', 'AE', 'OE', 'NJ', 'LJ', 'Nj', 'Lj', 'IJ']
-const IDIOS_LOWERS = ['germandbls', 'cent', 'dotlessi']
-const EXCL_UPPER = ['NULL', 'CR', 'Euro']
+const LATIN = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ]
+const GREEK = [ 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', ]
+const IDIOS = [ 'Eth', 'Eng', 'Thorn', 'AE', 'OE', 'NJ', 'LJ', 'Nj', 'Lj', 'IJ' ]
+const IDIOS_LOWERS = [ 'germandbls', 'cent', 'dotlessi' ]
+const EXCL_UPPER = [ 'NULL', 'CR', 'Euro' ]
 const REGEX_LATIN = new RegExp('^' + LATIN.join('|'))
 const REGEX_GREEK = new RegExp('^' + GREEK.join('|'))
 const REGEX_IDIOS = new RegExp('^' + IDIOS.join('|'))
-const alphabetFactory = () => mapToObject([...LATIN, ...IDIOS, ...GREEK], () => [])
+const alphabetFactory = () => mapToObject([ ...LATIN, ...IDIOS, ...GREEK ], () => [])
 
 const test = async () => {
   const list = (await subFileInfos(SRC)).filter(({ ext }) => ext === '.txt')
@@ -33,7 +33,7 @@ const test = async () => {
     for (let glyph of list) {
       if (
         ((matches = REGEX_GREEK.exec(glyph)) || (matches = REGEX_IDIOS.exec(glyph)) || (matches = REGEX_LATIN.exec(glyph)))
-        && ([letter] = matches)
+        && ([ letter ] = matches)
         && (!EXCL_UPPER.includes(glyph))
       ) {
         alphabet[letter].push(glyph)
@@ -52,8 +52,8 @@ const test = async () => {
         diff |> deco |> says['difference(x,y)']
         sum  |> deco |> says['union(x,y)']
 
-        const sumLower = mapEntries(sum, ([key, vec]) => [key.toLowerCase(), vec.map(x => x.toLowerCase())])
-        sumLower['germandbls'] = ['germandbls']
+        const sumLower = mapKeyValue(sum, (key, vec) => [ key.toLowerCase(), vec.map(x => x.toLowerCase()) ])
+        sumLower['germandbls'] = [ 'germandbls' ]
         sumLower['c'].push('cent')
         sumLower['i'].push('dotlessi')
 

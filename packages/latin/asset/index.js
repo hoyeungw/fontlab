@@ -2,10 +2,9 @@ import { merge }              from '@vect/vector-merge'
 import { GROUP_SCHEME_LOWER } from './GROUP_SCHEME_LOWER'
 import { GROUP_SCHEME_UPPER } from './GROUP_SCHEME_UPPER'
 
-export { DIACRITICS }               from './DIACRITICS'
-export { ORTHO_FRENCH }             from './ORTHO_FRENCH'
-export { ORTHO_ITALIAN }            from './ORTHO_ITALIAN'
-export { Scope, scopeName, SCOPES } from './Scope'
+export { DIACRITICS }    from './DIACRITICS'
+export { ORTHO_FRENCH }  from './ORTHO_FRENCH'
+export { ORTHO_ITALIAN } from './ORTHO_ITALIAN'
 
 export { GROUP_SCHEME_UPPER }
 export { GROUP_SCHEME_LOWER }

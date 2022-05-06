@@ -1,5 +1,6 @@
-import { groupedToSurject }                              from '@analys/convert'
-import { GROUP_SCHEME_LOWER, GROUP_SCHEME_UPPER, Scope } from '../asset'
+import { groupedToSurject }                       from '@analys/convert'
+import { Scope }                                  from '@fontlab/enum-scope'
+import { GROUP_SCHEME_LOWER, GROUP_SCHEME_UPPER } from '../asset'
 
 export class Latin {
   static #lexLower = groupedToSurject(GROUP_SCHEME_LOWER)

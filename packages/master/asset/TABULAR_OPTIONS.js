@@ -1,6 +1,6 @@
 import { AVERAGE }        from '@analys/enum-pivot-mode'
 import { Scope }          from '@fontlab/latin'
-import { GROUPS_CHALENE } from './GROUPS_CHALENE'
+import { GROUPS_CHALENE } from '../../../resources/schemes/GROUPS_CHALENE'
 
 export const TABULAR_OPTIONS = {
   scope: { x: Scope.Upper, y: Scope.Upper },

@@ -1,8 +1,8 @@
-import { parsePath }                                          from '@acq/path'
+import { parseBase }                                          from '@acq/path'
 import { crostabToNested }                                    from '@analys/convert'
 import { MIN }                                                from '@analys/enum-pivot-mode'
 import { crostabCollectionToWorkbook, readCrostabCollection } from '@analys/excel'
-import { scopeName, SCOPES }                                  from '@fontlab/latin'
+import { scopeName, SCOPES }                                  from '@fontlab/enum-scope'
 import { FONTLAB }                                            from '@fontlab/pheno'
 import { decoCrostab, decoFlat, decoString, logger }          from '@spare/logger'
 import { says }                                               from '@spare/xr'
@@ -18,7 +18,6 @@ const CLASS = 'PhenoPairsIO'
 // noinspection CommaExpressionJS
 export class PhenoPairsIO {
   static async exportPairs(srcVfm, dest, layer = REGULAR) {
-    const { base } = parsePath(srcVfm)
     const pheno = await PhenoIO.readPheno(srcVfm)
     const data = {}
     for (let x of SCOPES) {
@@ -33,7 +32,7 @@ export class PhenoPairsIO {
       }
     }
     const workbook = crostabCollectionToWorkbook(data)
-    const destXlsx = dest + '/' + base + '.xlsx'
+    const destXlsx = dest + '/' + parseBase(srcVfm) + '-pairs.xlsx'
     xlsx.writeFile(workbook, destXlsx);
     `[dest] (${destXlsx |> decoString})` |> says[FONTLAB].br(CLASS).br('exportPairs')
   }
@@ -42,10 +41,12 @@ export class PhenoPairsIO {
     const pheno = await PhenoIO.readPheno(destVfm)
     const crostabCollection = readCrostabCollection(srcXlsx)
     for (let [ key, crostab ] of indexed(crostabCollection)) {
+      if (!crostab) continue
       const layerToCount = pheno.mutatePairs(crostab|> crostabToNested)
       layerToCount |> decoFlat |> says[FONTLAB].br(CLASS).br('importPairs').p(decoXY(key))
     }
     for (let [ key, crostab ] of indexed(crostabCollection)) {
+      if (!crostab) continue
       const [ h, w ] = crostab.size;
       ((h <= 48 && w <= 24) ? (crostab |> decoCrostab) : `${h} x ${w}`) |>  says[FONTLAB].br(CLASS).br('importPairs').p(decoXY(key))
     }

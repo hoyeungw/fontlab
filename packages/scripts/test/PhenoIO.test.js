@@ -1,10 +1,8 @@
 import { PhenoIO } from '../src/PhenoIO'
 
-const LAYER = 'Regular'
-const SRC = './resources/custom'
-const DEST = './static/custom'
+const SRC = './static'
 
-const BASE = 'Chalene'
+const BASE = 'Chalene-regrouped'
 const SRC_VFM = SRC + '/' + BASE + '.vfm'
 
 PhenoIO.separateVfm(SRC_VFM).then()

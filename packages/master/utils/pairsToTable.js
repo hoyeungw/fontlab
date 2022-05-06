@@ -1,34 +1,15 @@
-import { groupedToSurject }     from '@analys/convert'
-import { Table }                from '@analys/table'
-import { Latin, Scope }         from '@fontlab/latin'
-import { parseNum }             from '@typen/numeral'
-import { indexed }              from '@vect/nested'
-import { GROUPS_CHALENE, Side } from '../asset'
-import { Grouped }              from '../src/Grouped'
-
-const trimKey = x => x.replace(/@?([A-Za-z_]+)\d*/, (_, ph) => ph)
-
-export function pairsToTable(scopeX = Scope.Upper, scopeY = Scope.Upper) {
-  const filterX = Latin.filterFactory(scopeX)
-  const filterY = Latin.filterFactory(scopeY)
-  const enumerator = indexed(this.pairs, {
-    by: (x, y, kern) => filterX(trimKey(x)) && filterY(trimKey(y)),
-    to: (x, y, kern) => [ x, y, parseNum(kern) ]
-  })
-
-  const table = Table.from({
-    head: [ 'group.v', 'group.r', 'kerning' ],
-    rows: [ ...enumerator ],
-    title: 'pairs'
-  })
-  // table  |> decoTable  |> logger
-
-  return table
-}
+import { groupedToSurject } from '@analys/convert'
+import { Table }            from '@analys/table'
+import { Scope }            from '@fontlab/enum-scope'
+import { Side }             from '@fontlab/enum-side'
+import { Grouped }          from '@fontlab/group'
+import { Latin }            from '@fontlab/latin'
+import { parseNum }         from '@typen/numeral'
+import { indexed }          from '@vect/nested'
 
 export function pairsToTableRegrouped(pairs, {
   scope = { x: Scope.Upper, y: Scope.Upper },
-  groupScheme = GROUPS_CHALENE
+  groupScheme
 } = {}) {
   const filterX = Latin.filterFactory(scope.x)
   const filterY = Latin.filterFactory(scope.y)
@@ -43,13 +24,12 @@ export function pairsToTableRegrouped(pairs, {
     title: 'pairs'
   })
 
-  const regrouped = Grouped.fromSamples(groupScheme)
+  const regrouped = Grouped.from(groupScheme)
   const glyphToGroupX = Grouped.select(this.grouped, Side.Verso)|> groupedToSurject
   const glyphToGroupY = Grouped.select(this.grouped, Side.Recto)|> groupedToSurject
   table.proliferateColumn([
     { key: 'glyph.v', to: x => glyphToGroupX[x] ?? '', as: 'group.v' },
     { key: 'glyph.r', to: x => glyphToGroupY[x] ?? '', as: 'group.r' }
   ], { nextTo: 'letter.r', mutate: true })
-
   return table
 }

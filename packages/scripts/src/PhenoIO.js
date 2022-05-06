@@ -1,12 +1,15 @@
 import { parsePath }                       from '@acq/path'
-import { masterToJson }                    from '@fontlab/master'
+import { groupToJson, masterToJson }       from '@fontlab/master'
+import { metricToJson }                    from '@fontlab/metric'
 import { CONVERT_OPTIONS, FONTLAB, Pheno } from '@fontlab/pheno'
 import { decoFlat, decoString }            from '@spare/logger'
 import { says }                            from '@spare/xr'
-import { mapValues }                       from '@vect/object-mapper'
+import { mappedIndexed, mapValues }        from '@vect/object-mapper'
 import { existsSync, promises }            from 'fs'
 
 const CLASS = 'PhenoIO'
+
+/** @typedef {{['1st'],['2nd'],name,names}} KerningClass */
 
 export class PhenoIO {
   static async readPheno(filePath) {
@@ -18,39 +21,56 @@ export class PhenoIO {
   /**
    *
    * @param {Pheno} pheno
-   * @param {string} file
-   * @param {{ [groups], [pairs], [metrics], [suffix] }} options
+   * @param {string} destVfm
+   * @param {{[groups],[pairs],[metrics]}} options
    * @returns {Promise<void>}
    */
-  static async savePheno(pheno, file, options = CONVERT_OPTIONS) {
-    const { dir, base, ext } = parsePath(file)
-    const target = dir + '/' + base + (options.suffix ?? '') + ext
-    const json = PhenoIO.phenoToJson(pheno, options)
+  static async savePheno(pheno, destVfm, options = CONVERT_OPTIONS) {
+    const json = PhenoIO.phenoToMetrics(pheno, options)
     const string = JSON.stringify(json)
-    await promises.writeFile(target, string);
-    `[saved] (${options |> decoFlat}) [dest] (${file |> decoString})` |> says[FONTLAB].br(CLASS).br('savePheno')
+    await promises.writeFile(destVfm, string);
+    `[saved] (${options |> decoFlat}) [dest] (${destVfm |> decoString})` |> says[FONTLAB].br(CLASS).br('savePheno(VFM)')
+  }
+
+  static async saveClasses(pheno, destJson) {
+    const json = PhenoIO.phenoToClasses(pheno)
+    const string = JSON.stringify(json)
+    await promises.writeFile(destJson, string);
+    `[dest] (${destJson |> decoString})` |> says[FONTLAB].br(CLASS).br('saveClasses')
   }
 
   static async separateVfm(srcVfm) {
     const { dir, base, ext } = parsePath(srcVfm)
     const pheno = await PhenoIO.readPheno(srcVfm)
-    if (!existsSync(dir)) await promises.mkdir(dir + '/' + base, { recursive: true })
-    await PhenoIO.savePheno(pheno, dir + '/' + base + '/' + base + '-groups' + ext, { groups: true })
-    await PhenoIO.savePheno(pheno, dir + '/' + base + '/' + base + '-pairs' + ext, { pairs: true })
-    await PhenoIO.savePheno(pheno, dir + '/' + base + '/' + base + '-metrics' + ext, { metrics: true })
+    const groupDir = dir + '/' + base
+    if (!existsSync(groupDir)) await promises.mkdir(groupDir, { recursive: true })
+    await PhenoIO.savePheno(pheno, groupDir + '/' + base + '-groups' + ext, { groups: true })
+    await PhenoIO.savePheno(pheno, groupDir + '/' + base + '-pairs' + ext, { pairs: true })
+    await PhenoIO.savePheno(pheno, groupDir + '/' + base + '-metrics' + ext, { metrics: true })
   }
 
   /***
    * @param {Pheno} pheno
    * @param {{groups:*,pairs:*,metrics:*}} options
-   * @returns {{dataType: (string|string|string|*)}}
+   * @returns {{dataType:string,[masters]:Object<string,{kerningClasses:KerningClass[],pairs}>,[metrics]:{},upm:number}} .vfm
    */
-  static phenoToJson(pheno, options = CONVERT_OPTIONS) {
+  static phenoToMetrics(pheno, options = CONVERT_OPTIONS) {
     const o = {}
     o.dataType = pheno.dataType
     if (options.groups || options.pairs) o.masters = mapValues(pheno.layerToMaster, master => masterToJson(master, options))
-    if (options.metrics) o.metrics = mapValues(pheno.glyphLayerToMetric, layerToMetrics => ({ layers: layerToMetrics }))
+    if (options.metrics) o.metrics = mapValues(pheno.glyphLayerToMetric, layerToMetric => ({ layers: mapValues(layerToMetric, metricToJson) }))
     o.upm = pheno.upm
     return o
+  }
+
+  /***
+   * @param {Pheno} pheno
+   * @returns {{masters:{name:string,kerningClasses:KerningClass[]}[]}} .json
+   */
+  static phenoToClasses(pheno) {
+    /** @type {Generator<{name,kerningClasses:KerningClass[]}, void, *>} */
+    const enumerator = mappedIndexed(pheno.layerToMaster,
+      (name, { kerningClasses }) => ({ name, kerningClasses: kerningClasses.map(groupToJson) }))
+    return { masters: [ ...enumerator ] }
   }
 }

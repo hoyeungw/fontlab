@@ -1,6 +1,6 @@
 import { parseBase }                                      from '@acq/path'
 import { readTableCollection, tableCollectionToWorkbook } from '@analys/excel'
-import { Scope }                                          from '@fontlab/latin'
+import { Scope }                                          from '@fontlab/enum-scope'
 import { FONTLAB }                                        from '@fontlab/pheno'
 import { deco, decoString, decoTable }                    from '@spare/logger'
 import { says }                                           from '@spare/xr'
