@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/kerning-pairs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "a function to handle fontlab kerning pairs",
   "exports": {
     "import": "./dist/index.mjs",
@@ -17,9 +17,9 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@vect/nested": "^0.5.23",
     "@spare/logger": "^0.13.16",
-    "@spare/xr": "^0.13.16"
+    "@spare/xr": "^0.13.16",
+    "@vect/nested": "^0.5.23"
   },
   "repository": {
     "type": "git",

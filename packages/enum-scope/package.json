@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/enum-scope",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "enum scope of upper, lower and other",
   "exports": {
     "import": "./dist/index.mjs",
