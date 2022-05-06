@@ -1,13 +1,14 @@
-import { asc }        from '@fontlab/latin'
-import { Side, side } from '../asset'
-import { groupToJson }     from '../utils'
+import { Side }        from '@fontlab/enum-side'
+import { asc }         from '@fontlab/latin'
+import { groupToJson } from './groupToJson'
 
 export class Group extends Array {
   /** @type {number} */ side = 0
   /** @type {string} */ name
   constructor(side, name, list) {
     // `[side] (${side}) [name] (${name}) [list] (${list})`  |> says['group.initialize']
-    if (list) { super(...list) } else { super() }
+    if (list) { super(...list) }
+    else { super() }
     this.side = side
     this.name = name
     this.sort(asc)
