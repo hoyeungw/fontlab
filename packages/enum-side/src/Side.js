@@ -14,6 +14,12 @@ export function side(group) {
   if (is2nd(group)) v |= Side.Recto
   return v
 }
+export function sideName(side) {
+  let vec = []
+  if (side & 1) vec.push('verso')
+  if (side & 2) vec.push('recto')
+  return vec.join(' ')
+}
 
 export class SideUtil {
   static filterFactory(side) {
