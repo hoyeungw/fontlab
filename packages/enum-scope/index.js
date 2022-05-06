@@ -1,0 +1,1 @@
+export { Scope, scopeName, SCOPES } from './src/Scope'
