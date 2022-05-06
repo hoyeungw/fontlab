@@ -6,10 +6,11 @@ const DEST = './static'
 
 const BASE = 'Chalene-regrouped'
 const SRC_VFM = SRC + '/' + BASE + '.vfm'
+const DEST_XLSX = DEST + '/' + BASE + '-pairs.xlsx'
 
 const workflow = async () => {
-  // await PhenoPairsIO.exportPairs(SRC_VFM, DEST)
-  await PhenoPairsIO.importPairs(SRC_VFM, DEST + '/' + BASE + '-pairs.xlsx')
+  // await PhenoPairsIO.exportPairs(SRC_VFM, DEST_XLSX)
+  await PhenoPairsIO.importPairs(SRC_VFM, DEST_XLSX)
 }
 
 workflow().then()

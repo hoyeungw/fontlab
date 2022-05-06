@@ -1,4 +1,3 @@
-import { parseBase }                                          from '@acq/path'
 import { crostabToNested }                                    from '@analys/convert'
 import { MIN }                                                from '@analys/enum-pivot-mode'
 import { crostabCollectionToWorkbook, readCrostabCollection } from '@analys/excel'
@@ -17,7 +16,7 @@ const CLASS = 'PhenoPairsIO'
 
 // noinspection CommaExpressionJS
 export class PhenoPairsIO {
-  static async exportPairs(srcVfm, dest, layer = REGULAR) {
+  static async exportPairs(srcVfm, destXlsx, layer = REGULAR) {
     const pheno = await PhenoIO.readPheno(srcVfm)
     const data = {}
     for (let x of SCOPES) {
@@ -32,7 +31,6 @@ export class PhenoPairsIO {
       }
     }
     const workbook = crostabCollectionToWorkbook(data)
-    const destXlsx = dest + '/' + parseBase(srcVfm) + '-pairs.xlsx'
     xlsx.writeFile(workbook, destXlsx);
     `[dest] (${destXlsx |> decoString})` |> says[FONTLAB].br(CLASS).br('exportPairs')
   }

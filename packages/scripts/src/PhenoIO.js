@@ -1,5 +1,6 @@
 import { parsePath }                       from '@acq/path'
-import { groupToJson, masterToJson }       from '@fontlab/master'
+import { groupToJson }                     from '@fontlab/kerning-class'
+import { masterToJson }                    from '@fontlab/master'
 import { metricToJson }                    from '@fontlab/metric'
 import { CONVERT_OPTIONS, FONTLAB, Pheno } from '@fontlab/pheno'
 import { decoFlat, decoString }            from '@spare/logger'

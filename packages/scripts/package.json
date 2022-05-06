@@ -19,7 +19,7 @@
     "@aryth/math": "^0.5.8",
     "@fontlab/enum-scope": "^0.1.1",
     "@fontlab/enum-side": "^0.1.1",
-    "@fontlab/group": "^0.1.1",
+    "@fontlab/kerning-class": "^0.1.1",
     "@fontlab/latin": "^0.1.1",
     "@fontlab/master": "^0.1.1",
     "@fontlab/metric": "^0.1.1",
