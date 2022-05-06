@@ -6,19 +6,23 @@ export const lookupRegroup = (nested, groupX, groupY, indicator) => {
     if (x in groupX) {
       if (y in groupY) {
         appendCell.call(GG, groupX[x], groupY[y], v)
-      } else {
+      }
+      else {
         appendCell.call(GS, groupX[x], y, v)
       }
-    } else {
+    }
+    else {
       if (y in groupY) {
         appendCell.call(SG, x, groupY[y], v)
-      } else {
-        updateCell.call(SS, x, y, v)
+      }
+      else {
+        // updateCell.call(SS, x, y, v)
       }
     }
   }
   const target = {}
   for (let [ x, y, v ] of simpleIndexed(GG)) updateCell.call(target, x, y, indicator(v))
+  // GG |> deco |> says['lookupRegroup'].br('GG')
   for (let [ x, y, v ] of simpleIndexed(GS)) updateCell.call(target, x, y, indicator(v))
   for (let [ x, y, v ] of simpleIndexed(SG)) updateCell.call(target, x, y, indicator(v))
   for (let [ x, y, v ] of simpleIndexed(SS)) updateCell.call(target, x, y, v)

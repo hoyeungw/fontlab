@@ -1,23 +1,18 @@
-import { groupedToSurject, surjectToGrouped }                        from '@analys/convert'
-import { filterIndexed }                                             from '@analys/crostab-indexed'
+import { groupedToSurject }                                          from '@analys/convert'
 import { AVERAGE }                                                   from '@analys/enum-pivot-mode'
-import { bound }                                                     from '@aryth/bound-vector'
-import { almostEqual, round }                                        from '@aryth/math'
-import { $, ros, says }                                              from '@spare/xr'
-import { nullish }                                                   from '@typen/nullish'
+import { Table }                                                     from '@analys/table'
+import { round }                                                     from '@aryth/math'
+import { Side }                                                      from '@fontlab/enum-side'
+import { Grouped }                                                   from '@fontlab/group'
+import { Latin }                                                     from '@fontlab/latin'
+import { parseNum }                                                  from '@typen/numeral'
 import { head as rectoKeys, indexed, side as versoKeys, updateCell } from '@vect/nested'
 import { ob }                                                        from '@vect/object-init'
-import { mapEntries }                                                from '@vect/object-mapper'
-import { CONVERT_OPTIONS, LAYER, Side, TABULAR_OPTIONS }             from '../asset'
-import { lookupRegroup, masterToJson, pairsToTable }                 from '../utils'
-import { trimToGlyph }                                               from '../utils/trimToGlyph'
-import { Group }                                                     from './Group'
-import { Grouped }                                                   from './Grouped'
+import { filterMappedIndexed }                                       from '@vect/object-mapper'
+import { CONVERT_OPTIONS, TABULAR_OPTIONS }                          from '../asset'
+import { glyphTrim, glyphTrimBeta, unionAcquire }                    from '../utils'
+import { masterToJson }                                              from './masterToJson'
 
-function unionAcquire(vector, list) {
-  for (let x of list) if (!vector.includes(x)) vector.push(x)
-  return vector
-}
 
 // noinspection JSBitwiseOperatorUsage
 export class Master {
@@ -32,10 +27,10 @@ export class Master {
   }
   static build(name, grouped, body) { return new Master(name, grouped, body) }
   static fromEntry(name, { kerningClasses = [], pairs = {} } = {}) {
-    return new Master(name, Grouped.fromSamples(kerningClasses), pairs)
+    return new Master(name, Grouped.from(kerningClasses), pairs)
   }
   static from({ name, kerningClasses = [], pairs = {} } = {}) {
-    return new Master(name, Grouped.fromSamples(kerningClasses), pairs)
+    return new Master(name, Grouped.from(kerningClasses), pairs)
   }
 
 
@@ -48,8 +43,8 @@ export class Master {
   }
   pairGlyphs(side) {
     let glyphs = Grouped.select(this.grouped, side)|> groupedToSurject |> Object.keys
-    if (side & 1) unionAcquire(glyphs, versoKeys(this.pairs).map(trimToGlyph))
-    if (side & 2) unionAcquire(glyphs, versoKeys(this.pairs).map(trimToGlyph))
+    if (side & 1) unionAcquire(glyphs, versoKeys(this.pairs).map(glyphTrim))
+    if (side & 2) unionAcquire(glyphs, versoKeys(this.pairs).map(glyphTrim))
     return glyphs
   }
 
@@ -63,13 +58,16 @@ export class Master {
       if ((xn[0] === '@') && (xg = xn.slice(1))) {
         if ((yn[0] === '@') && (yg = yn.slice(1))) {
           for (let x of (groupedV[xg] ?? fake)) for (let y of (groupedR[yg] ?? fake)) updateCell.call(target, x, y, v)
-        } else {
+        }
+        else {
           for (let x of (groupedV[xg] ?? fake)) updateCell.call(target, x, yn, v)
         }
-      } else {
+      }
+      else {
         if ((yn[0] === '@') && (yg = yn.slice(1))) {
           for (let y of (groupedR[yg] ?? fake)) updateCell.call(target, xn, y, v)
-        } else {
+        }
+        else {
           updateCell.call(target, xn, yn, v)
         }
       }
@@ -77,51 +75,23 @@ export class Master {
 
     return target
   }
-  /**
-   * @param {{['1st'],['2nd'],name,names}[]} regroups
-   * @return {Master}
-   */
-  regroup(regroups) {
-    const regrouped = regroups|> Grouped.fromSamples
-    const dictV = Grouped.glyphsToSurject(this.pairGlyphs(Side.Verso), Grouped.select(regrouped, Side.Verso))
-    const dictR = Grouped.glyphsToSurject(this.pairGlyphs(Side.Recto), Grouped.select(regrouped, Side.Recto))
-    // filter(dictV, Latin.isLetter) |> decoObject|> says['regroup'].br('glyphToPrevGroup'|> camelToSnake |> ros).br('verso')
-    const pairs = lookupRegroup(this.granularPairs(), dictV, dictR, list => {
-      const { min, dif } = bound(list)
-      return dif === 0 ? min : min
-    })
-    return Master.build(
-      this.name,
-      {
-        ...mapEntries(surjectToGrouped(dictV), ([ name, list ]) => [ name = trimToGlyph(name), new Group(Side.Verso, name, list) ]),
-        ...mapEntries(surjectToGrouped(dictR), ([ name, list ]) => [ name = trimToGlyph(name), new Group(Side.Recto, name, list) ]),
-      },
-      pairs
-    )
-  }
 
   updatePairs(indexed) {
-    for (let [ x, y, v ] of indexed) {
-      updateCell.call(this.pairs, x, y, v)
-    }
+    for (let [ x, y, v ] of indexed) updateCell.call(this.pairs, x, y, v)
     return this
   }
-  updatePairsByCrostab(crostab) {
-    const layer = this.name ?? 'master'
-    const pairs = this.pairs
-    let num = 0
-    for (let [ x, y, val ] of filterIndexed(crostab, (x, y, v) => !almostEqual(v, 0, 0.1))) {
-      const raw = (pairs[x] ?? {})[y] ?? null
-      if (nullish(val) || almostEqual(val, 0, 0.1) || raw === val) continue
-      num++
-      if (layer === 'Regular') `layer ( ${ros(layer)} ) cell( ${x}, ${y} ) = (${raw}) -> (${val})` |> says['Profile'].br('updatePairsByCrostab')
-      updateCell.call(pairs, x, y, val)
-    }
-    $[LAYER](ros(layer))['updatedPairs'](num) |> says['Profile'].br('updatePairsByCrostab')
-    // `layer ( ${ros(layer)} ) updated (${num}) pairs` |> says['Pheno'].br(ros(camelToSnake('mutatePairs')))
-  }
 
-  pairsToTable(scopeX, scopeY) { return pairsToTable.call(this, scopeX, scopeY) }
+  pairsToTable(scopeX = Scope.Upper, scopeY = Scope.Upper) {
+    const filterX = Latin.filterFactory(scopeX), filterY = Latin.filterFactory(scopeY)
+    const enumerator = filterMappedIndexed(
+      this.pairs, (x, y) => filterX(glyphTrimBeta(x)) && filterY(glyphTrimBeta(y)), (x, y, kern) => [ x, y, parseNum(kern) ]
+    )
+    return Table.from({
+      head: [ 'group.v', 'group.r', 'kerning' ],
+      rows: [ ...enumerator ],
+      title: 'pairs'
+    })
+  }
 
   // { scope, spec, groups }
   crostab(options = TABULAR_OPTIONS) {
