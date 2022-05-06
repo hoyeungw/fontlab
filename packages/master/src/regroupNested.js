@@ -1,19 +1,20 @@
 import { appendCell, indexed, simpleIndexed, updateCell } from '@vect/nested'
 
-export const lookupRegroup = (nested, groupX, groupY, indicator) => {
+export const lookupRegroup = (nested, surjectX, surjectY, indicator) => {
   const GG = {}, GS = {}, SG = {}, SS = {}
+
   for (let [ x, y, v ] of indexed(nested)) {
-    if (x in groupX) {
-      if (y in groupY) {
-        appendCell.call(GG, groupX[x], groupY[y], v)
+    if (x in surjectX) {
+      if (y in surjectY) {
+        appendCell.call(GG, surjectX[x], surjectY[y], v)
       }
       else {
-        appendCell.call(GS, groupX[x], y, v)
+        appendCell.call(GS, surjectX[x], y, v)
       }
     }
     else {
-      if (y in groupY) {
-        appendCell.call(SG, x, groupY[y], v)
+      if (y in surjectY) {
+        appendCell.call(SG, x, surjectY[y], v)
       }
       else {
         // updateCell.call(SS, x, y, v)

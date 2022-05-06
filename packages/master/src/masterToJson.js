@@ -1,4 +1,4 @@
-import { groupToJson }     from '@fontlab/group'
+import { groupToJson }     from '@fontlab/kerning-class'
 import { CONVERT_OPTIONS } from '../asset'
 
 /**

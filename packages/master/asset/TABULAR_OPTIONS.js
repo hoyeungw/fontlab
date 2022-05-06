@@ -1,5 +1,5 @@
 import { AVERAGE }        from '@analys/enum-pivot-mode'
-import { Scope }          from '@fontlab/latin'
+import { Scope }          from '@fontlab/enum-scope'
 import { GROUPS_CHALENE } from '../../../resources/schemes/GROUPS_CHALENE'
 
 export const TABULAR_OPTIONS = {

@@ -2,19 +2,17 @@ import { groupedToSurject }                                          from '@anal
 import { AVERAGE }                                                   from '@analys/enum-pivot-mode'
 import { Table }                                                     from '@analys/table'
 import { round }                                                     from '@aryth/math'
+import { Scope }                                                     from '@fontlab/enum-scope'
 import { Side }                                                      from '@fontlab/enum-side'
-import { Grouped }                                                   from '@fontlab/group'
+import { Grouped }                                                   from '@fontlab/kerning-class'
 import { Latin }                                                     from '@fontlab/latin'
 import { parseNum }                                                  from '@typen/numeral'
 import { head as rectoKeys, indexed, side as versoKeys, updateCell } from '@vect/nested'
 import { ob }                                                        from '@vect/object-init'
-import { filterMappedIndexed }                                       from '@vect/object-mapper'
 import { CONVERT_OPTIONS, TABULAR_OPTIONS }                          from '../asset'
-import { glyphTrim, glyphTrimBeta, unionAcquire }                    from '../utils'
+import { AT, glyphTrim, glyphTrimBeta, glyphTrimLeft, unionAcquire } from '../utils'
 import { masterToJson }                                              from './masterToJson'
 
-
-// noinspection JSBitwiseOperatorUsage
 export class Master {
   /** @type {string}                                      */ name
   /** @type {Object<string,Group>}                        */ grouped
@@ -33,7 +31,6 @@ export class Master {
     return new Master(name, Grouped.from(kerningClasses), pairs)
   }
 
-
   get kerningClasses() { return Object.values(this.grouped) }
   pairKeys(side) {
     const list = []
@@ -49,30 +46,29 @@ export class Master {
   }
 
   granularPairs() {
-    const groupedV = Grouped.select(this.grouped, Side.Verso)
-    const groupedR = Grouped.select(this.grouped, Side.Recto)
+    const groupedX = Grouped.select(this.grouped, Side.Verso)
+    const groupedY = Grouped.select(this.grouped, Side.Recto)
     const target = {}
     const fake = []
-    let xg, yg
-    for (let [ xn, yn, v ] of indexed(this.pairs)) {
-      if ((xn[0] === '@') && (xg = xn.slice(1))) {
-        if ((yn[0] === '@') && (yg = yn.slice(1))) {
-          for (let x of (groupedV[xg] ?? fake)) for (let y of (groupedR[yg] ?? fake)) updateCell.call(target, x, y, v)
+    let nameX, nameY
+    for (let [ miscX, miscY, v ] of indexed(this.pairs)) {
+      if (AT.test(miscX) && (nameX = glyphTrimLeft(miscX))) {
+        if (AT.test(miscY) && (nameY = glyphTrimLeft(miscY))) {
+          for (let x of groupedX[nameX] ?? fake) for (let y of groupedY[nameY] ?? fake) updateCell.call(target, x, y, v)
         }
         else {
-          for (let x of (groupedV[xg] ?? fake)) updateCell.call(target, x, yn, v)
+          for (let x of groupedX[nameX] ?? fake) updateCell.call(target, x, miscY, v)
         }
       }
       else {
-        if ((yn[0] === '@') && (yg = yn.slice(1))) {
-          for (let y of (groupedR[yg] ?? fake)) updateCell.call(target, xn, y, v)
+        if (AT.test(miscY) && (nameY = glyphTrimLeft(miscY))) {
+          for (let y of groupedY[nameY] ?? fake) updateCell.call(target, miscX, y, v)
         }
         else {
-          updateCell.call(target, xn, yn, v)
+          updateCell.call(target, miscX, miscY, v)
         }
       }
     }
-
     return target
   }
 
@@ -83,9 +79,10 @@ export class Master {
 
   pairsToTable(scopeX = Scope.Upper, scopeY = Scope.Upper) {
     const filterX = Latin.filterFactory(scopeX), filterY = Latin.filterFactory(scopeY)
-    const enumerator = filterMappedIndexed(
-      this.pairs, (x, y) => filterX(glyphTrimBeta(x)) && filterY(glyphTrimBeta(y)), (x, y, kern) => [ x, y, parseNum(kern) ]
-    )
+    const enumerator = indexed(this.pairs, {
+      by: (x, y) => filterX(glyphTrimBeta(x)) && filterY(glyphTrimBeta(y)),
+      to: (x, y, kern) => [ x, y, parseNum(kern) ]
+    })
     return Table.from({
       head: [ 'group.v', 'group.r', 'kerning' ],
       rows: [ ...enumerator ],
