@@ -4,10 +4,12 @@ import { Table }                                                      from '@ana
 import { merge }                                                      from '@analys/table-join'
 import { bound }                                                      from '@aryth/bound-vector'
 import { almostEqual }                                                from '@aryth/math'
+import { Scope }                                                      from '@fontlab/enum-scope'
 import { Side }                                                       from '@fontlab/enum-side'
-import { Grouped, LetterGrouped }                                     from '@fontlab/group'
+import { Group, Grouped, LetterGrouped }                              from '@fontlab/kerning-class'
+import { Pairs }                                                      from '@fontlab/kerning-pairs'
 import { asc, Latin, shortToWeight, weightToShort }                   from '@fontlab/latin'
-import { AT, glyphTrimLeft, lookupRegroup, Master }                   from '@fontlab/master'
+import { AT, glyphTrimLeft, Master }                                  from '@fontlab/master'
 import { Metric }                                                     from '@fontlab/metric'
 import { deco }                                                       from '@spare/logger'
 import { says }                                                       from '@spare/xr'
@@ -20,7 +22,7 @@ import { appendValue }                                                from '@vec
 import { getFace, GLYPH, LETTER }                                     from '../asset'
 
 
-// noinspection CommaExpressionJS
+// noinspection CommaExpressionJS,DuplicatedCode
 export class Pheno {
   dataType = 'com.fontlab.metrics'
   /** @type {Object<string,Master>}                */ layerToMaster // LayersToKerning
@@ -93,12 +95,11 @@ export class Pheno {
       master = this.master(layer),
       surjectV = LetterGrouped.prototype.toSurject.call(Grouped.from(regroups, Verso), ...master.pairGlyphs(Verso), ...this.glyphs(layer)),
       surjectR = LetterGrouped.prototype.toSurject.call(Grouped.from(regroups, Recto), ...master.pairGlyphs(Recto), ...this.glyphs(layer))
-    surjectV |> deco |> says['surjectV']
     const nextGrouped = ob(
       ...filterMappedIndexed(surjectToGrouped(surjectV), isGrouped, toEntry.bind({ side: Verso })),
       ...filterMappedIndexed(surjectToGrouped(surjectR), isGrouped, toEntry.bind({ side: Recto }))
     )
-    const nextPairs = lookupRegroup(master.granularPairs(), surjectV, surjectR, list => {
+    const nextPairs = Pairs.prototype.regroup.call(master.granularPairs(), surjectV, surjectR, list => {
       const { min, dif } = bound(list)
       return dif === 0 ? min : min
     })
