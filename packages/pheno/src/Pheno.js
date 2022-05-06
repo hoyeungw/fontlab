@@ -1,16 +1,24 @@
-import { UNION }                                                              from '@analys/enum-join-modes'
-import { Table }                                                              from '@analys/table'
-import { merge }                                                              from '@analys/table-join'
-import { almostEqual }                                                        from '@aryth/math'
-import { asc, Latin, Scope, shortToWeight, weightToShort }                    from '@fontlab/latin'
-import { Master }                                                             from '@fontlab/master'
-import { Metric }                                                             from '@fontlab/metric'
-import { valid }                                                              from '@typen/nullish'
-import { filterIndexed, transpose, updateCell }                               from '@vect/nested'
-import { vectorToObject }                                                     from '@vect/object-init'
-import { filterMappedIndexed, mapKeyValue, mappedIndexed, mapValues, mutate } from '@vect/object-mapper'
-import { appendValue }                                                        from '@vect/object-update'
-import { getFace, GLYPH, LETTER }                                             from '../asset'
+import { surjectToGrouped }                                           from '@analys/convert'
+import { UNION }                                                      from '@analys/enum-join-modes'
+import { Table }                                                      from '@analys/table'
+import { merge }                                                      from '@analys/table-join'
+import { bound }                                                      from '@aryth/bound-vector'
+import { almostEqual }                                                from '@aryth/math'
+import { Side }                                                       from '@fontlab/enum-side'
+import { Grouped, LetterGrouped }                                     from '@fontlab/group'
+import { asc, Latin, shortToWeight, weightToShort }                   from '@fontlab/latin'
+import { AT, glyphTrimLeft, lookupRegroup, Master }                   from '@fontlab/master'
+import { Metric }                                                     from '@fontlab/metric'
+import { deco }                                                       from '@spare/logger'
+import { says }                                                       from '@spare/xr'
+import { valid }                                                      from '@typen/nullish'
+import { isNumeric, parseNum }                                        from '@typen/num-strict'
+import { filterIndexed, transpose, updateCell }                       from '@vect/nested'
+import { ob, vectorToObject }                                         from '@vect/object-init'
+import { filterMappedIndexed, mapKeyValue, mappedIndexed, mapValues } from '@vect/object-mapper'
+import { appendValue }                                                from '@vect/object-update'
+import { getFace, GLYPH, LETTER }                                     from '../asset'
+
 
 // noinspection CommaExpressionJS
 export class Pheno {
@@ -72,7 +80,37 @@ export class Pheno {
       .proliferateColumn({ key: GLYPH, to: Latin.letterOrEmpty, as: LETTER }, { nextTo: GLYPH, mutate: true })
   }
 
-  mutateGroups(regroups) { return mutate(this.layerToMaster, m => m.regroup(regroups)), this }
+  /**
+   * @param {string} layer
+   * @param {{['1st'],['2nd'],name,names}[]} regroups
+   * @return {Master}
+   */
+  regroupMaster(layer, regroups) {
+    function isGrouped(name, list) { return AT.test(name) && list?.length }
+    function toEntry(name, list) { return [ name = glyphTrimLeft(name), new Group(this.side, name, list) ]}
+    const
+      { Verso, Recto } = Side,
+      master = this.master(layer),
+      surjectV = LetterGrouped.prototype.toSurject.call(Grouped.from(regroups, Verso), ...master.pairGlyphs(Verso), ...this.glyphs(layer)),
+      surjectR = LetterGrouped.prototype.toSurject.call(Grouped.from(regroups, Recto), ...master.pairGlyphs(Recto), ...this.glyphs(layer))
+    surjectV |> deco |> says['surjectV']
+    const nextGrouped = ob(
+      ...filterMappedIndexed(surjectToGrouped(surjectV), isGrouped, toEntry.bind({ side: Verso })),
+      ...filterMappedIndexed(surjectToGrouped(surjectR), isGrouped, toEntry.bind({ side: Recto }))
+    )
+    const nextPairs = lookupRegroup(master.granularPairs(), surjectV, surjectR, list => {
+      const { min, dif } = bound(list)
+      return dif === 0 ? min : min
+    })
+    return Master.build(master.name, nextGrouped, nextPairs)
+  }
+
+  mutateGroups(regroups) {
+    for (let layer in this.layerToMaster) {
+      this.layerToMaster[layer] = this.regroupMaster(layer, regroups)
+    }
+    return this
+  }
   mutatePairs(nextPairs) {
     function zero(v) { return almostEqual(v, 0, 0.1) }
     function cell(x, y) { return this[x] ? this[x][y] : null }
@@ -92,14 +130,18 @@ export class Pheno {
   mutateSidebearings(nextTable) {
     const counts = vectorToObject(this.shortenLayers, () => ({ lsb: 0, rsb: 0 }))
     for (let name of this.shortenLayers) {
-      const table = nextTable.select([ GLYPH, name + '.L', name + '.R' ])
+      const L = name + '.L', R = name + '.R'
+      const table = nextTable.select([ GLYPH, L, R ])
       const metrics = this.metrics(shortToWeight(name))
       if (!metrics || table?.height < 1 || table?.width < 3) continue
+      const
+        cfgL = { nums: ob(...filterMappedIndexed(table.lookupTable(GLYPH, L), (k, v) => isNumeric(v), (k, v) => [ k, parseNum(v) ])) },
+        cfgR = { nums: ob(...filterMappedIndexed(table.lookupTable(GLYPH, R), (k, v) => isNumeric(v), (k, v) => [ k, parseNum(v) ])) }
       for (let [ glyph, lsb, rsb ] of table.rows) {
+        // `[glyph] (${glyph}) [lsb] (${lsb}) (${typeof lsb}) [rsb] (${rsb}) (${typeof rsb}) `  |> console.log
         const metric = metrics[glyph]
-        if (!metrics) continue
-        if (lsb?.trim()?.length && metric.relLSB !== lsb) { counts[name].lsb++, metric.relLSB = lsb }
-        if (rsb?.trim()?.length && metric.relRSB !== rsb) { counts[name].rsb++, metric.relRSB = rsb }
+        if (metric && metric.lsb !== parseNum(lsb)) { counts[name].lsb++, metric.update(Side.Verso, lsb, cfgL) }
+        if (metric && metric.rsb !== parseNum(rsb)) { counts[name].rsb++, metric.update(Side.Recto, rsb, cfgR) }
       }
     }
     return counts
