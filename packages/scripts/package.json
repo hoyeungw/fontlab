@@ -35,7 +35,10 @@
     "@vect/object-mapper": "^0.5.23",
     "@vect/object-select": "^0.5.23",
     "@vect/object-update": "^0.5.23",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "@analys/enum-join-modes": "^0.6.2",
+    "@analys/table": "^0.6.2",
+    "@analys/table-join": "^0.6.2"
   },
   "publishConfig": {
     "access": "public"

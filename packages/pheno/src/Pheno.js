@@ -11,8 +11,6 @@ import { Pairs }                                                      from '@fon
 import { asc, Latin, shortToWeight, weightToShort }                   from '@fontlab/latin'
 import { AT, glyphTrimLeft, Master }                                  from '@fontlab/master'
 import { Metric }                                                     from '@fontlab/metric'
-import { deco }                                                       from '@spare/logger'
-import { says }                                                       from '@spare/xr'
 import { valid }                                                      from '@typen/nullish'
 import { isNumeric, parseNum }                                        from '@typen/num-strict'
 import { filterIndexed, transpose, updateCell }                       from '@vect/nested'
