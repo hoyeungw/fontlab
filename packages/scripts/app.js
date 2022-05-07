@@ -9,7 +9,7 @@ const DEST = './static'
 const FILE = 'Chalene'
 const VFM = '.vfm'
 const XLSX = '.xlsx'
-const LAYER = 'Medium'
+const LAYER = 'Regular'
 
 const SRC_VFM = SRC + '/' + FILE + VFM
 const DEST_VFM = DEST + '/' + FILE + '-regrouped' + VFM
@@ -29,5 +29,5 @@ export class Workflow {
   }
 }
 
-// Workflow.export().then()
-Workflow.import().then()
+Workflow.export().then()
+// Workflow.import().then()
