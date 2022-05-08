@@ -25,7 +25,6 @@ export const GROUP_SCHEME_LOWER = {
   x: ['x'],
   y: ['y', 'yacute', 'ycircumflex', 'ydieresis', 'ygrave', 'ydotbelow', 'yhookabove', 'ytilde'],
   z: ['z', 'zacute', 'zdotaccent', 'zcaron'],
-  germandbls: ['germandbls'],
   ae: ['ae', 'aeacute'],
   oe: ['oe'],
   nj: ['nj'],

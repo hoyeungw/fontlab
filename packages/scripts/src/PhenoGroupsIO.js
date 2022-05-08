@@ -14,7 +14,6 @@ import { deco, decoString, decoTable } from '@spare/logger'
 import { says }                        from '@spare/xr'
 import { indexed }                     from '@vect/object-mapper'
 import xlsx                            from 'xlsx'
-import { GROUPS_CHALENE }              from '../../../resources/schemes/GROUPS_CHALENE'
 import { decoKerningClasses }          from '../utils/decoKerningClasses'
 import { PhenoIO }                     from './PhenoIO'
 
@@ -22,11 +21,12 @@ const CLASS = 'PhenoGroupsIO'
 const LAYER = 'Regular'
 
 export class PhenoGroupsIO {
-  static async exportRegrouped(srcVfm, destVfm, regroups = GROUPS_CHALENE, logLayer = LAYER) {
+  static async exportRegrouped(srcVfm, destVfm, regroups, logLayer = LAYER) {
     const pheno = await PhenoIO.readPheno(srcVfm)
+    const layer = logLayer in pheno.layerToMaster ? logLayer : pheno.face
     pheno.mutateGroups(regroups)
-    pheno.master(logLayer).kerningClasses |> decoKerningClasses |> says[FONTLAB].br(CLASS).br('exportRegrouped').kerningClasses(logLayer)
-    pheno.master(logLayer).pairs |> deco |> says[FONTLAB].br(CLASS).br('exportRegrouped').pairs(logLayer)
+    pheno.master(layer).kerningClasses |> decoKerningClasses |> says[FONTLAB].br(CLASS).br('exportRegrouped').br('kerningClasses').pr(logLayer)
+    pheno.master(layer).pairs |> deco |> says[FONTLAB].br(CLASS).br('exportRegrouped').br('pairs').pr(logLayer)
     await PhenoIO.savePheno(pheno, destVfm, { groups: true, pairs: true, metrics: true })
     const { dir, base } = parsePath(destVfm)
     await PhenoIO.saveClasses(pheno, dir + '/' + base + '.json',)

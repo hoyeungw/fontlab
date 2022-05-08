@@ -1,5 +1,4 @@
 export { CONVERT_OPTIONS } from './CONVERT_OPTIONS'
-export { TABULAR_OPTIONS } from './TABULAR_OPTIONS'
 
 export const
   GLYPH = 'glyph',

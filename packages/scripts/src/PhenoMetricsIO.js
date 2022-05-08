@@ -1,16 +1,15 @@
 import { IMMUTABLE }                                      from '@analys/enum-mutabilities'
 import { readTableCollection, tableCollectionToWorkbook } from '@analys/excel'
 import { Scope }                                          from '@fontlab/enum-scope'
-import { stringValue }                                    from '@fontlab/latin'
 import { FONTLAB, GLYPH }                                 from '@fontlab/pheno'
 import { deco, decoFlat, decoString, decoTable }          from '@spare/logger'
 import { says }                                           from '@spare/xr'
 import { indexed, indexedBy, mapEntry }                   from '@vect/object-mapper'
 import xlsx                                               from 'xlsx'
+import { ascLocal }                                       from '../utils/ascLocal'
 import { PhenoIO }                                        from './PhenoIO'
 
 const CLASS = 'PhenoMetricsIO'
-function ascLocal(a, b) { return a.length === b.length ? stringValue(a) - stringValue(b) : a.length - b.length }
 
 export class PhenoMetricsIO {
   static async exportSidebearings(srcVfm, destXlsx) {

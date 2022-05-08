@@ -35,6 +35,7 @@ export const GROUP_SCHEME_UPPER = {
   Eth: ['Eth'],
   Eng: ['Eng'],
   Thorn: ['Thorn'],
+  germandbls: ['germandbls'],
   Alpha: ['Alphatonos', 'Alpha'],
   Beta: ['Beta'],
   Gamma: ['Gamma'],

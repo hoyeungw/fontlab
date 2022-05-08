@@ -4,21 +4,22 @@ import { crostabCollectionToWorkbook, readCrostabCollection } from '@analys/exce
 import { round }                                              from '@aryth/math'
 import { scopeName, SCOPES }                                  from '@fontlab/enum-scope'
 import { FONTLAB }                                            from '@fontlab/pheno'
-import { decoCrostab, decoFlat, decoString, logger }          from '@spare/logger'
+import { decoFlat, decoString, logger }                       from '@spare/logger'
 import { says }                                               from '@spare/xr'
 import { indexed }                                            from '@vect/object-mapper'
 import xlsx                                                   from 'xlsx'
+import { decoPairsCrostab }                                   from '../utils/decoPairsCrostab'
 import { decoXY }                                             from '../utils/decoXY'
 import { PhenoIO }                                            from './PhenoIO'
 
 const REGULAR = 'Regular'
 const CLASS = 'PhenoPairsIO'
-// const size=({size:[h,w]})=>({ h, w })
 
 // noinspection CommaExpressionJS
 export class PhenoPairsIO {
   static async exportPairs(srcVfm, destXlsx, layer = REGULAR) {
     const pheno = await PhenoIO.readPheno(srcVfm)
+    layer = layer in pheno.layerToMaster ? layer : pheno.face
     const data = {}
     for (let x of SCOPES) {
       for (let y of SCOPES) {
@@ -26,7 +27,7 @@ export class PhenoPairsIO {
         const crostab = data[`${xn}_${yn}`] = pheno.master(layer).groupCrostab(MIN, x, y, x => isNaN(x) ? '' : round(x))
         const [ h, w ] = crostab.size;
         `${h} x ${w}` |> says[FONTLAB].br(CLASS).br('exportPairs').br(decoXY(xn, yn))
-        crostab |> decoCrostab |> logger
+        crostab |> decoPairsCrostab |> logger
       }
     }
     const workbook = crostabCollectionToWorkbook(data)
@@ -44,8 +45,7 @@ export class PhenoPairsIO {
     }
     for (let [ key, crostab ] of indexed(crostabCollection)) {
       if (!crostab) continue
-      const [ h, w ] = crostab.size;
-      ((h <= 48 && w <= 24) ? (crostab |> decoCrostab) : `${h} x ${w}`) |>  says[FONTLAB].br(CLASS).br('importPairs').p(decoXY(key))
+      crostab |> decoPairsCrostab |>  says[FONTLAB].br(CLASS).br('importPairs').p(decoXY(key))
     }
     await PhenoIO.savePheno(pheno, destVfm, { groups: true, pairs: true, metrics: true })
   }
