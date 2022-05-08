@@ -1,11 +1,10 @@
 import { parsePath }                       from '@acq/path'
-import { groupToJson }                     from '@fontlab/kerning-class'
-import { masterToJson }                    from '@fontlab/master'
-import { metricToJson }                    from '@fontlab/metric'
+import { masterToClass, masterToJson }     from '@fontlab/master'
+import { embedLayerToMetrics }             from '@fontlab/metric'
 import { CONVERT_OPTIONS, FONTLAB, Pheno } from '@fontlab/pheno'
 import { decoFlat, decoString }            from '@spare/logger'
 import { says }                            from '@spare/xr'
-import { mappedIndexed, mapValues }        from '@vect/object-mapper'
+import { indexedTo, mapVal }               from '@vect/object-mapper'
 import { existsSync, promises }            from 'fs'
 
 const CLASS = 'PhenoIO'
@@ -56,12 +55,12 @@ export class PhenoIO {
    * @returns {{dataType:string,[masters]:Object<string,{kerningClasses:KerningClass[],pairs}>,[metrics]:{},upm:number}} .vfm
    */
   static phenoToMetrics(pheno, options = CONVERT_OPTIONS) {
-    const o = {}
-    o.dataType = pheno.dataType
-    if (options.groups || options.pairs) o.masters = mapValues(pheno.layerToMaster, master => masterToJson(master, options))
-    if (options.metrics) o.metrics = mapValues(pheno.glyphLayerToMetric, layerToMetric => ({ layers: mapValues(layerToMetric, metricToJson) }))
-    o.upm = pheno.upm
-    return o
+    const vfm = {}, { groups, pairs, metrics } = options
+    vfm.dataType = pheno.dataType
+    if (groups || pairs) vfm.masters = mapVal(pheno.layerToMaster, masterToJson.bind(options))
+    if (metrics) vfm.metrics = mapVal(pheno.glyphLayerToMetric, embedLayerToMetrics)
+    vfm.upm = pheno.upm
+    return vfm
   }
 
   /***
@@ -69,9 +68,8 @@ export class PhenoIO {
    * @returns {{masters:{name:string,kerningClasses:KerningClass[]}[]}} .json
    */
   static phenoToClasses(pheno) {
-    /** @type {Generator<{name,kerningClasses:KerningClass[]}, void, *>} */
-    const enumerator = mappedIndexed(pheno.layerToMaster,
-      (name, { kerningClasses }) => ({ name, kerningClasses: kerningClasses.map(groupToJson) }))
-    return { masters: [ ...enumerator ] }
+    return {
+      masters: [ ...indexedTo(pheno.layerToMaster, masterToClass) ]
+    }
   }
 }

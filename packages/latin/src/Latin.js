@@ -11,7 +11,7 @@ export class Latin {
   static letterOrEmpty(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? '' }
 
   /** @returns {(function(*): boolean)} */
-  static filterFactory(scope) {
+  static factory(scope) {
     if (scope === Scope.Upper) return Latin.isUpper
     if (scope === Scope.Lower) return Latin.isLower
     if (scope === Scope.Other) return Latin.isOther

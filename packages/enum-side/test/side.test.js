@@ -1,6 +1,7 @@
-import { Side } from '../asset'
+import { Side } from '@fontlab/enum-side'
 
 // 1, 2, 4, 8, 16
+
 
 const test = () => {
   const { Verso, Recto } = Side

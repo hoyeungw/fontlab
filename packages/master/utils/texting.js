@@ -7,7 +7,7 @@ export const glyphTrim = name => name
   .replace(AT, '')
   .replace(/\d+$/, '')
 
-export const glyphTrimLeft = name => {
+export const offAT = name => {
   try {
     return name.replace(AT, '')
   } catch (e) {
@@ -15,4 +15,4 @@ export const glyphTrimLeft = name => {
   }
 }
 
-export const glyphTrimBeta = x => x.replace(/@?([A-Za-z_]+)\d*/, (_, ph) => ph)
+export const getGlyph = x => x.replace(/@?([A-Za-z_]+)\d*/, (_, ph) => ph)

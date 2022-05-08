@@ -8,7 +8,7 @@ import { Scope }                       from '@fontlab/enum-scope'
 import { Side, sideName }              from '@fontlab/enum-side'
 import { Grouped }                     from '@fontlab/kerning-class'
 import { asc, Latin }                  from '@fontlab/latin'
-import { glyphTrimBeta }               from '@fontlab/master'
+import { getGlyph }                    from '@fontlab/master'
 import { FONTLAB, GLYPH }              from '@fontlab/pheno'
 import { deco, decoString, decoTable } from '@spare/logger'
 import { says }                        from '@spare/xr'
@@ -37,9 +37,9 @@ export class PhenoGroupsIO {
       { Lower, Upper } = Scope,
       JOIN_SPEC = { fields: [ GLYPH ], joinType: UNION, fillEmpty: '' }
     function groupsToTable(groups, side, scope) {
-      const scopeFilter = Latin.filterFactory(scope)
-      const surjectV = Grouped.from(groups.filter(({ name }) => scopeFilter(glyphTrimBeta(name))), side)|> groupedToSurject
-      return Table.from({ title: side = sideName(side), head: [ GLYPH, side ], rows: [ ...indexed(surjectV) ] })
+      const filter = Latin.factory(scope)
+      const surject = Grouped.from(groups.filter(({ name }) => filter(getGlyph(name))), side)|> groupedToSurject
+      return Table.from({ title: side = sideName(side), head: [ GLYPH, side ], rows: [ ...indexed(surject) ] })
     }
     const tableCollection = {
       upper: Table.from(merge.call(JOIN_SPEC, groupsToTable(groups, Verso, Upper), groupsToTable(groups, Recto, Upper))).sort(GLYPH, asc),

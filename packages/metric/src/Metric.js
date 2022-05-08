@@ -4,7 +4,6 @@ import { parseNum }     from '@typen/num-strict'
 import { calc }         from './calc'
 import { metricToJson } from './json'
 
-
 export class Metric {
   lsb
   rsb

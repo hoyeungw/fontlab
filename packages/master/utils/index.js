@@ -1,2 +1,2 @@
-export { isEmpty, unionAcquire }                       from './vect'
-export { AT, glyphTrim, glyphTrimBeta, glyphTrimLeft } from './texting'
+export { unionAcquire }                   from './vect'
+export { AT, glyphTrim, getGlyph, offAT } from './texting'

@@ -3,13 +3,16 @@ import { CONVERT_OPTIONS } from '../asset'
 
 /**
  * @param {Master} master
- * @param groups
- * @param pairs
  * @returns {{}}
  */
-export function masterToJson(master, { groups, pairs } = CONVERT_OPTIONS) {
+export function masterToJson(master) {
+  const { groups, pairs } = this ?? CONVERT_OPTIONS
   const o = {}
-  if (groups) { o.kerningClasses = Object.values(master.grouped).map(groupToJson) }
-  if (pairs) { o.pairs = master.pairs }
+  if (groups) o.kerningClasses = master.kerningClasses.map(groupToJson)
+  if (pairs) o.pairs = master.pairs
   return o
+}
+
+export function masterToClass(name, master) {
+  return { name: name ?? master.name, kerningClasses: master.kerningClasses.map(groupToJson) }
 }

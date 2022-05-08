@@ -1,6 +1,7 @@
 import { crostabToNested }                                    from '@analys/convert'
 import { MIN }                                                from '@analys/enum-pivot-mode'
 import { crostabCollectionToWorkbook, readCrostabCollection } from '@analys/excel'
+import { round }                                              from '@aryth/math'
 import { scopeName, SCOPES }                                  from '@fontlab/enum-scope'
 import { FONTLAB }                                            from '@fontlab/pheno'
 import { decoCrostab, decoFlat, decoString, logger }          from '@spare/logger'
@@ -21,12 +22,10 @@ export class PhenoPairsIO {
     const data = {}
     for (let x of SCOPES) {
       for (let y of SCOPES) {
-        const verso = scopeName(x), recto = scopeName(y)
-        const crostab = data[`${verso}_${recto}`] = pheno.master(layer).crostab(
-          { scope: { x, y }, spec: { x: 'group.v', y: 'group.r', mode: MIN } }
-        )
+        const xn = scopeName(x), yn = scopeName(y)
+        const crostab = data[`${xn}_${yn}`] = pheno.master(layer).groupCrostab(MIN, x, y, x => isNaN(x) ? '' : round(x))
         const [ h, w ] = crostab.size;
-        `${h} x ${w}` |> says[FONTLAB].br(CLASS).br('exportPairs').br(decoXY([ verso, recto ]))
+        `${h} x ${w}` |> says[FONTLAB].br(CLASS).br('exportPairs').br(decoXY(xn, yn))
         crostab |> decoCrostab |> logger
       }
     }

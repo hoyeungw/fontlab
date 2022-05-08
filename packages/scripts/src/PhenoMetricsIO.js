@@ -5,7 +5,7 @@ import { stringValue }                                    from '@fontlab/latin'
 import { FONTLAB, GLYPH }                                 from '@fontlab/pheno'
 import { deco, decoFlat, decoString, decoTable }          from '@spare/logger'
 import { says }                                           from '@spare/xr'
-import { filterIndexed, indexed, mapEntries }             from '@vect/object-mapper'
+import { indexed, indexedBy, mapEntry }                   from '@vect/object-mapper'
 import xlsx                                               from 'xlsx'
 import { PhenoIO }                                        from './PhenoIO'
 
@@ -21,8 +21,8 @@ export class PhenoMetricsIO {
       other: pheno.sidebearingTable(Scope.Other),
     }
     const FILTER_SPEC = { field: GLYPH, filter(g) { return g.length <= 2} }
-    const briefCollection = mapEntries(tableCollection, ([ scope, table ]) => [ scope + '-brief', table.filter(FILTER_SPEC, IMMUTABLE) ])
-    for (let [ scope, table ] of briefCollection) {
+    const briefCollection = mapEntry(tableCollection, (scope, table) => [ scope + '-brief', table.filter(FILTER_SPEC, IMMUTABLE) ])
+    for (let [ scope, table ] of indexed(briefCollection)) {
       table.filter({ field: GLYPH, filter(g) { return g.length <= 2} }, IMMUTABLE)
         |> decoTable |> says[FONTLAB].br(CLASS).br('exportSidebearings').br(scope)
     }
@@ -34,7 +34,7 @@ export class PhenoMetricsIO {
   static async importSidebearings(destVfm, srcXlsx) {
     const pheno = await PhenoIO.readPheno(destVfm)
     const tableCollection = readTableCollection(srcXlsx)
-    for (let [ scope, table ] of filterIndexed(tableCollection, (name, table) => /\W/.test(name) && table?.height)) {
+    for (let [ scope, table ] of indexedBy(tableCollection, (name, table) => /\W/.test(name) && table?.height)) {
       const layerToCount = pheno.mutateSidebearings(table)
       layerToCount |> decoFlat |> says[FONTLAB].br(CLASS).br('importSidebearings').br(scope).p('changed')
     }
