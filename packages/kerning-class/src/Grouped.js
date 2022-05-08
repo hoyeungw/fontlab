@@ -15,12 +15,12 @@ export class Grouped {
    * @returns {{}}
    */
   static from(groups, side) {
-    if (valid(side)) groups = groups.filter(SideUtil.filterFactory(side))
+    if (valid(side)) groups = groups.filter(SideUtil.factory(side))
     const o = {}
     for (let group of groups.sort(groupAscending)) o[group.name] = Group.build(group)
     return o
   }
-  static select(grouped, side) { return filterByValue(grouped, SideUtil.filterFactory(side)) }
+  static select(grouped, side) { return filterByValue(grouped, SideUtil.factory(side)) }
 }
 
 export class LetterGrouped {
