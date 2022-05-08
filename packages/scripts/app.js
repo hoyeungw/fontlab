@@ -6,7 +6,7 @@ import { PhenoPairsIO }   from './src/PhenoPairsIO'
 
 const SRC = './resources/metrics'
 const DEST = './static'
-const FILE = 'Chalene'
+const FILE = 'DolceFut'
 const VFM = '.vfm'
 const XLSX = '.xlsx'
 const LAYER = 'Regular'
@@ -21,11 +21,12 @@ export class Workflow {
     await PhenoGroupsIO.exportRegrouped(SRC_VFM, DEST_VFM, GROUPS_CHALENE, LAYER)
     await PhenoIO.separateVfm(DEST_VFM)
     await PhenoMetricsIO.exportSidebearings(DEST_VFM, DEST_SIDEBEARING_XLSX)
-    await PhenoPairsIO.exportPairs(DEST_VFM, DEST_PAIRS_XLSX,LAYER)
+    await PhenoPairsIO.exportPairs(DEST_VFM, DEST_PAIRS_XLSX, LAYER)
   }
   static async import() {
-    // await PhenoMetricsIO.importSidebearings(DEST_VFM, DEST_SIDEBEARING_XLSX)
+    await PhenoMetricsIO.importSidebearings(DEST_VFM, DEST_SIDEBEARING_XLSX)
     await PhenoPairsIO.importPairs(DEST_VFM, DEST_PAIRS_XLSX, LAYER)
+    await PhenoIO.separateVfm(DEST_VFM)
   }
 }
 

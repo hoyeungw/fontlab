@@ -1,3 +1,5 @@
+import { mapVal } from '@vect/object-mapper'
+
 export function metricToJson(metric) {
   return {
     lsb: metric.lsb,
@@ -9,5 +11,11 @@ export function metricToJson(metric) {
     xmin: metric.xlo,
     ymax: metric.yhi,
     ymin: metric.ylo,
+  }
+}
+
+export function embedLayerToMetrics(layerToMetrics) {
+  return {
+    layers: mapVal(layerToMetrics, metricToJson)
   }
 }

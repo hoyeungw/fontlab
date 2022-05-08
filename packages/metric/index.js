@@ -1,2 +1,2 @@
-export { Metric }       from './src/Metric'
-export { metricToJson } from './src/json'
+export { Metric }                            from './src/Metric'
+export { metricToJson, embedLayerToMetrics } from './src/json'
