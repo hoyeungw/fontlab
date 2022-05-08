@@ -22,7 +22,7 @@ export function sideName(side) {
 }
 
 export class SideUtil {
-  static filterFactory(side) {
+  static factory(side) {
     if (side === Side.Verso) return SideUtil.is1st
     if (side === Side.Recto) return SideUtil.is2nd
     return () => true
