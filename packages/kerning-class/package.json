@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/kerning-class",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "a function to handle fontlab kerning class",
   "exports": {
     "import": "./dist/index.mjs",
@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@analys/convert": "^0.6.8",
-    "@fontlab/enum-side": "^0.1.3",
-    "@fontlab/latin": "^0.1.3",
+    "@fontlab/enum-side": "^0.1.4",
+    "@fontlab/latin": "^0.1.4",
     "@typen/nullish": "^0.1.19",
     "@vect/object-select": "^0.6.8"
   },
