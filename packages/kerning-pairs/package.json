@@ -17,9 +17,9 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@spare/logger": "^0.14.0",
-    "@spare/xr": "^0.14.0",
-    "@vect/nested": "^0.6.2"
+    "@spare/logger": "^0.14.1",
+    "@spare/xr": "^0.14.1",
+    "@vect/nested": "^0.6.8"
   },
   "repository": {
     "type": "git",
