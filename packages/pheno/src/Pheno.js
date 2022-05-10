@@ -1,23 +1,22 @@
-import { surjectToGrouped }                         from '@analys/convert'
-import { UNION }                                    from '@analys/enum-join-modes'
-import { Table }                                    from '@analys/table'
-import { merge }                                    from '@analys/table-join'
-import { bound }                                    from '@aryth/bound-vector'
-import { almostEqual }                              from '@aryth/math'
-import { Scope }                                    from '@fontlab/enum-scope'
-import { Side, sideName }                           from '@fontlab/enum-side'
-import { Group, Grouped, LetterGrouped }            from '@fontlab/kerning-class'
-import { Pairs }                                    from '@fontlab/kerning-pairs'
-import { asc, Latin, shortToWeight, weightToShort } from '@fontlab/latin'
-import { AT, Master, offAT }                        from '@fontlab/master'
-import { Metric }                                   from '@fontlab/metric'
-import { valid }                                    from '@typen/nullish'
-import { isNumeric, parseNum }                      from '@typen/num-strict'
-import { indexedBy, transpose, updateCell }         from '@vect/nested'
-import { ob, vectorToObject }                       from '@vect/object-init'
-import { indexed, indexedTo, mapKeyVal, mapVal, }   from '@vect/object-mapper'
-import { appendValue }                              from '@vect/object-update'
-import { getFace, GLYPH, LETTER }                   from '../asset'
+import { Table }                                                  from '@analys/table'
+import { entryIndexed }                                           from '@analys/table-indexed'
+import { merge }                                                  from '@analys/table-join'
+import { distinct }                                               from '@aryth/distinct-vector'
+import { GLYPH, JOIN_SPEC, L, LABEL, LETTER, R }                  from '@fontlab/constants'
+import { Scope }                                                  from '@fontlab/enum-scope'
+import { Side }                                                   from '@fontlab/enum-side'
+import { asc, glyphToLabel, Latin, shortToWeight, weightToShort } from '@fontlab/latin'
+import { Master }                                                 from '@fontlab/master'
+import { Metric }                                                 from '@fontlab/metric'
+import { decoFlat }                                               from '@spare/logger'
+import { says }                                                   from '@spare/xr'
+import { isNumeric, parseNum }                                    from '@typen/num-strict'
+import { transpose }                                              from '@vect/nested'
+import { gather, vectorToObject }                                 from '@vect/object-init'
+import { indexed, indexedTo, mapKeyVal, mapVal, }                 from '@vect/object-mapper'
+import { appendValue }                                            from '@vect/object-update'
+import { acquire }                                                from '@vect/vector-merge'
+import { getFace }                                                from '../asset'
 
 
 // noinspection CommaExpressionJS,DuplicatedCode
@@ -67,81 +66,53 @@ export class Pheno {
     return grouped
   }
   sidebearingTable(scope = Scope.Upper) {
-    function metricToVector(glyph, metric) { return [ glyph, metric.relLSB, metric.relRSB ] }
-    const JOIN_SPEC = { fields: [ GLYPH ], joinType: UNION, fillEmpty: '' }
-    const table = merge.call(JOIN_SPEC, ...indexedTo(this.layerToMetrics, (name, metrics) =>
-      Table.from({
-        head: [ GLYPH, name + '.L', name + '.R' ],
-        rows: [ ...indexed(metrics, Latin.factory(scope), metricToVector) ],
-        title: name,
-      })))
-    return Table.from(table)
+    const toHead = name => [ GLYPH, name + '.' + L, name + '.' + R ]
+    const toRow = (glyph, metric) => [ glyph, metric.relLSB, metric.relRSB ]
+    const tables = indexedTo(this.layerToMetrics, (k, ms) => Table.gather(toHead(k), indexed(ms, Latin.factory(scope), toRow), k))
+    return Table.from(merge.call(JOIN_SPEC, ...tables))
+      .proliferateColumn([
+        { key: GLYPH, to: glyphToLabel, as: LABEL, },
+        { key: GLYPH, to: Latin.letterOrEmpty, as: LETTER, }
+      ], { nextTo: GLYPH })
       .mutateHead(weightToShort)
-      .proliferateColumn({ key: GLYPH, to: Latin.letterOrEmpty, as: LETTER }, { nextTo: GLYPH, mutate: true })
   }
 
-  /**
-   * @param {string} layer
-   * @param {{['1st'],['2nd'],name,names}[]} regroups
-   * @return {Master}
-   */
-  regroupMaster(layer, regroups) {
-    function checkGroup(name, list) { return AT.test(name) && list?.length }
-    function groupToEntry(name, list) { return [ name = offAT(name), Group[this.side](name, list) ]}
-    const
-      { Verso, Recto } = Side,
-      master = this.master(layer),
-      surjectV = LetterGrouped.prototype.toSurject.call(Grouped.from(regroups, Verso), ...master.glyphs(Verso), ...this.glyphs(layer)),
-      surjectR = LetterGrouped.prototype.toSurject.call(Grouped.from(regroups, Recto), ...master.glyphs(Recto), ...this.glyphs(layer))
-    const nextGrouped = ob(
-      ...indexed(surjectToGrouped(surjectV), checkGroup, groupToEntry.bind({ side: sideName(Verso) })),
-      ...indexed(surjectToGrouped(surjectR), checkGroup, groupToEntry.bind({ side: sideName(Recto) }))
-    )
-    const nextPairs = Pairs.prototype.regroup.call(master.flattenPairs, surjectV, surjectR, list => {
-      const { min, dif } = bound(list)
-      return dif === 0 ? min : min
-    })
-    return Master.build(master.name, nextGrouped, nextPairs)
-  }
-
-  mutateGroups(regroups) {
+  updateMaster(regroups) {
     for (let layer in this.layerToMaster) {
-      this.layerToMaster[layer] = this.regroupMaster(layer, regroups)
+      const master = this.layerToMaster[layer], metricGlyphs = this.glyphs(layer)
+      const xGlyphs = acquire(master.glyphs(Side.Verso), metricGlyphs)|> distinct
+      const yGlyphs = acquire(master.glyphs(Side.Verso), metricGlyphs)|> distinct
+      this.layerToMaster[layer] = master.regroup(regroups, xGlyphs, yGlyphs)
     }
     return this
   }
-  mutatePairs(nextPairs) {
-    function zero(v) { return almostEqual(v, 0, 0.1) }
-    function cell(x, y) { return this[x] ? this[x][y] : null }
-    return mapVal(this.layerToMaster, ({ pairs }) => {
-      let count = 0
-      for (let [ x, y, v ] of indexedBy(nextPairs, (x, y, v) => valid(v) && !zero(v) && cell.call(pairs, x, y) !== v)) {
-        count++, updateCell.call(pairs, x, y, v)
-      } // if (layer === 'Regular') `layer ( ${ros(layer)} ) cell( ${x}, ${y} ) = (${raw}) -> (${v})` |> says['Pheno'].br('mutatePairs')
-      return count // $[LAYER](layer)['updated'](num) |> says['Pheno'].br('mutatePairs')
+  updatePairs(nextPairs) {
+    return mapVal(this.layerToMaster, master => {
+      return master.updatePairs(nextPairs)
+      // let count = 0
+      // for (let [ x, y, v ] of indexedBy(nextPairs, (x, y, v) => valid(v) && !zero(v) && cell.call(pairs, x, y) !== v)) {
+      //   count++, updateCell.call(pairs, x, y, v)
+      // } // if (layer === 'Regular') `layer ( ${ros(layer)} ) cell( ${x}, ${y} ) = (${raw}) -> (${v})` |> says['Pheno'].br('updatePairs')
+      // return count // $[LAYER](layer)['updated'](num) |> says['Pheno'].br('updatePairs')
     })
   }
 
-  /**
-   * @param {Table} nextTable
-   * @returns {Pheno}
-   */
-  mutateSidebearings(nextTable) {
-    const counts = vectorToObject(this.shortenLayers, () => ({ lsb: 0, rsb: 0 }))
-    for (let name of this.shortenLayers) {
-      const LN = name + '.L', RN = name + '.R'
-      const table = nextTable.select([ GLYPH, LN, RN ])
-      const metrics = this.metrics(shortToWeight(name))
-      if (!metrics || table?.height < 1 || table?.width < 3) continue
+  updateMetrics(table) {
+    const stat = vectorToObject(this.shortenLayers, () => ({ lsb: 0, rsb: 0 }))
+    if (table?.height < 1 || table?.coin(GLYPH) <= 0) return stat
+    for (let layer of this.shortenLayers) {
+      const metrics = this.metrics(shortToWeight(layer))
+      const LN = layer + '.' + L, RN = layer + '.' + R
+      if (!metrics || table?.height < 1 || table?.coin(LN) <= 0 || table?.coin(RN) <= 0) continue
       const
-        cfgL = { nums: ob(...indexed(table.lookupTable(GLYPH, LN), (k, v) => isNumeric(v), (k, v) => [ k, parseNum(v) ])) },
-        cfgR = { nums: ob(...indexed(table.lookupTable(GLYPH, RN), (k, v) => isNumeric(v), (k, v) => [ k, parseNum(v) ])) }
-      for (let [ glyph, lsb, rsb ] of table.rows) { // `[glyph] (${glyph}) [lsb] (${lsb}) (${typeof lsb}) [rsb] (${rsb}) (${typeof rsb}) `  |> console.log
-        const metric = metrics[glyph]
-        if (metric && metric.lsb !== parseNum(lsb)) { counts[name].lsb++, metric.update(Side.Verso, lsb, cfgL) }
-        if (metric && metric.rsb !== parseNum(rsb)) { counts[name].rsb++, metric.update(Side.Recto, rsb, cfgR) }
+        confL = { nums: entryIndexed(table, [ GLYPH, LN ], (k, v) => isNumeric(v), (k, v) => [ k, parseNum(v) ]) |> gather },
+        confR = { nums: entryIndexed(table, [ GLYPH, RN ], (k, v) => isNumeric(v), (k, v) => [ k, parseNum(v) ]) |> gather }
+      for (let [ glyph, lsb, rsb ] of table.rows) {
+        const m = metrics[glyph]
+        if (m && m.lsb !== parseNum(lsb)) { stat[layer].lsb++, m.update(Side.Verso, lsb, confL) }
+        if (m && m.rsb !== parseNum(rsb)) { stat[layer].rsb++, m.update(Side.Recto, rsb, confR) }
       }
     }
-    return counts
+    return stat
   }
 }
