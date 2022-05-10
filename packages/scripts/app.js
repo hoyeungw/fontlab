@@ -1,9 +1,12 @@
 import { subFileInfos }   from '@acq/path'
+import { Verse }          from '@spare/verse'
+import { promises }       from 'fs'
 import { REGROUPS }       from '../../resources/schemes/GROUPS_CHALENE'
 import { PhenoGroupsIO }  from './src/PhenoGroupsIO'
 import { PhenoIO }        from './src/PhenoIO'
 import { PhenoMetricsIO } from './src/PhenoMetricsIO'
 import { PhenoPairsIO }   from './src/PhenoPairsIO'
+import { GLYPH_DICT }     from './utils/desToReal'
 
 const REGROUPED = '-regrouped'
 const GROUPS = '-groups'
@@ -20,7 +23,8 @@ export class Workflow {
     for (let { id, dir, base, ext } of await subFileInfos(Workflow.SRC)) {
       base |> console.log
       await Workflow.export(base, layer)
-      console.log()
+      const tx = Verse.object(GLYPH_DICT)
+      await promises.writeFile(Workflow.DEST + '/' + 'glyphDict.js', 'export const GLYPH_DICT = ' + tx)
     }
   }
   static async export(font, layer) {
@@ -45,6 +49,6 @@ export class Workflow {
   }
 }
 
-Workflow.groupExport('Regular').then()
+// Workflow.groupExport('Regular').then()
 // Workflow.export('LoVirgil', 'Regular').then()
-// Workflow.import('LoVirgil').then()
+Workflow.import('LoVirgil').then()

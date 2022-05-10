@@ -1,21 +1,20 @@
-import { parsePath }                   from '@acq/path'
-import { groupedToSurject }            from '@analys/convert'
-import { UNION }                       from '@analys/enum-join-modes'
-import { tableCollectionToWorkbook }   from '@analys/excel'
-import { Table }                       from '@analys/table'
-import { merge }                       from '@analys/table-join'
-import { Scope }                       from '@fontlab/enum-scope'
-import { Side, sideName }              from '@fontlab/enum-side'
-import { Grouped }                     from '@fontlab/kerning-class'
-import { asc, Latin }                  from '@fontlab/latin'
-import { getGlyph }                    from '@fontlab/master'
-import { FONTLAB, GLYPH }              from '@fontlab/pheno'
-import { deco, decoString, decoTable } from '@spare/logger'
-import { says }                        from '@spare/xr'
-import { indexed }                     from '@vect/object-mapper'
-import xlsx                            from 'xlsx'
-import { decoKerningClasses }          from '../utils/decoKerningClasses'
-import { PhenoIO }                     from './PhenoIO'
+import { parsePath }                 from '@acq/path'
+import { groupedToSurject }          from '@analys/convert'
+import { tableCollectionToWorkbook } from '@analys/excel'
+import { Table }                     from '@analys/table'
+import { merge }                     from '@analys/table-join'
+import { FONTLAB, GLYPH, JOIN_SPEC } from '@fontlab/constants'
+import { Scope }                     from '@fontlab/enum-scope'
+import { Side, sideName }            from '@fontlab/enum-side'
+import { Grouped }                   from '@fontlab/kerning-class'
+import { getGlyph }                  from '@fontlab/kerning-pairs'
+import { asc, Latin }                from '@fontlab/latin'
+import { decoString, decoTable }     from '@spare/logger'
+import { says }                      from '@spare/xr'
+import { indexed }                   from '@vect/object-mapper'
+import xlsx                          from 'xlsx'
+import { decoKerningClasses }        from '../utils/decoKerningClasses'
+import { PhenoIO }                   from './PhenoIO'
 
 const CLASS = 'PhenoGroupsIO'
 const LAYER = 'Regular'
@@ -24,9 +23,9 @@ export class PhenoGroupsIO {
   static async exportRegrouped(srcVfm, destVfm, regroups, logLayer = LAYER) {
     const pheno = await PhenoIO.readPheno(srcVfm)
     const layer = logLayer in pheno.layerToMaster ? logLayer : pheno.face
-    pheno.mutateGroups(regroups)
+    pheno.updateMaster(regroups)
     pheno.master(layer).kerningClasses |> decoKerningClasses |> says[FONTLAB].br(CLASS).br('exportRegrouped').br('kerningClasses').pr(logLayer)
-    pheno.master(layer).pairs |> deco |> says[FONTLAB].br(CLASS).br('exportRegrouped').br('pairs').pr(logLayer)
+    // pheno.master(layer).pairs |> deco |> says[FONTLAB].br(CLASS).br('exportRegrouped').br('pairs').pr(logLayer)
     await PhenoIO.savePheno(pheno, destVfm, { groups: true, pairs: true, metrics: true })
     const { dir, base } = parsePath(destVfm)
     await PhenoIO.saveClasses(pheno, dir + '/' + base + '.json',)
@@ -34,8 +33,7 @@ export class PhenoGroupsIO {
   static async exportRegroupsScheme(groups, destXlsx) {
     const
       { Verso, Recto } = Side,
-      { Lower, Upper } = Scope,
-      JOIN_SPEC = { fields: [ GLYPH ], joinType: UNION, fillEmpty: '' }
+      { Lower, Upper } = Scope
     function groupsToTable(groups, side, scope) {
       const filter = Latin.factory(scope)
       const surject = Grouped.from(groups.filter(({ name }) => filter(getGlyph(name))), side)|> groupedToSurject

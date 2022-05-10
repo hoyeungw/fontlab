@@ -10,16 +10,16 @@ export const REG_BASE = /(?<=.)base/g
 export const REG_SINGLE = /(?<=.)single?/g
 export const REG_DOUBLE = /(?<=.)lemot|dbl/g
 export const NUM_DICT = {
-  'zero': 0,
-  'one': 1,
-  'two': 2,
-  'three': 3,
-  'four': 4,
-  'five': 5,
-  'six': 6,
-  'seven': 7,
-  'eight': 8,
-  'nine': 9,
+  zero: 0,
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
 }
 export const CURR_DICT = {
   currency: '¤',
@@ -78,6 +78,7 @@ export const chooseExclamQuest = (match, key, tail) => {
   if (key === 'quest') return tail === 'down' ? '¿' : '?'
   return match
 }
+
 export const PUNC_ENTS = [
   [ /^(quote)(.*)/g, chooseQuote ],
   [ /^((?:paren|brac|guil).*)(left|right)/g, chooseBrac ],
@@ -95,11 +96,19 @@ export const PUNC_ENTS = [
 ] |> makeReplaceable
 
 export const brOnPunc = tx => (/^[^a-zA-Z]$/.test(tx) ? bracket(tx) : tx)
+
+export const GLYPH_DICT = {}
+
 export const parseGlyph = tx => {
-  if (tx in NUM_DICT) return NUM_DICT[tx]
-  if (tx in CURR_DICT) return CURR_DICT[tx]
-  if (tx in FREQ_PUNC_DICT) return brOnPunc(FREQ_PUNC_DICT[tx])
-  return tx.replace(PUNC_ENTS, brOnPunc)
+  function parser(tx) {
+    if (tx in NUM_DICT) return NUM_DICT[tx]
+    if (tx in CURR_DICT) return CURR_DICT[tx]
+    if (tx in FREQ_PUNC_DICT) return brOnPunc(FREQ_PUNC_DICT[tx])
+    return tx.replace(PUNC_ENTS, brOnPunc)
+  }
+  const result = parser(tx)
+  GLYPH_DICT[tx] = result
+  return result
 }
 
 
