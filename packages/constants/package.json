@@ -1,0 +1,41 @@
+{
+  "name": "@fontlab/constants",
+  "version": "0.1.3",
+  "description": "constants for script",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@analys/enum-join-modes": "^0.6.8"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "test": "node -r @babel/register test/test.index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyeungw/ject.git"
+  },
+  "keywords": [
+    "ject",
+    "function",
+    "metrics"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Hoyeung Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoyeungw/ject"
+  },
+  "homepage": "https://github.com/hoyeungw/ject#readme",
+  "gitHead": "4ec4dab0cf1636fa4a01dfd3651c62e8b4ac8d75"
+}
