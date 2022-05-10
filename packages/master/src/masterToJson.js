@@ -1,5 +1,5 @@
+import { CONVERT_OPTIONS } from '@fontlab/constants'
 import { groupToJson }     from '@fontlab/kerning-class'
-import { CONVERT_OPTIONS } from '../asset'
 
 /**
  * @param {Master} master

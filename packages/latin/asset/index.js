@@ -8,9 +8,7 @@ export { ORTHO_ITALIAN } from './ORTHO_ITALIAN'
 
 export { GROUP_SCHEME_UPPER }
 export { GROUP_SCHEME_LOWER }
+
 export const ALPHABET_LOWER = Object.keys(GROUP_SCHEME_LOWER)
 export const ALPHABET_UPPER = Object.keys(GROUP_SCHEME_UPPER)
 export const ALPHABET = merge(ALPHABET_UPPER, ALPHABET_LOWER)
-
-// export { ALPHABET_LOWER }     from './ALPHABET_LOWER'
-// export { ALPHABET_UPPER }     from './ALPHABET_UPPER'
