@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/enum-side",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "enum side of verso and recto",
   "exports": {
     "import": "./dist/index.mjs",
