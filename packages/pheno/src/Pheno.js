@@ -1,21 +1,19 @@
-import { Table }                                                  from '@analys/table'
-import { entryIndexed }                                           from '@analys/table-indexed'
-import { merge }                                                  from '@analys/table-join'
+import { UNION }                                                  from '@analys/enum-join-modes'
+import { Table }                                                  from '@analyz/table'
+import { Algebra }                                                from '@analyz/table-algebra'
 import { distinct }                                               from '@aryth/distinct-vector'
-import { GLYPH, JOIN_SPEC, L, LABEL, LETTER, R }                  from '@fontlab/constants'
+import { GLYPH, L, LABEL, LETTER, R }                             from '@fontlab/constants'
 import { Scope }                                                  from '@fontlab/enum-scope'
 import { Side }                                                   from '@fontlab/enum-side'
 import { asc, glyphToLabel, Latin, shortToWeight, weightToShort } from '@fontlab/latin'
 import { Master }                                                 from '@fontlab/master'
 import { Metric }                                                 from '@fontlab/metric'
-import { decoFlat }                                               from '@spare/logger'
-import { says }                                                   from '@spare/xr'
 import { isNumeric, parseNum }                                    from '@typen/num-strict'
 import { transpose }                                              from '@vect/nested'
 import { gather, vectorToObject }                                 from '@vect/object-init'
 import { indexed, indexedTo, mapKeyVal, mapVal, }                 from '@vect/object-mapper'
 import { appendValue }                                            from '@vect/object-update'
-import { acquire }                                                from '@vect/vector-merge'
+import { acquire }                                                from '@vect/vector-algebra'
 import { getFace }                                                from '../asset'
 
 
@@ -66,15 +64,15 @@ export class Pheno {
     return grouped
   }
   sidebearingTable(scope = Scope.Upper) {
-    const toHead = name => [ GLYPH, name + '.' + L, name + '.' + R ]
-    const toRow = (glyph, metric) => [ glyph, metric.relLSB, metric.relRSB ]
-    const tables = indexedTo(this.layerToMetrics, (k, ms) => Table.gather(toHead(k), indexed(ms, Latin.factory(scope), toRow), k))
-    return Table.from(merge.call(JOIN_SPEC, ...tables))
-      .proliferateColumn([
-        { key: GLYPH, to: glyphToLabel, as: LABEL, },
-        { key: GLYPH, to: Latin.letterOrEmpty, as: LETTER, }
-      ], { nextTo: GLYPH })
-      .mutateHead(weightToShort)
+    const nameToHead = name => [ GLYPH, name + '.' + L, name + '.' + R ]
+    const kvToRow = (glyph, metric) => [ glyph, metric.relLSB, metric.relRSB ]
+    const tables = indexedTo(this.layerToMetrics, (k, ms) => Table.build(nameToHead(k), null, k)
+      .collect(indexed(ms, Latin.factory(scope), kvToRow)))
+    const table = Algebra.joins(UNION, [ GLYPH ], '', ...tables)
+    table.headward
+      .grow(GLYPH, glyphToLabel, LABEL, GLYPH)
+      .grow(GLYPH, Latin.letterOrEmpty, LETTER, LABEL)
+    return table.mutateKeys(weightToShort)
   }
 
   updateMaster(regroups) {
@@ -87,32 +85,35 @@ export class Pheno {
     return this
   }
   updatePairs(nextPairs) {
-    return mapVal(this.layerToMaster, master => {
-      return master.updatePairs(nextPairs)
-      // let count = 0
-      // for (let [ x, y, v ] of indexedBy(nextPairs, (x, y, v) => valid(v) && !zero(v) && cell.call(pairs, x, y) !== v)) {
-      //   count++, updateCell.call(pairs, x, y, v)
-      // } // if (layer === 'Regular') `layer ( ${ros(layer)} ) cell( ${x}, ${y} ) = (${raw}) -> (${v})` |> says['Pheno'].br('updatePairs')
-      // return count // $[LAYER](layer)['updated'](num) |> says['Pheno'].br('updatePairs')
-    })
+    return mapVal(this.layerToMaster, master => master.updatePairs(nextPairs))
   }
 
+  /**
+   *
+   * @param {Table} table
+   * @returns {*}
+   */
   updateMetrics(table) {
     const stat = vectorToObject(this.shortenLayers, () => ({ lsb: 0, rsb: 0 }))
-    if (table?.height < 1 || table?.coin(GLYPH) <= 0) return stat
+    if (table?.height <= 0 || table?.coin(GLYPH) < 0) return stat
     for (let layer of this.shortenLayers) {
       const metrics = this.metrics(shortToWeight(layer))
       const LN = layer + '.' + L, RN = layer + '.' + R
-      if (!metrics || table?.height < 1 || table?.coin(LN) <= 0 || table?.coin(RN) <= 0) continue
+      if (!metrics || table?.height <= 0 || table?.coin(LN) < 0 || table?.coin(RN) < 0) continue
       const
-        confL = { nums: entryIndexed(table, [ GLYPH, LN ], (k, v) => isNumeric(v), (k, v) => [ k, parseNum(v) ]) |> gather },
-        confR = { nums: entryIndexed(table, [ GLYPH, RN ], (k, v) => isNumeric(v), (k, v) => [ k, parseNum(v) ]) |> gather }
-      for (let [ glyph, lsb, rsb ] of table.rows) {
-        const m = metrics[glyph]
-        if (m && m.lsb !== parseNum(lsb)) { stat[layer].lsb++, m.update(Side.Verso, lsb, confL) }
-        if (m && m.rsb !== parseNum(rsb)) { stat[layer].rsb++, m.update(Side.Recto, rsb, confR) }
+        lDict = table.headward.entryIndexed([ GLYPH, LN ], valIsNum, valToNum)|> gather,
+        rDict = table.headward.entryIndexed([ GLYPH, RN ], valIsNum, valToNum)|> gather
+      for (let [ glyph, lsb, rsb ] of table.headward.tripletIndexed([ GLYPH, LN, RN ])) {
+        if (!(glyph = metrics[glyph])) continue
+        if (glyph.lpt === '') glyph.lpt = null
+        if (glyph.rpt === '') glyph.rpt = null
+        if (glyph.lsb !== parseNum(lsb)) { stat[layer].lsb++, glyph.update(Side.Verso, lsb, lDict) }
+        if (glyph.rsb !== parseNum(rsb)) { stat[layer].rsb++, glyph.update(Side.Recto, rsb, rDict) }
       }
     }
     return stat
   }
 }
+
+export function valIsNum(_, v) { return isNumeric(v) }
+export function valToNum(k, v) { return [ k, parseNum(v) ] }

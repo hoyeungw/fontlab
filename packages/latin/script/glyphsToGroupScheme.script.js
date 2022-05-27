@@ -2,7 +2,7 @@ import { subFileInfos }      from '@acq/path'
 import { deco, ros, says }   from '@spare/logger'
 import { Verse }             from '@spare/verse'
 import { mapToObject }       from '@vect/object-init'
-import { mapKeyValue }       from '@vect/object-mapper'
+import { mapKeyVal }         from '@vect/object-mapper'
 import { difference, union } from '@vect/vector-algebra'
 import { promises }          from 'fs'
 
@@ -52,13 +52,12 @@ const test = async () => {
         diff |> deco |> says['difference(x,y)']
         sum  |> deco |> says['union(x,y)']
 
-        const sumLower = mapKeyValue(sum, (key, vec) => [ key.toLowerCase(), vec.map(x => x.toLowerCase()) ])
+        const sumLower = mapKeyVal(sum, (key, vec) => [ key.toLowerCase(), vec.map(x => x.toLowerCase()) ])
         sumLower['germandbls'] = [ 'germandbls' ]
         sumLower['c'].push('cent')
         sumLower['i'].push('dotlessi')
 
         await promises.writeFile(`${DEST}/GROUP_SCHEME_${x}_${y}_UPPER.js`, 'export const GROUP_SCHEME_UPPER = ' + Verse.object(sum))
-
         await promises.writeFile(`${DEST}/GROUP_SCHEME_${x}_${y}_LOWER.js`, 'export const GROUP_SCHEME_LOWER = ' + Verse.object(sumLower))
       }
     }

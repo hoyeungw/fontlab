@@ -1,4 +1,4 @@
-import { merge }              from '@vect/vector-merge'
+import { merge }              from '@vect/vector-algebra'
 import { GROUP_SCHEME_LOWER } from './GROUP_SCHEME_LOWER'
 import { GROUP_SCHEME_UPPER } from './GROUP_SCHEME_UPPER'
 

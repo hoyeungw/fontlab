@@ -17,18 +17,18 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@analys/convert": "^0.6.8",
+    "@analys/convert": "^0.6.10",
     "@fontlab/enum-side": "^0.1.4",
     "@fontlab/latin": "^0.1.4",
     "@typen/nullish": "^0.1.19",
-    "@vect/object-select": "^0.6.8"
+    "@vect/object-select": "^0.7.10"
   },
   "devDependencies": {
     "@acq/path": "^0.3.15",
     "@spare/csv": "^0.14.1",
     "@spare/translator": "^0.14.1",
     "@spare/verse": "^0.14.1",
-    "@vect/vector-algebra": "^0.6.8"
+    "@vect/vector-algebra": "^0.7.10"
   },
   "repository": {
     "type": "git",

@@ -19,7 +19,7 @@
   "dependencies": {
     "@spare/logger": "^0.14.1",
     "@spare/xr": "^0.14.1",
-    "@vect/nested": "^0.6.8"
+    "@vect/nested": "^0.7.10"
   },
   "repository": {
     "type": "git",

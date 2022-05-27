@@ -1,6 +1,8 @@
+// noinspection JSBitwiseOperatorUsage,CommaExpressionJS,RegExpRedundantEscape
+
 import { round }        from '@aryth/math'
-import { NUM, STR }     from '@typen/enum-data-types'
 import { parseNum }     from '@typen/num-strict'
+import { isNumeric }    from '@typen/numeral'
 import { calc }         from './calc'
 import { metricToJson } from './json'
 
@@ -31,16 +33,13 @@ export class Metric {
   get relRSB() { return this.rpt?.length ? this.rpt : round(this.rsb) }
   set sb(v) { this.lsb = v, this.rsb = v }
   set pt(v) { this.lpt = v, this.rpt = v }
-  update(side, value, cfg) {
-    const label = (side & 1) ? 'l' : (side & 2) ? 'r' : ''
-    const SB = label + 'sb', PT = label + 'pt'
-    if (typeof value === NUM) { return this[SB] = value }
-    if (typeof value === STR && (value = value.trim()).length && /\w/.test(value)) {
-      const [ eq, exp ] = /^=/g.test(value) ? [ '=', value.replace(/=/g, '') ] : [ null, value ]
-      const tbd = /[a-z\+\-\*\/]/gi.test(exp)
-      const val = tbd && cfg ? calc.call(cfg, exp) : parseNum(exp)
-      if (!isNaN(val)) { this[SB] = round(parseNum(val)) }
-      if (eq || tbd) { this[PT] = value }
+  update(side, expr, dict) {
+    side = (side & 1) ? 'l' : (side & 2) ? 'r' : ''
+    const SBKEY = side + 'sb', PTKEY = side + 'pt'
+    if (isNumeric(expr)) { return this[SBKEY] = parseNum(expr) }
+    if (/\w/.test(expr = expr?.trim())) { // input !== '', input !== '=', input contains [a-zA-Z0-9_]
+      this[PTKEY] = expr
+      if (isNumeric(expr = calc.call(dict, expr))) { this[SBKEY] = round(expr) }
     }
     return this
   }

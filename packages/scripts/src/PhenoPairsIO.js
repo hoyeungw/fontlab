@@ -1,13 +1,15 @@
-import { crostabToNested }                                    from '@analys/convert'
 import { MIN }                                                from '@analys/enum-pivot-mode'
 import { crostabCollectionToWorkbook, readCrostabCollection } from '@analys/excel'
+import { crostabToSparse }                                    from '@analyz/convert'
+import { Crostab }                                            from '@analyz/crostab'
 import { round }                                              from '@aryth/math'
-import { FONTLAB }                                            from '@fontlab/constants'
+import { FONTLAB, LAYER }                                     from '@fontlab/constants'
 import { scopeName, SCOPES }                                  from '@fontlab/enum-scope'
 import { glyphToLabel, labelToGlyph }                         from '@fontlab/latin'
 import { decoFlat, decoString, logger }                       from '@spare/logger'
 import { says }                                               from '@spare/xr'
-import { indexed }                                            from '@vect/object-mapper'
+import { gather }                                             from '@vect/object-init'
+import { indexed, mutate }                                    from '@vect/object-mapper'
 import xlsx                                                   from 'xlsx'
 import { decoPairsCrostab }                                   from '../utils/decoPairsCrostab'
 import { decoXY }                                             from '../utils/decoXY'
@@ -27,14 +29,9 @@ export class PhenoPairsIO {
     for (let x of SCOPES) {
       for (let y of SCOPES) {
         const xn = scopeName(x), yn = scopeName(y)
-        const crostab = pheno.master(layer).groupCrostab(MIN, x, y, po)
-        crostabCollection[`${xn}_${yn}`] = crostab
-          .mutateSide(glyphToLabel)
-          .mutateBanner(glyphToLabel)
-          .sortByLabels({ direct: 1, comparer: labelAsc, mutate: true })
-          .sortByLabels({ direct: 2, comparer: labelAsc, mutate: true })
-        const [ h, w ] = crostab.size;
-        `${h} x ${w}` |> says[FONTLAB].br(CLASS).br('exportPairs').br(decoXY(xn, yn))
+        const crostab = crostabCollection[`${xn}_${yn}`] = pheno.master(layer).groupCrostab(MIN, x, y, po).mutateKeys(glyphToLabel)
+        crostab.sideward.sortKeys(labelAsc), crostab.headward.sortKeys(labelAsc);
+        `${crostab.height} x ${crostab.width}` |> says[FONTLAB].br(CLASS).br('exportPairs')[LAYER](layer).br(decoXY(xn, yn))
         crostab |> decoPairsCrostab |> logger
       }
     }
@@ -45,13 +42,17 @@ export class PhenoPairsIO {
 
   static async importPairs(destVfm, srcXlsx) {
     const pheno = await PhenoIO.readPheno(destVfm)
-    const crostabCollection = readCrostabCollection(srcXlsx)
-    for (let [ s_h, crostab ] of indexed(crostabCollection)) {
-      if (!crostab) continue
-      crostab |> decoPairsCrostab |>  says[FONTLAB].br(CLASS).br('importPairs').p(decoXY(s_h))
-      crostab.mutateSide(labelToGlyph).mutateBanner(labelToGlyph)
-      const layerToCount = pheno.updatePairs(crostab|> crostabToNested)
-      layerToCount |> decoFlat |> says[FONTLAB].br(CLASS).br('importPairs').p(decoXY(s_h))
+    const crostabCollection = mutate(readCrostabCollection(srcXlsx), Crostab.from)
+    const statCollection = indexed(crostabCollection,
+      (side_head, crostab) => /^\w+$/.test(side_head) && crostab,
+      (side_head, crostab) => {
+        crostab |> decoPairsCrostab |> says[FONTLAB].br(CLASS).br('importPairs').p(decoXY(side_head))
+        const sparse = crostabToSparse(crostab.mutateKeys(labelToGlyph), (x, y, v) => v?.trim()?.length)
+        const updated = pheno.updatePairs(sparse)
+        return [ side_head, updated ]
+      })|> gather
+    for (let [ side_head, stat ] of indexed(statCollection)) {
+      stat |> decoFlat |> says[FONTLAB].br(CLASS).br('importPairs').p(decoXY(side_head))
     }
     await PhenoIO.savePheno(pheno, destVfm, { groups: true, pairs: true, metrics: true })
   }

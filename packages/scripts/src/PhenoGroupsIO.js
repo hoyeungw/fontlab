@@ -1,9 +1,10 @@
 import { parsePath }                 from '@acq/path'
 import { groupedToSurject }          from '@analys/convert'
+import { UNION }                     from '@analys/enum-join-modes'
 import { tableCollectionToWorkbook } from '@analys/excel'
 import { Table }                     from '@analys/table'
-import { merge }                     from '@analys/table-join'
-import { FONTLAB, GLYPH, JOIN_SPEC } from '@fontlab/constants'
+import { Algebra }                   from '@analyz/table-algebra'
+import { FONTLAB, GLYPH }            from '@fontlab/constants'
 import { Scope }                     from '@fontlab/enum-scope'
 import { Side, sideName }            from '@fontlab/enum-side'
 import { Grouped }                   from '@fontlab/kerning-class'
@@ -39,9 +40,11 @@ export class PhenoGroupsIO {
       const surject = Grouped.from(groups.filter(({ name }) => filter(getGlyph(name))), side)|> groupedToSurject
       return Table.from({ title: side = sideName(side), head: [ GLYPH, side ], rows: [ ...indexed(surject) ] })
     }
+    // { fields: [ GLYPH ], joinType: UNION, fillEmpty: '' }
+    const join = Algebra.join.bind(null, UNION, [ GLYPH ], '')
     const tableCollection = {
-      upper: Table.from(merge.call(JOIN_SPEC, groupsToTable(groups, Verso, Upper), groupsToTable(groups, Recto, Upper))).sort(GLYPH, asc),
-      lower: Table.from(merge.call(JOIN_SPEC, groupsToTable(groups, Verso, Lower), groupsToTable(groups, Recto, Lower))).sort(GLYPH, asc)
+      upper: Table.from(join(groupsToTable(groups, Verso, Upper), groupsToTable(groups, Recto, Upper))).sort(GLYPH, asc),
+      lower: Table.from(join(groupsToTable(groups, Verso, Lower), groupsToTable(groups, Recto, Lower))).sort(GLYPH, asc)
     }
     tableCollection.upper |> decoTable |> says[FONTLAB].br(CLASS).br('exportRegroupsScheme').br('upper')
     tableCollection.lower |> decoTable |> says[FONTLAB].br(CLASS).br('exportRegroupsScheme').br('lower')
