@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/kerning-pairs",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "a function to handle fontlab kerning pairs",
   "exports": {
     "import": "./dist/index.mjs",

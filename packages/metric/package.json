@@ -1,6 +1,6 @@
 {
   "name": "@fontlab/metric",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "a function to handle fontlab metrics file",
   "exports": {
     "import": "./dist/index.mjs",
