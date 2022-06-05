@@ -24,21 +24,15 @@ export class Pheno {
   /** @type {Object<string,Object<string,Metric>>} */ layerToMetrics // GlyphsToLayersToMetrics
   upm
 
-  /**
-   * @param {FontlabJson} profile
-   */
+  /** @param {FontlabJson} profile */
   constructor(profile) {
     const { dataType, masters, metrics, upm } = profile
     this.dataType = dataType
-    if (masters) this.layerToMaster = mapKeyVal(masters, Master.keyVFM)
+    if (masters) this.layerToMaster = mapKeyVal(masters, Master.fromVFM)
     if (metrics) this.layerToMetrics = mapVal(metrics, ({ layers }) => mapVal(layers, Metric.build))|> transpose
     this.upm = upm
   }
   static build(fontlabJson) { return new Pheno(fontlabJson) }
-
-  // static async fromFile(filePath) { return (await fileToProfile(filePath))|> Pheno.build }
-  // async save(file, options = CONVERT_OPTIONS) { await profileToFile(this, file, options) }
-  // toJson(options = CONVERT_OPTIONS) { return profileToJson(this, options) }
 
   get layers() { return Object.keys(this.layerToMaster) }
   get shortenLayers() { return this.layers.map(weightToShort) }

@@ -17,17 +17,17 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@aryth/calculator": "^0.6.0",
-    "@aryth/math": "^0.6.0",
+    "@aryth/calculator": "^0.6.1",
+    "@aryth/math": "^0.6.1",
     "@typen/nullish": "^0.1.19",
     "@typen/num-strict": "^0.1.19",
     "@typen/numeral": "^0.1.19",
     "@vect/object-mapper": "^0.7.11"
   },
   "devDependencies": {
-    "@acq/path": "^0.3.17",
-    "@spare/csv": "^0.14.3",
-    "@spare/translator": "^0.14.3"
+    "@acq/path": "^0.3.18",
+    "@spare/csv": "^0.14.7",
+    "@spare/translator": "^0.14.7"
   },
   "repository": {
     "type": "git",

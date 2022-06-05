@@ -11,14 +11,15 @@
   ],
   "dependencies": {
     "@analys/enum-join-modes": "^0.6.14",
-    "@analyz/table": "^0.0.19",
-    "@analyz/table-algebra": "^0.0.19",
-    "@aryth/distinct-vector": "^0.6.0",
+    "@analyz/table": "^0.0.20",
+    "@analyz/table-algebra": "^0.0.20",
+    "@aryth/distinct-vector": "^0.6.1",
     "@fontlab/constants": "^0.1.5",
     "@fontlab/enum-scope": "^0.1.5",
     "@fontlab/enum-side": "^0.1.5",
     "@fontlab/latin": "^0.1.5",
     "@fontlab/master": "^0.1.5",
+    "@fontlab/kerning-pairs": "^0.1.5",
     "@fontlab/metric": "^0.1.5",
     "@typen/num-strict": "^0.1.19",
     "@vect/nested": "^0.7.11",
@@ -26,7 +27,8 @@
     "@vect/object-init": "^0.7.11",
     "@vect/object-mapper": "^0.7.11",
     "@vect/object-update": "^0.7.11",
-    "@vect/vector-algebra": "^0.7.11"
+    "@vect/vector-algebra": "^0.7.11",
+    "@spare/deco": "^0.14.7"
   },
   "publishConfig": {
     "access": "public"

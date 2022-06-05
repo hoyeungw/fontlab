@@ -2,7 +2,7 @@ import { parsePath }                 from '@acq/path'
 import { groupedToSurject }          from '@analys/convert'
 import { UNION }                     from '@analys/enum-join-modes'
 import { tableCollectionToWorkbook } from '@analys/excel'
-import { Table }                     from '@analys/table'
+import { Table }                     from '@analyz/table'
 import { Algebra }                   from '@analyz/table-algebra'
 import { FONTLAB, GLYPH }            from '@fontlab/constants'
 import { Scope }                     from '@fontlab/enum-scope'
@@ -38,13 +38,11 @@ export class PhenoGroupsIO {
     function groupsToTable(groups, side, scope) {
       const filter = Latin.factory(scope)
       const surject = Grouped.from(groups.filter(({ name }) => filter(getGlyph(name))), side)|> groupedToSurject
-      return Table.from({ title: side = sideName(side), head: [ GLYPH, side ], rows: [ ...indexed(surject) ] })
+      return Table.build([ GLYPH, side = sideName(side) ], [ ...indexed(surject) ], side)
     }
-    // { fields: [ GLYPH ], joinType: UNION, fillEmpty: '' }
-    const join = Algebra.join.bind(null, UNION, [ GLYPH ], '')
     const tableCollection = {
-      upper: Table.from(join(groupsToTable(groups, Verso, Upper), groupsToTable(groups, Recto, Upper))).sort(GLYPH, asc),
-      lower: Table.from(join(groupsToTable(groups, Verso, Lower), groupsToTable(groups, Recto, Lower))).sort(GLYPH, asc)
+      upper: Algebra.join(UNION, [ GLYPH ], '', groupsToTable(groups, Verso, Upper), groupsToTable(groups, Recto, Upper)).sort(GLYPH, asc),
+      lower: Algebra.join(UNION, [ GLYPH ], '', groupsToTable(groups, Verso, Lower), groupsToTable(groups, Recto, Lower)).sort(GLYPH, asc)
     }
     tableCollection.upper |> decoTable |> says[FONTLAB].br(CLASS).br('exportRegroupsScheme').br('upper')
     tableCollection.lower |> decoTable |> says[FONTLAB].br(CLASS).br('exportRegroupsScheme').br('lower')
