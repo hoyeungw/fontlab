@@ -1,66 +1,61 @@
-import { almostEqual }                                                       from '@aryth/math'
-import { valid }                                                             from '@typen/nullish'
-import { appendCell, head, indexed, indexedBy, indexedOf, side, updateCell } from '@vect/nested'
-import { AT, offAT }                                                         from './texting'
+import { ACCUM, LAST }          from '@analys/enum-pivot-mode'
+import { Sparse, Stat }         from '@analyz/sparse'
+import { almostEqual }          from '@aryth/math'
+import { valid }                from '@typen/nullish'
+import { indexedBy, indexedOf } from '@vect/nested'
+import { AT, offAT }            from './texting'
 
 /** @typedef {Object<string,Object<string,*>>} Nested */
 
 // noinspection DuplicatedCode
 /** @type {Nested} */
-export class Pairs {
-  constructor() {}
+export class Pairs extends Sparse {
+  constructor(data) {
+    super()
+    if (data) this.data = data
+  }
+  static from(data) { return new Pairs(data) }
   regroup(surX, surY, stat) {
-    /** @type {Nested} */ const nested = this, XY = {}, Xy = {}, xY = {}, xy = {}
-    for (let [ x, y, v ] of indexed(nested)) {
+    const XY = Stat.of(ACCUM), Xy = Stat.of(ACCUM), xY = Stat.of(ACCUM), xy = Stat.of(LAST)
+    for (let [ x, y, v ] of this.indexed())
       x in surX
-        ? y in surY ? appendCell.call(XY, surX[x], surY[y], v) : appendCell.call(Xy, surX[x], y, v)
-        : y in surY ? appendCell.call(xY, x, surY[y], v) : updateCell.call(xy, x, y, v)
-    }
-    const target = {}
-    for (let [ x, y, vec ] of indexedOf(XY)) updateCell.call(target, x, y, stat(vec))
-    for (let [ x, y, vec ] of indexedOf(Xy)) updateCell.call(target, x, y, stat(vec))
-    for (let [ x, y, vec ] of indexedOf(xY)) updateCell.call(target, x, y, stat(vec))
-    for (let [ x, y, val ] of indexedOf(xy)) updateCell.call(target, x, y, val)
-    return target
+        ? y in surY ? XY.update(surX[x], surY[y], v) : Xy.update(surX[x], y, v)
+        : y in surY ? xY.update(x, surY[y], v) : xy.update(x, y, v)
+    const next = new Pairs()
+    for (let [ x, y, vec ] of indexedOf(XY)) next.update(x, y, stat(vec))
+    for (let [ x, y, vec ] of indexedOf(Xy)) next.update(x, y, stat(vec))
+    for (let [ x, y, vec ] of indexedOf(xY)) next.update(x, y, stat(vec))
+    for (let [ x, y, val ] of indexedOf(xy)) next.update(x, y, val)
+    return next
   }
 
   flatten(groupedX, groupedY) {
-    /** @type {Nested} */ const nested = this
     const
       xG = groupedX,
       yG = groupedY,
-      target = {}, fake = [], update = updateCell.bind(target)
-    for (let [ xn, yn, kern ] of indexed(nested)) {
+      next = new Pairs(), fake = []
+    for (let [ xn, yn, kern ] of this.indexed()) {
       if (AT.test(xn) && (xn = offAT(xn))) {
         if (AT.test(yn) && (yn = offAT(yn)))
-          for (let x of (xG[xn] ?? fake)) for (let y of (yG[yn] ?? fake)) update(x, y, kern)
+          for (let x of (xG[xn] ?? fake)) for (let y of (yG[yn] ?? fake)) next.update(x, y, kern)
         else
-          for (let x of (xG[xn] ?? fake)) update(x, yn, kern)
+          for (let x of (xG[xn] ?? fake)) next.update(x, yn, kern)
       }
       else {
         if (AT.test(yn) && (yn = offAT(yn)))
-          for (let y of (yG[yn] ?? fake)) update(xn, y, kern)
+          for (let y of (yG[yn] ?? fake)) next.update(xn, y, kern)
         else
-          update(xn, yn, kern)
+          next.update(xn, yn, kern)
       }
     }
-    return target
+    return next
   }
 
-  side() { return side(this) }
-  head() { return head(this) }
-  cell(x, y) { return this[x] ? this[x][y] : null }
+  sigDif(x, y, v) { return valid(v) && !almostEqual(this.cell(x, y), v, 0.1) }
 
-  update(nextPairs) {
-    /** @type {Nested} */ const nested = this
-    const cell = Pairs.prototype.cell.bind(nested)
+  overwrite(nextPairs) {
     let n = 0
-    for (let [ x, y, v ] of indexedBy(nextPairs, (x, y, v) => valid(v) && !almostEqual(cell(x, y), v, 0.1))) {
-      updateCell.call(nested, x, y, v)
-      n++
-    }
-    // for (let [ x, y, v ] of indexed(nested)) if (isNumeric(y)) delete nested[x][y]
-    // for (let x in nested) if (isNumeric(x)) delete nested[x]
+    for (let [ x, y, v ] of indexedBy(nextPairs, this.sigDif.bind(this))) { n++, this.update(x, y, v) }
     return n
   }
 }

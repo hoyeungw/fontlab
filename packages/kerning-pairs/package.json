@@ -17,8 +17,9 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@spare/logger": "^0.14.3",
-    "@spare/xr": "^0.14.3",
+    "@analyz/sparse": "^0.0.20",
+    "@spare/logger": "^0.14.7",
+    "@spare/xr": "^0.14.7",
     "@vect/nested": "^0.7.11"
   },
   "repository": {
