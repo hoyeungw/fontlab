@@ -40,9 +40,9 @@ export class Workflow {
     const DEST_SIDEBEARINGS_XLSX = Workflow.DEST + '/' + font + REGROUPED + SIDEBEARINGS + XLSX
     const DEST_PAIRS_XLSX = Workflow.DEST + '/' + font + REGROUPED + PAIRS + XLSX
 
-    // await PhenoMetricsIO.importSidebearings(DEST_VFM, DEST_SIDEBEARINGS_XLSX)
+    await PhenoMetricsIO.importSidebearings(DEST_VFM, DEST_SIDEBEARINGS_XLSX)
     await PhenoPairsIO.importPairs(DEST_VFM, DEST_PAIRS_XLSX)
-    // await PhenoIO.separateVfm(DEST_VFM)
+    await PhenoIO.separateVfm(DEST_VFM)
   }
 }
 

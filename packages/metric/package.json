@@ -22,12 +22,12 @@
     "@typen/nullish": "^0.1.19",
     "@typen/num-strict": "^0.1.19",
     "@typen/numeral": "^0.1.19",
-    "@vect/object-mapper": "^0.7.11"
+    "@vect/object-mapper": "^0.7.14"
   },
   "devDependencies": {
     "@acq/path": "^0.3.18",
-    "@spare/csv": "^0.14.7",
-    "@spare/translator": "^0.14.7"
+    "@spare/csv": "^0.14.9",
+    "@spare/translator": "^0.14.9"
   },
   "repository": {
     "type": "git",

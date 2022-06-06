@@ -21,14 +21,14 @@
     "@fontlab/enum-side": "^0.1.6",
     "@fontlab/latin": "^0.1.6",
     "@typen/nullish": "^0.1.19",
-    "@vect/object-select": "^0.7.11"
+    "@vect/object-select": "^0.7.14"
   },
   "devDependencies": {
     "@acq/path": "^0.3.18",
-    "@spare/csv": "^0.14.7",
-    "@spare/translator": "^0.14.7",
-    "@spare/verse": "^0.14.7",
-    "@vect/vector-algebra": "^0.7.11"
+    "@spare/csv": "^0.14.9",
+    "@spare/translator": "^0.14.9",
+    "@spare/verse": "^0.14.9",
+    "@vect/vector-algebra": "^0.7.14"
   },
   "repository": {
     "type": "git",

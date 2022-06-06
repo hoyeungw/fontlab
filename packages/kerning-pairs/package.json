@@ -17,10 +17,10 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@analyz/sparse": "^0.0.20",
-    "@spare/logger": "^0.14.7",
-    "@spare/xr": "^0.14.7",
-    "@vect/nested": "^0.7.11"
+    "@analyz/sparse": "^0.0.26",
+    "@spare/logger": "^0.14.9",
+    "@spare/xr": "^0.14.9",
+    "@vect/nested": "^0.7.14"
   },
   "repository": {
     "type": "git",
