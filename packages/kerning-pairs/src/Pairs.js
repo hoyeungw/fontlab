@@ -1,19 +1,18 @@
-import { ACCUM, LAST }          from '@analys/enum-pivot-mode'
-import { Sparse, Stat }         from '@analyz/sparse'
-import { almostEqual }          from '@aryth/math'
-import { valid }                from '@typen/nullish'
-import { indexedBy, indexedOf } from '@vect/nested'
-import { AT, offAT }            from './texting'
+import { ACCUM, LAST }    from '@analys/enum-pivot-mode'
+import { Sparse, Stat }   from '@analyz/sparse'
+import { almostEqual }    from '@aryth/math'
+import { nullish, valid } from '@typen/nullish'
+import { parseNum }       from '@typen/num-strict'
+import { indexedOf }      from '@vect/nested'
+import { AT, offAT }      from './texting'
 
 /** @typedef {Object<string,Object<string,*>>} Nested */
 
 // noinspection DuplicatedCode
 /** @type {Nested} */
 export class Pairs extends Sparse {
-  constructor(data) {
-    super()
-    if (data) this.data = data
-  }
+  constructor(fill, data) { super(fill, data) }
+  static build(fill, data) { return new Pairs(fill, data) }
   static from(data) { return new Pairs(data) }
   regroup(surX, surY, stat) {
     const XY = Stat.of(ACCUM), Xy = Stat.of(ACCUM), xY = Stat.of(ACCUM), xy = Stat.of(LAST)
@@ -21,7 +20,7 @@ export class Pairs extends Sparse {
       x in surX
         ? y in surY ? XY.update(surX[x], surY[y], v) : Xy.update(surX[x], y, v)
         : y in surY ? xY.update(x, surY[y], v) : xy.update(x, y, v)
-    const next = new Pairs()
+    const next = Pairs.build()
     for (let [ x, y, vec ] of indexedOf(XY)) next.update(x, y, stat(vec))
     for (let [ x, y, vec ] of indexedOf(Xy)) next.update(x, y, stat(vec))
     for (let [ x, y, vec ] of indexedOf(xY)) next.update(x, y, stat(vec))
@@ -33,7 +32,7 @@ export class Pairs extends Sparse {
     const
       xG = groupedX,
       yG = groupedY,
-      next = new Pairs(), fake = []
+      next = Pairs.build(), fake = []
     for (let [ xn, yn, kern ] of this.indexed()) {
       if (AT.test(xn) && (xn = offAT(xn))) {
         if (AT.test(yn) && (yn = offAT(yn)))
@@ -51,11 +50,24 @@ export class Pairs extends Sparse {
     return next
   }
 
-  sigDif(x, y, v) { return valid(v) && !almostEqual(this.cell(x, y), v, 0.1) }
+  delete(x, y) { if (x in this.data) delete this.data[x][y] }
+  cleanUp() {
+    let n = 0
+    for (let [ x, y, v ] of this.indexed((x, y, v) => nullish(v) || !(v = parseNum(v)) || isNaN(v))) {
+      n++, this.delete(x, y)
+    }
+    `[clean up] (${n})` |> console.log
+    return n
+  }
 
   overwrite(nextPairs) {
-    let n = 0
-    for (let [ x, y, v ] of indexedBy(nextPairs, this.sigDif.bind(this))) { n++, this.update(x, y, v) }
+    let n = this.cleanUp()
+    // if (/@[AHOT]1/.test(x) && /@[AHOT]2/.test(y)) `[ '${x}', '${y}', ${v} ],` |> console.log
+    for (let [ x, y, v ] of nextPairs.indexed()) {
+      v && !almostEqual(v, this.cell(x, y), 0.1)
+        ? this.update(x, y, v)
+        : (valid(this.cell(x, y)) ? this.delete(x, y) : null)
+    }
     return n
   }
 }

@@ -9,7 +9,7 @@ export function masterToJson(master) {
   const { groups, pairs } = this ?? CONVERT_OPTIONS
   const o = {}
   if (groups) o.kerningClasses = master.kerningClasses.map(groupToJson)
-  if (pairs) o.pairs = master.pairs
+  if (pairs) o.pairs = master.pairs.data
   return o
 }
 
