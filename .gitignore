@@ -3,7 +3,6 @@ temp
 node_modules
 target
 dist
-static/**
 .yarn/*
 #!.yarn/cache
 !.yarn/patches
@@ -13,8 +12,3 @@ static/**
 !.yarn/versions
 yarn.lock
 yarn-error.log
-dezeen
-resources/*
-static/*
-
-/packages/metrics/static/
