@@ -12,5 +12,11 @@ export {
 export { Latin } from './src/Latin'
 
 export {
-  weightToShort, shortToWeight, asc, stringAscending, stringValue, glyphToLabel, labelToGlyph
+  weightToShort,
+  shortToWeight,
+  asc,
+  stringAscending,
+  stringValue,
+  glyphToLabel,
+  labelToGlyph,
 } from './util/index'

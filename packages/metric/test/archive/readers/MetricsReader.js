@@ -61,7 +61,7 @@ export class MetricsReader {
     const crostabCollection = mapToObject(MetricsReader.getLayers(json), layer => CrosTab.from({
       side: this.alphabets.slice(),
       head: crostabHead.slice(),
-      title: layer
+      title: layer,
     }))
     const metrics = json.metrics
     let match, alphabet, diacritic

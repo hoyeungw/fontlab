@@ -17,6 +17,6 @@ export function metricToJson(metric) {
 
 export function embedLayerToMetrics(layerToMetrics) {
   return {
-    layers: mapVal(layerToMetrics, metricToJson)
+    layers: mapVal(layerToMetrics, metricToJson),
   }
 }

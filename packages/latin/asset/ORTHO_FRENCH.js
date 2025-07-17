@@ -13,5 +13,5 @@ export const ORTHO_FRENCH = {
   i: ['icircumflex', 'idieresis'],
   o: ['ocircumflex', 'oe'],
   u: ['ugrave', 'ucircumflex', 'udieresis'],
-  y: ['ydieresis']
+  y: ['ydieresis'],
 }

@@ -1,10 +1,17 @@
-import { makeEmbedded }                             from '@foba/util'
-import { decoCrostab, says }                        from '@spare/logger'
-import { strategies }                               from '@valjoux/strategies'
-import { indexed }                                  from '@vect/nested'
-import { mapToObject }                              from '@vect/object-init'
-import { ALPHABET_UPPER, DIACRITICS, ORTHO_FRENCH } from '../../asset'
-import { Latin }                                    from '../../src/Latin'
+import { makeEmbedded } from '@foba/util'
+import {
+  decoCrostab,
+  says,
+}                       from '@spare/logger'
+import { strategies }   from '@valjoux/strategies'
+import { indexed }      from '@vect/nested'
+import { mapToObject }  from '@vect/object-init'
+import {
+  ALPHABET_UPPER,
+  DIACRITICS,
+  ORTHO_FRENCH,
+}                       from '../../asset'
+import { Latin }        from '../../src/Latin'
 
 export const REGEX_UNITY_UPPER = /^@?([A-Z])(?![RUu])/ // exclude: CR NULL Euro
 export const REGEX_UPPER = /^[A-Z]$/
@@ -27,12 +34,12 @@ const simple = {
   NULL: 'NULL',
   CR: 'CR',
   Euro: 'Euro',
-  cent: 'cent'
+  cent: 'cent',
 }
 
 const FRENCH = {
   ...mapToObject(ALPHABET_UPPER, x => x),
-  ...mapToObject([...indexed(ORTHO_FRENCH, (x, y, v) => v)], x => x)
+  ...mapToObject([...indexed(ORTHO_FRENCH, (x, y, v) => v)], x => x),
 }
 
 const { lapse, result } = strategies({
@@ -52,8 +59,8 @@ const { lapse, result } = strategies({
       if (REGEX_UPPER.test(glyph[0])) return true // A, B, C initials (normally alphabets)
       // && Latin.#safeList.add(glyph.toLowerCase())
       return false // not others
-    }
-  }
+    },
+  },
 })
 
 lapse |> decoCrostab |> says['lapse']

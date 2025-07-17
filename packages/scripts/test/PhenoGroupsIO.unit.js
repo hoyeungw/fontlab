@@ -1,4 +1,5 @@
-import { PhenoGroupsIO }  from '../src/PhenoGroupsIO'
+import { PhenoGroupsIO }              from '../src/PhenoGroupsIO.js'
+import { REGROUPS as GROUPS_CHALENE } from '../../../resources/schemes/GROUPS_CHALENE.js'
 
 const SRC = './resources/metrics'
 const DEST = './static'

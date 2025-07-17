@@ -6,14 +6,21 @@ export class Side {
   static Recto = 0b10
 }
 
-export function is1st(group) { return group[_1ST] ?? Boolean(group.side & 1) }
-export function is2nd(group) { return group[_2ND] ?? Boolean(group.side & 2) }
+export function is1st(group) {
+  return group[_1ST] ?? Boolean(group.side & 1)
+}
+
+export function is2nd(group) {
+  return group[_2ND] ?? Boolean(group.side & 2)
+}
+
 export function side(group) {
   let v = 0
   if (is1st(group)) v |= Side.Verso
   if (is2nd(group)) v |= Side.Recto
   return v
 }
+
 export function sideName(side) {
   let vec = []
   if (side & 1) vec.push('verso')

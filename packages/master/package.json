@@ -2,13 +2,14 @@
   "name": "@fontlab/master",
   "version": "0.1.6",
   "description": "a function to handle fontlab metrics file",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
-  },
+  "type": "module",
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -17,25 +18,25 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@analys/convert": "^0.6.14",
-    "@analys/enum-pivot-mode": "^0.6.14",
-    "@analyz/sparse": "^0.0.26",
-    "@fontlab/constants": "^0.1.6",
-    "@fontlab/enum-side": "^0.1.6",
-    "@fontlab/kerning-class": "^0.1.6",
-    "@fontlab/kerning-pairs": "^0.1.6",
-    "@fontlab/latin": "^0.1.6",
-    "@typen/numeral": "^0.1.19",
-    "@vect/object-init": "^0.7.14",
-    "@vect/object-mapper": "^0.7.14",
-    "@vect/vector-algebra": "^0.7.14",
-    "@vect/vector-stat": "^0.7.14"
+    "@analys/convert": "^0.7.4",
+    "@analys/enum-pivot-mode": "^0.7.4",
+    "@analyz/sparse": "^0.1.1",
+    "@fontlab/constants": "workspace:^",
+    "@fontlab/enum-side": "workspace:^",
+    "@fontlab/kerning-class": "workspace:^",
+    "@fontlab/kerning-pairs": "workspace:^",
+    "@fontlab/latin": "workspace:^",
+    "@typen/numeral": "^0.2.0",
+    "@vect/object-init": "^0.8.6",
+    "@vect/object-mapper": "^0.8.6",
+    "@vect/vector-algebra": "^0.8.6",
+    "@vect/vector-stat": "^0.8.6"
   },
   "devDependencies": {
-    "@acq/path": "^0.3.18",
-    "@spare/csv": "^0.14.9",
-    "@spare/translator": "^0.14.9",
-    "@spare/verse": "^0.14.9",
+    "@acq/path": "^0.4.0",
+    "@spare/csv": "^0.16.27",
+    "@spare/translator": "^0.16.16",
+    "@spare/verse": "^0.16.27",
     "@vect/vector-algebra": "^0.7.14"
   },
   "repository": {
@@ -47,9 +48,6 @@
     "function",
     "metrics"
   ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
   "author": "Hoyeung Wong",
   "license": "MIT",
   "bugs": {

@@ -34,7 +34,7 @@ export const BRAC_DICT = {
   bracket: '[]',
   brace: '{}',
   guilsingl: '<>',
-  guillemot: '«»'
+  guillemot: '«»',
 }
 export const FREQ_PUNC_DICT = {
   at: '@',
@@ -50,7 +50,7 @@ export const FREQ_PUNC_DICT = {
   backslash: '\\',
   colon: ':',
   semicolon: ';',
-  bar: '|'
+  bar: '|',
 }
 export const chooseQuote = (match, key, tail) => {
   if (REG_DOUBLE.test(tail)) {
@@ -58,8 +58,7 @@ export const chooseQuote = (match, key, tail) => {
     if (REG_RIGHT.test(tail)) return '”'
     if (REG_BASE.test(tail)) return '„'
     return '"'
-  }
-  else {
+  } else {
     if (REG_LEFT.test(tail)) return '‘'
     if (REG_RIGHT.test(tail)) return '’'
     if (REG_BASE.test(tail)) return '‚'
@@ -79,21 +78,21 @@ export const chooseExclamQuest = (match, key, tail) => {
   return match
 }
 
-export const PUNC_ENTS = [
-  [ /^(quote)(.*)/g, chooseQuote ],
-  [ /^((?:paren|brac|guil).*)(left|right)/g, chooseBrac ],
-  [ /^(exclam|quest).*((?:down)?)/g, chooseExclamQuest ],
-  [ /tilde$/g, '[~]' ],
-  [ /(?<=.)single?/g, '.1' ],
-  [ /(?<=.)lemot|dbl/g, '.2' ],
-  [ /(?<=.)down/g, '.d' ],
-  [ /(?<=.)left/g, '.l' ],
-  [ /(?<=.)right/g, '.r' ],
-  [ /(?<=.)base/g, '.bs' ],
-  [ /greater/g, '>' ],
-  [ /less/g, '<' ],
-  [ /equal/g, '=' ],
-] |> makeReplaceable
+export const PUNC_ENTS = makeReplaceable([
+  [/^(quote)(.*)/g, chooseQuote],
+  [/^((?:paren|brac|guil).*)(left|right)/g, chooseBrac],
+  [/^(exclam|quest).*((?:down)?)/g, chooseExclamQuest],
+  [/tilde$/g, '[~]'],
+  [/(?<=.)single?/g, '.1'],
+  [/(?<=.)lemot|dbl/g, '.2'],
+  [/(?<=.)down/g, '.d'],
+  [/(?<=.)left/g, '.l'],
+  [/(?<=.)right/g, '.r'],
+  [/(?<=.)base/g, '.bs'],
+  [/greater/g, '>'],
+  [/less/g, '<'],
+  [/equal/g, '='],
+])
 
 export const brOnPunc = tx => (/^[^a-zA-Z]$/.test(tx) ? bracket(tx) : tx)
 
@@ -106,6 +105,7 @@ export const parseGlyph = tx => {
     if (tx in FREQ_PUNC_DICT) return brOnPunc(FREQ_PUNC_DICT[tx])
     return tx.replace(PUNC_ENTS, brOnPunc)
   }
+
   const result = parser(tx)
   GLYPH_DICT[tx] = result
   return result

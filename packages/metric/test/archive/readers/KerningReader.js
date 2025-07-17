@@ -9,7 +9,9 @@ export class KerningReader {
     this.alphabets = alphabets
   }
 
-  static getLayers(json) { return Object.keys(json?.masters ?? {}) }
+  static getLayers(json) {
+    return Object.keys(json?.masters ?? {})
+  }
 
   /**
    *
@@ -20,7 +22,7 @@ export class KerningReader {
     const layers = KerningReader.getLayers(json)
     const side = this.alphabets.slice()
     const head = init(layers.length * 2, (i) => !(i % 2) ? layers[i / 2] + '.L' : layers[(i - 1) / 2] + '.R')
-    const crostab = CrosTab.from({ side, head, title: 'metrics', })
+    const crostab = CrosTab.from({ side, head, title: 'metrics' })
 
     const masters = json.masters
     for (const [glyph, { pairs }] of Object.entries(masters)) {

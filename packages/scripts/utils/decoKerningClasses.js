@@ -1,5 +1,9 @@
-import { decoFlat, DecoObject, DecoVector } from '@spare/logger'
+import {
+  decoFlat,
+  DecoObject,
+  DecoVector,
+} from '@spare/logger'
 
-export const decoKerningClasses = DecoVector({ read: x => x?.toObject() |> decoFlat })
-const decoGroupedEntries = DecoObject({ read: x => x?.toObject() |> decoFlat })
+export const decoKerningClasses = DecoVector({ read: x => decoFlat(x?.toObject()) })
+const decoGroupedEntries = DecoObject({ read: x => decoFlat(x?.toObject()) })
 export const decoGrouped = o => decoGroupedEntries(o).replace(/ +/g, ' ')

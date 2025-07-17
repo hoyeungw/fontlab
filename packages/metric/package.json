@@ -2,13 +2,14 @@
   "name": "@fontlab/metric",
   "version": "0.1.6",
   "description": "a function to handle fontlab metrics file",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
-  },
+  "type": "module",
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -17,17 +18,17 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@aryth/calculator": "^0.6.1",
-    "@aryth/math": "^0.6.1",
-    "@typen/nullish": "^0.1.19",
-    "@typen/num-strict": "^0.1.19",
-    "@typen/numeral": "^0.1.19",
-    "@vect/object-mapper": "^0.7.14"
+    "@aryth/calculator": "^0.7.8",
+    "@aryth/math": "^0.7.8",
+    "@typen/nullish": "^0.2.0",
+    "@typen/num-strict": "^0.2.0",
+    "@typen/numeral": "^0.2.0",
+    "@vect/object-mapper": "^0.8.6"
   },
   "devDependencies": {
-    "@acq/path": "^0.3.18",
-    "@spare/csv": "^0.14.9",
-    "@spare/translator": "^0.14.9"
+    "@acq/path": "^0.4.0",
+    "@spare/csv": "^0.16.27",
+    "@spare/translator": "^0.16.16"
   },
   "repository": {
     "type": "git",
@@ -38,9 +39,6 @@
     "function",
     "metrics"
   ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
   "author": "Hoyeung Wong",
   "license": "MIT",
   "bugs": {

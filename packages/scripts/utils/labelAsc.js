@@ -9,16 +9,13 @@ export const labelAsc = (a, b) => {
       a = a.replace(MARK_G, (_, x) => x)
       b = b.replace(MARK_G, (_, x) => x)
       return a.localeCompare(b)
-    }
-    else {
+    } else {
       return asc(a, b)
     }
-  }
-  else {
+  } else {
     if (bt) {
       return asc(a, b)
-    }
-    else {
+    } else {
       return a.localeCompare(b)
     }
   }

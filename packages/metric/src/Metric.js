@@ -27,23 +27,39 @@ export class Metric {
     this.yhi = metrics.ymax
     this.ylo = metrics.ymin
   }
-  static build(metrics) { return new Metric(metrics) }
+  static build(metrics) {
+    return new Metric(metrics)
+  }
 
-  get relLSB() { return this.lpt?.length ? this.lpt : round(this.lsb) }
-  get relRSB() { return this.rpt?.length ? this.rpt : round(this.rsb) }
-  set sb(v) { this.lsb = v, this.rsb = v }
-  set pt(v) { this.lpt = v, this.rpt = v }
+  get relLSB() {
+    return this.lpt?.length ? this.lpt : round(this.lsb)
+  }
+  get relRSB() {
+    return this.rpt?.length ? this.rpt : round(this.rsb)
+  }
+  set sb(v) {
+    this.lsb = v, this.rsb = v
+  }
+  set pt(v) {
+    this.lpt = v, this.rpt = v
+  }
   update(side, expr, dict) {
     side = (side & 1) ? 'l' : (side & 2) ? 'r' : ''
     const SBKEY = side + 'sb', PTKEY = side + 'pt'
-    if (isNumeric(expr)) { return this[SBKEY] = parseNum(expr) }
+    if (isNumeric(expr)) {
+      return this[SBKEY] = parseNum(expr)
+    }
     if (/\w/.test(expr = expr?.trim())) { // input !== '', input !== '=', input contains [a-zA-Z0-9_]
       this[PTKEY] = expr
-      if (isNumeric(expr = calc.call(dict, expr))) { this[SBKEY] = round(expr) }
+      if (isNumeric(expr = calc.call(dict, expr))) {
+        this[SBKEY] = round(expr)
+      }
     }
     return this
   }
-  toJson() { return metricToJson(this) }
+  toJson() {
+    return metricToJson(this)
+  }
   toString() {
     return `[sb] (${this.lsb},${this.rsb}) [wd] (${this.width}) [x] (${this.xlo},${this.xhi}) [y] (${this.ylo},${this.yhi})`
   }

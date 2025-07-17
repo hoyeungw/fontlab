@@ -14,5 +14,5 @@ export const
   L = 'L',
   R = 'R'
 
-export const JOIN_SPEC = { fields: [ GLYPH ], joinType: UNION, fillEmpty: '' }
+export const JOIN_SPEC = { fields: [GLYPH], joinType: UNION, fillEmpty: '' }
 export const CONVERT_OPTIONS = { groups: true, pairs: true, metrics: true }

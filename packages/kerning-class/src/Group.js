@@ -1,4 +1,7 @@
-import { Side, side }  from '@fontlab/enum-side'
+import {
+  Side,
+  side,
+}                      from '@fontlab/enum-side'
 import { asc }         from '@fontlab/latin'
 import { groupToJson } from './groupToJson'
 
@@ -7,8 +10,11 @@ export class Group extends Array {
   /** @type {string} */ name
   constructor(side, name, list) {
     // `[side] (${side}) [name] (${name}) [list] (${list})`  |> says['group.initialize']
-    if (list) { super(...list) }
-    else { super() }
+    if (list) {
+      super(...list)
+    } else {
+      super()
+    }
     this.side = side
     this.name = name
     this.sort(asc)
@@ -18,13 +24,29 @@ export class Group extends Array {
   static build(body) {
     return new Group(side(body), body.name, Array.isArray(body) ? body : Array.isArray(body.names) ? body.names : [])
   }
-  static verso(name, names) { return new Group(Side.Verso, name, names) }
-  static recto(name, names) { return new Group(Side.Recto, name, names) }
-  get names() { return this.slice() }
-  is1st() { return Boolean(this.side & 1) }
-  is2nd() { return Boolean(this.side & 2) }
-  toObject() { return { side: this.side, name: this.name, names: this.slice() } }
-  toJson() { return groupToJson(this) }
-  toString() { return `[side] (${this.side}) [key] (${this.name}) [glyphs] (${this.slice()})` }
+  static verso(name, names) {
+    return new Group(Side.Verso, name, names)
+  }
+  static recto(name, names) {
+    return new Group(Side.Recto, name, names)
+  }
+  get names() {
+    return this.slice()
+  }
+  is1st() {
+    return Boolean(this.side & 1)
+  }
+  is2nd() {
+    return Boolean(this.side & 2)
+  }
+  toObject() {
+    return { side: this.side, name: this.name, names: this.slice() }
+  }
+  toJson() {
+    return groupToJson(this)
+  }
+  toString() {
+    return `[side] (${this.side}) [key] (${this.name}) [glyphs] (${this.slice()})`
+  }
 }
 

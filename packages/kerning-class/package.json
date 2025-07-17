@@ -2,13 +2,14 @@
   "name": "@fontlab/kerning-class",
   "version": "0.1.6",
   "description": "a function to handle fontlab kerning class",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
-  },
+  "type": "module",
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -17,18 +18,18 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@analys/convert": "^0.6.14",
-    "@fontlab/enum-side": "^0.1.6",
-    "@fontlab/latin": "^0.1.6",
-    "@typen/nullish": "^0.1.19",
-    "@vect/object-select": "^0.7.14"
+    "@analys/convert": "^0.7.4",
+    "@fontlab/enum-side": "workspace:^",
+    "@fontlab/latin": "workspace:^",
+    "@typen/nullish": "^0.2.0",
+    "@vect/object-select": "^0.8.6"
   },
   "devDependencies": {
-    "@acq/path": "^0.3.18",
-    "@spare/csv": "^0.14.9",
-    "@spare/translator": "^0.14.9",
-    "@spare/verse": "^0.14.9",
-    "@vect/vector-algebra": "^0.7.14"
+    "@acq/path": "^0.4.0",
+    "@spare/csv": "^0.16.27",
+    "@spare/translator": "^0.16.16",
+    "@spare/verse": "^0.16.27",
+    "@vect/vector-algebra": "^0.8.6"
   },
   "repository": {
     "type": "git",
@@ -39,9 +40,6 @@
     "function",
     "metrics"
   ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
   "author": "Hoyeung Wong",
   "license": "MIT",
   "bugs": {

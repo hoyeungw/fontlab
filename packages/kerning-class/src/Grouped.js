@@ -1,7 +1,13 @@
 import { groupedToSurject } from '@analys/convert'
 import { SideUtil }         from '@fontlab/enum-side'
-import { asc, Latin }       from '@fontlab/latin'
-import { nullish, valid }   from '@typen/nullish'
+import {
+  asc,
+  Latin,
+}                           from '@fontlab/latin'
+import {
+  nullish,
+  valid,
+}                           from '@typen/nullish'
 import { filterByValue }    from '@vect/object-select'
 import { Group }            from './Group'
 
@@ -20,7 +26,9 @@ export class Grouped {
     for (let group of groups.sort(groupAscending)) o[group.name] = Group.build(group)
     return o
   }
-  static select(grouped, side) { return filterByValue(grouped, SideUtil.factory(side)) }
+  static select(grouped, side) {
+    return filterByValue(grouped, SideUtil.factory(side))
+  }
 }
 
 export class LetterGrouped {

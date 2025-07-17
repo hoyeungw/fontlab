@@ -1,10 +1,10 @@
 import { merge }              from '@vect/vector-algebra'
-import { GROUP_SCHEME_LOWER } from './GROUP_SCHEME_LOWER'
-import { GROUP_SCHEME_UPPER } from './GROUP_SCHEME_UPPER'
+import { GROUP_SCHEME_LOWER } from './GROUP_SCHEME_LOWER.js'
+import { GROUP_SCHEME_UPPER } from './GROUP_SCHEME_UPPER.js'
 
-export { DIACRITICS }    from './DIACRITICS'
-export { ORTHO_FRENCH }  from './ORTHO_FRENCH'
-export { ORTHO_ITALIAN } from './ORTHO_ITALIAN'
+export { DIACRITICS }    from './DIACRITICS.js'
+export { ORTHO_FRENCH }  from './ORTHO_FRENCH.js'
+export { ORTHO_ITALIAN } from './ORTHO_ITALIAN.js'
 
 export { GROUP_SCHEME_UPPER }
 export { GROUP_SCHEME_LOWER }

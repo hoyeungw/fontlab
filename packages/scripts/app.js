@@ -1,5 +1,8 @@
 import { subFileInfos }   from '@acq/path'
-import { FONTLAB, LAYER } from '@fontlab/constants'
+import {
+  FONTLAB,
+  LAYER,
+}                         from '@fontlab/constants'
 import { says }           from '@spare/xr'
 import { REGROUPS }       from '../../resources/schemes/GROUPS_CHALENE'
 import { PhenoGroupsIO }  from './src/PhenoGroupsIO'
@@ -29,7 +32,7 @@ export class Workflow {
     const DEST_SIDEBEARINGS_XLSX = Workflow.DEST + '/' + font + REGROUPED + SIDEBEARINGS + XLSX
     const DEST_PAIRS_XLSX = Workflow.DEST + '/' + font + REGROUPED + PAIRS + XLSX
 
-    SRC_VFM |> says[FONTLAB].export(font)[LAYER](layer)
+    says[FONTLAB].export(font)[LAYER](layer)(SRC_VFM)
     await PhenoGroupsIO.exportRegrouped(SRC_VFM, DEST_VFM, REGROUPS, layer)
     await PhenoIO.separateVfm(DEST_VFM)
     await PhenoMetricsIO.exportSidebearings(DEST_VFM, DEST_SIDEBEARINGS_XLSX)

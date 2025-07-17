@@ -2,13 +2,14 @@
   "name": "@fontlab/kerning-pairs",
   "version": "0.1.6",
   "description": "a function to handle fontlab kerning pairs",
-  "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
-  },
+  "type": "module",
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -17,10 +18,14 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@analyz/sparse": "^0.0.26",
-    "@spare/logger": "^0.14.9",
-    "@spare/xr": "^0.14.9",
-    "@vect/nested": "^0.7.14"
+    "@analyz/sparse": "^0.1.1",
+    "@spare/logger": "^0.16.27",
+    "@spare/xr": "^0.16.27",
+    "@vect/nested": "^0.8.6"
+  },
+  "devDependencies": {
+    "@analys/enum-pivot-mode": "^0.7.4",
+    "@typen/nullish": "^0.2.0"
   },
   "repository": {
     "type": "git",
@@ -31,9 +36,6 @@
     "function",
     "metrics"
   ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
   "author": "Hoyeung Wong",
   "license": "MIT",
   "bugs": {

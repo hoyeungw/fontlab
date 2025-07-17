@@ -1,5 +1,11 @@
-export { WEIGHTS, WEIGHTS_TO_INITIALS } from './WEIGHTS'
-export { LAYERS_PRIORITY, getFace }     from './LAYERS_PRIORITY'
+export {
+  WEIGHTS,
+  WEIGHTS_TO_INITIALS,
+} from './WEIGHTS.js'
+export {
+  LAYERS_PRIORITY,
+  getFace,
+} from './LAYERS_PRIORITY.js'
 
 /**
  * @typedef {{

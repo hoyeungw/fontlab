@@ -1,20 +1,43 @@
-import { UNION }                                                  from '@analys/enum-join-modes'
-import { Table }                                                  from '@analyz/table'
-import { Algebra }                                                from '@analyz/table-algebra'
-import { distinct }                                               from '@aryth/distinct-vector'
-import { GLYPH, L, LABEL, LETTER, R }                             from '@fontlab/constants'
-import { Scope }                                                  from '@fontlab/enum-scope'
-import { Side }                                                   from '@fontlab/enum-side'
-import { asc, glyphToLabel, Latin, shortToWeight, weightToShort } from '@fontlab/latin'
-import { Master }                                                 from '@fontlab/master'
-import { Metric }                                                 from '@fontlab/metric'
-import { isNumeric, parseNum }                                    from '@typen/num-strict'
-import { transpose }                                              from '@vect/nested'
-import { gather, vectorToObject }                                 from '@vect/object-init'
-import { indexed, indexedTo, mapKeyVal, mapVal, }                 from '@vect/object-mapper'
-import { appendValue }                                            from '@vect/object-update'
-import { acquire }                                                from '@vect/vector-algebra'
-import { getFace }                                                from '../asset'
+import { UNION }       from '@analys/enum-join-modes'
+import { Table }       from '@analyz/table'
+import { Algebra }     from '@analyz/table-algebra'
+import { distinct }    from '@aryth/distinct-vector'
+import {
+  GLYPH,
+  L,
+  LABEL,
+  LETTER,
+  R,
+}                      from '@fontlab/constants'
+import { Scope }       from '@fontlab/enum-scope'
+import { Side }        from '@fontlab/enum-side'
+import {
+  asc,
+  glyphToLabel,
+  Latin,
+  shortToWeight,
+  weightToShort,
+}                      from '@fontlab/latin'
+import { Master }      from '@fontlab/master'
+import { Metric }      from '@fontlab/metric'
+import {
+  isNumeric,
+  parseNum,
+}                      from '@typen/num-strict'
+import { transpose }   from '@vect/nested'
+import {
+  gather,
+  vectorToObject,
+}                      from '@vect/object-init'
+import {
+  indexed,
+  indexedTo,
+  mapKeyVal,
+  mapVal,
+}                      from '@vect/object-mapper'
+import { appendValue } from '@vect/object-update'
+import { acquire }     from '@vect/vector-algebra'
+import { getFace }     from '../asset/index.js'
 
 
 // noinspection CommaExpressionJS,DuplicatedCode
@@ -29,27 +52,43 @@ export class Pheno {
     const { dataType, masters, metrics, upm } = profile
     this.dataType = dataType
     if (masters) this.layerToMaster = mapKeyVal(masters, Master.fromVFM)
-    if (metrics) this.layerToMetrics = mapVal(metrics, ({ layers }) => mapVal(layers, Metric.build))|> transpose
+    if (metrics) this.layerToMetrics = transpose(mapVal(metrics, ({ layers }) => mapVal(layers, Metric.build)))
     this.upm = upm
   }
-  static build(fontlabJson) { return new Pheno(fontlabJson) }
+  static build(fontlabJson) {
+    return new Pheno(fontlabJson)
+  }
 
-  get layers() { return Object.keys(this.layerToMaster) }
-  get shortenLayers() { return this.layers.map(weightToShort) }
-  get face() { return getFace(this.layerToMaster) }
-  get glyphLayerToMetric() { return this.layerToMetrics|> transpose }
+  get layers() {
+    return Object.keys(this.layerToMaster)
+  }
+  get shortenLayers() {
+    return this.layers.map(weightToShort)
+  }
+  get face() {
+    return getFace(this.layerToMaster)
+  }
+  get glyphLayerToMetric() {
+    return transpose(this['layerToMetrics'])
+  }
 
   /**
    * @param {string} [layer]
    * @return {Master}
    */
-  master(layer) { return this.layerToMaster[layer ?? this.face] }
+  master(layer) {
+    return this.layerToMaster[layer ?? this.face]
+  }
   /**
    * @param {string} [layer]
    * @return {Object<string,Metric>}
    */
-  metrics(layer) { return this.layerToMetrics[layer ?? this.face] }
-  glyphs(layer) { return Object.keys(this.metrics(layer ?? this.face)).sort(asc) }
+  metrics(layer) {
+    return this.layerToMetrics[layer ?? this.face]
+  }
+  glyphs(layer) {
+    return Object.keys(this.metrics(layer ?? this.face)).sort(asc)
+  }
 
   alphabetGrouped(layer) {
     let grouped = {}, x
@@ -58,11 +97,11 @@ export class Pheno {
     return grouped
   }
   sidebearingTable(scope = Scope.Upper) {
-    const nameToHead = name => [ GLYPH, name + '.' + L, name + '.' + R ]
-    const kvToRow = (glyph, metric) => [ glyph, metric.relLSB, metric.relRSB ]
+    const nameToHead = name => [GLYPH, name + '.' + L, name + '.' + R]
+    const kvToRow = (glyph, metric) => [glyph, metric.relLSB, metric.relRSB]
     const tables = indexedTo(this.layerToMetrics, (k, ms) => Table.build(nameToHead(k), null, k)
       .collect(indexed(ms, Latin.factory(scope), kvToRow)))
-    const table = Algebra.joins(UNION, [ GLYPH ], '', ...tables)
+    const table = Algebra.joins(UNION, [GLYPH], '', ...tables)
     table.headward
       .grow(GLYPH, glyphToLabel, LABEL, GLYPH)
       .grow(GLYPH, Latin.letterOrEmpty, LETTER, LABEL)
@@ -72,8 +111,8 @@ export class Pheno {
   updateMaster(regroups) {
     for (let layer in this.layerToMaster) {
       const master = this.layerToMaster[layer], metricGlyphs = this.glyphs(layer)
-      const xGlyphs = acquire(master.glyphs(Side.Verso), metricGlyphs)|> distinct
-      const yGlyphs = acquire(master.glyphs(Side.Verso), metricGlyphs)|> distinct
+      const xGlyphs = distinct(acquire(master.glyphs(Side.Verso), metricGlyphs))
+      const yGlyphs = distinct(acquire(master.glyphs(Side.Verso), metricGlyphs))
       this.layerToMaster[layer] = master.regroup(regroups, xGlyphs, yGlyphs)
     }
     return this
@@ -95,19 +134,28 @@ export class Pheno {
       const LN = layer + '.' + L, RN = layer + '.' + R
       if (!metrics || table?.height <= 0 || table?.coin(LN) < 0 || table?.coin(RN) < 0) continue
       const
-        lDict = table.headward.entryIndexed([ GLYPH, LN ], valIsNum, valToNum)|> gather,
-        rDict = table.headward.entryIndexed([ GLYPH, RN ], valIsNum, valToNum)|> gather
-      for (let [ glyph, lsb, rsb ] of table.headward.tripletIndexed([ GLYPH, LN, RN ])) {
+        lDict = gather(table.headward.entryIndexed([GLYPH, LN], valIsNum, valToNum)),
+        rDict = gather(table.headward.entryIndexed([GLYPH, RN], valIsNum, valToNum))
+      for (let [glyph, lsb, rsb] of table.headward.tripletIndexed([GLYPH, LN, RN])) {
         if (!(glyph = metrics[glyph])) continue
         if (glyph.lpt === '') glyph.lpt = null
         if (glyph.rpt === '') glyph.rpt = null
-        if (glyph.lsb !== parseNum(lsb)) { stat[layer].lsb++, glyph.update(Side.Verso, lsb, lDict) }
-        if (glyph.rsb !== parseNum(rsb)) { stat[layer].rsb++, glyph.update(Side.Recto, rsb, rDict) }
+        if (glyph.lsb !== parseNum(lsb)) {
+          stat[layer].lsb++, glyph.update(Side.Verso, lsb, lDict)
+        }
+        if (glyph.rsb !== parseNum(rsb)) {
+          stat[layer].rsb++, glyph.update(Side.Recto, rsb, rDict)
+        }
       }
     }
     return stat
   }
 }
 
-export function valIsNum(_, v) { return isNumeric(v) }
-export function valToNum(k, v) { return [ k, parseNum(v) ] }
+export function valIsNum(_, v) {
+  return isNumeric(v)
+}
+
+export function valToNum(k, v) {
+  return [k, parseNum(v)]
+}

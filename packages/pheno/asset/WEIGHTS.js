@@ -7,7 +7,7 @@ export const WEIGHTS = [
   'Medium',
   'SemiBold',
   'Bold',
-  'Black'
+  'Black',
 ]
 
 export const WEIGHTS_TO_INITIALS = {

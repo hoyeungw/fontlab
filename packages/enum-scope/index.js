@@ -1,1 +1,5 @@
-export { Scope, scopeName, SCOPES } from './src/Scope'
+export {
+  Scope,
+  scopeName,
+  SCOPES,
+} from './src/Scope'

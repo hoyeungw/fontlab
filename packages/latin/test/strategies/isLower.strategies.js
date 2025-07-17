@@ -1,10 +1,17 @@
-import { makeEmbedded }                             from '@foba/util'
-import { decoCrostab, says }                        from '@spare/logger'
-import { strategies }                               from '@valjoux/strategies'
-import { indexed }                                  from '@vect/nested'
-import { mapToObject }                              from '@vect/object-init'
-import { ALPHABET_LOWER, DIACRITICS, ORTHO_FRENCH } from '../../asset'
-import { Latin }                                    from '../../src/Latin'
+import { makeEmbedded } from '@foba/util'
+import {
+  decoCrostab,
+  says,
+}                       from '@spare/logger'
+import { strategies }   from '@valjoux/strategies'
+import { indexed }      from '@vect/nested'
+import { mapToObject }  from '@vect/object-init'
+import {
+  ALPHABET_LOWER,
+  DIACRITICS,
+  ORTHO_FRENCH,
+}                       from '../../asset'
+import { Latin }        from '../../src/Latin'
 
 export const REGEX_UNITY_LOWER = /^@?([a-z])/
 export const REGEX_LOWER = /^[a-z]$/
@@ -30,7 +37,7 @@ const LOWERS = {
   ij: 'ij',
   lj: 'lj',
 
-  cent: 'cent'
+  cent: 'cent',
 }
 const NON_LETTERS = {
   NULL: 'NULL',
@@ -56,7 +63,7 @@ const NON_LETTERS = {
 
 const FRENCH = {
   ...mapToObject(ALPHABET_LOWER, x => x),
-  ...mapToObject([...indexed(ORTHO_FRENCH, (x, y, v) => v)], x => x)
+  ...mapToObject([...indexed(ORTHO_FRENCH, (x, y, v) => v)], x => x),
 }
 
 const METHODS = {
@@ -73,14 +80,14 @@ const METHODS = {
     if (REGEX_LOWER.test(glyph[0])) return true //
     // && Latin.#safeList.add(glyph.toLowerCase())
     return false // not others
-  }
+  },
 }
 
 {
   const { lapse, result } = strategies({
     repeat: 6E+5,
     candidates: UPPERS|> makeEmbedded,
-    methods: METHODS
+    methods: METHODS,
   })
   lapse |> decoCrostab |> says['lapse']
   '' |> console.log
@@ -92,7 +99,7 @@ const METHODS = {
   const { lapse, result } = strategies({
     repeat: 6E+5,
     candidates: LOWERS|> makeEmbedded,
-    methods: METHODS
+    methods: METHODS,
   })
   lapse |> decoCrostab |> says['lapse']
   '' |> console.log
@@ -104,7 +111,7 @@ const METHODS = {
   const { lapse, result } = strategies({
     repeat: 6E+5,
     candidates: NON_LETTERS|> makeEmbedded,
-    methods: METHODS
+    methods: METHODS,
   })
   lapse |> decoCrostab |> says['lapse']
   '' |> console.log

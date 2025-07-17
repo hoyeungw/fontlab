@@ -11,7 +11,7 @@ export const offAT = name => {
   try {
     return name.replace(AT, '')
   } catch (e) {
-    name |> deco |> says.error
+    says.error(deco(name))
   }
 }
 
