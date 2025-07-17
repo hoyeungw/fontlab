@@ -1,4 +1,0 @@
-68 error Error: Command failed with exit code 128: git push --follow-tags --no-verify --atomic origin master
-68 error fatal: unable to access 'https://github.com/hoyeungw/fontlab/': Failed to connect to github.com port 443: Timed out
-68 error     at makeError (C:\Users\hoyeu\banyan\fontlab\node_modules\execa\lib\error.js:60:11)
-68 error     at handlePromise (C:\Users\hoyeu\banyan\fontlab\node_modules\execa\index.js:118:26)
