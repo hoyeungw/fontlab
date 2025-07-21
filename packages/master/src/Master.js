@@ -1,33 +1,17 @@
-import {
-  groupedToSurject,
-  surjectToGrouped,
-}                          from '@analys/convert'
-import { MIN }             from '@analys/enum-pivot-mode'
-import {
-  indexed as indexedNested,
-  Stat as SparseStat,
-}                          from '@analyz/sparse'
-import { CONVERT_OPTIONS } from '@fontlab/constants'
-import { Side }            from '@fontlab/enum-side'
-import {
-  Group,
-  Grouped,
-  LetterGrouped,
-}                          from '@fontlab/kerning-class'
-import {
-  AT,
-  getGlyph,
-  glyphTrim,
-  offAT,
-  Pairs,
-}                          from '@fontlab/kerning-pairs'
-import { Latin }           from '@fontlab/latin'
-import { parseNum }        from '@typen/numeral'
-import { ob }              from '@vect/object-init'
-import { indexed }         from '@vect/object-mapper'
-import { union }           from '@vect/vector-algebra'
-import { Stat }            from '@vect/vector-stat'
-import { masterToJson }    from './masterToJson'
+import { groupedToSurject, surjectToGrouped }           from '@analys/convert'
+import { MIN }                                          from '@analys/enum-pivot-mode'
+import { indexed as indexedNested, Stat as SparseStat } from '@analyz/sparse'
+import { CONVERT_OPTIONS }                              from '@fontlab/constants'
+import { Side }                                         from '@fontlab/enum-side'
+import { Group, Grouped, LetterGrouped }                from '@fontlab/kerning-class'
+import { AT, getGlyph, glyphTrim, offAT, Pairs }        from '@fontlab/kerning-pairs'
+import { Latin }                                        from '@fontlab/latin'
+import { parseNum }                                     from '@typen/numeral'
+import { ob }                                           from '@vect/object-init'
+import { indexed }                                      from '@vect/object-mapper'
+import { union }                                        from '@vect/vector-algebra'
+import { Stat }                                         from '@vect/vector-stat'
+import { masterToJson }                                 from './masterToJson'
 
 export class Master {
   /** @type {string}               */ name

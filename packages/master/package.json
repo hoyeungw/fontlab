@@ -18,9 +18,9 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@analys/convert": "^0.7.4",
-    "@analys/enum-pivot-mode": "^0.7.4",
-    "@analyz/sparse": "^0.1.1",
+    "@analys/convert": "^0.7.5",
+    "@analys/enum-pivot-mode": "^0.7.5",
+    "@analyz/sparse": "^0.1.3",
     "@fontlab/constants": "workspace:^",
     "@fontlab/enum-side": "workspace:^",
     "@fontlab/kerning-class": "workspace:^",
@@ -34,9 +34,9 @@
   },
   "devDependencies": {
     "@acq/path": "^0.4.0",
-    "@spare/csv": "^0.16.27",
+    "@spare/csv": "^0.16.29",
     "@spare/translator": "^0.16.16",
-    "@spare/verse": "^0.16.27",
+    "@spare/verse": "^0.16.29",
     "@vect/vector-algebra": "^0.7.14"
   },
   "repository": {

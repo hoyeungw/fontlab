@@ -1,22 +1,10 @@
-import {
-  ACCUM,
-  LAST,
-} from '@analys/enum-pivot-mode'
-import {
-  Sparse,
-  Stat,
-} from '@analyz/sparse'
-import { almostEqual } from '@aryth/math'
-import {
-  nullish,
-  valid,
-} from '@typen/nullish'
-import { parseNum } from '@typen/num-strict'
-import { indexedOf } from '@vect/nested'
-import {
-  AT,
-  offAT,
-} from './texting.js'
+import { ACCUM, LAST }    from '@analys/enum-pivot-mode'
+import { Sparse, Stat }   from '@analyz/sparse'
+import { almostEqual }     from '@aryth/math'
+import { nullish, valid } from '@typen/nullish'
+import { parseNum }        from '@typen/num-strict'
+import { indexedOf }       from '@vect/nested'
+import { AT, offAT }      from './texting.js'
 
 /** @typedef {Object<string,Object<string,*>>} Nested */
 
@@ -70,6 +58,7 @@ export class Pairs extends Sparse {
   delete(x, y) {
     if (x in this.data) delete this.data[x][y]
   }
+
   cleanUp() {
     let n = 0
     for (let [x, y, v] of this.indexed((x, y, v) => nullish(v) || !(v = parseNum(v)) || isNaN(v))) {

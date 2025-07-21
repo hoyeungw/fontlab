@@ -1,18 +1,13 @@
 import { groupedToSurject } from '@analys/convert'
 import { SideUtil }         from '@fontlab/enum-side'
-import {
-  asc,
-  Latin,
-}                           from '@fontlab/latin'
-import {
-  nullish,
-  valid,
-}                           from '@typen/nullish'
+import { asc, Latin }       from '@fontlab/latin'
+import { nullish, valid }   from '@typen/nullish'
 import { filterByValue }    from '@vect/object-select'
-import { Group }            from './Group'
+import { Group }            from './Group.js'
 
 export const groupAscending = (a, b) => a.side === b.side ? asc(a.name, b.name) : a.side - b.side
 
+// Utility class for managing collections of groups with filtering and conversion methods
 export class Grouped {
   /**
    *

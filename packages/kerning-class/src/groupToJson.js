@@ -1,9 +1,4 @@
-import {
-  is1st,
-  is2nd,
-  _1ST,
-  _2ND,
-} from '@fontlab/enum-side'
+import { _1ST, _2ND, is1st, is2nd } from '@fontlab/enum-side'
 
 
 export function groupToJson(group) {

@@ -1,7 +1,4 @@
-import {
-  logger,
-  ros,
-} from '@spare/logger'
+import { logger, ros } from '@spare/logger'
 
 class Scope {
   static None = 0b0

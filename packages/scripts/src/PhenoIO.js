@@ -1,27 +1,12 @@
-import { parsePath } from '@acq/path'
-import {
-  CONVERT_OPTIONS,
-  FONTLAB,
-} from '@fontlab/constants'
-import {
-  masterToClass,
-  masterToJson,
-} from '@fontlab/master'
-import { embedLayerToMetrics } from '@fontlab/metric'
-import { Pheno } from '@fontlab/pheno'
-import {
-  decoFlat,
-  decoString,
-} from '@spare/logger'
-import { says } from '@spare/xr'
-import {
-  indexedTo,
-  mapVal,
-} from '@vect/object-mapper'
-import {
-  existsSync,
-  promises,
-} from 'fs'
+import { parsePath }                   from '@acq/path'
+import { CONVERT_OPTIONS, FONTLAB }    from '@fontlab/constants'
+import { masterToClass, masterToJson } from '@fontlab/master'
+import { embedLayerToMetrics }         from '@fontlab/metric'
+import { Typeface }                       from '@fontlab/pheno'
+import { decoFlat, decoString } from '@spare/logger'
+import { $, says }              from '@spare/xr'
+import { indexedTo, mapVal }    from '@vect/object-mapper'
+import { existsSync, promises }        from 'fs'
 
 const CLASS = 'PhenoIO'
 
@@ -30,13 +15,13 @@ const CLASS = 'PhenoIO'
 export class PhenoIO {
   static async readPheno(filePath) {
     const buffer = await promises.readFile(filePath, 'utf8')
-    says[FONTLAB].br(CLASS).br('readPheno')(`[read] (${(decoString(filePath))})`)
+    says[FONTLAB](`[read] (${(decoString(filePath))})`) //.class(CLASS).task('readPheno')
     const json = await JSON.parse(buffer.toString())
-    return Pheno.build(json)
+    return Typeface.build(json)
   }
   /**
    *
-   * @param {Pheno} pheno
+   * @param {Typeface} pheno
    * @param {string} destVfm
    * @param {{[groups],[pairs],[metrics]}} options
    * @returns {Promise<void>}
@@ -45,14 +30,15 @@ export class PhenoIO {
     const json = PhenoIO.phenoToMetrics(pheno, options)
     const string = JSON.stringify(json)
     await promises.writeFile(destVfm, string)
-    says[FONTLAB].br(CLASS).br('savePheno(VFM)')(`[saved] (${(decoFlat(options))}) [dest] (${(decoString(destVfm))})`)
+    // console.log($.fontlab(CLASS).calling('savePheno(VFM)')(`[saved] (${(decoFlat(options))}) [dest] (${(decoString(destVfm))})`)
+    console.log($.fontlab(CLASS).calling('savePheno(VFM)').saved(decoFlat(options)).dest(decoString(destVfm)))
   }
 
   static async saveClasses(pheno, destJson) {
     const json = PhenoIO.phenoToClasses(pheno)
     const string = JSON.stringify(json)
     await promises.writeFile(destJson, string)
-    says[FONTLAB].br(CLASS).br('saveClasses')(`[dest] (${(decoString(destJson))})`)
+    console.log($.fontlab(CLASS).calling('saveClasses')(`[dest] (${(decoString(destJson))})`))
   }
 
   static async separateVfm(srcVfm) {
@@ -66,7 +52,7 @@ export class PhenoIO {
   }
 
   /***
-   * @param {Pheno} pheno
+   * @param {Typeface} pheno
    * @param {{groups:*,pairs:*,metrics:*}} options
    * @returns {{dataType:string,[masters]:Object<string,{kerningClasses:KerningClass[],pairs}>,[metrics]:{},upm:number}} .vfm
    */
@@ -80,7 +66,7 @@ export class PhenoIO {
   }
 
   /***
-   * @param {Pheno} pheno
+   * @param {Typeface} pheno
    * @returns {{masters:{name:string,kerningClasses:KerningClass[]}[]}} .json
    */
   static phenoToClasses(pheno) {

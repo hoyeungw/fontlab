@@ -1,9 +1,6 @@
-import { groupedToSurject } from '@analys/convert'
-import { Scope }            from '@fontlab/enum-scope'
-import {
-  GROUP_SCHEME_LOWER,
-  GROUP_SCHEME_UPPER,
-}                           from '../asset/index.js'
+import { groupedToSurject }                       from '@analys/convert'
+import { Scope }                                  from '@fontlab/enum-scope'
+import { GROUP_SCHEME_LOWER, GROUP_SCHEME_UPPER } from '../asset/index.js'
 
 export class Latin {
   static #lexLower = groupedToSurject(GROUP_SCHEME_LOWER)

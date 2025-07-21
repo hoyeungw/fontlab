@@ -18,7 +18,7 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
-    "@analys/convert": "^0.7.4",
+    "@analys/convert": "^0.7.5",
     "@fontlab/enum-side": "workspace:^",
     "@fontlab/latin": "workspace:^",
     "@typen/nullish": "^0.2.0",
@@ -26,9 +26,9 @@
   },
   "devDependencies": {
     "@acq/path": "^0.4.0",
-    "@spare/csv": "^0.16.27",
+    "@spare/csv": "^0.16.29",
     "@spare/translator": "^0.16.16",
-    "@spare/verse": "^0.16.27",
+    "@spare/verse": "^0.16.29",
     "@vect/vector-algebra": "^0.8.6"
   },
   "repository": {

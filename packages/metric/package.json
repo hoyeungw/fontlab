@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@acq/path": "^0.4.0",
-    "@spare/csv": "^0.16.27",
+    "@spare/csv": "^0.16.29",
     "@spare/translator": "^0.16.16"
   },
   "repository": {

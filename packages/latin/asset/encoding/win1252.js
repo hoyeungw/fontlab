@@ -1,4 +1,3 @@
-import { mapEntry } from '@vect/object-mapper'
 /**
  * %%FONTLAB ENCODING: 8; MS Windows 1252 Western (ANSI)
  * %%GROUP:Type 1 Basic

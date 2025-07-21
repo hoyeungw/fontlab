@@ -1,14 +1,11 @@
 import { subFileInfos }   from '@acq/path'
-import {
-  FONTLAB,
-  LAYER,
-}                         from '@fontlab/constants'
+import { FONTLAB, LAYER } from '@fontlab/constants'
 import { says }           from '@spare/xr'
-import { REGROUPS }       from '../../resources/schemes/GROUPS_CHALENE'
-import { PhenoGroupsIO }  from './src/PhenoGroupsIO'
-import { PhenoIO }        from './src/PhenoIO'
-import { PhenoMetricsIO } from './src/PhenoMetricsIO'
-import { PhenoPairsIO }   from './src/PhenoPairsIO'
+import { REGROUPS }       from '../../resources/schemes/GROUPS_CHALENE.js'
+import { PhenoGroupsIO }  from './src/PhenoGroupsIO.js'
+import { PhenoIO }        from './src/PhenoIO.js'
+import { PhenoMetricsIO } from './src/PhenoMetricsIO.js'
+import { PhenoPairsIO }   from './src/PhenoPairsIO.js'
 
 const REGROUPED = '-regrouped'
 const GROUPS = '-groups'

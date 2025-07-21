@@ -1,47 +1,24 @@
-import { UNION }       from '@analys/enum-join-modes'
-import { Table }       from '@analyz/table'
-import { Algebra }     from '@analyz/table-algebra'
-import { distinct }    from '@aryth/distinct-vector'
-import {
-  GLYPH,
-  L,
-  LABEL,
-  LETTER,
-  R,
-}                      from '@fontlab/constants'
-import { Scope }       from '@fontlab/enum-scope'
-import { Side }        from '@fontlab/enum-side'
-import {
-  asc,
-  glyphToLabel,
-  Latin,
-  shortToWeight,
-  weightToShort,
-}                      from '@fontlab/latin'
-import { Master }      from '@fontlab/master'
-import { Metric }      from '@fontlab/metric'
-import {
-  isNumeric,
-  parseNum,
-}                      from '@typen/num-strict'
-import { transpose }   from '@vect/nested'
-import {
-  gather,
-  vectorToObject,
-}                      from '@vect/object-init'
-import {
-  indexed,
-  indexedTo,
-  mapKeyVal,
-  mapVal,
-}                      from '@vect/object-mapper'
-import { appendValue } from '@vect/object-update'
-import { acquire }     from '@vect/vector-algebra'
-import { getFace }     from '../asset/index.js'
+import { UNION }                                                  from '@analys/enum-join-modes'
+import { Table }                                                  from '@analyz/table'
+import { Algebra }                                                from '@analyz/table-algebra'
+import { distinct }                                               from '@aryth/distinct-vector'
+import { GLYPH, L, LABEL, LETTER, R }                             from '@fontlab/constants'
+import { Scope }                                                  from '@fontlab/enum-scope'
+import { Side }                                                   from '@fontlab/enum-side'
+import { asc, glyphToLabel, Latin, shortToWeight, weightToShort } from '@fontlab/latin'
+import { Master }                                                 from '@fontlab/master'
+import { Metric }                                                 from '@fontlab/metric'
+import { isNumeric, parseNum }                                    from '@typen/num-strict'
+import { transpose }                                              from '@vect/nested'
+import { gather, vectorToObject }                                 from '@vect/object-init'
+import { indexed, indexedTo, mapKeyVal, mapVal }                  from '@vect/object-mapper'
+import { appendValue }                                            from '@vect/object-update'
+import { acquire }                                                from '@vect/vector-algebra'
+import { getFace }                                                from '../asset/index.js'
 
 
 // noinspection CommaExpressionJS,DuplicatedCode
-export class Pheno {
+export class Typeface {
   dataType = 'com.fontlab.metrics'
   /** @type {Object<string,Master>}                */ layerToMaster // LayersToKerning
   /** @type {Object<string,Object<string,Metric>>} */ layerToMetrics // GlyphsToLayersToMetrics
@@ -56,7 +33,7 @@ export class Pheno {
     this.upm = upm
   }
   static build(fontlabJson) {
-    return new Pheno(fontlabJson)
+    return new Typeface(fontlabJson)
   }
 
   get layers() {
@@ -133,8 +110,7 @@ export class Pheno {
       const metrics = this.metrics(shortToWeight(layer))
       const LN = layer + '.' + L, RN = layer + '.' + R
       if (!metrics || table?.height <= 0 || table?.coin(LN) < 0 || table?.coin(RN) < 0) continue
-      const
-        lDict = gather(table.headward.entryIndexed([GLYPH, LN], valIsNum, valToNum)),
+      const lDict = gather(table.headward.entryIndexed([GLYPH, LN], valIsNum, valToNum)),
         rDict = gather(table.headward.entryIndexed([GLYPH, RN], valIsNum, valToNum))
       for (let [glyph, lsb, rsb] of table.headward.tripletIndexed([GLYPH, LN, RN])) {
         if (!(glyph = metrics[glyph])) continue

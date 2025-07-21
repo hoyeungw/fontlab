@@ -1,17 +1,10 @@
-import { subFileInfos } from '@acq/path'
-import {
-  deco,
-  ros,
-  says,
-}                       from '@spare/logger'
-import { Verse }        from '@spare/verse'
-import { mapToObject }  from '@vect/object-init'
-import { mapKeyVal }    from '@vect/object-mapper'
-import {
-  difference,
-  union,
-}                       from '@vect/vector-algebra'
-import { promises }     from 'fs'
+import { subFileInfos }      from '@acq/path'
+import { deco, ros, says }   from '@spare/logger'
+import { Verse }             from '@spare/verse'
+import { mapToObject }       from '@vect/object-init'
+import { mapKeyVal }         from '@vect/object-mapper'
+import { difference, union } from '@vect/vector-algebra'
+import { promises }          from 'fs'
 
 const SRC = process.cwd() + '/packages/latin/script/asset'
 const DEST = process.cwd() + '/packages/latin/script/target'

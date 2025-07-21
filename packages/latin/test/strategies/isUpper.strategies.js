@@ -1,17 +1,10 @@
-import { makeEmbedded } from '@foba/util'
-import {
-  decoCrostab,
-  says,
-}                       from '@spare/logger'
-import { strategies }   from '@valjoux/strategies'
-import { indexed }      from '@vect/nested'
-import { mapToObject }  from '@vect/object-init'
-import {
-  ALPHABET_UPPER,
-  DIACRITICS,
-  ORTHO_FRENCH,
-}                       from '../../asset'
-import { Latin }        from '../../src/Latin'
+import { makeEmbedded }                             from '@foba/util'
+import { decoCrostab, says }                        from '@spare/logger'
+import { strategies }                               from '@valjoux/strategies'
+import { indexed }                                  from '@vect/nested'
+import { mapToObject }                              from '@vect/object-init'
+import { ALPHABET_UPPER, DIACRITICS, ORTHO_FRENCH } from '../../asset'
+import { Latin }                                    from '../../src/Latin'
 
 export const REGEX_UNITY_UPPER = /^@?([A-Z])(?![RUu])/ // exclude: CR NULL Euro
 export const REGEX_UPPER = /^[A-Z]$/
