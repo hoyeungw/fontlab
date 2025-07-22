@@ -9,9 +9,9 @@ import { Latin }                                    from '../../src/Latin'
 export const REGEX_UNITY_UPPER = /^@?([A-Z])(?![RUu])/ // exclude: CR NULL Euro
 export const REGEX_UPPER = /^[A-Z]$/
 export const REGEX_CLASS_UPPER = /^@[A-Z]/
-export const EXCL_UPPER = ['NULL', 'CR', 'Euro']
+export const EXCL_UPPER = [ 'NULL', 'CR', 'Euro' ]
 
-const french = mapToObject([...indexed(ORTHO_FRENCH, (x, y, v) => v)], x => x)
+const french = mapToObject([ ...indexed(ORTHO_FRENCH, (x, y, v) => v) ], x => x)
 const simple = {
   E: 'E',
   Eacute: 'Eacute',
@@ -32,7 +32,7 @@ const simple = {
 
 const FRENCH = {
   ...mapToObject(ALPHABET_UPPER, x => x),
-  ...mapToObject([...indexed(ORTHO_FRENCH, (x, y, v) => v)], x => x),
+  ...mapToObject([ ...indexed(ORTHO_FRENCH, (x, y, v) => v) ], x => x),
 }
 
 const { lapse, result } = strategies({

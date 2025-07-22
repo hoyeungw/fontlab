@@ -10,7 +10,7 @@ export const REGEX_UNITY_LOWER = /^@?([a-z])/
 export const REGEX_LOWER = /^[a-z]$/
 export const REGEX_CLASS_LOWER = /^@[a-z]/
 
-export const INCL_LOWER = ['germandbls', 'cent', 'dotlessi'] // 'ae', 'oe', 'lj', 'ij', 'nj', 'thorn'
+export const INCL_LOWER = [ 'germandbls', 'cent', 'dotlessi' ] // 'ae', 'oe', 'lj', 'ij', 'nj', 'thorn'
 
 const UPPERS = {
   E: 'E',
@@ -56,7 +56,7 @@ const NON_LETTERS = {
 
 const FRENCH = {
   ...mapToObject(ALPHABET_LOWER, x => x),
-  ...mapToObject([...indexed(ORTHO_FRENCH, (x, y, v) => v)], x => x),
+  ...mapToObject([ ...indexed(ORTHO_FRENCH, (x, y, v) => v) ], x => x),
 }
 
 const METHODS = {

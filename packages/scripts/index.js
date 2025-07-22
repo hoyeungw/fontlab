@@ -1,4 +1,4 @@
-export { PhenoGroupsIO }  from './src/PhenoGroupsIO'
-export { PhenoPairsIO }   from './src/PhenoPairsIO'
-export { PhenoMetricsIO } from './src/PhenoMetricsIO'
-export { PhenoIO }        from './src/PhenoIO'
+export { GroupsIO }   from './src/GroupsIO.js'
+export { PairsIO }    from './src/PairsIO.js'
+export { MetricsIO }  from './src/MetricsIO.js'
+export { TypefaceIO } from './src/TypefaceIO.js'

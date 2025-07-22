@@ -13,10 +13,10 @@ export class MetricsReader {
   }
 
   matchAlphabetAndDiacritic(name) {
-    if (this.alphabets.includes(name)) return [name, '_']
+    if (this.alphabets.includes(name)) return [ name, '_' ]
     for (const alphabet of this.alphabets) {
       for (const diacritic of this.diacritics) {
-        if (name === alphabet + diacritic) return [alphabet, diacritic]
+        if (name === alphabet + diacritic) return [ alphabet, diacritic ]
       }
     }
     return null
@@ -40,8 +40,8 @@ export class MetricsReader {
       title: 'metrics',
     })
 
-    for (const [glyph, layerToMetrics] of Object.entries(profile.glyphLayerToMetric)) {
-      if (this.matchAlphabet(glyph)) for (const [layer, metrics] of Object.entries(layerToMetrics)) {
+    for (const [ glyph, layerToMetrics ] of Object.entries(profile.glyphLayerToMetric)) {
+      if (this.matchAlphabet(glyph)) for (const [ layer, metrics ] of Object.entries(layerToMetrics)) {
         const { lsb, rsb } = metrics
         crostab.setCell(glyph, layer + '.L', round(lsb))
         crostab.setCell(glyph, layer + '.R', round(rsb))
@@ -57,7 +57,7 @@ export class MetricsReader {
    * @returns {Object<string,CrosTab>}
    */
   byLayersAlphabetsByDiacritics(json) {
-    const crostabHead = ['_', ...this.diacritics]
+    const crostabHead = [ '_', ...this.diacritics ]
     const crostabCollection = mapToObject(MetricsReader.getLayers(json), layer => CrosTab.from({
       side: this.alphabets.slice(),
       head: crostabHead.slice(),
@@ -66,13 +66,13 @@ export class MetricsReader {
     const metrics = json.metrics
     let match, alphabet, diacritic
     for (let name in metrics) {
-      if ((match = this.matchAlphabetAndDiacritic(name)) && ([alphabet, diacritic] = match)) {
+      if ((match = this.matchAlphabetAndDiacritic(name)) && ([ alphabet, diacritic ] = match)) {
         /** @type {GlyphToFontlabMetrics} */ const metric = metrics[name]
         const layers = metric?.layers
         for (let layer in layers) {
           const { lsb, rsb } = layers[layer]
           const crostab = crostabCollection[layer] // logger(Xr().glyph(glyph).variation(variation).info(deco({ lsb, rsb })))
-          crostab.setCell(alphabet, diacritic, [lsb, rsb])
+          crostab.setCell(alphabet, diacritic, [ lsb, rsb ])
         }
       }
     }

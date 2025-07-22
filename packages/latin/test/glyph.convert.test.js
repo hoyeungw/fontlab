@@ -10,14 +10,14 @@ const REG_PUNC = /^(?:period|comma|quot|guil|brac|paren|hyph|under|exclam|quest|
 const REG_CURR = /^(?:currency|dollar|Euro|sterling|yen|cent)$/
 
 const GLYPH = 'glyph', LABEL = 'label', GLYPH2 = 'glyph2'
-const HEAD = [GLYPH, LABEL, GLYPH2]
-const toRow = x => [x, x = glyphToLabel(x), labelToGlyph(x)]
+const HEAD = [ GLYPH, LABEL, GLYPH2 ]
+const toRow = x => [ x, x = glyphToLabel(x), labelToGlyph(x) ]
 
 const tableCollection = {
-  nums: Table.from({ head: HEAD, rows: [...indexed(GLYPH_TO_CHAR, g => REG_NUMS.test(g), toRow)] }).sort(LABEL, asc),
-  punc: Table.from({ head: HEAD, rows: [...indexed(GLYPH_TO_CHAR, g => REG_PUNC.test(g), toRow)] }),
-  curr: Table.from({ head: HEAD, rows: [...indexed(GLYPH_TO_CHAR, g => REG_CURR.test(g), toRow)] }),
+  nums: Table.from({ head: HEAD, rows: [ ...indexed(GLYPH_TO_CHAR, g => REG_NUMS.test(g), toRow) ] }).sort(LABEL, asc),
+  punc: Table.from({ head: HEAD, rows: [ ...indexed(GLYPH_TO_CHAR, g => REG_PUNC.test(g), toRow) ] }),
+  curr: Table.from({ head: HEAD, rows: [ ...indexed(GLYPH_TO_CHAR, g => REG_CURR.test(g), toRow) ] }),
 }
-for (let [name, table] of indexed(tableCollection)) {
+for (let [ name, table ] of indexed(tableCollection)) {
   table |> decoTable |> says[name]
 }

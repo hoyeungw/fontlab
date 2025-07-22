@@ -79,19 +79,19 @@ export const chooseExclamQuest = (match, key, tail) => {
 }
 
 export const PUNC_ENTS = makeReplaceable([
-  [/^(quote)(.*)/g, chooseQuote],
-  [/^((?:paren|brac|guil).*)(left|right)/g, chooseBrac],
-  [/^(exclam|quest).*((?:down)?)/g, chooseExclamQuest],
-  [/tilde$/g, '[~]'],
-  [/(?<=.)single?/g, '.1'],
-  [/(?<=.)lemot|dbl/g, '.2'],
-  [/(?<=.)down/g, '.d'],
-  [/(?<=.)left/g, '.l'],
-  [/(?<=.)right/g, '.r'],
-  [/(?<=.)base/g, '.bs'],
-  [/greater/g, '>'],
-  [/less/g, '<'],
-  [/equal/g, '='],
+  [ /^(quote)(.*)/g, chooseQuote ],
+  [ /^((?:paren|brac|guil).*)(left|right)/g, chooseBrac ],
+  [ /^(exclam|quest).*((?:down)?)/g, chooseExclamQuest ],
+  [ /tilde$/g, '[~]' ],
+  [ /(?<=.)single?/g, '.1' ],
+  [ /(?<=.)lemot|dbl/g, '.2' ],
+  [ /(?<=.)down/g, '.d' ],
+  [ /(?<=.)left/g, '.l' ],
+  [ /(?<=.)right/g, '.r' ],
+  [ /(?<=.)base/g, '.bs' ],
+  [ /greater/g, '>' ],
+  [ /less/g, '<' ],
+  [ /equal/g, '=' ],
 ])
 
 export const brOnPunc = tx => (/^[^a-zA-Z]$/.test(tx) ? bracket(tx) : tx)

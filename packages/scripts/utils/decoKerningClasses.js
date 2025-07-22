@@ -1,9 +1,11 @@
-import {
-  decoFlat,
-  DecoObject,
-  DecoVector,
-} from '@spare/logger'
+import { decoFlat, decoObject, decoVector } from '@spare/logger'
+import { mapVal }                           from '@vect/object-mapper'
+import { mapper }                           from '@vect/vector-mapper'
 
-export const decoKerningClasses = DecoVector({ read: x => decoFlat(x?.toObject()) })
-const decoGroupedEntries = DecoObject({ read: x => decoFlat(x?.toObject()) })
+// export const decoKerningClasses = DecoVector({ read: x => decoFlat(x?.toObject()) })
+// export const decoGroupedEntries = DecoObject({ read: x => decoFlat(x?.toObject()) })
+// export const decoGrouped = o => decoGroupedEntries(o).replace(/ +/g, ' ')
+
+export const decoKerningClasses = v => decoVector(mapper(v, v => decoFlat(v?.toObject())))
+export const decoGroupedEntries = o => decoObject(mapVal(o, v => decoFlat(v?.toObject)))
 export const decoGrouped = o => decoGroupedEntries(o).replace(/ +/g, ' ')

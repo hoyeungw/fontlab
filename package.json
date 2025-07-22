@@ -28,6 +28,8 @@
     "@foba/util": "^0.6.1",
     "@foba/vector": "^0.6.1",
     "@foba/vector-number": "^0.6.1",
+    "@iohub/iter": "^0.0.4",
+    "@iohub/pathinfo": "^0.0.4",
     "@rollup/plugin-json": "^6.1.0",
     "@spare/deco-func": "^0.16.29",
     "@spare/logger": "^0.16.29",

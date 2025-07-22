@@ -1,5 +1,5 @@
 import { groupedToSurject } from '@analys/convert'
-import { SideUtil }         from '@fontlab/enum-side'
+import { createSideCheck }  from '@fontlab/enum-side'
 import { asc, Latin }       from '@fontlab/latin'
 import { nullish, valid }   from '@typen/nullish'
 import { filterByValue }    from '@vect/object-select'
@@ -16,13 +16,13 @@ export class Grouped {
    * @returns {{}}
    */
   static from(groups, side) {
-    if (valid(side)) groups = groups.filter(SideUtil.factory(side))
+    if (valid(side)) groups = groups.filter(createSideCheck(side))
     const o = {}
     for (let group of groups.sort(groupAscending)) o[group.name] = Group.build(group)
     return o
   }
   static select(grouped, side) {
-    return filterByValue(grouped, SideUtil.factory(side))
+    return filterByValue(grouped, createSideCheck(side))
   }
 }
 

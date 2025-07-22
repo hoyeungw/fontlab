@@ -1,4 +1,4 @@
-import { PhenoGroupsIO }              from '../src/PhenoGroupsIO.js'
+import { GroupsIO }                   from '../src/GroupsIO.js'
 import { REGROUPS as GROUPS_CHALENE } from '../../../resources/schemes/GROUPS_CHALENE.js'
 
 const SRC = './resources/metrics'
@@ -7,10 +7,10 @@ const FILE = 'Chalene'
 const VFM = '.vfm'
 const XLSX = '.xlsx'
 
-// PhenoGroupsIO
+// GroupsIO
 //   .exportRegrouped(SRC + '/' + FILE + VFM, DEST + '/' + FILE + '-regrouped' + VFM, GROUPS_CHALENE)
 //   .then()
 
-PhenoGroupsIO
+GroupsIO
   .exportRegroupsScheme(GROUPS_CHALENE, DEST + '/' + FILE + '-regroups-scheme' + XLSX)
   .then()

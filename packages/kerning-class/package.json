@@ -3,9 +3,9 @@
   "version": "0.1.6",
   "description": "a function to handle fontlab kerning class",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": "./index.js",
   "files": [
-    "dist"
+    "index.js"
   ],
   "engines": {
     "node": ">=22.0.0"
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoyeungw/ject.git"
+    "url": "git+https://github.com/hoyeungw/fontlab.git"
   },
   "keywords": [
     "ject",
@@ -43,8 +43,8 @@
   "author": "Hoyeung Wong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hoyeungw/ject"
+    "url": "https://github.com/hoyeungw/fontlab"
   },
-  "homepage": "https://github.com/hoyeungw/ject#readme",
+  "homepage": "https://github.com/hoyeungw/fontlab#readme",
   "gitHead": "4ec4dab0cf1636fa4a01dfd3651c62e8b4ac8d75"
 }

@@ -1,4 +1,4 @@
-import { PhenoPairsIO } from '../src/PhenoPairsIO'
+import { PairsIO } from '../src/PairsIO.js'
 
 const LAYER = 'Regular'
 const SRC = './static'
@@ -9,8 +9,8 @@ const SRC_VFM = SRC + '/' + BASE + '.vfm'
 const DEST_XLSX = DEST + '/' + BASE + '-pairs.xlsx'
 
 const workflow = async () => {
-  // await PhenoPairsIO.exportPairs(SRC_VFM, DEST_XLSX)
-  await PhenoPairsIO.importPairs(SRC_VFM, DEST_XLSX)
+  // await PairsIO.exportPairs(SRC_VFM, DEST_XLSX)
+  await PairsIO.importPairs(SRC_VFM, DEST_XLSX)
 }
 
 workflow().then()

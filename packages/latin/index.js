@@ -7,9 +7,9 @@ export {
   ORTHO_ITALIAN,
   GROUP_SCHEME_LOWER,
   GROUP_SCHEME_UPPER,
-} from './asset/index'
+} from './asset/index.js'
 
-export { Latin } from './src/Latin'
+export { Latin } from './src/Latin.js'
 
 export {
   weightToShort,
@@ -19,4 +19,4 @@ export {
   stringValue,
   glyphToLabel,
   labelToGlyph,
-} from './util/index'
+} from './util/index.js'

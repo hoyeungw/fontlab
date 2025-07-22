@@ -1,11 +1,8 @@
-import { subFileInfos }   from '@acq/path'
-import { FONTLAB, LAYER } from '@fontlab/constants'
-import { says }           from '@spare/xr'
-import { REGROUPS }       from '../../resources/schemes/GROUPS_CHALENE.js'
-import { PhenoGroupsIO }  from './src/PhenoGroupsIO.js'
-import { PhenoIO }        from './src/PhenoIO.js'
-import { PhenoMetricsIO } from './src/PhenoMetricsIO.js'
-import { PhenoPairsIO }   from './src/PhenoPairsIO.js'
+import { subFileInfos }                             from '@acq/path'
+import { $ }                                        from '@spare/xr'
+import { GroupsIO, MetricsIO, PairsIO, TypefaceIO } from './index.js'
+
+import { REGROUPS } from '../../resources/schemes/GROUPS_CHALENE.js'
 
 const REGROUPED = '-regrouped'
 const GROUPS = '-groups'
@@ -23,26 +20,26 @@ export class Workflow {
       await Workflow.export(base, layer)
     }
   }
-  static async export(font, layer) {
-    const SRC_VFM = Workflow.SRC + '/' + font + VFM
-    const DEST_VFM = Workflow.DEST + '/' + font + REGROUPED + VFM
-    const DEST_SIDEBEARINGS_XLSX = Workflow.DEST + '/' + font + REGROUPED + SIDEBEARINGS + XLSX
-    const DEST_PAIRS_XLSX = Workflow.DEST + '/' + font + REGROUPED + PAIRS + XLSX
-
-    says[FONTLAB].export(font)[LAYER](layer)(SRC_VFM)
-    await PhenoGroupsIO.exportRegrouped(SRC_VFM, DEST_VFM, REGROUPS, layer)
-    await PhenoIO.separateVfm(DEST_VFM)
-    await PhenoMetricsIO.exportSidebearings(DEST_VFM, DEST_SIDEBEARINGS_XLSX)
-    await PhenoPairsIO.exportPairs(DEST_VFM, DEST_PAIRS_XLSX, layer)
+  static async export(fontName, layer) {
+    const SRC_VFM = Workflow.SRC + '/' + fontName + VFM
+    const DEST_VFM = Workflow.DEST + '/' + fontName + REGROUPED + VFM
+    const DEST_SIDEBEARINGS_XLSX = Workflow.DEST + '/' + fontName + REGROUPED + SIDEBEARINGS + XLSX
+    const DEST_PAIRS_XLSX = Workflow.DEST + '/' + fontName + REGROUPED + PAIRS + XLSX
+    console.log($.fontlab('export').font(fontName).layer(layer).from(SRC_VFM).dest(DEST_VFM))
+    // says[FONTLAB].export(font)[LAYER](layer)(SRC_VFM)
+    await GroupsIO.exportRegrouped(SRC_VFM, DEST_VFM, REGROUPS, layer)
+    await TypefaceIO.separateTypeface(DEST_VFM)
+    await MetricsIO.exportSidebearings(DEST_VFM, DEST_SIDEBEARINGS_XLSX)
+    await PairsIO.exportPairs(DEST_VFM, DEST_PAIRS_XLSX, layer)
   }
   static async import(font) {
     const DEST_VFM = Workflow.DEST + '/' + font + REGROUPED + VFM
     const DEST_SIDEBEARINGS_XLSX = Workflow.DEST + '/' + font + REGROUPED + SIDEBEARINGS + XLSX
     const DEST_PAIRS_XLSX = Workflow.DEST + '/' + font + REGROUPED + PAIRS + XLSX
 
-    await PhenoMetricsIO.importSidebearings(DEST_VFM, DEST_SIDEBEARINGS_XLSX)
-    await PhenoPairsIO.importPairs(DEST_VFM, DEST_PAIRS_XLSX)
-    await PhenoIO.separateVfm(DEST_VFM)
+    await MetricsIO.importSidebearings(DEST_VFM, DEST_SIDEBEARINGS_XLSX)
+    await PairsIO.importPairs(DEST_VFM, DEST_PAIRS_XLSX)
+    await TypefaceIO.separateTypeface(DEST_VFM)
   }
 }
 

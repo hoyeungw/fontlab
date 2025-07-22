@@ -41,6 +41,12 @@ importers:
       '@foba/vector-number':
         specifier: ^0.6.1
         version: 0.6.1
+      '@iohub/iter':
+        specifier: ^0.0.4
+        version: 0.0.4
+      '@iohub/pathinfo':
+        specifier: ^0.0.4
+        version: 0.0.4
       '@rollup/plugin-json':
         specifier: ^6.1.0
         version: 6.1.0(rollup@4.45.1)
@@ -267,60 +273,6 @@ importers:
         specifier: ^0.16.16
         version: 0.16.16
 
-  packages/pheno:
-    dependencies:
-      '@analys/enum-join-modes':
-        specifier: ^0.7.5
-        version: 0.7.5
-      '@analyz/table':
-        specifier: ^0.1.3
-        version: 0.1.3
-      '@analyz/table-algebra':
-        specifier: ^0.1.3
-        version: 0.1.3
-      '@aryth/distinct-vector':
-        specifier: ^0.7.8
-        version: 0.7.8
-      '@fontlab/constants':
-        specifier: workspace:^
-        version: link:../constants
-      '@fontlab/enum-scope':
-        specifier: workspace:^
-        version: link:../enum-scope
-      '@fontlab/enum-side':
-        specifier: workspace:^
-        version: link:../enum-side
-      '@fontlab/latin':
-        specifier: workspace:^
-        version: link:../latin
-      '@fontlab/master':
-        specifier: workspace:^
-        version: link:../master
-      '@fontlab/metric':
-        specifier: workspace:^
-        version: link:../metric
-      '@typen/num-strict':
-        specifier: ^0.2.0
-        version: 0.2.0
-      '@vect/nested':
-        specifier: ^0.8.6
-        version: 0.8.6
-      '@vect/object-index':
-        specifier: ^0.8.6
-        version: 0.8.6
-      '@vect/object-init':
-        specifier: ^0.8.6
-        version: 0.8.6
-      '@vect/object-mapper':
-        specifier: ^0.8.6
-        version: 0.8.6
-      '@vect/object-update':
-        specifier: ^0.8.6
-        version: 0.8.6
-      '@vect/vector-algebra':
-        specifier: ^0.8.6
-        version: 0.8.6
-
   packages/scripts:
     dependencies:
       '@acq/path':
@@ -377,12 +329,15 @@ importers:
       '@fontlab/metric':
         specifier: workspace:^
         version: link:../metric
-      '@fontlab/pheno':
+      '@fontlab/typeface':
         specifier: workspace:^
-        version: link:../pheno
+        version: link:../typeface
       '@palett/presets':
         specifier: ^0.12.28
         version: 0.12.28
+      '@spare/deco-path':
+        specifier: ^0.16.29
+        version: 0.16.29
       '@spare/logger':
         specifier: ^0.16.29
         version: 0.16.29
@@ -404,9 +359,66 @@ importers:
       '@vect/object-mapper':
         specifier: ^0.8.6
         version: 0.8.6
+      '@vect/vector-mapper':
+        specifier: ^0.8.6
+        version: 0.8.6
       xlsx:
         specifier: ^0.18.5
         version: 0.18.5
+
+  packages/typeface:
+    dependencies:
+      '@analys/enum-join-modes':
+        specifier: ^0.7.5
+        version: 0.7.5
+      '@analyz/table':
+        specifier: ^0.1.3
+        version: 0.1.3
+      '@analyz/table-algebra':
+        specifier: ^0.1.3
+        version: 0.1.3
+      '@aryth/distinct-vector':
+        specifier: ^0.7.8
+        version: 0.7.8
+      '@fontlab/constants':
+        specifier: workspace:^
+        version: link:../constants
+      '@fontlab/enum-scope':
+        specifier: workspace:^
+        version: link:../enum-scope
+      '@fontlab/enum-side':
+        specifier: workspace:^
+        version: link:../enum-side
+      '@fontlab/latin':
+        specifier: workspace:^
+        version: link:../latin
+      '@fontlab/master':
+        specifier: workspace:^
+        version: link:../master
+      '@fontlab/metric':
+        specifier: workspace:^
+        version: link:../metric
+      '@typen/num-strict':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@vect/nested':
+        specifier: ^0.8.6
+        version: 0.8.6
+      '@vect/object-index':
+        specifier: ^0.8.6
+        version: 0.8.6
+      '@vect/object-init':
+        specifier: ^0.8.6
+        version: 0.8.6
+      '@vect/object-mapper':
+        specifier: ^0.8.6
+        version: 0.8.6
+      '@vect/object-update':
+        specifier: ^0.8.6
+        version: 0.8.6
+      '@vect/vector-algebra':
+        specifier: ^0.8.6
+        version: 0.8.6
 
 packages:
 
@@ -932,6 +944,14 @@ packages:
   '@foba/vector@0.6.1':
     resolution: {integrity: sha512-X7F4gd7Q+ZgVdGFO4bwuHw22GGTE0YPq8S6+t9QP1sh+RHjYU+5li+1mVvqRWemkCZcYftbVy0t2iGK8E61I5g==}
 
+  '@iohub/iter@0.0.4':
+    resolution: {integrity: sha512-hKbcAgH93AKgtc5bngzWvELgnTE+6H0oFp6zS/Zfeuvpmffd1QY1hDVyqH/6AoYIKsN0pWcE/FG1Lopb0sWQTQ==}
+    engines: {node: '>=22.0.0'}
+
+  '@iohub/pathinfo@0.0.4':
+    resolution: {integrity: sha512-m7JP68ZlFIQbvbbPhm9a7Lu5+hXUAmD5dWvACIAldGV2sxhPcOPN417dAyJvwApzlAqXLhaRbwG4DGv53t50DQ==}
+    engines: {node: '>=22.0.0'}
+
   '@ject/mixin@0.1.2':
     resolution: {integrity: sha512-Fd/fVhW6Z84kK2Jb2PkP0pic/Vsp6RBMZXwxgndDS6fdNaQnnPsOtEL0Yqu+9vOHDimR5S3AgYIK29JrfAljlg==}
     engines: {node: '>=22.0.0'}
@@ -984,6 +1004,10 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@orche/collect@0.0.1':
+    resolution: {integrity: sha512-LaNQlV5w0WqkpwvcV5a/9kdSJPBW2FZnxSNkhfVJ0PLffENarFky4MZ8KAPe6mibLfvzK8j7g6puCWEaw5o1QA==}
+    engines: {node: '>=22.0.0'}
 
   '@palett/cards@0.10.5':
     resolution: {integrity: sha512-VIR+dwyNAmh06j/kR/ZzcNcpI86uTrd3uQFIVrbyd5NSflv4zG6hSmBV66y1IGqzgLQukDiCrCJvzpd7D9IyWQ==}
@@ -1301,16 +1325,16 @@ packages:
     resolution: {integrity: sha512-Xs/MalcXREstid/kFNtSzJBeg5gmmgabMqZwzHOlFCF5k+HpbfylTDaFFWIVqhVBKot6ZkKPXuP6OBZ6GGYr7w==}
     engines: {node: '>=22.0.0'}
 
+  '@spare/deco-path@0.16.29':
+    resolution: {integrity: sha512-cEXjRPrsBRmjgapIOn/1Ee0EesNqlcGV/qRwuADE7/sAwyirqSVFrzWcn9K4z6UkHUGZKYC/4fqs0YbcLXklZQ==}
+    engines: {node: '>=22.0.0'}
+
   '@spare/deco-samples@0.16.29':
     resolution: {integrity: sha512-6LvqjTeqHcWnK3p+t5i8EwlWsXHUA8/ov2pDpLPfHetNUUOxB33O1pfu08lIMoPehMz0c+TxcxHnlaP/jkOhaA==}
     engines: {node: '>=22.0.0'}
 
   '@spare/deco-string@0.15.16':
     resolution: {integrity: sha512-IUB4xy4XbGL2zdkmbwVDvVdLkSqXvPrsCYav8ybmSJrGhF30eVjI1fKCLG9Xhy8/Ls0weGjhcoUPCI3YEPYzYQ==}
-
-  '@spare/deco-string@0.16.27':
-    resolution: {integrity: sha512-OhpBoOJYm5T9NZBehHAoIOP+zdQR0R3zGcK9qUgRs6ltmCNlhapzaaONWpAFNKCRpgaD5b0TNDgSfE5xAE44lQ==}
-    engines: {node: '>=22.0.0'}
 
   '@spare/deco-string@0.16.29':
     resolution: {integrity: sha512-YSSjfJMV64LUTWI0p2k7BDaKrnoVLnY1YH3ycB+zZpsBnQJplMMARDVAT9ChlZNKsBj7pLxgQZ44btBsbMvLXw==}
@@ -1322,10 +1346,6 @@ packages:
 
   '@spare/deco-vector@0.15.16':
     resolution: {integrity: sha512-n/bV6TZTAQ5uMM9LE+z5uP50+0K5pT4lBVw4ubk1H/cL18a6uv9cRaTiHdu3lXUZpC3xL7zu5WUcUuLOD9UAbQ==}
-
-  '@spare/deco-vector@0.16.27':
-    resolution: {integrity: sha512-bjkRhewQwpWZ5hnqTaQEvqDdhGj+69pyUnnZ8N1+6X1TIDLBVhVscQJ5EZm78y6TzwywdhNnLEUqe23B0JZqvA==}
-    engines: {node: '>=22.0.0'}
 
   '@spare/deco-vector@0.16.29':
     resolution: {integrity: sha512-9x3SQsA8JJbrBpg+K4dhPzOgwaFoCQDO0WlnpFVK0FkK3J35+tAUnSlDNb6gLqaNnTbryOXwcRVvcBgtmAXweA==}
@@ -1379,20 +1399,12 @@ packages:
     resolution: {integrity: sha512-jDw0VjrsRfSwON9YEcQWzxagaaZ8v9AaVDKwfXhG6+BLxH+KJSDpNO7nybV02TLPnpQ7ZOpzr5itha0hLlXQGg==}
     engines: {node: '>=22.0.0'}
 
-  '@spare/node@0.16.27':
-    resolution: {integrity: sha512-Ga94qN/5rH6fV3b0wfpX8sfrB4TBW777FGeUgRGDBf+OWCi1oWr9NfqGQ7lmteovRB9qMGn7fUGFq1EHfJlxnQ==}
-    engines: {node: '>=22.0.0'}
-
   '@spare/node@0.16.29':
     resolution: {integrity: sha512-zcbq4+sHTH6RGIjHOCuN0m02md7GH9L6DeYMZuk471LlsDLNaMTPKCmnHXS9rpnJrxPrAE7dkK9mPKO4mkg3YA==}
     engines: {node: '>=22.0.0'}
 
   '@spare/phrasing@0.16.16':
     resolution: {integrity: sha512-B51/s/koraTO+tKJmU4VEKzO9tx7hO4b6GX9y5VT439G62Huk/Fl9Gcrrwjxk8FrQXILH1UE7rb4PfRtBX86uw==}
-    engines: {node: '>=22.0.0'}
-
-  '@spare/plot@0.16.27':
-    resolution: {integrity: sha512-B7fmx459jU0XdNsl9gDBeWm7P1Ca9hcRIOXH/26XhHEbjtVBTRDLBHXZL6Nd0sq7QLACV58L4h+CR3SDKZolEw==}
     engines: {node: '>=22.0.0'}
 
   '@spare/plot@0.16.29':
@@ -1427,10 +1439,6 @@ packages:
   '@spare/ripper@0.16.16':
     resolution: {integrity: sha512-7F0SQH6ZkYpdFisQNfizRWcvgMNq6T3K+ma34O4WsGTnFcyT0VIYnwC6zXAlBh3PfoGa04rIKHBZj++Eqv4ZRQ==}
     engines: {node: '>=22.0.0'}
-
-  '@spare/serial@0.16.27':
-    resolution: {integrity: sha512-vfkbypeKE6+yofgJA3nCRaxAQfGI9+DavvdhgwUCpRODbmJHTyq+8632dLG8I5JZa+OIsEahWnhxhv+v4vazOg==}
-    engines: {serial: '>=22.0.0'}
 
   '@spare/serial@0.16.29':
     resolution: {integrity: sha512-hIgxzaKEmZS+QTfOd3PeTU98tUZVSgfT/kcoMUqn/OXnxpDp+WhTVSyNAeKdrESq7rer47nzw8gedou+DI6Zaw==}
@@ -2129,8 +2137,8 @@ packages:
   duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
 
-  electron-to-chromium@1.5.183:
-    resolution: {integrity: sha512-vCrDBYjQCAEefWGjlK3EpoSKfKbT10pR4XXPdn65q7snuNOZnthoVpBfZPykmDapOKfoD+MMIPG8ZjKyyc9oHA==}
+  electron-to-chromium@1.5.189:
+    resolution: {integrity: sha512-y9D1ntS1ruO/pZ/V2FtLE+JXLQe28XoRpZ7QCCo0T8LdQladzdcOVQZH/IWLVJvCw12OGMb6hYOeOAjntCmJRQ==}
 
   enquirer@2.4.1:
     resolution: {integrity: sha512-rRqJg/6gd538VHvR3PSrdRBb/1Vy2YfzHqzvbhGIQpDRKIa4FgV/54b5Q1xYSxOOwKvjXweS26E0Q+nAMwp2pQ==}
@@ -2348,8 +2356,8 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
-  picomatch@4.0.2:
-    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+  picomatch@4.0.3:
+    resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
   pify@4.0.1:
@@ -3546,6 +3554,12 @@ snapshots:
       '@foba/vector-number': 0.6.1
       '@foba/vector-string': 0.6.1
 
+  '@iohub/iter@0.0.4':
+    dependencies:
+      '@orche/collect': 0.0.1
+
+  '@iohub/pathinfo@0.0.4': {}
+
   '@ject/mixin@0.1.2':
     dependencies:
       '@ject/rename': 0.1.2
@@ -3605,6 +3619,8 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
+
+  '@orche/collect@0.0.1': {}
 
   '@palett/cards@0.10.5':
     dependencies:
@@ -3861,7 +3877,7 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.8
       estree-walker: 2.0.2
-      picomatch: 4.0.2
+      picomatch: 4.0.3
     optionalDependencies:
       rollup: 4.45.1
 
@@ -4093,6 +4109,16 @@ snapshots:
       '@valjoux/format-time': 0.4.4
       '@vect/entries-mapper': 0.8.6
 
+  '@spare/deco-path@0.16.29':
+    dependencies:
+      '@palett/flopper': 0.12.28
+      '@palett/munsell': 0.12.28
+      '@palett/nuance-midtone': 0.12.28
+      '@spare/node': 0.16.29
+      '@spare/serial': 0.16.29
+      '@texting/charset-ansi': 0.2.6
+      '@texting/splitter': 0.2.6
+
   '@spare/deco-samples@0.16.29':
     dependencies:
       '@analys/convert': 0.7.5
@@ -4117,11 +4143,6 @@ snapshots:
       '@texting/fold': 0.1.13
       '@texting/splitter': 0.1.13
 
-  '@spare/deco-string@0.16.27':
-    dependencies:
-      '@palett/presets': 0.12.28
-      '@spare/node': 0.16.27
-
   '@spare/deco-string@0.16.29':
     dependencies:
       '@palett/presets': 0.12.28
@@ -4142,11 +4163,6 @@ snapshots:
       '@palett/presets': 0.11.6
       '@spare/deco': 0.15.16
       '@spare/vector-margin': 0.15.16
-
-  '@spare/deco-vector@0.16.27':
-    dependencies:
-      '@palett/presets': 0.12.28
-      '@spare/node': 0.16.27
 
   '@spare/deco-vector@0.16.29':
     dependencies:
@@ -4256,21 +4272,6 @@ snapshots:
       '@vect/matrix-mapper': 0.8.6
       '@vect/matrix-zipper': 0.8.6
 
-  '@spare/node@0.16.27':
-    dependencies:
-      '@aryth/comparer': 0.7.8
-      '@palett/convert': 0.12.28
-      '@palett/enum-ansi-codes': 0.12.28
-      '@palett/pres': 0.12.28
-      '@palett/util-ansi': 0.12.28
-      '@spare/serial': 0.16.27
-      '@texting/enum-brackets': 0.2.6
-      '@texting/enum-chars': 0.2.6
-      '@texting/lange': 0.2.6
-      '@texting/splitter': 0.2.6
-      '@typen/enum-data-types': 0.2.0
-      '@vect/matrix-index': 0.8.6
-
   '@spare/node@0.16.29':
     dependencies:
       '@aryth/comparer': 0.7.8
@@ -4288,23 +4289,10 @@ snapshots:
 
   '@spare/phrasing@0.16.16':
     dependencies:
-      '@spare/deco-vector': 0.16.27
+      '@spare/deco-vector': 0.16.29
       '@spare/enum-chars': 0.16.16
       '@spare/regex-phrasing': 0.16.16
       '@vect/vector-mapper': 0.8.6
-
-  '@spare/plot@0.16.27':
-    dependencies:
-      '@aryth/comparer': 0.7.8
-      '@palett/flopper': 0.12.28
-      '@palett/munsell': 0.12.28
-      '@palett/nuance-midtone': 0.12.28
-      '@spare/deco-string': 0.16.27
-      '@texting/bracket': 0.2.6
-      '@texting/charset-ansi': 0.2.6
-      '@texting/enum-chars': 0.2.6
-      '@texting/phrasing': 0.2.6
-      '@typen/enum-data-types': 0.2.0
 
   '@spare/plot@0.16.29':
     dependencies:
@@ -4350,29 +4338,10 @@ snapshots:
 
   '@spare/ripper@0.16.16':
     dependencies:
-      '@spare/deco-vector': 0.16.27
+      '@spare/deco-vector': 0.16.29
       '@spare/enum-chars': 0.16.16
       '@spare/phrasing': 0.16.16
       '@typen/nullish': 0.2.0
-
-  '@spare/serial@0.16.27':
-    dependencies:
-      '@palett/dye': 0.12.28
-      '@palett/pres': 0.12.28
-      '@palett/util-ansi': 0.12.28
-      '@texting/charset-ansi': 0.2.6
-      '@texting/charset-fullwidth': 0.2.6
-      '@texting/enum-chars': 0.2.6
-      '@texting/lange': 0.2.6
-      '@texting/padder': 0.2.6
-      '@texting/splitter': 0.2.6
-      '@texting/string-value': 0.2.6
-      '@typen/enum-data-types': 0.2.0
-      '@typen/literal': 0.2.0
-      '@typen/num-strict': 0.2.0
-      '@vect/enum-matrix-directions': 0.6.13
-      '@vect/matrix-index': 0.8.6
-      '@vect/vector-init': 0.8.6
 
   '@spare/serial@0.16.29':
     dependencies:
@@ -4435,7 +4404,7 @@ snapshots:
 
   '@spare/tap@0.16.16':
     dependencies:
-      '@spare/deco-vector': 0.16.27
+      '@spare/deco-vector': 0.16.29
       '@spare/enum-chars': 0.16.16
       '@spare/phrasing': 0.16.16
       '@typen/nullish': 0.2.0
@@ -4779,7 +4748,7 @@ snapshots:
     dependencies:
       '@analyz/crostab': 0.1.3
       '@aryth/math': 0.7.8
-      '@spare/plot': 0.16.27
+      '@spare/plot': 0.16.29
       '@texting/enum-chars': 0.2.6
       '@valjoux/eta': 0.4.4
       '@valjoux/timestamp': 0.4.4
@@ -5216,7 +5185,7 @@ snapshots:
   browserslist@4.25.1:
     dependencies:
       caniuse-lite: 1.0.30001727
-      electron-to-chromium: 1.5.183
+      electron-to-chromium: 1.5.189
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.25.1)
 
@@ -5261,7 +5230,7 @@ snapshots:
 
   duplexer@0.1.2: {}
 
-  electron-to-chromium@1.5.183: {}
+  electron-to-chromium@1.5.189: {}
 
   enquirer@2.4.1:
     dependencies:
@@ -5445,7 +5414,7 @@ snapshots:
 
   picomatch@2.3.1: {}
 
-  picomatch@4.0.2: {}
+  picomatch@4.0.3: {}
 
   pify@4.0.1: {}
 

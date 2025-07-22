@@ -1,10 +1,8 @@
-// noinspection JSBitwiseOperatorUsage,CommaExpressionJS,RegExpRedundantEscape
-
 import { round }        from '@aryth/math'
 import { parseNum }     from '@typen/num-strict'
 import { isNumeric }    from '@typen/numeral'
-import { calc }         from './calc'
-import { metricToJson } from './json'
+import { calc }         from './calc.js'
+import { metricToJson } from './json.js'
 
 export class Metric {
   lsb
@@ -31,18 +29,10 @@ export class Metric {
     return new Metric(metrics)
   }
 
-  get relLSB() {
-    return this.lpt?.length ? this.lpt : round(this.lsb)
-  }
-  get relRSB() {
-    return this.rpt?.length ? this.rpt : round(this.rsb)
-  }
-  set sb(v) {
-    this.lsb = v, this.rsb = v
-  }
-  set pt(v) {
-    this.lpt = v, this.rpt = v
-  }
+  get relLSB() { return this.lpt?.length ? this.lpt : round(this.lsb) }
+  get relRSB() { return this.rpt?.length ? this.rpt : round(this.rsb) }
+  set sb(v) { this.lsb = v, this.rsb = v }
+  set pt(v) { this.lpt = v, this.rpt = v }
   update(side, expr, dict) {
     side = (side & 1) ? 'l' : (side & 2) ? 'r' : ''
     const SBKEY = side + 'sb', PTKEY = side + 'pt'
@@ -57,9 +47,7 @@ export class Metric {
     }
     return this
   }
-  toJson() {
-    return metricToJson(this)
-  }
+  toJson() { return metricToJson(this) }
   toString() {
     return `[sb] (${this.lsb},${this.rsb}) [wd] (${this.width}) [x] (${this.xlo},${this.xhi}) [y] (${this.ylo},${this.yhi})`
   }

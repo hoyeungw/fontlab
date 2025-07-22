@@ -25,9 +25,9 @@ export class KerningReader {
     const crostab = CrosTab.from({ side, head, title: 'metrics' })
 
     const masters = json.masters
-    for (const [glyph, { pairs }] of Object.entries(masters)) {
+    for (const [ glyph, { pairs } ] of Object.entries(masters)) {
       if (this.matchAlphabet(glyph)) {
-        for (const [layer, metricParams] of Object.entries(fontlabMetric.layers)) {
+        for (const [ layer, metricParams ] of Object.entries(fontlabMetric.layers)) {
           const { lsb, rsb } = metricParams
           crostab.setCell(glyph, layer + '.L', round(lsb))
           crostab.setCell(glyph, layer + '.R', round(rsb))

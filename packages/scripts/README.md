@@ -23,9 +23,9 @@
 
 [badge-pp-install-size]: https://flat.badgen.net/packagephobia/install/@fontlab/metric
 
-[badge-github-last-commit]: https://flat.badgen.net/github/last-commit/hoyeungw/ject
+[badge-github-last-commit]: https://flat.badgen.net/github/last-commit/hoyeungw/fontlab
 
-[badge-github-commit-count]: https://flat.badgen.net/github/commits/hoyeungw/ject
+[badge-github-commit-count]: https://flat.badgen.net/github/commits/hoyeungw/fontlab
 
 [//]: <> (Link)
 
@@ -33,7 +33,7 @@
 
 [url-pp]: https://packagephobia.now.sh/result?p=@fontlab/metric
 
-[url-github]: https://github.com/hoyeungw/ject
+[url-github]: https://github.com/hoyeungw/fontlab
 
 ##### A metrics helper
 

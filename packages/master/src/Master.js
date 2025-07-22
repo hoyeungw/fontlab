@@ -44,26 +44,26 @@ export class Master {
   }
 
   get flattenPairs() {
-    return this.pairs.flatten(Grouped.select(this.grouped, Side.Verso), Grouped.select(this.grouped, Side.Recto))
+    return this.pairs.flatten(Grouped.select(this.grouped, Side.Left), Grouped.select(this.grouped, Side.Right))
   }
   updatePairs(nextPairs) {
     return this.pairs.overwrite(nextPairs)
   }
   regroup(regroups, xGlyphs, yGlyphs) {
-    const { Verso, Recto } = Side, { toSurject } = LetterGrouped.prototype
-    if (!xGlyphs) xGlyphs = this.glyphs(Verso)
-    if (!yGlyphs) yGlyphs = this.glyphs(Recto)
-    const surjV = toSurject.apply(Grouped.from(regroups, Verso), xGlyphs)  // ...master.glyphs(Verso), ...pheno.glyphs(layer)
-    const surjR = toSurject.apply(Grouped.from(regroups, Recto), yGlyphs)  // ...master.glyphs(Recto), ...pheno.glyphs(layer)
+    const { Left, Right } = Side, { toSurject } = LetterGrouped.prototype
+    if (!xGlyphs) xGlyphs = this.glyphs(Left)
+    if (!yGlyphs) yGlyphs = this.glyphs(Right)
+    const surjV = toSurject.apply(Grouped.from(regroups, Left), xGlyphs)  // ...master.glyphs(Left), ...typeface.glyphs(layer)
+    const surjR = toSurject.apply(Grouped.from(regroups, Right), yGlyphs)  // ...master.glyphs(Right), ...typeface.glyphs(layer)
     const groupedV = surjectToGrouped(surjV)
     const groupedR = surjectToGrouped(surjR)
     const
       by = (k, v) => AT.test(k) && v?.length,
-      toVerso = (k, v) => [k = offAT(k), Group.verso(k, v)],
-      toRecto = (k, v) => [k = offAT(k), Group.recto(k, v)]
+      toLeft = (k, v) => [ k = offAT(k), Group.left(k, v) ],
+      toRight = (k, v) => [ k = offAT(k), Group.right(k, v) ]
     return Master.build(
       this.name,
-      ob(...indexed(groupedV, by, toVerso), ...indexed(groupedR, by, toRecto)),
+      ob(...indexed(groupedV, by, toLeft), ...indexed(groupedR, by, toRight)),
       this.flattenPairs.regroup(surjV, surjR, Stat.min),
     )
   }
@@ -85,5 +85,5 @@ export class Master {
 }
 
 export function coordToNum(x, y, v) {
-  return [x, y, parseNum(v)]
+  return [ x, y, parseNum(v) ]
 }

@@ -8,13 +8,14 @@ import { Side }                                                   from '@fontlab
 import { asc, glyphToLabel, Latin, shortToWeight, weightToShort } from '@fontlab/latin'
 import { Master }                                                 from '@fontlab/master'
 import { Metric }                                                 from '@fontlab/metric'
-import { isNumeric, parseNum }                                    from '@typen/num-strict'
+import { parseNum }                                               from '@typen/num-strict'
 import { transpose }                                              from '@vect/nested'
 import { gather, vectorToObject }                                 from '@vect/object-init'
 import { indexed, indexedTo, mapKeyVal, mapVal }                  from '@vect/object-mapper'
 import { appendValue }                                            from '@vect/object-update'
 import { acquire }                                                from '@vect/vector-algebra'
 import { getFace }                                                from '../asset/index.js'
+import { valIsNum, valToNum }                                     from './utils.js'
 
 
 // noinspection CommaExpressionJS,DuplicatedCode
@@ -32,40 +33,24 @@ export class Typeface {
     if (metrics) this.layerToMetrics = transpose(mapVal(metrics, ({ layers }) => mapVal(layers, Metric.build)))
     this.upm = upm
   }
-  static build(fontlabJson) {
-    return new Typeface(fontlabJson)
-  }
+  static build(fontlabJson) { return new Typeface(fontlabJson) }
 
-  get layers() {
-    return Object.keys(this.layerToMaster)
-  }
-  get shortenLayers() {
-    return this.layers.map(weightToShort)
-  }
-  get face() {
-    return getFace(this.layerToMaster)
-  }
-  get glyphLayerToMetric() {
-    return transpose(this['layerToMetrics'])
-  }
+  get layers() { return Object.keys(this.layerToMaster) }
+  get shortenLayers() { return this.layers.map(weightToShort) }
+  get face() { return getFace(this.layerToMaster) }
+  get glyphLayerToMetric() { return transpose(this['layerToMetrics']) }
 
   /**
    * @param {string} [layer]
    * @return {Master}
    */
-  master(layer) {
-    return this.layerToMaster[layer ?? this.face]
-  }
+  master(layer) { return this.layerToMaster[layer ?? this.face] }
   /**
    * @param {string} [layer]
    * @return {Object<string,Metric>}
    */
-  metrics(layer) {
-    return this.layerToMetrics[layer ?? this.face]
-  }
-  glyphs(layer) {
-    return Object.keys(this.metrics(layer ?? this.face)).sort(asc)
-  }
+  metrics(layer) { return this.layerToMetrics[layer ?? this.face] }
+  glyphs(layer) { return Object.keys(this.metrics(layer ?? this.face)).sort(asc) }
 
   alphabetGrouped(layer) {
     let grouped = {}, x
@@ -74,11 +59,11 @@ export class Typeface {
     return grouped
   }
   sidebearingTable(scope = Scope.Upper) {
-    const nameToHead = name => [GLYPH, name + '.' + L, name + '.' + R]
-    const kvToRow = (glyph, metric) => [glyph, metric.relLSB, metric.relRSB]
+    const nameToHead = name => [ GLYPH, name + '.' + L, name + '.' + R ]
+    const kvToRow = (glyph, metric) => [ glyph, metric.relLSB, metric.relRSB ]
     const tables = indexedTo(this.layerToMetrics, (k, ms) => Table.build(nameToHead(k), null, k)
       .collect(indexed(ms, Latin.factory(scope), kvToRow)))
-    const table = Algebra.joins(UNION, [GLYPH], '', ...tables)
+    const table = Algebra.joins(UNION, [ GLYPH ], '', ...tables)
     table.headward
       .grow(GLYPH, glyphToLabel, LABEL, GLYPH)
       .grow(GLYPH, Latin.letterOrEmpty, LETTER, LABEL)
@@ -88,15 +73,13 @@ export class Typeface {
   updateMaster(regroups) {
     for (let layer in this.layerToMaster) {
       const master = this.layerToMaster[layer], metricGlyphs = this.glyphs(layer)
-      const xGlyphs = distinct(acquire(master.glyphs(Side.Verso), metricGlyphs))
-      const yGlyphs = distinct(acquire(master.glyphs(Side.Verso), metricGlyphs))
+      const xGlyphs = distinct(acquire(master.glyphs(Side.Left), metricGlyphs))
+      const yGlyphs = distinct(acquire(master.glyphs(Side.Left), metricGlyphs))
       this.layerToMaster[layer] = master.regroup(regroups, xGlyphs, yGlyphs)
     }
     return this
   }
-  updatePairs(nextPairs) {
-    return mapVal(this.layerToMaster, master => master.updatePairs(nextPairs))
-  }
+  updatePairs(nextPairs) { return mapVal(this.layerToMaster, master => master.updatePairs(nextPairs)) }
 
   /**
    *
@@ -110,28 +93,16 @@ export class Typeface {
       const metrics = this.metrics(shortToWeight(layer))
       const LN = layer + '.' + L, RN = layer + '.' + R
       if (!metrics || table?.height <= 0 || table?.coin(LN) < 0 || table?.coin(RN) < 0) continue
-      const lDict = gather(table.headward.entryIndexed([GLYPH, LN], valIsNum, valToNum)),
-        rDict = gather(table.headward.entryIndexed([GLYPH, RN], valIsNum, valToNum))
-      for (let [glyph, lsb, rsb] of table.headward.tripletIndexed([GLYPH, LN, RN])) {
+      const lDict = gather(table.headward.entryIndexed([ GLYPH, LN ], valIsNum, valToNum)),
+        rDict = gather(table.headward.entryIndexed([ GLYPH, RN ], valIsNum, valToNum))
+      for (let [ glyph, lsb, rsb ] of table.headward.tripletIndexed([ GLYPH, LN, RN ])) {
         if (!(glyph = metrics[glyph])) continue
         if (glyph.lpt === '') glyph.lpt = null
         if (glyph.rpt === '') glyph.rpt = null
-        if (glyph.lsb !== parseNum(lsb)) {
-          stat[layer].lsb++, glyph.update(Side.Verso, lsb, lDict)
-        }
-        if (glyph.rsb !== parseNum(rsb)) {
-          stat[layer].rsb++, glyph.update(Side.Recto, rsb, rDict)
-        }
+        if (glyph.lsb !== parseNum(lsb)) { stat[layer].lsb++, glyph.update(Side.Left, lsb, lDict) }
+        if (glyph.rsb !== parseNum(rsb)) { stat[layer].rsb++, glyph.update(Side.Right, rsb, rDict) }
       }
     }
     return stat
   }
-}
-
-export function valIsNum(_, v) {
-  return isNumeric(v)
-}
-
-export function valToNum(k, v) {
-  return [k, parseNum(v)]
 }

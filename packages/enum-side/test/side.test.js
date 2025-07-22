@@ -1,17 +1,17 @@
-import { Side } from '@fontlab/enum-side'
+import { Side } from '@fontlab/enum-checkSide'
 
 // 1, 2, 4, 8, 16
 
 
 const test = () => {
-  const { Verso, Recto } = Side
+  const { Left, Right } = Side
   let none = 0, combo = 0
-  combo |= Verso
-  combo |= Recto;
+  combo |= Left
+  combo |= Right;
 
   `[None] (${none}) [ None & 0b1 ] (${none & 1}) [ None & 0b10 ] (${none & 2})`  |> console.log;
-  `[Verso] (${Verso}) [ Verso & 0b1 ] (${Verso & 1}) [ Verso & 0b10 ] (${Verso & 2})`  |> console.log;
-  `[Recto] (${Recto}) [ Recto & 0b1 ] (${Recto & 1}) [ Recto & 0b10 ] (${Recto & 2})`  |> console.log;
+  `[Left] (${Left}) [ Left & 0b1 ] (${Left & 1}) [ Left & 0b10 ] (${Left & 2})`  |> console.log;
+  `[Right] (${Right}) [ Right & 0b1 ] (${Right & 1}) [ Right & 0b10 ] (${Right & 2})`  |> console.log;
   `[Combo] (${combo}) [ Combo & 0b1 ] (${combo & 1}) [ Combo & 0b10 ] (${combo & 2})`  |> console.log
 }
 
