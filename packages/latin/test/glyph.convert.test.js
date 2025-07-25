@@ -1,9 +1,10 @@
-import { Table }                           from '@analys/table'
+import { Table }                           from '@analyz/table'
 import { decoTable }                       from '@spare/logger'
 import { says }                            from '@spare/xr'
 import { indexed }                         from '@vect/object-mapper'
-import { GLYPH_TO_CHAR }                   from '../asset/encoding/win1252'
-import { asc, glyphToLabel, labelToGlyph } from '../util'
+import { GLYPH_TO_CHAR }                   from '../asset/encoding/win1252.js'
+import { asc, glyphToLabel, labelToGlyph } from '../util/index.js'
+import { test }                            from 'node:test'
 
 const REG_NUMS = /^(?:zero|one|two|three|four|five|six|seven|eight|nine|ten)$/
 const REG_PUNC = /^(?:period|comma|quot|guil|brac|paren|hyph|under|exclam|quest|tilde)|(?:bar|slash|dash|colon)$/
@@ -18,6 +19,9 @@ const tableCollection = {
   punc: Table.from({ head: HEAD, rows: [ ...indexed(GLYPH_TO_CHAR, g => REG_PUNC.test(g), toRow) ] }),
   curr: Table.from({ head: HEAD, rows: [ ...indexed(GLYPH_TO_CHAR, g => REG_CURR.test(g), toRow) ] }),
 }
-for (let [ name, table ] of indexed(tableCollection)) {
-  table |> decoTable |> says[name]
-}
+
+test('glyph to char', () => {
+  for (let [ name, table ] of indexed(tableCollection)) {
+    says[name](decoTable(table))
+  }
+})

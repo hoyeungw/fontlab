@@ -127,25 +127,30 @@ importers:
 
   packages/kerning-pairs:
     dependencies:
+      '@analys/enum-pivot-mode':
+        specifier: ^0.7.5
+        version: 0.7.5
       '@analyz/sparse':
         specifier: ^0.1.3
         version: 0.1.3
+      '@aryth/math':
+        specifier: ^0.7.8
+        version: 0.7.8
       '@spare/logger':
         specifier: ^0.16.29
         version: 0.16.29
       '@spare/xr':
         specifier: ^0.16.29
         version: 0.16.29
-      '@vect/nested':
-        specifier: ^0.8.6
-        version: 0.8.6
-    devDependencies:
-      '@analys/enum-pivot-mode':
-        specifier: ^0.7.5
-        version: 0.7.5
       '@typen/nullish':
         specifier: ^0.2.0
         version: 0.2.0
+      '@typen/num-strict':
+        specifier: ^0.2.0
+        version: 0.2.0
+      '@vect/nested':
+        specifier: ^0.8.6
+        version: 0.8.6
 
   packages/latin:
     dependencies:
@@ -183,6 +188,9 @@ importers:
         specifier: ^0.8.6
         version: 0.8.6
     devDependencies:
+      '@analyz/table':
+        specifier: ^0.1.3
+        version: 0.1.3
       '@spare/csv':
         specifier: ^0.16.29
         version: 0.16.29
@@ -398,6 +406,9 @@ importers:
       '@fontlab/metric':
         specifier: workspace:^
         version: link:../metric
+      '@iohub/pathinfo':
+        specifier: ^0.0.4
+        version: 0.0.4
       '@typen/num-strict':
         specifier: ^0.2.0
         version: 0.2.0
@@ -419,6 +430,13 @@ importers:
       '@vect/vector-algebra':
         specifier: ^0.8.6
         version: 0.8.6
+    devDependencies:
+      '@fontlab/scripts':
+        specifier: workspace:^
+        version: link:../scripts
+      '@spare/logger':
+        specifier: ^0.16.29
+        version: 0.16.29
 
 packages:
 

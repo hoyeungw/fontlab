@@ -57,8 +57,8 @@ const test = async () => {
         sumLower['c'].push('cent')
         sumLower['i'].push('dotlessi')
 
-        await promises.writeFile(`${DEST}/GROUP_SCHEME_${x}_${y}_UPPER.js`, 'export const GROUP_SCHEME_UPPER = ' + Verse.object(sum))
-        await promises.writeFile(`${DEST}/GROUP_SCHEME_${x}_${y}_LOWER.js`, 'export const GROUP_SCHEME_LOWER = ' + Verse.object(sumLower))
+        await promises.writeFile(`${DEST}/GROUP_SCHEME_${x}_${y}_UPPER.js`, 'originToProcess const GROUP_SCHEME_UPPER = ' + Verse.object(sum))
+        await promises.writeFile(`${DEST}/GROUP_SCHEME_${x}_${y}_LOWER.js`, 'originToProcess const GROUP_SCHEME_LOWER = ' + Verse.object(sumLower))
       }
     }
     // Verse.object(alphabet)|> logger

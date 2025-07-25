@@ -21,32 +21,28 @@ const CLASS = 'PairsIO'
 
 // noinspection CommaExpressionJS
 export class PairsIO {
-  static async exportPairs(srcVFM, destXlsx, layer = REGULAR) {
-    const typeface = await TypefaceIO.readTypeface(srcVFM)
-
-    function po(x) {
-      return isNaN(x) ? '' : round(x)
-    }
-
+  static async sourceToProcess(srcVFM, destXLSX, layer = REGULAR) {
+    const typeface = await TypefaceIO.loadTypeface(srcVFM)
+    function ro(x) { return isNaN(x) ? '' : round(x) }
     layer = layer in typeface.layerToMaster ? layer : typeface.face
     const crostabCollection = {}
     for (let x of SCOPES) {
       for (let y of SCOPES) {
         const xn = scopeName(x), yn = scopeName(y)
-        const crostab = crostabCollection[`${xn}_${yn}`] = typeface.master(layer).groupCrostab(MIN, x, y, po).mutateKeys(glyphToLabel)
+        const crostab = crostabCollection[`${xn}_${yn}`] = typeface.master(layer).groupCrostab(MIN, x, y, ro).mutateKeys(glyphToLabel)
         crostab.sideward.sortKeys(labelAsc), crostab.headward.sortKeys(labelAsc)
         console.log($.fontlab(CLASS).export('pairs')[LAYER](layer).br(decoXY(xn, yn))(`${crostab.height} x ${crostab.width}`))
         logger(decoPairsCrostab(crostab))
       }
     }
     const workbook = crostabCollectionToWorkbook(crostabCollection)
-    xlsx.writeFile(workbook, destXlsx)
-    console.log($.fontlab(CLASS).export('pairs')(`[dest] (${(decoString(destXlsx))})`))
+    xlsx.writeFile(workbook, destXLSX)
+    console.log($.fontlab(CLASS).export('pairs').dest(decoString(destXLSX)))
   }
 
-  static async importPairs(destVFM, srcXlsx) {
-    const typeface = await TypefaceIO.readTypeface(destVFM)
-    const crostabCollection = mutate(readCrostabCollection(srcXlsx), Crostab.from)
+  static async processToTarget(srcXLSX, destVFM) {
+    const typeface = await TypefaceIO.loadTypeface(destVFM)
+    const crostabCollection = mutate(readCrostabCollection(srcXLSX), Crostab.from)
     const statCollection = gather(indexed(crostabCollection,
       (side_head, crostab) => /^\w+$/.test(side_head) && crostab,
       (side_head, crostab) => {

@@ -240,7 +240,7 @@ export const GLYPH_TO_CHAR = {
   ydieresis: '\u00FF',        // U+00FF: [255] Latin Small Letter Y with Diaeresis
 }
 
-// export const CHAR_TO_GLYPH = mapEntry(GLYPH_TO_CHAR, (k, v) => [ v, k ])
+// originToProcess const CHAR_TO_GLYPH = mapEntry(GLYPH_TO_CHAR, (k, v) => [ v, k ])
 
 // const samples = [ ...indexedTo(GLYPH_TO_CHAR, (name, char) => ({ name, char, code: char.charCodeAt(0) })) ]
 // samples |> console.table

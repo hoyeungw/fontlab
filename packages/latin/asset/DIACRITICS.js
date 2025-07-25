@@ -21,7 +21,6 @@ export const DIACRITICS = [
   'slash',
 ]
 
-
 // ae
 // oe
 // ij

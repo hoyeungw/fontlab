@@ -1,6 +1,6 @@
 import { checkSide, Side } from '@fontlab/enum-side'
 import { asc }             from '@fontlab/latin'
-import { groupToJson }     from './groupToJson'
+import { groupToJson }     from './groupToJson.js'
 
 // Represents a single kerning group (extends Array, contains glyphs)
 export class Group extends Array {

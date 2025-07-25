@@ -38,7 +38,7 @@ export class Typeface {
   get layers() { return Object.keys(this.layerToMaster) }
   get shortenLayers() { return this.layers.map(weightToShort) }
   get face() { return getFace(this.layerToMaster) }
-  get glyphLayerToMetric() { return transpose(this['layerToMetrics']) }
+  get glyphLayerToMetric() { return transpose(this.layerToMetrics) }
 
   /**
    * @param {string} [layer]
@@ -72,9 +72,9 @@ export class Typeface {
 
   updateMaster(regroups) {
     for (let layer in this.layerToMaster) {
-      const master = this.layerToMaster[layer], metricGlyphs = this.glyphs(layer)
-      const xGlyphs = distinct(acquire(master.glyphs(Side.Left), metricGlyphs))
-      const yGlyphs = distinct(acquire(master.glyphs(Side.Left), metricGlyphs))
+      const master = this.layerToMaster[layer], glyphs = this.glyphs(layer)
+      const xGlyphs = distinct(acquire(master.glyphs(Side.Left), glyphs))
+      const yGlyphs = distinct(acquire(master.glyphs(Side.Left), glyphs))
       this.layerToMaster[layer] = master.regroup(regroups, xGlyphs, yGlyphs)
     }
     return this

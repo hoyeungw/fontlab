@@ -5,7 +5,7 @@ export const GROUP_SCHEME_UPPER = {
     'Acircumflexacute', 'Ahookabove', 'Acircumflexhookabove', 'Abrevehookabove' ],
   B: [ 'B' ],
   C: [ 'C', 'Cacute', 'Ccaron', 'Ccedilla', 'Ccircumflex', 'Cdotaccent' ],
-  D: [ 'D', 'Dcaron', 'Dcroat', 'Dzcaron', 'Ddotbelow', 'Dlinebelow', 'DZcaron' ],
+  D: [ 'D', 'Dcaron', 'Dcroat', 'Dcaron', 'Ddotbelow', 'Dlinebelow' ],
   E: [ 'E', 'Eacute', 'Ebreve', 'Ecaron', 'Ecircumflex', 'Edieresis', 'Edotaccent', 'Egrave', 'Emacron', 'Eogonek',
     'Edblgrave', 'Einvertedbreve', 'Emacrongrave', 'Emacronacute', 'Ecedillabreve', 'Edotbelow', 'Ehoi', 'Etilde',
     'Ecircumflexacute', 'Ecircumflexgrave', 'Ecircumflexhoi', 'Ecircumflextilde', 'Ecircumflexdotbelow', 'Ehookabove',

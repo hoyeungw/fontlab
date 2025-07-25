@@ -8,7 +8,7 @@ const VFM = '.vfm'
 const XLSX = '.xlsx'
 
 // GroupsIO
-//   .exportRegrouped(SRC + '/' + FILE + VFM, DEST + '/' + FILE + '-regrouped' + VFM, GROUPS_CHALENE)
+//   .regroup(SRC + '/' + FILE + VFM, DEST + '/' + FILE + '-regrouped' + VFM, GROUPS_CHALENE)
 //   .then()
 
 GroupsIO

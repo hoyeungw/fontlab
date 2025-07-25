@@ -6,15 +6,17 @@ export class Latin {
   static #lexLower = groupedToSurject(GROUP_SCHEME_LOWER)
   static #lexUpper = groupedToSurject(GROUP_SCHEME_UPPER)
 
-  static letterOrSelf(glyph) {
-    return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? glyph
-  }
-  static letterOrNull(glyph) {
-    return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? null
-  }
-  static letterOrEmpty(glyph) {
-    return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? ''
-  }
+  static lower() { return Latin.#lexLower}
+  static upper() { return Latin.#lexUpper}
+
+  static letterOrSelf(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? glyph }
+  static letterOrNull(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? null }
+  static letterOrEmpty(glyph) { return Latin.#lexUpper[glyph] ?? Latin.#lexLower[glyph] ?? '' }
+
+  static isLetter(glyph) { return glyph in Latin.#lexUpper || glyph in Latin.#lexLower }
+  static isUpper(glyph) { return glyph in Latin.#lexUpper }
+  static isLower(glyph) { return glyph in Latin.#lexLower }
+  static isOther(glyph) { return !Latin.isLetter(glyph) }
 
   /** @returns {(function(*): boolean)} */
   static factory(scope) {
@@ -23,18 +25,5 @@ export class Latin {
     if (scope === Scope.Other) return Latin.isOther
     if (scope === Scope.Letter) return Latin.isLetter
     return () => true
-  }
-
-  static isLetter(glyph) {
-    return glyph in Latin.#lexUpper || glyph in Latin.#lexLower
-  }
-  static isUpper(glyph) {
-    return glyph in Latin.#lexUpper
-  }
-  static isLower(glyph) {
-    return glyph in Latin.#lexLower
-  }
-  static isOther(glyph) {
-    return !Latin.isLetter(glyph)
   }
 }

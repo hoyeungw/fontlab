@@ -1,7 +1,7 @@
 import { bracket }              from '@texting/bracket'
 import { mapEntry }             from '@vect/object-mapper'
 import { filter }               from '@vect/object-select'
-import { GLYPH_TO_CHAR as RAW } from '../asset/encoding/win1252'
+import { GLYPH_TO_CHAR as RAW } from '../asset/encoding/win1252.js'
 
 const GLYPH_TO_CHAR = filter(RAW, (g, c) => /^[^a-zA-Z]$/.test(c))
 const CHAR_TO_GLYPH = mapEntry(GLYPH_TO_CHAR, (g, c) => [ c, g ])

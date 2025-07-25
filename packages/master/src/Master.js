@@ -11,7 +11,7 @@ import { ob }                                           from '@vect/object-init'
 import { indexed }                                      from '@vect/object-mapper'
 import { union }                                        from '@vect/vector-algebra'
 import { Stat }                                         from '@vect/vector-stat'
-import { masterToJson }                                 from './masterToJson'
+import { masterToJson }                                 from './masterToJson.js'
 
 export class Master {
   /** @type {string}               */ name
