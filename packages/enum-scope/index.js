@@ -9,7 +9,7 @@ export class Scope {
 export const SCOPES = [ Scope.Upper, Scope.Lower, Scope.Other ]
 
 export const scopeName = scope => {
-  for (let k in Scope) {
+  for (const k in Scope) {
     if (Scope[k] === scope) return k
   }
 }

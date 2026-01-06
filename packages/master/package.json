@@ -35,6 +35,7 @@
   "devDependencies": {
     "@acq/path": "^0.4.0",
     "@spare/csv": "^0.16.29",
+    "@spare/logger": "^0.16.29",
     "@spare/translator": "^0.16.16",
     "@spare/verse": "^0.16.29",
     "@vect/vector-algebra": "^0.7.14"

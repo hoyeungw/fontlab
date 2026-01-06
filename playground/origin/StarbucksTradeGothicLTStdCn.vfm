@@ -1,0 +1,3601 @@
+{
+    "dataType": "com.fontlab.metrics",
+    "masters": {
+        "CondensedNo.18": {
+            "kerningClasses": [
+                {
+                    "1st": true,
+                    "name": "A",
+                    "names": [
+                        "A",
+                        "Agrave",
+                        "Aacute",
+                        "Acircumflex",
+                        "Atilde",
+                        "Adieresis",
+                        "Aring"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "L",
+                    "names": [
+                        "Lslash",
+                        "L"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "y",
+                    "names": [
+                        "y",
+                        "yacute",
+                        "ydieresis"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "Y",
+                    "names": [
+                        "Y",
+                        "Ydieresis",
+                        "Yacute"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "y2",
+                    "names": [
+                        "y",
+                        "yacute",
+                        "ydieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "Y2",
+                    "names": [
+                        "Y",
+                        "Ydieresis",
+                        "Yacute"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "A2",
+                    "names": [
+                        "A",
+                        "Agrave",
+                        "Aacute",
+                        "Acircumflex",
+                        "Atilde",
+                        "Adieresis",
+                        "Aring",
+                        "AE"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "a",
+                    "names": [
+                        "a",
+                        "agrave",
+                        "aacute",
+                        "acircumflex",
+                        "atilde",
+                        "adieresis",
+                        "aring",
+                        "ae"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "c",
+                    "names": [
+                        "c",
+                        "ccedilla"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "e",
+                    "names": [
+                        "e",
+                        "egrave",
+                        "eacute",
+                        "ecircumflex",
+                        "edieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "i",
+                    "names": [
+                        "i",
+                        "igrave",
+                        "iacute",
+                        "icircumflex",
+                        "idieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "o",
+                    "names": [
+                        "o",
+                        "oe",
+                        "ograve",
+                        "oacute",
+                        "ocircumflex",
+                        "otilde",
+                        "odieresis",
+                        "oslash"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "s",
+                    "names": [
+                        "s",
+                        "scaron"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "u",
+                    "names": [
+                        "u",
+                        "ugrave",
+                        "uacute",
+                        "ucircumflex",
+                        "udieresis"
+                    ]
+                }
+            ],
+            "pairs": {
+                "@A": {
+                    "@Y2": "-55",
+                    "@y2": "-18",
+                    "T": "-37",
+                    "V": "-37",
+                    "W": "-37",
+                    "quoteright": "-55",
+                    "v": "-18",
+                    "w": "-18"
+                },
+                "@L": {
+                    "@Y2": "-74",
+                    "@y2": "-37",
+                    "T": "-55",
+                    "V": "-55",
+                    "W": "-37",
+                    "quoteright": "-74"
+                },
+                "@Y": {
+                    "@A2": "-37",
+                    "@a": "-55",
+                    "@e": "-55",
+                    "@i": "-18",
+                    "@o": "-55",
+                    "@u": "-37",
+                    "colon": "-55",
+                    "comma": "-74",
+                    "hyphen": "-55",
+                    "p": "-37",
+                    "period": "-74",
+                    "q": "-55",
+                    "semicolon": "-55",
+                    "v": "-18"
+                },
+                "@y": {
+                    "comma": "-37",
+                    "period": "-37"
+                },
+                "F": {
+                    "@A2": "-37",
+                    "comma": "-111",
+                    "period": "-111"
+                },
+                "P": {
+                    "@A2": "-18",
+                    "comma": "-111",
+                    "period": "-111"
+                },
+                "R": {
+                    "@Y2": "-18",
+                    "T": "-18",
+                    "V": "-18"
+                },
+                "T": {
+                    "@A2": "-37",
+                    "@a": "-55",
+                    "@c": "-55",
+                    "@e": "-55",
+                    "@i": "-55",
+                    "@o": "-55",
+                    "@s": "-55",
+                    "@u": "-55",
+                    "@y2": "-55",
+                    "acircumflex": "-28",
+                    "adieresis": "-14",
+                    "agrave": "-28",
+                    "aring": "-28",
+                    "atilde": "-28",
+                    "colon": "-55",
+                    "comma": "-74",
+                    "ecircumflex": "-41",
+                    "edieresis": "-28",
+                    "egrave": "-41",
+                    "hyphen": "-55",
+                    "iacute": "-28",
+                    "icircumflex": "11",
+                    "igrave": "28",
+                    "odieresis": "-28",
+                    "ograve": "-28",
+                    "period": "-74",
+                    "r": "-55",
+                    "scaron": "-14",
+                    "semicolon": "-55",
+                    "udieresis": "-28",
+                    "w": "-55"
+                },
+                "V": {
+                    "@A2": "-18",
+                    "@a": "-37",
+                    "@e": "-37",
+                    "@i": "-18",
+                    "@o": "-37",
+                    "@u": "-18",
+                    "acircumflex": "-19",
+                    "adieresis": "-19",
+                    "agrave": "-19",
+                    "aring": "-19",
+                    "atilde": "-19",
+                    "colon": "-37",
+                    "comma": "-74",
+                    "ecircumflex": "-19",
+                    "edieresis": "-19",
+                    "egrave": "-19",
+                    "hyphen": "-37",
+                    "icircumflex": "4",
+                    "ocircumflex": "-28",
+                    "odieresis": "-19",
+                    "period": "-74",
+                    "r": "-18",
+                    "semicolon": "-37"
+                },
+                "W": {
+                    "@A2": "-18",
+                    "@a": "-18",
+                    "@e": "-18",
+                    "@o": "-18",
+                    "adieresis": "-14",
+                    "colon": "-18",
+                    "comma": "-37",
+                    "ecircumflex": "-14",
+                    "odieresis": "-14",
+                    "period": "-37",
+                    "semicolon": "-18"
+                },
+                "Y": {
+                    "odieresis": "-41",
+                    "udieresis": "-28"
+                },
+                "quoteleft": {
+                    "quoteleft": "-55"
+                },
+                "quoteright": {
+                    "@s": "-74",
+                    "quoteright": "-55"
+                },
+                "r": {
+                    "comma": "-55",
+                    "hyphen": "-37",
+                    "period": "-55"
+                },
+                "v": {
+                    "comma": "-37",
+                    "period": "-37"
+                },
+                "w": {
+                    "comma": "-37",
+                    "period": "-37"
+                }
+            }
+        }
+    },
+    "metrics": {
+        ".notdef": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 500,
+                    "xmax": 500,
+                    "xmin": 0,
+                    "ymax": 700,
+                    "ymin": 0
+                }
+            }
+        },
+        "A": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 9,
+                    "rsb": 9,
+                    "width": 444,
+                    "xmax": 435,
+                    "xmin": 9,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "AE": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 9,
+                    "rsb": 36,
+                    "width": 722,
+                    "xmax": 686,
+                    "xmin": 9,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Aacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 9,
+                    "rsb": 9,
+                    "width": 444,
+                    "xmax": 435,
+                    "xmin": 9,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "Acircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 9,
+                    "rsb": 9,
+                    "width": 444,
+                    "xmax": 435,
+                    "xmin": 9,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "Adieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 9,
+                    "rsb": 9,
+                    "width": 444,
+                    "xmax": 435,
+                    "xmin": 9,
+                    "ymax": 872,
+                    "ymin": 0
+                }
+            }
+        },
+        "Agrave": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 9,
+                    "rsb": 9,
+                    "width": 444,
+                    "xmax": 435,
+                    "xmin": 9,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "Aring": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 9,
+                    "rsb": 9,
+                    "width": 444,
+                    "xmax": 435,
+                    "xmin": 9,
+                    "ymax": 950,
+                    "ymin": 0
+                }
+            }
+        },
+        "Atilde": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 9,
+                    "rsb": 9,
+                    "width": 444,
+                    "xmax": 435,
+                    "xmin": 9,
+                    "ymax": 874,
+                    "ymin": 0
+                }
+            }
+        },
+        "B": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 56,
+                    "width": 500,
+                    "xmax": 444,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "C": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 50,
+                    "width": 500,
+                    "xmax": 450,
+                    "xmin": 46,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "CR": {
+            "layers": {
+                "CondensedNo.18": {
+                    "width": 333
+                }
+            }
+        },
+        "Ccedilla": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 50,
+                    "width": 500,
+                    "xmax": 450,
+                    "xmin": 46,
+                    "ymax": 732,
+                    "ymin": -216
+                }
+            }
+        },
+        "D": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 56,
+                    "width": 500,
+                    "xmax": 444,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Delta": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 28,
+                    "rsb": 27,
+                    "width": 522,
+                    "xmax": 495,
+                    "xmin": 28,
+                    "ymax": 733,
+                    "ymin": 0
+                }
+            }
+        },
+        "E": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 36,
+                    "width": 444,
+                    "xmax": 408,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Eacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 36,
+                    "width": 444,
+                    "xmax": 408,
+                    "xmin": 66,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "Ecircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 36,
+                    "width": 444,
+                    "xmax": 408,
+                    "xmin": 66,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "Edieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 36,
+                    "width": 444,
+                    "xmax": 408,
+                    "xmin": 66,
+                    "ymax": 872,
+                    "ymin": 0
+                }
+            }
+        },
+        "Egrave": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 36,
+                    "width": 444,
+                    "xmax": 408,
+                    "xmin": 66,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "Eth": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 12,
+                    "rsb": 56,
+                    "width": 500,
+                    "xmax": 444,
+                    "xmin": 12,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Euro": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 15,
+                    "rsb": 4,
+                    "width": 444,
+                    "xmax": 440,
+                    "xmin": 15,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "F": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 13,
+                    "width": 389,
+                    "xmax": 376,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "G": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 56,
+                    "width": 500,
+                    "xmax": 444,
+                    "xmin": 46,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "H": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 66,
+                    "width": 500,
+                    "xmax": 434,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "I": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 222,
+                    "xmax": 150,
+                    "xmin": 72,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Iacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 54,
+                    "rsb": -8,
+                    "width": 222,
+                    "xmax": 230,
+                    "xmin": 54,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "Icircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -24,
+                    "rsb": -24,
+                    "width": 222,
+                    "xmax": 246,
+                    "xmin": -24,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "Idieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 12,
+                    "rsb": 12,
+                    "width": 222,
+                    "xmax": 210,
+                    "xmin": 12,
+                    "ymax": 872,
+                    "ymin": 0
+                }
+            }
+        },
+        "Igrave": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -8,
+                    "rsb": 54,
+                    "width": 222,
+                    "xmax": 168,
+                    "xmin": -8,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "J": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -6,
+                    "rsb": 66,
+                    "width": 278,
+                    "xmax": 212,
+                    "xmin": -6,
+                    "ymax": 722,
+                    "ymin": -10
+                }
+            }
+        },
+        "K": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 56,
+                    "rsb": -4,
+                    "width": 444,
+                    "xmax": 448,
+                    "xmin": 56,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "L": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 11,
+                    "width": 389,
+                    "xmax": 378,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Lslash": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -14,
+                    "rsb": 11,
+                    "width": 389,
+                    "xmax": 378,
+                    "xmin": -14,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "M": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 56,
+                    "rsb": 56,
+                    "width": 611,
+                    "xmax": 555,
+                    "xmin": 56,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "N": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 56,
+                    "rsb": 56,
+                    "width": 500,
+                    "xmax": 444,
+                    "xmin": 56,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "NULL": {
+            "layers": {
+                "CondensedNo.18": {
+                    "width": 0
+                }
+            }
+        },
+        "Ntilde": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 56,
+                    "rsb": 56,
+                    "width": 500,
+                    "xmax": 444,
+                    "xmin": 56,
+                    "ymax": 874,
+                    "ymin": 0
+                }
+            }
+        },
+        "O": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 46,
+                    "width": 500,
+                    "xmax": 454,
+                    "xmin": 46,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "OE": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 36,
+                    "rsb": 36,
+                    "width": 722,
+                    "xmax": 686,
+                    "xmin": 36,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Oacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 46,
+                    "width": 500,
+                    "xmax": 454,
+                    "xmin": 46,
+                    "ymax": 898,
+                    "ymin": -10
+                }
+            }
+        },
+        "Ocircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 46,
+                    "width": 500,
+                    "xmax": 454,
+                    "xmin": 46,
+                    "ymax": 898,
+                    "ymin": -10
+                }
+            }
+        },
+        "Odieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 46,
+                    "width": 500,
+                    "xmax": 454,
+                    "xmin": 46,
+                    "ymax": 872,
+                    "ymin": -10
+                }
+            }
+        },
+        "Ograve": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 46,
+                    "width": 500,
+                    "xmax": 454,
+                    "xmin": 46,
+                    "ymax": 898,
+                    "ymin": -10
+                }
+            }
+        },
+        "Omega": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 42,
+                    "width": 569,
+                    "xmax": 527,
+                    "xmin": 40,
+                    "ymax": 726,
+                    "ymin": 0
+                }
+            }
+        },
+        "Oslash": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 30,
+                    "rsb": 46,
+                    "width": 500,
+                    "xmax": 454,
+                    "xmin": 30,
+                    "ymax": 804,
+                    "ymin": -120
+                }
+            }
+        },
+        "Otilde": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 46,
+                    "width": 500,
+                    "xmax": 454,
+                    "xmin": 46,
+                    "ymax": 874,
+                    "ymin": -10
+                }
+            }
+        },
+        "P": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 56,
+                    "rsb": 26,
+                    "width": 444,
+                    "xmax": 418,
+                    "xmin": 56,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Q": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 26,
+                    "width": 500,
+                    "xmax": 474,
+                    "xmin": 46,
+                    "ymax": 732,
+                    "ymin": -56
+                }
+            }
+        },
+        "R": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 56,
+                    "width": 500,
+                    "xmax": 444,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "S": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 36,
+                    "rsb": 40,
+                    "width": 444,
+                    "xmax": 404,
+                    "xmin": 36,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "Scaron": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 36,
+                    "rsb": 40,
+                    "width": 444,
+                    "xmax": 404,
+                    "xmin": 36,
+                    "ymax": 898,
+                    "ymin": -10
+                }
+            }
+        },
+        "T": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 7,
+                    "rsb": 8,
+                    "width": 389,
+                    "xmax": 381,
+                    "xmin": 7,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Thorn": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 56,
+                    "rsb": 26,
+                    "width": 444,
+                    "xmax": 418,
+                    "xmin": 56,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "U": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 66,
+                    "width": 500,
+                    "xmax": 434,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": -10
+                }
+            }
+        },
+        "Uacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 66,
+                    "width": 500,
+                    "xmax": 434,
+                    "xmin": 66,
+                    "ymax": 898,
+                    "ymin": -10
+                }
+            }
+        },
+        "Ucircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 66,
+                    "width": 500,
+                    "xmax": 434,
+                    "xmin": 66,
+                    "ymax": 898,
+                    "ymin": -10
+                }
+            }
+        },
+        "Udieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 66,
+                    "width": 500,
+                    "xmax": 434,
+                    "xmin": 66,
+                    "ymax": 872,
+                    "ymin": -10
+                }
+            }
+        },
+        "Ugrave": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 66,
+                    "width": 500,
+                    "xmax": 434,
+                    "xmin": 66,
+                    "ymax": 898,
+                    "ymin": -10
+                }
+            }
+        },
+        "V": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 16,
+                    "rsb": 16,
+                    "width": 444,
+                    "xmax": 428,
+                    "xmin": 16,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "W": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 6,
+                    "rsb": 7,
+                    "width": 611,
+                    "xmax": 604,
+                    "xmin": 6,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "X": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 14,
+                    "rsb": 14,
+                    "width": 444,
+                    "xmax": 430,
+                    "xmin": 14,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Y": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 16,
+                    "rsb": 16,
+                    "width": 444,
+                    "xmax": 428,
+                    "xmin": 16,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Yacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 16,
+                    "rsb": 16,
+                    "width": 444,
+                    "xmax": 428,
+                    "xmin": 16,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "Ydieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 16,
+                    "rsb": 16,
+                    "width": 444,
+                    "xmax": 428,
+                    "xmin": 16,
+                    "ymax": 872,
+                    "ymin": 0
+                }
+            }
+        },
+        "Z": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 44,
+                    "rsb": 44,
+                    "width": 444,
+                    "xmax": 400,
+                    "xmin": 44,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "Zcaron": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 44,
+                    "rsb": 44,
+                    "width": 444,
+                    "xmax": 400,
+                    "xmin": 44,
+                    "ymax": 898,
+                    "ymin": 0
+                }
+            }
+        },
+        "a": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 66,
+                    "width": 444,
+                    "xmax": 378,
+                    "xmin": 48,
+                    "ymax": 530,
+                    "ymin": -10
+                }
+            }
+        },
+        "aacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 66,
+                    "width": 444,
+                    "xmax": 378,
+                    "xmin": 48,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "acircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 66,
+                    "width": 444,
+                    "xmax": 378,
+                    "xmin": 48,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "acute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 54,
+                    "rsb": -8,
+                    "width": 222,
+                    "xmax": 230,
+                    "xmin": 54,
+                    "ymax": 716,
+                    "ymin": 578
+                }
+            }
+        },
+        "adieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 66,
+                    "width": 444,
+                    "xmax": 378,
+                    "xmin": 48,
+                    "ymax": 690,
+                    "ymin": -10
+                }
+            }
+        },
+        "ae": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 611,
+                    "xmax": 581,
+                    "xmin": 30,
+                    "ymax": 530,
+                    "ymin": -10
+                }
+            }
+        },
+        "afii61289": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 26,
+                    "rsb": 20,
+                    "width": 401,
+                    "xmax": 381,
+                    "xmin": 26,
+                    "ymax": 790,
+                    "ymin": -5
+                }
+            }
+        },
+        "agrave": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 66,
+                    "width": 444,
+                    "xmax": 378,
+                    "xmin": 48,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "ampersand": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 50,
+                    "rsb": 36,
+                    "width": 556,
+                    "xmax": 520,
+                    "xmin": 50,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "approxequal": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 36,
+                    "rsb": 38,
+                    "width": 470,
+                    "xmax": 432,
+                    "xmin": 36,
+                    "ymax": 422,
+                    "ymin": 162
+                }
+            }
+        },
+        "aring": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 66,
+                    "width": 444,
+                    "xmax": 378,
+                    "xmin": 48,
+                    "ymax": 768,
+                    "ymin": -10
+                }
+            }
+        },
+        "asciicircum": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 62,
+                    "rsb": 62,
+                    "width": 600,
+                    "xmax": 538,
+                    "xmin": 62,
+                    "ymax": 722,
+                    "ymin": 295
+                }
+            }
+        },
+        "asciitilde": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 60,
+                    "rsb": 60,
+                    "width": 600,
+                    "xmax": 540,
+                    "xmin": 60,
+                    "ymax": 331,
+                    "ymin": 189
+                }
+            }
+        },
+        "asterisk": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 444,
+                    "xmax": 399,
+                    "xmin": 45,
+                    "ymax": 722,
+                    "ymin": 380
+                }
+            }
+        },
+        "at": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 46,
+                    "width": 800,
+                    "xmax": 754,
+                    "xmin": 46,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "atilde": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 66,
+                    "width": 444,
+                    "xmax": 378,
+                    "xmin": 48,
+                    "ymax": 692,
+                    "ymin": -10
+                }
+            }
+        },
+        "b": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 48,
+                    "width": 444,
+                    "xmax": 396,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": -10
+                }
+            }
+        },
+        "backslash": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -10,
+                    "rsb": -10,
+                    "width": 278,
+                    "xmax": 288,
+                    "xmin": -10,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "bar": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 78,
+                    "rsb": 78,
+                    "width": 222,
+                    "xmax": 144,
+                    "xmin": 78,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "braceleft": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 16,
+                    "rsb": 46,
+                    "width": 278,
+                    "xmax": 232,
+                    "xmin": 16,
+                    "ymax": 732,
+                    "ymin": -110
+                }
+            }
+        },
+        "braceright": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 16,
+                    "width": 278,
+                    "xmax": 262,
+                    "xmin": 46,
+                    "ymax": 732,
+                    "ymin": -110
+                }
+            }
+        },
+        "bracketleft": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 60,
+                    "rsb": 34,
+                    "width": 278,
+                    "xmax": 244,
+                    "xmin": 60,
+                    "ymax": 722,
+                    "ymin": -100
+                }
+            }
+        },
+        "bracketright": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 34,
+                    "rsb": 60,
+                    "width": 278,
+                    "xmax": 218,
+                    "xmin": 34,
+                    "ymax": 722,
+                    "ymin": -100
+                }
+            }
+        },
+        "breve": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -18,
+                    "rsb": -18,
+                    "width": 222,
+                    "xmax": 240,
+                    "xmin": -18,
+                    "ymax": 710,
+                    "ymin": 582
+                }
+            }
+        },
+        "brokenbar": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 78,
+                    "rsb": 78,
+                    "width": 222,
+                    "xmax": 144,
+                    "xmin": 78,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "bullet": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 69,
+                    "rsb": 70,
+                    "width": 500,
+                    "xmax": 430,
+                    "xmin": 69,
+                    "ymax": 541,
+                    "ymin": 180
+                }
+            }
+        },
+        "c": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 41,
+                    "width": 389,
+                    "xmax": 348,
+                    "xmin": 35,
+                    "ymax": 530,
+                    "ymin": -10
+                }
+            }
+        },
+        "caron": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -24,
+                    "rsb": -24,
+                    "width": 222,
+                    "xmax": 246,
+                    "xmin": -24,
+                    "ymax": 716,
+                    "ymin": 578
+                }
+            }
+        },
+        "ccedilla": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 41,
+                    "width": 389,
+                    "xmax": 348,
+                    "xmin": 35,
+                    "ymax": 530,
+                    "ymin": -216
+                }
+            }
+        },
+        "cedilla": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 8,
+                    "rsb": 14,
+                    "width": 222,
+                    "xmax": 208,
+                    "xmin": 8,
+                    "ymax": 0,
+                    "ymin": -216
+                }
+            }
+        },
+        "cent": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 61,
+                    "rsb": 70,
+                    "width": 444,
+                    "xmax": 374,
+                    "xmin": 61,
+                    "ymax": 650,
+                    "ymin": -114
+                }
+            }
+        },
+        "circumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -24,
+                    "rsb": -24,
+                    "width": 222,
+                    "xmax": 246,
+                    "xmin": -24,
+                    "ymax": 716,
+                    "ymin": 578
+                }
+            }
+        },
+        "colon": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 69,
+                    "rsb": 69,
+                    "width": 222,
+                    "xmax": 153,
+                    "xmin": 69,
+                    "ymax": 366,
+                    "ymin": 0
+                }
+            }
+        },
+        "comma": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 63,
+                    "rsb": 69,
+                    "width": 222,
+                    "xmax": 153,
+                    "xmin": 63,
+                    "ymax": 94,
+                    "ymin": -150
+                }
+            }
+        },
+        "copyright": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 26,
+                    "rsb": 26,
+                    "width": 800,
+                    "xmax": 774,
+                    "xmin": 26,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "currency": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 6,
+                    "rsb": 6,
+                    "width": 444,
+                    "xmax": 438,
+                    "xmin": 6,
+                    "ymax": 579,
+                    "ymin": 143
+                }
+            }
+        },
+        "d": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 66,
+                    "width": 444,
+                    "xmax": 378,
+                    "xmin": 48,
+                    "ymax": 722,
+                    "ymin": -10
+                }
+            }
+        },
+        "dagger": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 74,
+                    "rsb": 74,
+                    "width": 500,
+                    "xmax": 426,
+                    "xmin": 74,
+                    "ymax": 732,
+                    "ymin": -84
+                }
+            }
+        },
+        "daggerdbl": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 74,
+                    "rsb": 74,
+                    "width": 500,
+                    "xmax": 426,
+                    "xmin": 74,
+                    "ymax": 732,
+                    "ymin": -84
+                }
+            }
+        },
+        "degree": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 52,
+                    "rsb": 52,
+                    "width": 400,
+                    "xmax": 348,
+                    "xmin": 52,
+                    "ymax": 732,
+                    "ymin": 436
+                }
+            }
+        },
+        "dieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 12,
+                    "rsb": 12,
+                    "width": 222,
+                    "xmax": 210,
+                    "xmin": 12,
+                    "ymax": 690,
+                    "ymin": 588
+                }
+            }
+        },
+        "divide": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 600,
+                    "xmax": 560,
+                    "xmin": 40,
+                    "ymax": 530,
+                    "ymin": -10
+                }
+            }
+        },
+        "dollar": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 38,
+                    "rsb": 38,
+                    "width": 444,
+                    "xmax": 406,
+                    "xmin": 38,
+                    "ymax": 818,
+                    "ymin": -116
+                }
+            }
+        },
+        "dotaccent": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 78,
+                    "rsb": 78,
+                    "width": 222,
+                    "xmax": 144,
+                    "xmin": 78,
+                    "ymax": 690,
+                    "ymin": 588
+                }
+            }
+        },
+        "dotlessi": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 222,
+                    "xmax": 147,
+                    "xmin": 75,
+                    "ymax": 520,
+                    "ymin": 0
+                }
+            }
+        },
+        "e": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 30,
+                    "width": 389,
+                    "xmax": 359,
+                    "xmin": 35,
+                    "ymax": 530,
+                    "ymin": -10
+                }
+            }
+        },
+        "eacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 30,
+                    "width": 389,
+                    "xmax": 359,
+                    "xmin": 35,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "ecircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 30,
+                    "width": 389,
+                    "xmax": 359,
+                    "xmin": 35,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "edieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 30,
+                    "width": 389,
+                    "xmax": 359,
+                    "xmin": 35,
+                    "ymax": 690,
+                    "ymin": -10
+                }
+            }
+        },
+        "egrave": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 30,
+                    "width": 389,
+                    "xmax": 359,
+                    "xmin": 35,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "eight": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 44,
+                    "rsb": 44,
+                    "width": 444,
+                    "xmax": 400,
+                    "xmin": 44,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "ellipsis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 125,
+                    "rsb": 125,
+                    "width": 1000,
+                    "xmax": 875,
+                    "xmin": 125,
+                    "ymax": 94,
+                    "ymin": 0
+                }
+            }
+        },
+        "emdash": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 1000,
+                    "xmax": 1000,
+                    "xmin": 0,
+                    "ymax": 284,
+                    "ymin": 236
+                }
+            }
+        },
+        "endash": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 500,
+                    "xmax": 500,
+                    "xmin": 0,
+                    "ymax": 284,
+                    "ymin": 236
+                }
+            }
+        },
+        "equal": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 600,
+                    "xmax": 560,
+                    "xmin": 40,
+                    "ymax": 400,
+                    "ymin": 120
+                }
+            }
+        },
+        "estimated": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 36,
+                    "width": 895,
+                    "xmax": 859,
+                    "xmin": 35,
+                    "ymax": 732,
+                    "ymin": -9
+                }
+            }
+        },
+        "eth": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 22,
+                    "width": 389,
+                    "xmax": 367,
+                    "xmin": 35,
+                    "ymax": 722,
+                    "ymin": -10
+                }
+            }
+        },
+        "exclam": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 124,
+                    "rsb": 125,
+                    "width": 333,
+                    "xmax": 208,
+                    "xmin": 124,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "exclamdown": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 125,
+                    "rsb": 124,
+                    "width": 333,
+                    "xmax": 209,
+                    "xmin": 125,
+                    "ymax": 520,
+                    "ymin": -202
+                }
+            }
+        },
+        "f": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 18,
+                    "rsb": 18,
+                    "width": 278,
+                    "xmax": 260,
+                    "xmin": 18,
+                    "ymax": 732,
+                    "ymin": 0
+                }
+            }
+        },
+        "fi": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 2,
+                    "rsb": 65,
+                    "width": 444,
+                    "xmax": 379,
+                    "xmin": 2,
+                    "ymax": 732,
+                    "ymin": 0
+                }
+            }
+        },
+        "five": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 56,
+                    "rsb": 50,
+                    "width": 444,
+                    "xmax": 394,
+                    "xmin": 56,
+                    "ymax": 722,
+                    "ymin": -10
+                }
+            }
+        },
+        "fl": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 2,
+                    "rsb": 65,
+                    "width": 444,
+                    "xmax": 379,
+                    "xmin": 2,
+                    "ymax": 732,
+                    "ymin": 0
+                }
+            }
+        },
+        "florin": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 34,
+                    "rsb": 30,
+                    "width": 444,
+                    "xmax": 414,
+                    "xmin": 34,
+                    "ymax": 732,
+                    "ymin": -170
+                }
+            }
+        },
+        "four": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 24,
+                    "rsb": 42,
+                    "width": 444,
+                    "xmax": 402,
+                    "xmin": 24,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "fraction": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -167,
+                    "rsb": -167,
+                    "width": 167,
+                    "xmax": 334,
+                    "xmin": -167,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "g": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 36,
+                    "width": 444,
+                    "xmax": 408,
+                    "xmin": 48,
+                    "ymax": 530,
+                    "ymin": -170
+                }
+            }
+        },
+        "germandbls": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 42,
+                    "width": 444,
+                    "xmax": 402,
+                    "xmin": 72,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "grave": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -8,
+                    "rsb": 54,
+                    "width": 222,
+                    "xmax": 168,
+                    "xmin": -8,
+                    "ymax": 716,
+                    "ymin": 578
+                }
+            }
+        },
+        "greater": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 600,
+                    "xmax": 560,
+                    "xmin": 40,
+                    "ymax": 517,
+                    "ymin": 3
+                }
+            }
+        },
+        "greaterequal": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 45,
+                    "rsb": 44,
+                    "width": 470,
+                    "xmax": 426,
+                    "xmin": 45,
+                    "ymax": 573,
+                    "ymin": 31
+                }
+            }
+        },
+        "guillemotleft": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 82,
+                    "rsb": 82,
+                    "width": 500,
+                    "xmax": 418,
+                    "xmin": 82,
+                    "ymax": 414,
+                    "ymin": 106
+                }
+            }
+        },
+        "guillemotright": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 82,
+                    "rsb": 82,
+                    "width": 500,
+                    "xmax": 418,
+                    "xmin": 82,
+                    "ymax": 414,
+                    "ymin": 106
+                }
+            }
+        },
+        "guilsinglleft": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 69,
+                    "width": 333,
+                    "xmax": 264,
+                    "xmin": 72,
+                    "ymax": 414,
+                    "ymin": 106
+                }
+            }
+        },
+        "guilsinglright": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 69,
+                    "rsb": 72,
+                    "width": 333,
+                    "xmax": 261,
+                    "xmin": 69,
+                    "ymax": 414,
+                    "ymin": 106
+                }
+            }
+        },
+        "h": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "hungarumlaut": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -4,
+                    "rsb": -64,
+                    "width": 222,
+                    "xmax": 286,
+                    "xmin": -4,
+                    "ymax": 716,
+                    "ymin": 578
+                }
+            }
+        },
+        "hyphen": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 43,
+                    "rsb": 44,
+                    "width": 333,
+                    "xmax": 289,
+                    "xmin": 43,
+                    "ymax": 293,
+                    "ymin": 227
+                }
+            }
+        },
+        "i": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 222,
+                    "xmax": 147,
+                    "xmin": 75,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "iacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 54,
+                    "rsb": -8,
+                    "width": 222,
+                    "xmax": 230,
+                    "xmin": 54,
+                    "ymax": 716,
+                    "ymin": 0
+                }
+            }
+        },
+        "icircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -24,
+                    "rsb": -24,
+                    "width": 222,
+                    "xmax": 246,
+                    "xmin": -24,
+                    "ymax": 716,
+                    "ymin": 0
+                }
+            }
+        },
+        "idieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 12,
+                    "rsb": 12,
+                    "width": 222,
+                    "xmax": 210,
+                    "xmin": 12,
+                    "ymax": 690,
+                    "ymin": 0
+                }
+            }
+        },
+        "igrave": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -8,
+                    "rsb": 54,
+                    "width": 222,
+                    "xmax": 168,
+                    "xmin": -8,
+                    "ymax": 716,
+                    "ymin": 0
+                }
+            }
+        },
+        "infinity": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 43,
+                    "rsb": 44,
+                    "width": 685,
+                    "xmax": 641,
+                    "xmin": 43,
+                    "ymax": 436,
+                    "ymin": 157
+                }
+            }
+        },
+        "integral": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 17,
+                    "rsb": 19,
+                    "width": 315,
+                    "xmax": 296,
+                    "xmin": 17,
+                    "ymax": 874,
+                    "ymin": -163
+                }
+            }
+        },
+        "j": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 4,
+                    "rsb": 72,
+                    "width": 222,
+                    "xmax": 150,
+                    "xmin": 4,
+                    "ymax": 722,
+                    "ymin": -170
+                }
+            }
+        },
+        "k": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 13,
+                    "width": 389,
+                    "xmax": 376,
+                    "xmin": 66,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "l": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 222,
+                    "xmax": 147,
+                    "xmin": 75,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "less": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 600,
+                    "xmax": 560,
+                    "xmin": 40,
+                    "ymax": 517,
+                    "ymin": 3
+                }
+            }
+        },
+        "lessequal": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 44,
+                    "rsb": 44,
+                    "width": 470,
+                    "xmax": 426,
+                    "xmin": 44,
+                    "ymax": 573,
+                    "ymin": 31
+                }
+            }
+        },
+        "logicalnot": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 600,
+                    "xmax": 560,
+                    "xmin": 40,
+                    "ymax": 400,
+                    "ymin": 120
+                }
+            }
+        },
+        "lozenge": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 47,
+                    "rsb": 48,
+                    "width": 485,
+                    "xmax": 437,
+                    "xmin": 47,
+                    "ymax": 751,
+                    "ymin": -36
+                }
+            }
+        },
+        "lslash": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -4,
+                    "rsb": -4,
+                    "width": 222,
+                    "xmax": 226,
+                    "xmin": -4,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "m": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 80,
+                    "rsb": 81,
+                    "width": 667,
+                    "xmax": 586,
+                    "xmin": 80,
+                    "ymax": 530,
+                    "ymin": 0
+                }
+            }
+        },
+        "macron": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -22,
+                    "rsb": -22,
+                    "width": 222,
+                    "xmax": 244,
+                    "xmin": -22,
+                    "ymax": 662,
+                    "ymin": 614
+                }
+            }
+        },
+        "minus": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 600,
+                    "xmax": 560,
+                    "xmin": 40,
+                    "ymax": 293,
+                    "ymin": 227
+                }
+            }
+        },
+        "mu": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 520,
+                    "ymin": -170
+                }
+            }
+        },
+        "multiply": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 600,
+                    "xmax": 560,
+                    "xmin": 40,
+                    "ymax": 520,
+                    "ymin": 0
+                }
+            }
+        },
+        "n": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 530,
+                    "ymin": 0
+                }
+            }
+        },
+        "nine": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 52,
+                    "rsb": 52,
+                    "width": 444,
+                    "xmax": 392,
+                    "xmin": 52,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "notequal": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 44,
+                    "rsb": 45,
+                    "width": 470,
+                    "xmax": 425,
+                    "xmin": 44,
+                    "ymax": 497,
+                    "ymin": 83
+                }
+            }
+        },
+        "ntilde": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 692,
+                    "ymin": 0
+                }
+            }
+        },
+        "numbersign": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 18,
+                    "rsb": 18,
+                    "width": 444,
+                    "xmax": 426,
+                    "xmin": 18,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "o": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 36,
+                    "width": 389,
+                    "xmax": 353,
+                    "xmin": 35,
+                    "ymax": 530,
+                    "ymin": -10
+                }
+            }
+        },
+        "oacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 36,
+                    "width": 389,
+                    "xmax": 353,
+                    "xmin": 35,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "ocircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 36,
+                    "width": 389,
+                    "xmax": 353,
+                    "xmin": 35,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "odieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 36,
+                    "width": 389,
+                    "xmax": 353,
+                    "xmin": 35,
+                    "ymax": 690,
+                    "ymin": -10
+                }
+            }
+        },
+        "oe": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 23,
+                    "rsb": 30,
+                    "width": 611,
+                    "xmax": 581,
+                    "xmin": 23,
+                    "ymax": 530,
+                    "ymin": -10
+                }
+            }
+        },
+        "ogonek": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -11,
+                    "rsb": -2,
+                    "width": 222,
+                    "xmax": 224,
+                    "xmin": -11,
+                    "ymax": 18,
+                    "ymin": -214
+                }
+            }
+        },
+        "ograve": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 36,
+                    "width": 389,
+                    "xmax": 353,
+                    "xmin": 35,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "one": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 104,
+                    "rsb": 94,
+                    "width": 444,
+                    "xmax": 350,
+                    "xmin": 104,
+                    "ymax": 732,
+                    "ymin": 0
+                }
+            }
+        },
+        "onehalf": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 68,
+                    "rsb": 26,
+                    "width": 666,
+                    "xmax": 640,
+                    "xmin": 68,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "onequarter": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 68,
+                    "rsb": 38,
+                    "width": 666,
+                    "xmax": 628,
+                    "xmin": 68,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "onesuperior": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 52,
+                    "rsb": 52,
+                    "width": 266,
+                    "xmax": 214,
+                    "xmin": 52,
+                    "ymax": 732,
+                    "ymin": 292
+                }
+            }
+        },
+        "ordfeminine": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 20,
+                    "rsb": 32,
+                    "width": 266,
+                    "xmax": 234,
+                    "xmin": 20,
+                    "ymax": 732,
+                    "ymin": 408
+                }
+            }
+        },
+        "ordmasculine": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 13,
+                    "rsb": 14,
+                    "width": 233,
+                    "xmax": 219,
+                    "xmin": 13,
+                    "ymax": 732,
+                    "ymin": 408
+                }
+            }
+        },
+        "oslash": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 21,
+                    "rsb": 22,
+                    "width": 389,
+                    "xmax": 367,
+                    "xmin": 21,
+                    "ymax": 630,
+                    "ymin": -120
+                }
+            }
+        },
+        "otilde": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 35,
+                    "rsb": 36,
+                    "width": 389,
+                    "xmax": 353,
+                    "xmin": 35,
+                    "ymax": 692,
+                    "ymin": -10
+                }
+            }
+        },
+        "p": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 78,
+                    "rsb": 48,
+                    "width": 444,
+                    "xmax": 396,
+                    "xmin": 78,
+                    "ymax": 530,
+                    "ymin": -170
+                }
+            }
+        },
+        "paragraph": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 11,
+                    "rsb": -2,
+                    "width": 500,
+                    "xmax": 502,
+                    "xmin": 11,
+                    "ymax": 722,
+                    "ymin": -84
+                }
+            }
+        },
+        "parenleft": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 40,
+                    "width": 278,
+                    "xmax": 238,
+                    "xmin": 66,
+                    "ymax": 732,
+                    "ymin": -110
+                }
+            }
+        },
+        "parenright": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 66,
+                    "width": 278,
+                    "xmax": 212,
+                    "xmin": 40,
+                    "ymax": 732,
+                    "ymin": -110
+                }
+            }
+        },
+        "partialdiff": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 38,
+                    "rsb": 42,
+                    "width": 450,
+                    "xmax": 408,
+                    "xmin": 38,
+                    "ymax": 806,
+                    "ymin": -4
+                }
+            }
+        },
+        "percent": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 46,
+                    "rsb": 82,
+                    "width": 778,
+                    "xmax": 696,
+                    "xmin": 46,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "period": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 69,
+                    "rsb": 69,
+                    "width": 222,
+                    "xmax": 153,
+                    "xmin": 69,
+                    "ymax": 94,
+                    "ymin": 0
+                }
+            }
+        },
+        "periodcentered": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 62,
+                    "rsb": 62,
+                    "width": 222,
+                    "xmax": 160,
+                    "xmin": 62,
+                    "ymax": 309,
+                    "ymin": 211
+                }
+            }
+        },
+        "perthousand": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 1000,
+                    "xmax": 980,
+                    "xmin": 20,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "pi": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 11,
+                    "rsb": 19,
+                    "width": 465,
+                    "xmax": 446,
+                    "xmin": 11,
+                    "ymax": 532,
+                    "ymin": 0
+                }
+            }
+        },
+        "plus": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 600,
+                    "xmax": 560,
+                    "xmin": 40,
+                    "ymax": 520,
+                    "ymin": 0
+                }
+            }
+        },
+        "plusminus": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 600,
+                    "xmax": 560,
+                    "xmin": 40,
+                    "ymax": 520,
+                    "ymin": 0
+                }
+            }
+        },
+        "product": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 24,
+                    "rsb": 25,
+                    "width": 570,
+                    "xmax": 545,
+                    "xmin": 24,
+                    "ymax": 716,
+                    "ymin": -99
+                }
+            }
+        },
+        "q": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 78,
+                    "width": 444,
+                    "xmax": 366,
+                    "xmin": 48,
+                    "ymax": 530,
+                    "ymin": -170
+                }
+            }
+        },
+        "question": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 64,
+                    "rsb": 64,
+                    "width": 389,
+                    "xmax": 325,
+                    "xmin": 64,
+                    "ymax": 732,
+                    "ymin": 0
+                }
+            }
+        },
+        "questiondown": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 64,
+                    "rsb": 64,
+                    "width": 389,
+                    "xmax": 325,
+                    "xmin": 64,
+                    "ymax": 520,
+                    "ymin": -212
+                }
+            }
+        },
+        "quotedbl": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 333,
+                    "xmax": 261,
+                    "xmin": 72,
+                    "ymax": 722,
+                    "ymin": 466
+                }
+            }
+        },
+        "quotedblbase": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 60,
+                    "rsb": 72,
+                    "width": 389,
+                    "xmax": 317,
+                    "xmin": 60,
+                    "ymax": 94,
+                    "ymin": -150
+                }
+            }
+        },
+        "quotedblleft": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 60,
+                    "width": 389,
+                    "xmax": 329,
+                    "xmin": 72,
+                    "ymax": 732,
+                    "ymin": 488
+                }
+            }
+        },
+        "quotedblright": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 60,
+                    "rsb": 72,
+                    "width": 389,
+                    "xmax": 317,
+                    "xmin": 60,
+                    "ymax": 722,
+                    "ymin": 478
+                }
+            }
+        },
+        "quoteleft": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 60,
+                    "width": 222,
+                    "xmax": 162,
+                    "xmin": 72,
+                    "ymax": 732,
+                    "ymin": 488
+                }
+            }
+        },
+        "quoteright": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 60,
+                    "rsb": 72,
+                    "width": 222,
+                    "xmax": 150,
+                    "xmin": 60,
+                    "ymax": 722,
+                    "ymin": 478
+                }
+            }
+        },
+        "quotesinglbase": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 60,
+                    "rsb": 72,
+                    "width": 222,
+                    "xmax": 150,
+                    "xmin": 60,
+                    "ymax": 94,
+                    "ymin": -150
+                }
+            }
+        },
+        "quotesingle": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 80,
+                    "rsb": 80,
+                    "width": 222,
+                    "xmax": 142,
+                    "xmin": 80,
+                    "ymax": 722,
+                    "ymin": 466
+                }
+            }
+        },
+        "r": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 66,
+                    "rsb": 6,
+                    "width": 278,
+                    "xmax": 272,
+                    "xmin": 66,
+                    "ymax": 530,
+                    "ymin": 0
+                }
+            }
+        },
+        "radical": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 30,
+                    "rsb": 7,
+                    "width": 484,
+                    "xmax": 477,
+                    "xmin": 30,
+                    "ymax": 852,
+                    "ymin": -154
+                }
+            }
+        },
+        "registered": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 26,
+                    "rsb": 26,
+                    "width": 800,
+                    "xmax": 774,
+                    "xmin": 26,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "ring": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 16,
+                    "rsb": 16,
+                    "width": 222,
+                    "xmax": 206,
+                    "xmin": 16,
+                    "ymax": 768,
+                    "ymin": 578
+                }
+            }
+        },
+        "s": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 38,
+                    "rsb": 43,
+                    "width": 389,
+                    "xmax": 346,
+                    "xmin": 38,
+                    "ymax": 530,
+                    "ymin": -10
+                }
+            }
+        },
+        "scaron": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 38,
+                    "rsb": 43,
+                    "width": 389,
+                    "xmax": 346,
+                    "xmin": 38,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "section": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 64,
+                    "rsb": 64,
+                    "width": 500,
+                    "xmax": 436,
+                    "xmin": 64,
+                    "ymax": 732,
+                    "ymin": -84
+                }
+            }
+        },
+        "semicolon": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 63,
+                    "rsb": 69,
+                    "width": 222,
+                    "xmax": 153,
+                    "xmin": 63,
+                    "ymax": 366,
+                    "ymin": -150
+                }
+            }
+        },
+        "seven": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 60,
+                    "rsb": 60,
+                    "width": 444,
+                    "xmax": 384,
+                    "xmin": 60,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "six": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 52,
+                    "rsb": 52,
+                    "width": 444,
+                    "xmax": 392,
+                    "xmin": 52,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "slash": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -10,
+                    "rsb": -10,
+                    "width": 278,
+                    "xmax": 288,
+                    "xmin": -10,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "space": {
+            "layers": {
+                "CondensedNo.18": {
+                    "width": 222
+                }
+            }
+        },
+        "sterling": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 32,
+                    "rsb": 40,
+                    "width": 444,
+                    "xmax": 404,
+                    "xmin": 32,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "summation": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 21,
+                    "rsb": 19,
+                    "width": 454,
+                    "xmax": 435,
+                    "xmin": 21,
+                    "ymax": 716,
+                    "ymin": -99
+                }
+            }
+        },
+        "t": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 8,
+                    "rsb": 32,
+                    "width": 278,
+                    "xmax": 246,
+                    "xmin": 8,
+                    "ymax": 694,
+                    "ymin": -10
+                }
+            }
+        },
+        "thorn": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 78,
+                    "rsb": 48,
+                    "width": 444,
+                    "xmax": 396,
+                    "xmin": 78,
+                    "ymax": 722,
+                    "ymin": -170
+                }
+            }
+        },
+        "three": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 42,
+                    "rsb": 64,
+                    "width": 444,
+                    "xmax": 380,
+                    "xmin": 42,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "threequarters": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 38,
+                    "rsb": 38,
+                    "width": 666,
+                    "xmax": 628,
+                    "xmin": 38,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "threesuperior": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 18,
+                    "rsb": 30,
+                    "width": 266,
+                    "xmax": 236,
+                    "xmin": 18,
+                    "ymax": 732,
+                    "ymin": 286
+                }
+            }
+        },
+        "tilde": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -30,
+                    "rsb": -30,
+                    "width": 222,
+                    "xmax": 252,
+                    "xmin": -30,
+                    "ymax": 692,
+                    "ymin": 588
+                }
+            }
+        },
+        "trademark": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 38,
+                    "rsb": 89,
+                    "width": 990,
+                    "xmax": 901,
+                    "xmin": 38,
+                    "ymax": 722,
+                    "ymin": 299
+                }
+            }
+        },
+        "two": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 56,
+                    "width": 444,
+                    "xmax": 388,
+                    "xmin": 48,
+                    "ymax": 732,
+                    "ymin": 0
+                }
+            }
+        },
+        "twosuperior": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 22,
+                    "rsb": 22,
+                    "width": 266,
+                    "xmax": 244,
+                    "xmin": 22,
+                    "ymax": 732,
+                    "ymin": 292
+                }
+            }
+        },
+        "u": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 520,
+                    "ymin": -10
+                }
+            }
+        },
+        "uacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "ucircumflex": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "udieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 690,
+                    "ymin": -10
+                }
+            }
+        },
+        "ugrave": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 716,
+                    "ymin": -10
+                }
+            }
+        },
+        "underscore": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 500,
+                    "xmax": 500,
+                    "xmin": 0,
+                    "ymax": -75,
+                    "ymin": -125
+                }
+            }
+        },
+        "uni00A0": {
+            "layers": {
+                "CondensedNo.18": {
+                    "width": 222
+                }
+            }
+        },
+        "uni00AD": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 43,
+                    "rsb": 44,
+                    "width": 333,
+                    "xmax": 289,
+                    "xmin": 43,
+                    "ymax": 293,
+                    "ymin": 227
+                }
+            }
+        },
+        "uni02C9": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -22,
+                    "rsb": -22,
+                    "width": 222,
+                    "xmax": 244,
+                    "xmin": -22,
+                    "ymax": 662,
+                    "ymin": 614
+                }
+            }
+        },
+        "uni03A9": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 40,
+                    "rsb": 42,
+                    "width": 569,
+                    "xmax": 527,
+                    "xmin": 40,
+                    "ymax": 726,
+                    "ymin": 0
+                }
+            }
+        },
+        "uni03BC": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 72,
+                    "rsb": 72,
+                    "width": 444,
+                    "xmax": 372,
+                    "xmin": 72,
+                    "ymax": 520,
+                    "ymin": -170
+                }
+            }
+        },
+        "uni2215": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": -167,
+                    "rsb": -167,
+                    "width": 167,
+                    "xmax": 334,
+                    "xmin": -167,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        },
+        "uni2219": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 62,
+                    "rsb": 62,
+                    "width": 222,
+                    "xmax": 160,
+                    "xmin": 62,
+                    "ymax": 309,
+                    "ymin": 211
+                }
+            }
+        },
+        "v": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 18,
+                    "rsb": 19,
+                    "width": 389,
+                    "xmax": 370,
+                    "xmin": 18,
+                    "ymax": 520,
+                    "ymin": 0
+                }
+            }
+        },
+        "w": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 18,
+                    "rsb": 18,
+                    "width": 556,
+                    "xmax": 538,
+                    "xmin": 18,
+                    "ymax": 520,
+                    "ymin": 0
+                }
+            }
+        },
+        "x": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 1,
+                    "rsb": 2,
+                    "width": 333,
+                    "xmax": 331,
+                    "xmin": 1,
+                    "ymax": 520,
+                    "ymin": 0
+                }
+            }
+        },
+        "y": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 2,
+                    "rsb": 3,
+                    "width": 333,
+                    "xmax": 330,
+                    "xmin": 2,
+                    "ymax": 520,
+                    "ymin": -170
+                }
+            }
+        },
+        "yacute": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 2,
+                    "rsb": 3,
+                    "width": 333,
+                    "xmax": 330,
+                    "xmin": 2,
+                    "ymax": 716,
+                    "ymin": -170
+                }
+            }
+        },
+        "ydieresis": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 2,
+                    "rsb": 3,
+                    "width": 333,
+                    "xmax": 330,
+                    "xmin": 2,
+                    "ymax": 690,
+                    "ymin": -170
+                }
+            }
+        },
+        "yen": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 19,
+                    "rsb": 19,
+                    "width": 444,
+                    "xmax": 425,
+                    "xmin": 19,
+                    "ymax": 722,
+                    "ymin": 0
+                }
+            }
+        },
+        "z": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 23,
+                    "rsb": 24,
+                    "width": 333,
+                    "xmax": 309,
+                    "xmin": 23,
+                    "ymax": 520,
+                    "ymin": 0
+                }
+            }
+        },
+        "zcaron": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 23,
+                    "rsb": 24,
+                    "width": 333,
+                    "xmax": 309,
+                    "xmin": 23,
+                    "ymax": 716,
+                    "ymin": 0
+                }
+            }
+        },
+        "zero": {
+            "layers": {
+                "CondensedNo.18": {
+                    "lsb": 48,
+                    "rsb": 48,
+                    "width": 444,
+                    "xmax": 396,
+                    "xmin": 48,
+                    "ymax": 732,
+                    "ymin": -10
+                }
+            }
+        }
+    },
+    "upm": 1000
+}

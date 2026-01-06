@@ -1,0 +1,3644 @@
+{
+    "dataType": "com.fontlab.metrics",
+    "masters": {
+        "Medium": {
+            "kerningClasses": [
+                {
+                    "1st": true,
+                    "name": "A",
+                    "names": [
+                        "A",
+                        "Agrave",
+                        "Aacute",
+                        "Acircumflex",
+                        "Atilde",
+                        "Adieresis",
+                        "Aring"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "f",
+                    "names": [
+                        "fi",
+                        "fl",
+                        "f"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "L",
+                    "names": [
+                        "Lslash",
+                        "L"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "y",
+                    "names": [
+                        "y",
+                        "yacute",
+                        "ydieresis"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "Y",
+                    "names": [
+                        "Y",
+                        "Ydieresis",
+                        "Yacute"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "y2",
+                    "names": [
+                        "y",
+                        "yacute",
+                        "ydieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "Y2",
+                    "names": [
+                        "Y",
+                        "Ydieresis",
+                        "Yacute"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "f2",
+                    "names": [
+                        "fi",
+                        "fl",
+                        "f",
+                        "germandbls"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "A2",
+                    "names": [
+                        "A",
+                        "Agrave",
+                        "Aacute",
+                        "Acircumflex",
+                        "Atilde",
+                        "Adieresis",
+                        "Aring",
+                        "AE"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "n",
+                    "names": [
+                        "n",
+                        "ntilde"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "a",
+                    "names": [
+                        "a",
+                        "agrave",
+                        "aacute",
+                        "acircumflex",
+                        "atilde",
+                        "adieresis",
+                        "aring",
+                        "ae"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "c",
+                    "names": [
+                        "c",
+                        "ccedilla"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "e",
+                    "names": [
+                        "e",
+                        "egrave",
+                        "eacute",
+                        "ecircumflex",
+                        "edieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "i",
+                    "names": [
+                        "i",
+                        "igrave",
+                        "iacute",
+                        "icircumflex",
+                        "idieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "o",
+                    "names": [
+                        "o",
+                        "oe",
+                        "ograve",
+                        "oacute",
+                        "ocircumflex",
+                        "otilde",
+                        "odieresis",
+                        "oslash"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "s",
+                    "names": [
+                        "s",
+                        "scaron"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "u",
+                    "names": [
+                        "u",
+                        "ugrave",
+                        "uacute",
+                        "ucircumflex",
+                        "udieresis"
+                    ]
+                }
+            ],
+            "pairs": {
+                "@A": {
+                    "@Y2": "-100",
+                    "@y2": "-20",
+                    "T": "-80",
+                    "V": "-120",
+                    "W": "-100",
+                    "quoteright": "-80",
+                    "v": "-20",
+                    "w": "-20"
+                },
+                "@L": {
+                    "@Y2": "-40",
+                    "@y2": "-20",
+                    "T": "-30",
+                    "V": "-40",
+                    "W": "-30",
+                    "quoteright": "-80"
+                },
+                "@Y": {
+                    "@A2": "-100",
+                    "@a": "-100",
+                    "@e": "-100",
+                    "@i": "-20",
+                    "@o": "-100",
+                    "@u": "-60",
+                    "colon": "-100",
+                    "comma": "-100",
+                    "hyphen": "-60",
+                    "p": "-80",
+                    "period": "-100",
+                    "q": "-100",
+                    "semicolon": "-100",
+                    "v": "-40"
+                },
+                "@f": {
+                    "@f2": "20",
+                    "quoteright": "20"
+                },
+                "@y": {
+                    "comma": "-80",
+                    "period": "-80"
+                },
+                "F": {
+                    "@A2": "-60",
+                    "comma": "-150",
+                    "period": "-150"
+                },
+                "P": {
+                    "@A2": "-80",
+                    "comma": "-135",
+                    "period": "-135"
+                },
+                "R": {
+                    "@Y2": "-20",
+                    "T": "-20"
+                },
+                "T": {
+                    "@A2": "-80",
+                    "@a": "-100",
+                    "@c": "-100",
+                    "@e": "-100",
+                    "@i": "-15",
+                    "@o": "-100",
+                    "@s": "-100",
+                    "@u": "-100",
+                    "@y2": "-80",
+                    "acircumflex": "-50",
+                    "adieresis": "-25",
+                    "agrave": "-50",
+                    "aring": "-50",
+                    "atilde": "-50",
+                    "colon": "-100",
+                    "comma": "-100",
+                    "ecircumflex": "-75",
+                    "edieresis": "-50",
+                    "egrave": "-75",
+                    "hyphen": "-80",
+                    "iacute": "-8",
+                    "icircumflex": "3",
+                    "igrave": "8",
+                    "odieresis": "-50",
+                    "ograve": "-50",
+                    "period": "-100",
+                    "r": "-80",
+                    "scaron": "-25",
+                    "semicolon": "-100",
+                    "udieresis": "-50",
+                    "w": "-80"
+                },
+                "V": {
+                    "@A2": "-100",
+                    "@a": "-80",
+                    "@e": "-80",
+                    "@i": "-20",
+                    "@o": "-80",
+                    "@u": "-60",
+                    "@y2": "-20",
+                    "acircumflex": "-40",
+                    "adieresis": "-40",
+                    "agrave": "-40",
+                    "aring": "-40",
+                    "atilde": "-40",
+                    "colon": "-80",
+                    "comma": "-120",
+                    "ecircumflex": "-40",
+                    "edieresis": "-40",
+                    "egrave": "-40",
+                    "hyphen": "-30",
+                    "icircumflex": "4",
+                    "ocircumflex": "-60",
+                    "odieresis": "-40",
+                    "period": "-120",
+                    "r": "-40",
+                    "semicolon": "-80"
+                },
+                "W": {
+                    "@A2": "-100",
+                    "@a": "-60",
+                    "@e": "-60",
+                    "@o": "-60",
+                    "@u": "-40",
+                    "adieresis": "-45",
+                    "colon": "-80",
+                    "comma": "-80",
+                    "ecircumflex": "-45",
+                    "odieresis": "-45",
+                    "period": "-80",
+                    "r": "-20",
+                    "semicolon": "-80",
+                    "udieresis": "-30"
+                },
+                "Y": {
+                    "odieresis": "-75",
+                    "udieresis": "-45"
+                },
+                "quoteleft": {
+                    "quoteleft": "-111"
+                },
+                "quoteright": {
+                    "@s": "-100",
+                    "quoteright": "-111",
+                    "t": "-20"
+                },
+                "r": {
+                    "@f2": "20",
+                    "@n": "8",
+                    "@y2": "40",
+                    "comma": "-100",
+                    "m": "8",
+                    "period": "-100",
+                    "q": "-20",
+                    "t": "20",
+                    "v": "40",
+                    "w": "40",
+                    "x": "40"
+                },
+                "v": {
+                    "comma": "-80",
+                    "period": "-80"
+                },
+                "w": {
+                    "comma": "-60",
+                    "period": "-60"
+                }
+            }
+        }
+    },
+    "metrics": {
+        ".notdef": {
+            "layers": {
+                "Medium": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 500,
+                    "xmax": 500,
+                    "xmin": 0,
+                    "ymax": 700,
+                    "ymin": 0
+                }
+            }
+        },
+        "A": {
+            "layers": {
+                "Medium": {
+                    "lsb": -8,
+                    "rsb": -9,
+                    "width": 703,
+                    "xmax": 712,
+                    "xmin": -8,
+                    "ymax": 786,
+                    "ymin": 0
+                }
+            }
+        },
+        "AE": {
+            "layers": {
+                "Medium": {
+                    "lsb": 0,
+                    "rsb": -24,
+                    "width": 997,
+                    "xmax": 1021,
+                    "xmin": 0,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Aacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": -8,
+                    "rsb": -9,
+                    "width": 703,
+                    "xmax": 712,
+                    "xmin": -8,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "Acircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": -8,
+                    "rsb": -9,
+                    "width": 703,
+                    "xmax": 712,
+                    "xmin": -8,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "Adieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": -8,
+                    "rsb": -9,
+                    "width": 703,
+                    "xmax": 712,
+                    "xmin": -8,
+                    "ymax": 955,
+                    "ymin": 0
+                }
+            }
+        },
+        "Agrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": -8,
+                    "rsb": -9,
+                    "width": 703,
+                    "xmax": 712,
+                    "xmin": -8,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "Aring": {
+            "layers": {
+                "Medium": {
+                    "lsb": -8,
+                    "rsb": -9,
+                    "width": 703,
+                    "xmax": 712,
+                    "xmin": -8,
+                    "ymax": 985,
+                    "ymin": 0
+                }
+            }
+        },
+        "Atilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": -8,
+                    "rsb": -9,
+                    "width": 703,
+                    "xmax": 712,
+                    "xmin": -8,
+                    "ymax": 955,
+                    "ymin": 0
+                }
+            }
+        },
+        "B": {
+            "layers": {
+                "Medium": {
+                    "lsb": 64,
+                    "rsb": 33,
+                    "width": 535,
+                    "xmax": 502,
+                    "xmin": 64,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "C": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 40,
+                    "width": 661,
+                    "xmax": 621,
+                    "xmin": 30,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "CR": {
+            "layers": {
+                "Medium": {
+                    "width": 333
+                }
+            }
+        },
+        "Ccedilla": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 40,
+                    "width": 661,
+                    "xmax": 621,
+                    "xmin": 30,
+                    "ymax": 770,
+                    "ymin": -181
+                }
+            }
+        },
+        "D": {
+            "layers": {
+                "Medium": {
+                    "lsb": 64,
+                    "rsb": 22,
+                    "width": 665,
+                    "xmax": 643,
+                    "xmin": 64,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Delta": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 34,
+                    "width": 676,
+                    "xmax": 642,
+                    "xmin": 33,
+                    "ymax": 777,
+                    "ymin": 0
+                }
+            }
+        },
+        "E": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": 44,
+                    "width": 521,
+                    "xmax": 477,
+                    "xmin": 72,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Eacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": 44,
+                    "width": 521,
+                    "xmax": 477,
+                    "xmin": 72,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "Ecircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": 44,
+                    "width": 521,
+                    "xmax": 477,
+                    "xmin": 72,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "Edieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": 44,
+                    "width": 521,
+                    "xmax": 477,
+                    "xmin": 72,
+                    "ymax": 955,
+                    "ymin": 0
+                }
+            }
+        },
+        "Egrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": 44,
+                    "width": 521,
+                    "xmax": 477,
+                    "xmin": 72,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "Eth": {
+            "layers": {
+                "Medium": {
+                    "lsb": 0,
+                    "rsb": 22,
+                    "width": 665,
+                    "xmax": 643,
+                    "xmin": 0,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Euro": {
+            "layers": {
+                "Medium": {
+                    "lsb": 27,
+                    "rsb": 46,
+                    "width": 578,
+                    "xmax": 532,
+                    "xmin": 27,
+                    "ymax": 769,
+                    "ymin": -15
+                }
+            }
+        },
+        "F": {
+            "layers": {
+                "Medium": {
+                    "lsb": 71,
+                    "rsb": 38,
+                    "width": 474,
+                    "xmax": 436,
+                    "xmin": 71,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "G": {
+            "layers": {
+                "Medium": {
+                    "lsb": 21,
+                    "rsb": 21,
+                    "width": 780,
+                    "xmax": 759,
+                    "xmin": 21,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "H": {
+            "layers": {
+                "Medium": {
+                    "lsb": 64,
+                    "rsb": 64,
+                    "width": 675,
+                    "xmax": 611,
+                    "xmin": 64,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "I": {
+            "layers": {
+                "Medium": {
+                    "lsb": 69,
+                    "rsb": 69,
+                    "width": 232,
+                    "xmax": 163,
+                    "xmin": 69,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Iacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 42,
+                    "rsb": -18,
+                    "width": 232,
+                    "xmax": 250,
+                    "xmin": 42,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "Icircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": -44,
+                    "rsb": -44,
+                    "width": 232,
+                    "xmax": 276,
+                    "xmin": -44,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "Idieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": -50,
+                    "rsb": -50,
+                    "width": 232,
+                    "xmax": 282,
+                    "xmin": -50,
+                    "ymax": 955,
+                    "ymin": 0
+                }
+            }
+        },
+        "Igrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": -18,
+                    "rsb": 42,
+                    "width": 232,
+                    "xmax": 190,
+                    "xmin": -18,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "J": {
+            "layers": {
+                "Medium": {
+                    "lsb": -19,
+                    "rsb": 59,
+                    "width": 362,
+                    "xmax": 303,
+                    "xmin": -19,
+                    "ymax": 754,
+                    "ymin": -16
+                }
+            }
+        },
+        "K": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": -15,
+                    "width": 600,
+                    "xmax": 615,
+                    "xmin": 72,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "L": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": -10,
+                    "width": 385,
+                    "xmax": 395,
+                    "xmin": 72,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Lslash": {
+            "layers": {
+                "Medium": {
+                    "lsb": -9,
+                    "rsb": -10,
+                    "width": 385,
+                    "xmax": 395,
+                    "xmin": -9,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "M": {
+            "layers": {
+                "Medium": {
+                    "lsb": 13,
+                    "rsb": 12,
+                    "width": 851,
+                    "xmax": 839,
+                    "xmin": 13,
+                    "ymax": 786,
+                    "ymin": -16
+                }
+            }
+        },
+        "N": {
+            "layers": {
+                "Medium": {
+                    "lsb": 63,
+                    "rsb": 62,
+                    "width": 785,
+                    "xmax": 723,
+                    "xmin": 63,
+                    "ymax": 790,
+                    "ymin": -31
+                }
+            }
+        },
+        "NULL": {
+            "layers": {
+                "Medium": {
+                    "width": 0
+                }
+            }
+        },
+        "Ntilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 63,
+                    "rsb": 62,
+                    "width": 785,
+                    "xmax": 723,
+                    "xmin": 63,
+                    "ymax": 955,
+                    "ymin": -31
+                }
+            }
+        },
+        "O": {
+            "layers": {
+                "Medium": {
+                    "lsb": 19,
+                    "rsb": 19,
+                    "width": 828,
+                    "xmax": 809,
+                    "xmin": 19,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "OE": {
+            "layers": {
+                "Medium": {
+                    "lsb": 19,
+                    "rsb": 30,
+                    "width": 1143,
+                    "xmax": 1113,
+                    "xmin": 19,
+                    "ymax": 770,
+                    "ymin": -16.025974025974023
+                }
+            }
+        },
+        "Oacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 19,
+                    "rsb": 19,
+                    "width": 828,
+                    "xmax": 809,
+                    "xmin": 19,
+                    "ymax": 995,
+                    "ymin": -16
+                }
+            }
+        },
+        "Ocircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 19,
+                    "rsb": 19,
+                    "width": 828,
+                    "xmax": 809,
+                    "xmin": 19,
+                    "ymax": 995,
+                    "ymin": -16
+                }
+            }
+        },
+        "Odieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 19,
+                    "rsb": 19,
+                    "width": 828,
+                    "xmax": 809,
+                    "xmin": 19,
+                    "ymax": 955,
+                    "ymin": -16
+                }
+            }
+        },
+        "Ograve": {
+            "layers": {
+                "Medium": {
+                    "lsb": 19,
+                    "rsb": 19,
+                    "width": 828,
+                    "xmax": 809,
+                    "xmin": 19,
+                    "ymax": 995,
+                    "ymin": -16
+                }
+            }
+        },
+        "Omega": {
+            "layers": {
+                "Medium": {
+                    "lsb": 50,
+                    "rsb": 51,
+                    "width": 745,
+                    "xmax": 694,
+                    "xmin": 50,
+                    "ymax": 769,
+                    "ymin": 0
+                }
+            }
+        },
+        "Oslash": {
+            "layers": {
+                "Medium": {
+                    "lsb": 7,
+                    "rsb": 7,
+                    "width": 828,
+                    "xmax": 821,
+                    "xmin": 7,
+                    "ymax": 770,
+                    "ymin": -32
+                }
+            }
+        },
+        "Otilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 19,
+                    "rsb": 19,
+                    "width": 828,
+                    "xmax": 809,
+                    "xmin": 19,
+                    "ymax": 955,
+                    "ymin": -16
+                }
+            }
+        },
+        "P": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": 11,
+                    "width": 495,
+                    "xmax": 484,
+                    "xmin": 72,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Q": {
+            "layers": {
+                "Medium": {
+                    "lsb": 19,
+                    "rsb": 19,
+                    "width": 828,
+                    "xmax": 809,
+                    "xmin": 19,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "R": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": 2,
+                    "width": 543,
+                    "xmax": 541,
+                    "xmin": 72,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "S": {
+            "layers": {
+                "Medium": {
+                    "lsb": 32,
+                    "rsb": 31,
+                    "width": 537,
+                    "xmax": 506,
+                    "xmin": 32,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "Scaron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 32,
+                    "rsb": 31,
+                    "width": 537,
+                    "xmax": 506,
+                    "xmin": 32,
+                    "ymax": 995,
+                    "ymin": -16
+                }
+            }
+        },
+        "T": {
+            "layers": {
+                "Medium": {
+                    "lsb": 2,
+                    "rsb": 2,
+                    "width": 456,
+                    "xmax": 454,
+                    "xmin": 2,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Thorn": {
+            "layers": {
+                "Medium": {
+                    "lsb": 72,
+                    "rsb": 11,
+                    "width": 495,
+                    "xmax": 484,
+                    "xmin": 72,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "U": {
+            "layers": {
+                "Medium": {
+                    "lsb": 59,
+                    "rsb": 58,
+                    "width": 669,
+                    "xmax": 611,
+                    "xmin": 59,
+                    "ymax": 754,
+                    "ymin": -16
+                }
+            }
+        },
+        "Uacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 59,
+                    "rsb": 58,
+                    "width": 669,
+                    "xmax": 611,
+                    "xmin": 59,
+                    "ymax": 995,
+                    "ymin": -16
+                }
+            }
+        },
+        "Ucircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 59,
+                    "rsb": 58,
+                    "width": 669,
+                    "xmax": 611,
+                    "xmin": 59,
+                    "ymax": 995,
+                    "ymin": -16
+                }
+            }
+        },
+        "Udieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 59,
+                    "rsb": 58,
+                    "width": 669,
+                    "xmax": 611,
+                    "xmin": 59,
+                    "ymax": 955,
+                    "ymin": -16
+                }
+            }
+        },
+        "Ugrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 59,
+                    "rsb": 58,
+                    "width": 669,
+                    "xmax": 611,
+                    "xmin": 59,
+                    "ymax": 995,
+                    "ymin": -16
+                }
+            }
+        },
+        "V": {
+            "layers": {
+                "Medium": {
+                    "lsb": -7,
+                    "rsb": -8,
+                    "width": 640,
+                    "xmax": 648,
+                    "xmin": -7,
+                    "ymax": 754,
+                    "ymin": -40
+                }
+            }
+        },
+        "W": {
+            "layers": {
+                "Medium": {
+                    "lsb": -12,
+                    "rsb": -13,
+                    "width": 1027,
+                    "xmax": 1040,
+                    "xmin": -12,
+                    "ymax": 770,
+                    "ymin": -30
+                }
+            }
+        },
+        "X": {
+            "layers": {
+                "Medium": {
+                    "lsb": 0,
+                    "rsb": 1,
+                    "width": 574,
+                    "xmax": 573,
+                    "xmin": 0,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Y": {
+            "layers": {
+                "Medium": {
+                    "lsb": -6,
+                    "rsb": -7,
+                    "width": 573,
+                    "xmax": 580,
+                    "xmin": -6,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Yacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": -6,
+                    "rsb": -7,
+                    "width": 573,
+                    "xmax": 580,
+                    "xmin": -6,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "Ydieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": -6,
+                    "rsb": -7,
+                    "width": 573,
+                    "xmax": 580,
+                    "xmin": -6,
+                    "ymax": 955,
+                    "ymin": 0
+                }
+            }
+        },
+        "Z": {
+            "layers": {
+                "Medium": {
+                    "lsb": 9,
+                    "rsb": 8,
+                    "width": 552,
+                    "xmax": 544,
+                    "xmin": 9,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "Zcaron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 9,
+                    "rsb": 8,
+                    "width": 552,
+                    "xmax": 544,
+                    "xmin": 9,
+                    "ymax": 995,
+                    "ymin": 0
+                }
+            }
+        },
+        "a": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 55,
+                    "width": 556,
+                    "xmax": 501,
+                    "xmin": 26,
+                    "ymax": 482,
+                    "ymin": -16
+                }
+            }
+        },
+        "aacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 55,
+                    "width": 556,
+                    "xmax": 501,
+                    "xmin": 26,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "acircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 55,
+                    "width": 556,
+                    "xmax": 501,
+                    "xmin": 26,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "acute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 76,
+                    "rsb": 76,
+                    "width": 360,
+                    "xmax": 284,
+                    "xmin": 76,
+                    "ymax": 734,
+                    "ymin": 541
+                }
+            }
+        },
+        "adieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 55,
+                    "width": 556,
+                    "xmax": 501,
+                    "xmin": 26,
+                    "ymax": 694,
+                    "ymin": -16
+                }
+            }
+        },
+        "ae": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 15,
+                    "width": 807,
+                    "xmax": 792,
+                    "xmin": 26,
+                    "ymax": 482,
+                    "ymin": -16
+                }
+            }
+        },
+        "afii61289": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 24,
+                    "width": 509,
+                    "xmax": 485,
+                    "xmin": 30,
+                    "ymax": 832,
+                    "ymin": -11
+                }
+            }
+        },
+        "agrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 55,
+                    "width": 556,
+                    "xmax": 501,
+                    "xmin": 26,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "ampersand": {
+            "layers": {
+                "Medium": {
+                    "lsb": 53,
+                    "rsb": -16,
+                    "width": 692,
+                    "xmax": 708,
+                    "xmin": 53,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "approxequal": {
+            "layers": {
+                "Medium": {
+                    "lsb": 47,
+                    "rsb": 48,
+                    "width": 588,
+                    "xmax": 540,
+                    "xmin": 47,
+                    "ymax": 467,
+                    "ymin": 153
+                }
+            }
+        },
+        "aring": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 55,
+                    "width": 556,
+                    "xmax": 501,
+                    "xmin": 26,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "asciicircum": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 754,
+                    "ymin": 308
+                }
+            }
+        },
+        "asciitilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 350,
+                    "ymin": 162
+                }
+            }
+        },
+        "asterisk": {
+            "layers": {
+                "Medium": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 432,
+                    "xmax": 369,
+                    "xmin": 63,
+                    "ymax": 754,
+                    "ymin": 444
+                }
+            }
+        },
+        "at": {
+            "layers": {
+                "Medium": {
+                    "lsb": 36,
+                    "rsb": 35,
+                    "width": 800,
+                    "xmax": 765,
+                    "xmin": 36,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "atilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 55,
+                    "width": 556,
+                    "xmax": 501,
+                    "xmin": 26,
+                    "ymax": 694,
+                    "ymin": -16
+                }
+            }
+        },
+        "b": {
+            "layers": {
+                "Medium": {
+                    "lsb": 55,
+                    "rsb": 26,
+                    "width": 556,
+                    "xmax": 530,
+                    "xmin": 55,
+                    "ymax": 868,
+                    "ymin": -16
+                }
+            }
+        },
+        "backslash": {
+            "layers": {
+                "Medium": {
+                    "lsb": 31,
+                    "rsb": 32,
+                    "width": 551,
+                    "xmax": 519,
+                    "xmin": 31,
+                    "ymax": 868,
+                    "ymin": 0
+                }
+            }
+        },
+        "bar": {
+            "layers": {
+                "Medium": {
+                    "lsb": 242,
+                    "rsb": 242,
+                    "width": 570,
+                    "xmax": 328,
+                    "xmin": 242,
+                    "ymax": 786,
+                    "ymin": -214
+                }
+            }
+        },
+        "braceleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 48,
+                    "rsb": 48,
+                    "width": 334,
+                    "xmax": 286,
+                    "xmin": 48,
+                    "ymax": 809,
+                    "ymin": -194
+                }
+            }
+        },
+        "braceright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 48,
+                    "rsb": 48,
+                    "width": 334,
+                    "xmax": 286,
+                    "xmin": 48,
+                    "ymax": 809,
+                    "ymin": -194
+                }
+            }
+        },
+        "bracketleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 61,
+                    "rsb": 60,
+                    "width": 311,
+                    "xmax": 251,
+                    "xmin": 61,
+                    "ymax": 809,
+                    "ymin": -193
+                }
+            }
+        },
+        "bracketright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 60,
+                    "rsb": 61,
+                    "width": 311,
+                    "xmax": 250,
+                    "xmin": 60,
+                    "ymax": 809,
+                    "ymin": -193
+                }
+            }
+        },
+        "breve": {
+            "layers": {
+                "Medium": {
+                    "lsb": 71,
+                    "rsb": 71,
+                    "width": 490,
+                    "xmax": 419,
+                    "xmin": 71,
+                    "ymax": 694,
+                    "ymin": 553
+                }
+            }
+        },
+        "brokenbar": {
+            "layers": {
+                "Medium": {
+                    "lsb": 242,
+                    "rsb": 242,
+                    "width": 570,
+                    "xmax": 328,
+                    "xmin": 242,
+                    "ymax": 661,
+                    "ymin": -89
+                }
+            }
+        },
+        "bullet": {
+            "layers": {
+                "Medium": {
+                    "lsb": 100.98214285714285,
+                    "rsb": 100,
+                    "width": 578,
+                    "xmax": 478,
+                    "xmin": 100.98214285714285,
+                    "ymax": 566,
+                    "ymin": 189
+                }
+            }
+        },
+        "c": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 35,
+                    "width": 441,
+                    "xmax": 406,
+                    "xmin": 26,
+                    "ymax": 482,
+                    "ymin": -16
+                }
+            }
+        },
+        "caron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 76,
+                    "rsb": 76,
+                    "width": 472,
+                    "xmax": 396,
+                    "xmin": 76,
+                    "ymax": 734,
+                    "ymin": 543
+                }
+            }
+        },
+        "ccedilla": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 35,
+                    "width": 441,
+                    "xmax": 406,
+                    "xmin": 26,
+                    "ymax": 482,
+                    "ymin": -181
+                }
+            }
+        },
+        "cedilla": {
+            "layers": {
+                "Medium": {
+                    "lsb": 86,
+                    "rsb": 86,
+                    "width": 330,
+                    "xmax": 244,
+                    "xmin": 86,
+                    "ymax": -17,
+                    "ymin": -181
+                }
+            }
+        },
+        "cent": {
+            "layers": {
+                "Medium": {
+                    "lsb": 100,
+                    "rsb": 100,
+                    "width": 578,
+                    "xmax": 478,
+                    "xmin": 100,
+                    "ymax": 704,
+                    "ymin": 48
+                }
+            }
+        },
+        "circumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 470,
+                    "xmax": 395,
+                    "xmin": 75,
+                    "ymax": 734,
+                    "ymin": 543
+                }
+            }
+        },
+        "colon": {
+            "layers": {
+                "Medium": {
+                    "lsb": 87,
+                    "rsb": 86,
+                    "width": 289,
+                    "xmax": 203,
+                    "xmin": 87,
+                    "ymax": 482,
+                    "ymin": -16
+                }
+            }
+        },
+        "comma": {
+            "layers": {
+                "Medium": {
+                    "lsb": 54,
+                    "rsb": 47,
+                    "width": 289,
+                    "xmax": 242,
+                    "xmin": 54,
+                    "ymax": 119,
+                    "ymin": -179
+                }
+            }
+        },
+        "copyright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 6,
+                    "rsb": 6,
+                    "width": 800,
+                    "xmax": 794,
+                    "xmin": 6,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "currency": {
+            "layers": {
+                "Medium": {
+                    "lsb": 34,
+                    "rsb": 34,
+                    "width": 578,
+                    "xmax": 544,
+                    "xmin": 34,
+                    "ymax": 550,
+                    "ymin": 50
+                }
+            }
+        },
+        "d": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 55,
+                    "width": 556,
+                    "xmax": 501,
+                    "xmin": 26,
+                    "ymax": 868,
+                    "ymin": -16
+                }
+            }
+        },
+        "dagger": {
+            "layers": {
+                "Medium": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 578,
+                    "xmax": 515,
+                    "xmin": 63,
+                    "ymax": 868,
+                    "ymin": -88
+                }
+            }
+        },
+        "daggerdbl": {
+            "layers": {
+                "Medium": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 578,
+                    "xmax": 515,
+                    "xmin": 63,
+                    "ymax": 868,
+                    "ymin": -87
+                }
+            }
+        },
+        "degree": {
+            "layers": {
+                "Medium": {
+                    "lsb": 49.97802197802198,
+                    "rsb": 50,
+                    "width": 400,
+                    "xmax": 350,
+                    "xmin": 49.97802197802198,
+                    "ymax": 770,
+                    "ymin": 470
+                }
+            }
+        },
+        "dieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 69,
+                    "rsb": 69,
+                    "width": 470,
+                    "xmax": 401,
+                    "xmin": 69,
+                    "ymax": 694,
+                    "ymin": 573
+                }
+            }
+        },
+        "divide": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 512,
+                    "ymin": 0
+                }
+            }
+        },
+        "dollar": {
+            "layers": {
+                "Medium": {
+                    "lsb": 50,
+                    "rsb": 50,
+                    "width": 578,
+                    "xmax": 528,
+                    "xmin": 50,
+                    "ymax": 860,
+                    "ymin": -111
+                }
+            }
+        },
+        "dotaccent": {
+            "layers": {
+                "Medium": {
+                    "lsb": 120,
+                    "rsb": 119,
+                    "width": 360,
+                    "xmax": 241,
+                    "xmin": 120,
+                    "ymax": 694,
+                    "ymin": 573
+                }
+            }
+        },
+        "dotlessi": {
+            "layers": {
+                "Medium": {
+                    "lsb": 82,
+                    "rsb": 82,
+                    "width": 254,
+                    "xmax": 172,
+                    "xmin": 82,
+                    "ymax": 468,
+                    "ymin": 0
+                }
+            }
+        },
+        "e": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 15,
+                    "width": 488,
+                    "xmax": 473,
+                    "xmin": 26,
+                    "ymax": 482,
+                    "ymin": -16
+                }
+            }
+        },
+        "eacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 15,
+                    "width": 488,
+                    "xmax": 473,
+                    "xmin": 26,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "ecircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 15,
+                    "width": 488,
+                    "xmax": 473,
+                    "xmin": 26,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "edieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 15,
+                    "width": 488,
+                    "xmax": 473,
+                    "xmin": 26,
+                    "ymax": 694,
+                    "ymin": -16
+                }
+            }
+        },
+        "egrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 15,
+                    "width": 488,
+                    "xmax": 473,
+                    "xmin": 26,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "eight": {
+            "layers": {
+                "Medium": {
+                    "lsb": 53,
+                    "rsb": 53,
+                    "width": 578,
+                    "xmax": 525,
+                    "xmin": 53,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "ellipsis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 108,
+                    "rsb": 108,
+                    "width": 1000,
+                    "xmax": 892,
+                    "xmin": 108,
+                    "ymax": 100,
+                    "ymin": -16
+                }
+            }
+        },
+        "emdash": {
+            "layers": {
+                "Medium": {
+                    "lsb": 130,
+                    "rsb": 130,
+                    "width": 1000,
+                    "xmax": 870,
+                    "xmin": 130,
+                    "ymax": 358,
+                    "ymin": 283
+                }
+            }
+        },
+        "endash": {
+            "layers": {
+                "Medium": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 500,
+                    "xmax": 500,
+                    "xmin": 0,
+                    "ymax": 358,
+                    "ymin": 283
+                }
+            }
+        },
+        "equal": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 385,
+                    "ymin": 127
+                }
+            }
+        },
+        "estimated": {
+            "layers": {
+                "Medium": {
+                    "lsb": 37,
+                    "rsb": 38,
+                    "width": 948,
+                    "xmax": 910,
+                    "xmin": 37,
+                    "ymax": 770,
+                    "ymin": -15
+                }
+            }
+        },
+        "eth": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 540,
+                    "xmax": 520,
+                    "xmin": 20,
+                    "ymax": 877,
+                    "ymin": -16
+                }
+            }
+        },
+        "exclam": {
+            "layers": {
+                "Medium": {
+                    "lsb": 103,
+                    "rsb": 102,
+                    "width": 321,
+                    "xmax": 219,
+                    "xmin": 103,
+                    "ymax": 754,
+                    "ymin": -16
+                }
+            }
+        },
+        "exclamdown": {
+            "layers": {
+                "Medium": {
+                    "lsb": 103,
+                    "rsb": 102,
+                    "width": 321,
+                    "xmax": 219,
+                    "xmin": 103,
+                    "ymax": 508,
+                    "ymin": -258
+                }
+            }
+        },
+        "f": {
+            "layers": {
+                "Medium": {
+                    "lsb": 39,
+                    "rsb": -19,
+                    "width": 275,
+                    "xmax": 294,
+                    "xmin": 39,
+                    "ymax": 880,
+                    "ymin": 0
+                }
+            }
+        },
+        "fi": {
+            "layers": {
+                "Medium": {
+                    "lsb": 39,
+                    "rsb": 65,
+                    "width": 512,
+                    "xmax": 447,
+                    "xmin": 39,
+                    "ymax": 880,
+                    "ymin": 0
+                }
+            }
+        },
+        "five": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 39,
+                    "width": 578,
+                    "xmax": 539,
+                    "xmin": 30,
+                    "ymax": 754,
+                    "ymin": -16
+                }
+            }
+        },
+        "fl": {
+            "layers": {
+                "Medium": {
+                    "lsb": 39,
+                    "rsb": 66,
+                    "width": 497,
+                    "xmax": 431,
+                    "xmin": 39,
+                    "ymax": 880,
+                    "ymin": 0
+                }
+            }
+        },
+        "florin": {
+            "layers": {
+                "Medium": {
+                    "lsb": 14,
+                    "rsb": 38,
+                    "width": 578,
+                    "xmax": 540,
+                    "xmin": 14,
+                    "ymax": 836,
+                    "ymin": -149
+                }
+            }
+        },
+        "four": {
+            "layers": {
+                "Medium": {
+                    "lsb": 7,
+                    "rsb": 23,
+                    "width": 578,
+                    "xmax": 555,
+                    "xmin": 7,
+                    "ymax": 786,
+                    "ymin": 0
+                }
+            }
+        },
+        "fraction": {
+            "layers": {
+                "Medium": {
+                    "lsb": -163,
+                    "rsb": -163,
+                    "width": 165,
+                    "xmax": 328,
+                    "xmin": -163,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "g": {
+            "layers": {
+                "Medium": {
+                    "lsb": 25,
+                    "rsb": 55,
+                    "width": 555,
+                    "xmax": 500,
+                    "xmin": 25,
+                    "ymax": 482,
+                    "ymin": -268
+                }
+            }
+        },
+        "germandbls": {
+            "layers": {
+                "Medium": {
+                    "lsb": 28,
+                    "rsb": 13,
+                    "width": 580,
+                    "xmax": 567,
+                    "xmin": 28,
+                    "ymax": 880,
+                    "ymin": -16.290697674418606
+                }
+            }
+        },
+        "grave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 76,
+                    "rsb": 76,
+                    "width": 360,
+                    "xmax": 284,
+                    "xmin": 76,
+                    "ymax": 734,
+                    "ymin": 541
+                }
+            }
+        },
+        "greater": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 498,
+                    "ymin": 14
+                }
+            }
+        },
+        "greaterequal": {
+            "layers": {
+                "Medium": {
+                    "lsb": 55,
+                    "rsb": 54,
+                    "width": 588,
+                    "xmax": 534,
+                    "xmin": 55,
+                    "ymax": 643,
+                    "ymin": 8
+                }
+            }
+        },
+        "guillemotleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 63,
+                    "width": 523,
+                    "xmax": 460,
+                    "xmin": 30,
+                    "ymax": 560,
+                    "ymin": 88
+                }
+            }
+        },
+        "guillemotright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 63,
+                    "rsb": 30,
+                    "width": 523,
+                    "xmax": 493,
+                    "xmin": 63,
+                    "ymax": 560,
+                    "ymin": 88
+                }
+            }
+        },
+        "guilsinglleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 22,
+                    "rsb": 76,
+                    "width": 336,
+                    "xmax": 260,
+                    "xmin": 22,
+                    "ymax": 560,
+                    "ymin": 88
+                }
+            }
+        },
+        "guilsinglright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 76,
+                    "rsb": 22,
+                    "width": 336,
+                    "xmax": 314,
+                    "xmin": 76,
+                    "ymax": 560,
+                    "ymin": 88
+                }
+            }
+        },
+        "h": {
+            "layers": {
+                "Medium": {
+                    "lsb": 62,
+                    "rsb": 62,
+                    "width": 523,
+                    "xmax": 461,
+                    "xmin": 62,
+                    "ymax": 868,
+                    "ymin": 0
+                }
+            }
+        },
+        "hungarumlaut": {
+            "layers": {
+                "Medium": {
+                    "lsb": 38,
+                    "rsb": 38,
+                    "width": 470,
+                    "xmax": 432,
+                    "xmin": 38,
+                    "ymax": 734,
+                    "ymin": 532
+                }
+            }
+        },
+        "hyphen": {
+            "layers": {
+                "Medium": {
+                    "lsb": 57,
+                    "rsb": 56,
+                    "width": 332,
+                    "xmax": 276,
+                    "xmin": 57,
+                    "ymax": 358,
+                    "ymin": 283
+                }
+            }
+        },
+        "i": {
+            "layers": {
+                "Medium": {
+                    "lsb": 65,
+                    "rsb": 65,
+                    "width": 254,
+                    "xmax": 189,
+                    "xmin": 65,
+                    "ymax": 745,
+                    "ymin": 0
+                }
+            }
+        },
+        "iacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 53,
+                    "rsb": -7,
+                    "width": 254,
+                    "xmax": 261,
+                    "xmin": 53,
+                    "ymax": 734,
+                    "ymin": 0
+                }
+            }
+        },
+        "icircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": -33,
+                    "rsb": -33,
+                    "width": 254,
+                    "xmax": 287,
+                    "xmin": -33,
+                    "ymax": 734,
+                    "ymin": 0
+                }
+            }
+        },
+        "idieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": -39,
+                    "rsb": -39,
+                    "width": 254,
+                    "xmax": 293,
+                    "xmin": -39,
+                    "ymax": 694,
+                    "ymin": 0
+                }
+            }
+        },
+        "igrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": -7,
+                    "rsb": 53,
+                    "width": 254,
+                    "xmax": 201,
+                    "xmin": -7,
+                    "ymax": 734,
+                    "ymin": 0
+                }
+            }
+        },
+        "infinity": {
+            "layers": {
+                "Medium": {
+                    "lsb": 53,
+                    "rsb": 53,
+                    "width": 821,
+                    "xmax": 768,
+                    "xmin": 53,
+                    "ymax": 479,
+                    "ymin": 144
+                }
+            }
+        },
+        "integral": {
+            "layers": {
+                "Medium": {
+                    "lsb": 16,
+                    "rsb": 19,
+                    "width": 381,
+                    "xmax": 362,
+                    "xmin": 16,
+                    "ymax": 926,
+                    "ymin": -175
+                }
+            }
+        },
+        "j": {
+            "layers": {
+                "Medium": {
+                    "lsb": 65,
+                    "rsb": 65,
+                    "width": 254,
+                    "xmax": 189,
+                    "xmin": 65,
+                    "ymax": 745,
+                    "ymin": -268
+                }
+            }
+        },
+        "k": {
+            "layers": {
+                "Medium": {
+                    "lsb": 68,
+                    "rsb": -11,
+                    "width": 462,
+                    "xmax": 473,
+                    "xmin": 68,
+                    "ymax": 868,
+                    "ymin": 0
+                }
+            }
+        },
+        "l": {
+            "layers": {
+                "Medium": {
+                    "lsb": 66,
+                    "rsb": 66,
+                    "width": 222,
+                    "xmax": 156,
+                    "xmin": 66,
+                    "ymax": 868,
+                    "ymin": 0
+                }
+            }
+        },
+        "less": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 498,
+                    "ymin": 14
+                }
+            }
+        },
+        "lessequal": {
+            "layers": {
+                "Medium": {
+                    "lsb": 54,
+                    "rsb": 53,
+                    "width": 588,
+                    "xmax": 535,
+                    "xmin": 54,
+                    "ymax": 643,
+                    "ymin": 8
+                }
+            }
+        },
+        "logicalnot": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 385,
+                    "ymin": 115
+                }
+            }
+        },
+        "lozenge": {
+            "layers": {
+                "Medium": {
+                    "lsb": 57,
+                    "rsb": 58,
+                    "width": 602,
+                    "xmax": 544,
+                    "xmin": 57,
+                    "ymax": 805,
+                    "ymin": -48
+                }
+            }
+        },
+        "lslash": {
+            "layers": {
+                "Medium": {
+                    "lsb": 1,
+                    "rsb": 1,
+                    "width": 255,
+                    "xmax": 254,
+                    "xmin": 1,
+                    "ymax": 868,
+                    "ymin": 0
+                }
+            }
+        },
+        "m": {
+            "layers": {
+                "Medium": {
+                    "lsb": 59,
+                    "rsb": 58,
+                    "width": 767,
+                    "xmax": 709,
+                    "xmin": 59,
+                    "ymax": 482,
+                    "ymin": 0
+                }
+            }
+        },
+        "macron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 69,
+                    "width": 500,
+                    "xmax": 431,
+                    "xmin": 70,
+                    "ymax": 694,
+                    "ymin": 626
+                }
+            }
+        },
+        "minus": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 299,
+                    "ymin": 213
+                }
+            }
+        },
+        "mu": {
+            "layers": {
+                "Medium": {
+                    "lsb": 58,
+                    "rsb": 58,
+                    "width": 512,
+                    "xmax": 454,
+                    "xmin": 58,
+                    "ymax": 468,
+                    "ymin": -268
+                }
+            }
+        },
+        "multiply": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 512,
+                    "ymin": 0
+                }
+            }
+        },
+        "n": {
+            "layers": {
+                "Medium": {
+                    "lsb": 62,
+                    "rsb": 62,
+                    "width": 523,
+                    "xmax": 461,
+                    "xmin": 62,
+                    "ymax": 482,
+                    "ymin": 0
+                }
+            }
+        },
+        "nine": {
+            "layers": {
+                "Medium": {
+                    "lsb": 52,
+                    "rsb": 26,
+                    "width": 578,
+                    "xmax": 552,
+                    "xmin": 52,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "notequal": {
+            "layers": {
+                "Medium": {
+                    "lsb": 53,
+                    "rsb": 54,
+                    "width": 588,
+                    "xmax": 534,
+                    "xmin": 53,
+                    "ymax": 560,
+                    "ymin": 54
+                }
+            }
+        },
+        "ntilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 62,
+                    "rsb": 62,
+                    "width": 523,
+                    "xmax": 461,
+                    "xmin": 62,
+                    "ymax": 694,
+                    "ymin": 0
+                }
+            }
+        },
+        "numbersign": {
+            "layers": {
+                "Medium": {
+                    "lsb": 25,
+                    "rsb": 25,
+                    "width": 578,
+                    "xmax": 553,
+                    "xmin": 25,
+                    "ymax": 718,
+                    "ymin": 0
+                }
+            }
+        },
+        "o": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 540,
+                    "xmax": 520,
+                    "xmin": 20,
+                    "ymax": 482,
+                    "ymin": -16
+                }
+            }
+        },
+        "oacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 540,
+                    "xmax": 520,
+                    "xmin": 20,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "ocircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 540,
+                    "xmax": 520,
+                    "xmin": 20,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "odieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 540,
+                    "xmax": 520,
+                    "xmin": 20,
+                    "ymax": 694,
+                    "ymin": -16
+                }
+            }
+        },
+        "oe": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 15,
+                    "width": 897,
+                    "xmax": 882,
+                    "xmin": 20,
+                    "ymax": 482,
+                    "ymin": -16.035087719298247
+                }
+            }
+        },
+        "ogonek": {
+            "layers": {
+                "Medium": {
+                    "lsb": 84,
+                    "rsb": 84,
+                    "width": 340,
+                    "xmax": 256,
+                    "xmin": 84,
+                    "ymax": -16,
+                    "ymin": -212
+                }
+            }
+        },
+        "ograve": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 540,
+                    "xmax": 520,
+                    "xmin": 20,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "one": {
+            "layers": {
+                "Medium": {
+                    "lsb": 123,
+                    "rsb": 234,
+                    "width": 578,
+                    "xmax": 344,
+                    "xmin": 123,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "onehalf": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 867,
+                    "xmax": 827,
+                    "xmin": 40,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "onequarter": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 867,
+                    "xmax": 827,
+                    "xmin": 40,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "onesuperior": {
+            "layers": {
+                "Medium": {
+                    "lsb": 65,
+                    "rsb": 131,
+                    "width": 346,
+                    "xmax": 215,
+                    "xmin": 65,
+                    "ymax": 754,
+                    "ymin": 302
+                }
+            }
+        },
+        "ordfeminine": {
+            "layers": {
+                "Medium": {
+                    "lsb": 12,
+                    "rsb": 12,
+                    "width": 334,
+                    "xmax": 322,
+                    "xmin": 12,
+                    "ymax": 770,
+                    "ymin": 471
+                }
+            }
+        },
+        "ordmasculine": {
+            "layers": {
+                "Medium": {
+                    "lsb": 0,
+                    "rsb": -1,
+                    "width": 324,
+                    "xmax": 325,
+                    "xmin": 0,
+                    "ymax": 770,
+                    "ymin": 471
+                }
+            }
+        },
+        "oslash": {
+            "layers": {
+                "Medium": {
+                    "lsb": 8,
+                    "rsb": 8,
+                    "width": 540,
+                    "xmax": 532,
+                    "xmin": 8,
+                    "ymax": 491,
+                    "ymin": -38
+                }
+            }
+        },
+        "otilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 540,
+                    "xmax": 520,
+                    "xmin": 20,
+                    "ymax": 694,
+                    "ymin": -16
+                }
+            }
+        },
+        "p": {
+            "layers": {
+                "Medium": {
+                    "lsb": 55,
+                    "rsb": 26,
+                    "width": 556,
+                    "xmax": 530,
+                    "xmin": 55,
+                    "ymax": 482,
+                    "ymin": -268
+                }
+            }
+        },
+        "paragraph": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40.3049645390071,
+                    "rsb": 40,
+                    "width": 578,
+                    "xmax": 538,
+                    "xmin": 40.3049645390071,
+                    "ymax": 754,
+                    "ymin": -153
+                }
+            }
+        },
+        "parenleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 57,
+                    "rsb": 57,
+                    "width": 292,
+                    "xmax": 235,
+                    "xmin": 57,
+                    "ymax": 809,
+                    "ymin": -193
+                }
+            }
+        },
+        "parenright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 57,
+                    "rsb": 57,
+                    "width": 292,
+                    "xmax": 235,
+                    "xmin": 57,
+                    "ymax": 809,
+                    "ymin": -193
+                }
+            }
+        },
+        "partialdiff": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 53,
+                    "width": 573,
+                    "xmax": 520,
+                    "xmin": 45,
+                    "ymax": 848,
+                    "ymin": -11
+                }
+            }
+        },
+        "percent": {
+            "layers": {
+                "Medium": {
+                    "lsb": 17,
+                    "rsb": 16,
+                    "width": 708,
+                    "xmax": 692,
+                    "xmin": 17,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "period": {
+            "layers": {
+                "Medium": {
+                    "lsb": 87,
+                    "rsb": 86,
+                    "width": 289,
+                    "xmax": 203,
+                    "xmin": 87,
+                    "ymax": 100,
+                    "ymin": -16
+                }
+            }
+        },
+        "periodcentered": {
+            "layers": {
+                "Medium": {
+                    "lsb": 87,
+                    "rsb": 86,
+                    "width": 289,
+                    "xmax": 203,
+                    "xmin": 87,
+                    "ymax": 314,
+                    "ymin": 198
+                }
+            }
+        },
+        "perthousand": {
+            "layers": {
+                "Medium": {
+                    "lsb": 22,
+                    "rsb": 21,
+                    "width": 1110,
+                    "xmax": 1089,
+                    "xmin": 22,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "pi": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 21,
+                    "width": 598,
+                    "xmax": 577,
+                    "xmin": 10,
+                    "ymax": 564,
+                    "ymin": 0
+                }
+            }
+        },
+        "plus": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 512,
+                    "ymin": 0
+                }
+            }
+        },
+        "plusminus": {
+            "layers": {
+                "Medium": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 578,
+                    "xmax": 545,
+                    "xmin": 33,
+                    "ymax": 562,
+                    "ymin": 0
+                }
+            }
+        },
+        "product": {
+            "layers": {
+                "Medium": {
+                    "lsb": 28,
+                    "rsb": 28,
+                    "width": 731,
+                    "xmax": 703,
+                    "xmin": 28,
+                    "ymax": 757,
+                    "ymin": -105
+                }
+            }
+        },
+        "q": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 55,
+                    "width": 556,
+                    "xmax": 501,
+                    "xmin": 26,
+                    "ymax": 482,
+                    "ymin": -268
+                }
+            }
+        },
+        "question": {
+            "layers": {
+                "Medium": {
+                    "lsb": 51.72881355932205,
+                    "rsb": 42,
+                    "width": 453,
+                    "xmax": 411,
+                    "xmin": 51.72881355932205,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "questiondown": {
+            "layers": {
+                "Medium": {
+                    "lsb": 42,
+                    "rsb": 51.728813559321964,
+                    "width": 453,
+                    "xmax": 401.27118644067804,
+                    "xmin": 42,
+                    "ymax": 508,
+                    "ymin": -268
+                }
+            }
+        },
+        "quotedbl": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 439,
+                    "xmax": 349,
+                    "xmin": 90,
+                    "ymax": 754,
+                    "ymin": 426
+                }
+            }
+        },
+        "quotedblbase": {
+            "layers": {
+                "Medium": {
+                    "lsb": 50,
+                    "rsb": 35,
+                    "width": 439,
+                    "xmax": 404,
+                    "xmin": 50,
+                    "ymax": 119,
+                    "ymin": -179
+                }
+            }
+        },
+        "quotedblleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 60,
+                    "rsb": 24,
+                    "width": 439,
+                    "xmax": 415,
+                    "xmin": 60,
+                    "ymax": 770,
+                    "ymin": 472
+                }
+            }
+        },
+        "quotedblright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 24,
+                    "rsb": 60,
+                    "width": 439,
+                    "xmax": 379,
+                    "xmin": 24,
+                    "ymax": 770,
+                    "ymin": 472
+                }
+            }
+        },
+        "quoteleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 60,
+                    "rsb": 28,
+                    "width": 277,
+                    "xmax": 249,
+                    "xmin": 60,
+                    "ymax": 770,
+                    "ymin": 472
+                }
+            }
+        },
+        "quoteright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 28,
+                    "rsb": 60,
+                    "width": 277,
+                    "xmax": 217,
+                    "xmin": 28,
+                    "ymax": 770,
+                    "ymin": 472
+                }
+            }
+        },
+        "quotesinglbase": {
+            "layers": {
+                "Medium": {
+                    "lsb": 54,
+                    "rsb": 35,
+                    "width": 277,
+                    "xmax": 242,
+                    "xmin": 54,
+                    "ymax": 119,
+                    "ymin": -179
+                }
+            }
+        },
+        "quotesingle": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 89,
+                    "width": 277,
+                    "xmax": 188,
+                    "xmin": 90,
+                    "ymax": 754,
+                    "ymin": 426
+                }
+            }
+        },
+        "r": {
+            "layers": {
+                "Medium": {
+                    "lsb": 68,
+                    "rsb": -12,
+                    "width": 351,
+                    "xmax": 363,
+                    "xmin": 68,
+                    "ymax": 482,
+                    "ymin": 0
+                }
+            }
+        },
+        "radical": {
+            "layers": {
+                "Medium": {
+                    "lsb": 36,
+                    "rsb": 0,
+                    "width": 601,
+                    "xmax": 601,
+                    "xmin": 36,
+                    "ymax": 901,
+                    "ymin": -161
+                }
+            }
+        },
+        "registered": {
+            "layers": {
+                "Medium": {
+                    "lsb": 6,
+                    "rsb": 6,
+                    "width": 800,
+                    "xmax": 794,
+                    "xmin": 6,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "ring": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 89,
+                    "width": 360,
+                    "xmax": 271,
+                    "xmin": 90,
+                    "ymax": 734,
+                    "ymin": 553
+                }
+            }
+        },
+        "s": {
+            "layers": {
+                "Medium": {
+                    "lsb": 35,
+                    "rsb": 26,
+                    "width": 384,
+                    "xmax": 358,
+                    "xmin": 35,
+                    "ymax": 482,
+                    "ymin": -16
+                }
+            }
+        },
+        "scaron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 32,
+                    "rsb": 26,
+                    "width": 384,
+                    "xmax": 358,
+                    "xmin": 32,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "section": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 578,
+                    "xmax": 538,
+                    "xmin": 40,
+                    "ymax": 868,
+                    "ymin": -112
+                }
+            }
+        },
+        "semicolon": {
+            "layers": {
+                "Medium": {
+                    "lsb": 46,
+                    "rsb": 39,
+                    "width": 289,
+                    "xmax": 250,
+                    "xmin": 46,
+                    "ymax": 482,
+                    "ymin": -179
+                }
+            }
+        },
+        "seven": {
+            "layers": {
+                "Medium": {
+                    "lsb": 47,
+                    "rsb": -12,
+                    "width": 578,
+                    "xmax": 590,
+                    "xmin": 47,
+                    "ymax": 754,
+                    "ymin": -16
+                }
+            }
+        },
+        "six": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 38,
+                    "width": 578,
+                    "xmax": 540,
+                    "xmin": 40,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "slash": {
+            "layers": {
+                "Medium": {
+                    "lsb": 32,
+                    "rsb": 31,
+                    "width": 551,
+                    "xmax": 520,
+                    "xmin": 32,
+                    "ymax": 868,
+                    "ymin": -126
+                }
+            }
+        },
+        "space": {
+            "layers": {
+                "Medium": {
+                    "width": 289
+                }
+            }
+        },
+        "sterling": {
+            "layers": {
+                "Medium": {
+                    "lsb": 11,
+                    "rsb": -3,
+                    "width": 578,
+                    "xmax": 581,
+                    "xmin": 11,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "summation": {
+            "layers": {
+                "Medium": {
+                    "lsb": 24,
+                    "rsb": 23,
+                    "width": 578,
+                    "xmax": 555,
+                    "xmin": 24,
+                    "ymax": 757,
+                    "ymin": -105
+                }
+            }
+        },
+        "t": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": -13,
+                    "width": 240,
+                    "xmax": 253,
+                    "xmin": 26,
+                    "ymax": 647,
+                    "ymin": 0
+                }
+            }
+        },
+        "thorn": {
+            "layers": {
+                "Medium": {
+                    "lsb": 55,
+                    "rsb": 26,
+                    "width": 556,
+                    "xmax": 530,
+                    "xmin": 55,
+                    "ymax": 868,
+                    "ymin": -268
+                }
+            }
+        },
+        "three": {
+            "layers": {
+                "Medium": {
+                    "lsb": 53,
+                    "rsb": 54,
+                    "width": 578,
+                    "xmax": 524,
+                    "xmin": 53,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "threequarters": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 867,
+                    "xmax": 827,
+                    "xmin": 40,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "threesuperior": {
+            "layers": {
+                "Medium": {
+                    "lsb": 19,
+                    "rsb": 18,
+                    "width": 346,
+                    "xmax": 328,
+                    "xmin": 19,
+                    "ymax": 770,
+                    "ymin": 298
+                }
+            }
+        },
+        "tilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 64,
+                    "rsb": 63,
+                    "width": 510,
+                    "xmax": 447,
+                    "xmin": 64,
+                    "ymax": 694,
+                    "ymin": 568
+                }
+            }
+        },
+        "trademark": {
+            "layers": {
+                "Medium": {
+                    "lsb": 34,
+                    "rsb": 34,
+                    "width": 940,
+                    "xmax": 906,
+                    "xmin": 34,
+                    "ymax": 754,
+                    "ymin": 333
+                }
+            }
+        },
+        "two": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 46,
+                    "width": 578,
+                    "xmax": 532,
+                    "xmin": 45,
+                    "ymax": 770,
+                    "ymin": 0
+                }
+            }
+        },
+        "twosuperior": {
+            "layers": {
+                "Medium": {
+                    "lsb": 15,
+                    "rsb": 14,
+                    "width": 346,
+                    "xmax": 332,
+                    "xmin": 15,
+                    "ymax": 764,
+                    "ymin": 302
+                }
+            }
+        },
+        "u": {
+            "layers": {
+                "Medium": {
+                    "lsb": 58,
+                    "rsb": 58,
+                    "width": 512,
+                    "xmax": 454,
+                    "xmin": 58,
+                    "ymax": 468,
+                    "ymin": -16
+                }
+            }
+        },
+        "uacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 58,
+                    "rsb": 58,
+                    "width": 512,
+                    "xmax": 454,
+                    "xmin": 58,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "ucircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 58,
+                    "rsb": 58,
+                    "width": 512,
+                    "xmax": 454,
+                    "xmin": 58,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "udieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 58,
+                    "rsb": 58,
+                    "width": 512,
+                    "xmax": 454,
+                    "xmin": 58,
+                    "ymax": 694,
+                    "ymin": -16
+                }
+            }
+        },
+        "ugrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 58,
+                    "rsb": 58,
+                    "width": 512,
+                    "xmax": 454,
+                    "xmin": 58,
+                    "ymax": 734,
+                    "ymin": -16
+                }
+            }
+        },
+        "underscore": {
+            "layers": {
+                "Medium": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 500,
+                    "xmax": 500,
+                    "xmin": 0,
+                    "ymax": -75,
+                    "ymin": -125
+                }
+            }
+        },
+        "uni00A0": {
+            "layers": {
+                "Medium": {
+                    "width": 289
+                }
+            }
+        },
+        "uni00AD": {
+            "layers": {
+                "Medium": {
+                    "lsb": 57,
+                    "rsb": 56,
+                    "width": 332,
+                    "xmax": 276,
+                    "xmin": 57,
+                    "ymax": 358,
+                    "ymin": 283
+                }
+            }
+        },
+        "uni02C9": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 69,
+                    "width": 500,
+                    "xmax": 431,
+                    "xmin": 70,
+                    "ymax": 694,
+                    "ymin": 626
+                }
+            }
+        },
+        "uni03A9": {
+            "layers": {
+                "Medium": {
+                    "lsb": 50,
+                    "rsb": 51,
+                    "width": 745,
+                    "xmax": 694,
+                    "xmin": 50,
+                    "ymax": 769,
+                    "ymin": 0
+                }
+            }
+        },
+        "uni03BC": {
+            "layers": {
+                "Medium": {
+                    "lsb": 58,
+                    "rsb": 58,
+                    "width": 512,
+                    "xmax": 454,
+                    "xmin": 58,
+                    "ymax": 468,
+                    "ymin": -268
+                }
+            }
+        },
+        "uni2215": {
+            "layers": {
+                "Medium": {
+                    "lsb": -163,
+                    "rsb": -163,
+                    "width": 165,
+                    "xmax": 328,
+                    "xmin": -163,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        },
+        "uni2219": {
+            "layers": {
+                "Medium": {
+                    "lsb": 87,
+                    "rsb": 86,
+                    "width": 289,
+                    "xmax": 203,
+                    "xmin": 87,
+                    "ymax": 314,
+                    "ymin": 198
+                }
+            }
+        },
+        "v": {
+            "layers": {
+                "Medium": {
+                    "lsb": -13,
+                    "rsb": -13,
+                    "width": 445,
+                    "xmax": 458,
+                    "xmin": -13,
+                    "ymax": 468,
+                    "ymin": -16
+                }
+            }
+        },
+        "w": {
+            "layers": {
+                "Medium": {
+                    "lsb": -16,
+                    "rsb": -17,
+                    "width": 718,
+                    "xmax": 735,
+                    "xmin": -16,
+                    "ymax": 494,
+                    "ymin": -16
+                }
+            }
+        },
+        "x": {
+            "layers": {
+                "Medium": {
+                    "lsb": -14,
+                    "rsb": -14,
+                    "width": 489,
+                    "xmax": 503,
+                    "xmin": -14,
+                    "ymax": 468,
+                    "ymin": 0
+                }
+            }
+        },
+        "y": {
+            "layers": {
+                "Medium": {
+                    "lsb": -13,
+                    "rsb": -14,
+                    "width": 484,
+                    "xmax": 498,
+                    "xmin": -13,
+                    "ymax": 468,
+                    "ymin": -268
+                }
+            }
+        },
+        "yacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": -13,
+                    "rsb": -14,
+                    "width": 484,
+                    "xmax": 498,
+                    "xmin": -13,
+                    "ymax": 734,
+                    "ymin": -268
+                }
+            }
+        },
+        "ydieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": -13,
+                    "rsb": -14,
+                    "width": 484,
+                    "xmax": 498,
+                    "xmin": -13,
+                    "ymax": 694,
+                    "ymin": -268
+                }
+            }
+        },
+        "yen": {
+            "layers": {
+                "Medium": {
+                    "lsb": -4,
+                    "rsb": -4,
+                    "width": 578,
+                    "xmax": 582,
+                    "xmin": -4,
+                    "ymax": 754,
+                    "ymin": 0
+                }
+            }
+        },
+        "z": {
+            "layers": {
+                "Medium": {
+                    "lsb": 2,
+                    "rsb": 1,
+                    "width": 495,
+                    "xmax": 494,
+                    "xmin": 2,
+                    "ymax": 468,
+                    "ymin": 0
+                }
+            }
+        },
+        "zcaron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 2,
+                    "rsb": 1,
+                    "width": 495,
+                    "xmax": 494,
+                    "xmin": 2,
+                    "ymax": 734,
+                    "ymin": 0
+                }
+            }
+        },
+        "zero": {
+            "layers": {
+                "Medium": {
+                    "lsb": 26,
+                    "rsb": 26,
+                    "width": 578,
+                    "xmax": 552,
+                    "xmin": 26,
+                    "ymax": 770,
+                    "ymin": -16
+                }
+            }
+        }
+    },
+    "upm": 1000
+}

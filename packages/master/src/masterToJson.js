@@ -6,9 +6,9 @@ import { groupToJson }     from '@fontlab/kerning-class'
  * @returns {{}}
  */
 export function masterToJson(master) {
-  const { groups, pairs } = this ?? CONVERT_OPTIONS
+  const { kerningClasses, pairs } = this ?? CONVERT_OPTIONS
   const o = {}
-  if (groups) o.kerningClasses = master.kerningClasses.map(groupToJson)
+  if (kerningClasses) o.kerningClasses = master.kerningClasses.map(groupToJson)
   if (pairs) o.pairs = master.pairs.data
   return o
 }

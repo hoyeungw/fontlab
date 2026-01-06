@@ -13,16 +13,16 @@ import { indexed, mutate }                                    from '@vect/object
 import xlsx                                                   from 'xlsx'
 import { decoPairsCrostab }                                   from '../utils/decoPairsCrostab.js'
 import { decoXY }                                             from '../utils/decoXY.js'
-import { labelAsc }                                           from '../utils/labelAsc.js'
-import { TypefaceIO }                                         from './TypefaceIO.js'
+import { labelAsc } from '../utils/labelAsc.js'
+import { VFMIO }    from './VFMIO.js'
 
 const REGULAR = 'Regular'
 const CLASS = 'PairsIO'
 
 // noinspection CommaExpressionJS
 export class PairsIO {
-  static async sourceToProcess(srcVFM, destXLSX, layer = REGULAR) {
-    const typeface = await TypefaceIO.loadTypeface(srcVFM)
+  static async vfmToXlsx(srcVFM, destXLSX, layer = REGULAR) {
+    const typeface = await VFMIO.readFile(srcVFM)
     function ro(x) { return isNaN(x) ? '' : round(x) }
     layer = layer in typeface.layerToMaster ? layer : typeface.face
     const crostabCollection = {}
@@ -40,8 +40,8 @@ export class PairsIO {
     console.log($.fontlab(CLASS).export('pairs').dest(decoString(destXLSX)))
   }
 
-  static async processToTarget(srcXLSX, destVFM) {
-    const typeface = await TypefaceIO.loadTypeface(destVFM)
+  static async xlsxToVfm(srcXLSX, destVFM) {
+    const typeface = await VFMIO.readFile(destVFM)
     const crostabCollection = mutate(readCrostabCollection(srcXLSX), Crostab.from)
     const statCollection = gather(indexed(crostabCollection,
       (side_head, crostab) => /^\w+$/.test(side_head) && crostab,
@@ -54,7 +54,7 @@ export class PairsIO {
     for (let [ side_head, stat ] of indexed(statCollection)) {
       console.log($.fontlab(CLASS).import('pairs')[decoXY(side_head)](decoFlat(stat)))
     }
-    await TypefaceIO.saveTypeface(typeface, destVFM, { groups: true, pairs: true, metrics: true })
+    await VFMIO.saveTypeface(typeface, destVFM, { kerningClasses: true, pairs: true, metrics: true })
   }
 }
 

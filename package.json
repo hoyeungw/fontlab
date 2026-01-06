@@ -7,7 +7,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-test-coverage --test packages/*/test/*.test.js",
+    "test": "node -r dotenv/config --experimental-test-coverage --test packages/*/test/*.test.js",
     "upint": "pnpm up -i -r --latest",
     "check": "pnpm outdated",
     "changeset-add": "pnpm changeset add",
@@ -21,8 +21,8 @@
     "@analys/crostab": "^0.7.5",
     "@aryth/math": "^0.7.8",
     "@aryth/rand": "^0.7.8",
-    "@babel/core": "^7.18.2",
-    "@changesets/cli": "^2.29.5",
+    "@babel/core": "^7.28.5",
+    "@changesets/cli": "^2.29.8",
     "@foba/foo": "^0.6.1",
     "@foba/object": "^0.6.1",
     "@foba/util": "^0.6.1",
@@ -30,7 +30,9 @@
     "@foba/vector-number": "^0.6.1",
     "@iohub/iter": "^0.0.4",
     "@iohub/pathinfo": "^0.0.4",
+    "@palett/presets": "^0.12.28",
     "@rollup/plugin-json": "^6.1.0",
+    "@spare/deco": "^0.16.29",
     "@spare/deco-func": "^0.16.29",
     "@spare/logger": "^0.16.29",
     "@spare/tap": "^0.16.16",
@@ -39,7 +41,9 @@
     "@typen/num-strict": "^0.2.0",
     "@valjoux/strategies": "^0.4.4",
     "@valjoux/timestamp-pretty": "^0.4.4",
-    "rollup": "^4.45.1",
+    "@vect/object-index": "^0.8.6",
+    "dotenv": "^17.2.3",
+    "rollup": "^4.54.0",
     "rollup-plugin-fileinfo": "^0.3.4"
   }
 }

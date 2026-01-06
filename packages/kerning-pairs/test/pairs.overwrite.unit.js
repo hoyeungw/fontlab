@@ -1,7 +1,7 @@
-import { deco }  from '@spare/logger'
-import { Pairs } from '../src/Pairs.js'
+import { deco }         from '@spare/logger'
+import { KerningPairs } from '../src/KerningPairs.js'
 
-const pairs = Pairs.build()
+const pairs = KerningPairs.build()
 pairs.collect([
   [ '@A1', '@A2', -30 ],
   [ '@A1', '@H2', 6 ],

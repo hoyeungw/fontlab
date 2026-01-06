@@ -1,0 +1,3958 @@
+{
+    "dataType": "com.fontlab.metrics",
+    "masters": {
+        "Medium": {
+            "kerningClasses": [
+                {
+                    "1st": true,
+                    "name": "minus",
+                    "names": [
+                        "hyphen",
+                        "endash",
+                        "emdash",
+                        "minus",
+                        "hyphen.case",
+                        "endash.case",
+                        "emdash.case"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "parenleft",
+                    "names": [
+                        "parenleft",
+                        "parenleft.case"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "parenright",
+                    "names": [
+                        "parenright",
+                        "parenright.case"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "quotedblbase",
+                    "names": [
+                        "quotesinglbase",
+                        "quotedblbase"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "quoteleft",
+                    "names": [
+                        "quoteleft",
+                        "quotedblleft"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "quoteright",
+                    "names": [
+                        "quoteright",
+                        "quotedblright"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "quotedbl",
+                    "names": [
+                        "quotedbl",
+                        "quotesingle"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "at",
+                    "names": [
+                        "at",
+                        "at.case"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "exclam",
+                    "names": [
+                        "exclam",
+                        "exclamdown"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "parenleft2",
+                    "names": [
+                        "parenleft",
+                        "parenleft.case"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "quotedblbase2",
+                    "names": [
+                        "quotesinglbase",
+                        "quotedblbase"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "parenright2",
+                    "names": [
+                        "parenright",
+                        "parenright.case"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "X",
+                    "names": [
+                        "X",
+                        "x"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "Y",
+                    "names": [
+                        "Y",
+                        "y",
+                        "Ydieresis",
+                        "ydieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "A",
+                    "names": [
+                        "A",
+                        "a",
+                        "Agrave",
+                        "Acircumflex",
+                        "Adieresis",
+                        "Aring",
+                        "AE",
+                        "agrave",
+                        "acircumflex",
+                        "adieresis",
+                        "aring",
+                        "ae"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "J",
+                    "names": [
+                        "J",
+                        "j"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "T",
+                    "names": [
+                        "T",
+                        "t"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "Z",
+                    "names": [
+                        "Zcaron",
+                        "zcaron",
+                        "Z",
+                        "z"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "quoteleft2",
+                    "names": [
+                        "quoteleft",
+                        "quotedblleft"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "quoteright2",
+                    "names": [
+                        "quoteright",
+                        "quotedblright"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "V",
+                    "names": [
+                        "V",
+                        "v"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "W",
+                    "names": [
+                        "W",
+                        "w"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "C",
+                    "names": [
+                        "C",
+                        "G",
+                        "O",
+                        "Q",
+                        "c",
+                        "g",
+                        "o",
+                        "q",
+                        "OE",
+                        "oe",
+                        "Ccedilla",
+                        "Ocircumflex",
+                        "Odieresis",
+                        "ccedilla",
+                        "ocircumflex",
+                        "odieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "quotedbl2",
+                    "names": [
+                        "quotedbl",
+                        "quotesingle"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "B",
+                    "names": [
+                        "B",
+                        "D",
+                        "E",
+                        "H",
+                        "I",
+                        "K",
+                        "L",
+                        "M",
+                        "N",
+                        "P",
+                        "R",
+                        "b",
+                        "d",
+                        "e",
+                        "h",
+                        "i",
+                        "k",
+                        "l",
+                        "m",
+                        "n",
+                        "p",
+                        "r",
+                        "Egrave",
+                        "Eacute",
+                        "Ecircumflex",
+                        "Edieresis",
+                        "Icircumflex",
+                        "Idieresis",
+                        "egrave",
+                        "eacute",
+                        "ecircumflex",
+                        "edieresis",
+                        "icircumflex",
+                        "idieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "guillemotleft",
+                    "names": [
+                        "guilsinglleft",
+                        "guillemotleft",
+                        "guillemotleft.case",
+                        "guilsinglleft.case"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "A2",
+                    "names": [
+                        "A",
+                        "a",
+                        "Agrave",
+                        "Acircumflex",
+                        "Adieresis",
+                        "Aring",
+                        "agrave",
+                        "acircumflex",
+                        "adieresis",
+                        "aring"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "B2",
+                    "names": [
+                        "B",
+                        "b"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "C2",
+                    "names": [
+                        "C",
+                        "D",
+                        "G",
+                        "O",
+                        "c",
+                        "d",
+                        "g",
+                        "o",
+                        "Ccedilla",
+                        "Ocircumflex",
+                        "Odieresis",
+                        "ccedilla",
+                        "ocircumflex",
+                        "odieresis"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "E",
+                    "names": [
+                        "E",
+                        "e",
+                        "OE",
+                        "oe",
+                        "AE",
+                        "Egrave",
+                        "Eacute",
+                        "Ecircumflex",
+                        "Edieresis",
+                        "ae",
+                        "egrave",
+                        "eacute",
+                        "ecircumflex",
+                        "edieresis"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "F",
+                    "names": [
+                        "F",
+                        "f"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "J2",
+                    "names": [
+                        "J",
+                        "j"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "K",
+                    "names": [
+                        "K",
+                        "k"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "L",
+                    "names": [
+                        "L",
+                        "l"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "P",
+                    "names": [
+                        "P",
+                        "p"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "Q",
+                    "names": [
+                        "Q",
+                        "q"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "R",
+                    "names": [
+                        "R",
+                        "r"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "S",
+                    "names": [
+                        "S",
+                        "s",
+                        "Scaron",
+                        "scaron"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "T2",
+                    "names": [
+                        "T",
+                        "t"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "U",
+                    "names": [
+                        "U",
+                        "u",
+                        "Ugrave",
+                        "Ucircumflex",
+                        "Udieresis",
+                        "ugrave",
+                        "ucircumflex",
+                        "udieresis"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "V2",
+                    "names": [
+                        "V",
+                        "v"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "X2",
+                    "names": [
+                        "X",
+                        "x"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "W2",
+                    "names": [
+                        "W",
+                        "Y",
+                        "y",
+                        "Ydieresis",
+                        "ydieresis"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "Z2",
+                    "names": [
+                        "Zcaron",
+                        "zcaron",
+                        "Z",
+                        "z"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "at2",
+                    "names": [
+                        "at",
+                        "at.case"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "exclam2",
+                    "names": [
+                        "exclam",
+                        "exclamdown"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "guillemotleft2",
+                    "names": [
+                        "guilsinglleft",
+                        "guillemotleft",
+                        "guillemotleft.case",
+                        "guilsinglleft.case"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "guillemotright",
+                    "names": [
+                        "guilsinglright",
+                        "guillemotright",
+                        "guillemotright.case",
+                        "guilsinglright.case"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "S2",
+                    "names": [
+                        "S",
+                        "s",
+                        "Scaron",
+                        "scaron"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "U2",
+                    "names": [
+                        "U",
+                        "u",
+                        "Ugrave",
+                        "Ucircumflex",
+                        "Udieresis",
+                        "ugrave",
+                        "ucircumflex",
+                        "udieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "guillemotright2",
+                    "names": [
+                        "guilsinglright",
+                        "guillemotright",
+                        "guillemotright.case",
+                        "guilsinglright.case"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "minus2",
+                    "names": [
+                        "hyphen",
+                        "endash",
+                        "emdash",
+                        "minus",
+                        "hyphen.case",
+                        "endash.case",
+                        "emdash.case"
+                    ]
+                }
+            ],
+            "pairs": {
+                "@A2": {
+                    "@A": "10",
+                    "@B": "-15",
+                    "@C": "-10",
+                    "@J": "40",
+                    "@S2": "-10",
+                    "@T": "-65",
+                    "@U2": "-10",
+                    "@V": "-90",
+                    "@W": "-60",
+                    "@Y": "-65",
+                    "@Z": "20",
+                    "@exclam": "25",
+                    "@guillemotleft": "-25",
+                    "@guillemotright2": "-10",
+                    "@minus2": "-10",
+                    "@parenleft2": "-15",
+                    "@parenright2": "15",
+                    "@quotedbl2": "-40",
+                    "@quotedblbase2": "50",
+                    "@quoteleft2": "-80",
+                    "@quoteright2": "-80",
+                    "Euro": "-15",
+                    "asterisk": "-80",
+                    "backslash": "-125",
+                    "colon": "30",
+                    "comma": "30",
+                    "dollar": "-5",
+                    "four": "10",
+                    "nine": "-10",
+                    "numbersign": "20",
+                    "one": "-40",
+                    "period": "70",
+                    "plus": "-10",
+                    "question": "-35",
+                    "questiondown": "50",
+                    "semicolon": "30",
+                    "six": "-10",
+                    "slash": "60",
+                    "sterling": "20",
+                    "underscore": "40",
+                    "yen": "-25"
+                },
+                "@B2": {
+                    "@A": "-20",
+                    "@J": "20",
+                    "@T": "-35",
+                    "@V": "-45",
+                    "@W": "-25",
+                    "@X": "-30",
+                    "@Y": "-55",
+                    "@quotedblbase2": "-20",
+                    "backslash": "-75",
+                    "one": "-25",
+                    "question": "-20",
+                    "questiondown": "-25",
+                    "slash": "-10",
+                    "yen": "-20"
+                },
+                "@C2": {
+                    "@A": "-10",
+                    "@J": "20",
+                    "@T": "-20",
+                    "@W": "-10",
+                    "@X": "-35",
+                    "@Y": "-20",
+                    "@exclam": "10",
+                    "@quotedblbase2": "-34",
+                    "Euro": "15",
+                    "backslash": "-55",
+                    "comma": "-25",
+                    "question": "15",
+                    "questiondown": "-35",
+                    "slash": "-25",
+                    "sterling": "10",
+                    "underscore": "-35",
+                    "yen": "-10"
+                },
+                "@E": {
+                    "@C": "-10",
+                    "@X": "-10",
+                    "@Y": "-10"
+                },
+                "@F": {
+                    "@A": "-90",
+                    "@J": "-90",
+                    "@at": "-20",
+                    "@exclam": "-15",
+                    "@parenleft2": "-25",
+                    "@quotedblbase2": "-140",
+                    "ampersand": "-60",
+                    "backslash": "10",
+                    "cent": "-30",
+                    "colon": "-20",
+                    "comma": "-110",
+                    "dollar": "-30",
+                    "ellipsis": "-130",
+                    "numbersign": "-55",
+                    "period": "-110",
+                    "questiondown": "-110",
+                    "semicolon": "-20",
+                    "slash": "-110",
+                    "underscore": "-100"
+                },
+                "@J2": {
+                    "@X": "-15",
+                    "@Y": "-15",
+                    "@exclam": "-5",
+                    "@quotedblbase2": "-35",
+                    "ampersand": "-10",
+                    "questiondown": "-30",
+                    "slash": "-20",
+                    "underscore": "-15"
+                },
+                "@K": {
+                    "@B": "-15",
+                    "@C": "-40",
+                    "@T": "10",
+                    "@V": "10",
+                    "@W": "10",
+                    "@X": "10",
+                    "@Y": "10",
+                    "@exclam": "-15",
+                    "@guillemotleft": "-50",
+                    "@guillemotright2": "-30",
+                    "@parenleft2": "-45",
+                    "@quotedbl2": "-10",
+                    "@quoteleft2": "-15",
+                    "@quoteright2": "-15",
+                    "Euro": "-35",
+                    "ampersand": "-30",
+                    "backslash": "40",
+                    "bullet": "-60",
+                    "dollar": "-20",
+                    "eight": "-20",
+                    "five": "-20",
+                    "nine": "-20",
+                    "one": "-20",
+                    "periodcentered": "-60",
+                    "periodcentered.case": "-60",
+                    "plus": "-30",
+                    "question": "-20",
+                    "questiondown": "30",
+                    "six": "-20",
+                    "slash": "50",
+                    "three": "-20",
+                    "underscore": "20",
+                    "yen": "20",
+                    "zero": "-30"
+                },
+                "@L": {
+                    "@A": "20",
+                    "@C": "-20",
+                    "@J": "40",
+                    "@T": "-80",
+                    "@V": "-80",
+                    "@W": "-65",
+                    "@Y": "-85",
+                    "@at": "40",
+                    "@guillemotleft": "-40",
+                    "@guillemotright2": "-10",
+                    "@parenleft2": "-20",
+                    "@parenright2": "10",
+                    "@quotedbl2": "-145",
+                    "@quoteleft2": "-135",
+                    "@quoteright2": "-135",
+                    "Euro": "-20",
+                    "asterisk": "-145",
+                    "backslash": "-135",
+                    "bullet": "-80",
+                    "four": "20",
+                    "one": "-40",
+                    "periodcentered": "-100",
+                    "periodcentered.case": "-100",
+                    "plus": "-80",
+                    "question": "-80",
+                    "questiondown": "60",
+                    "seven": "-20",
+                    "slash": "50",
+                    "underscore": "20",
+                    "yen": "-60"
+                },
+                "@P": {
+                    "@A": "-75",
+                    "@J": "-60",
+                    "@S2": "-10",
+                    "@U2": "-10",
+                    "@V": "-10",
+                    "@X": "-35",
+                    "@Y": "-35",
+                    "@parenleft2": "-10",
+                    "@parenright2": "-20",
+                    "@quotedblbase2": "-100",
+                    "ampersand": "-45",
+                    "backslash": "-20",
+                    "bullet": "30",
+                    "comma": "-110",
+                    "ellipsis": "-110",
+                    "four": "-30",
+                    "numbersign": "-30",
+                    "period": "-110",
+                    "periodcentered.case": "20",
+                    "questiondown": "-75",
+                    "slash": "-95",
+                    "underscore": "-120",
+                    "yen": "-10"
+                },
+                "@Q": {
+                    "@A": "50",
+                    "@J": "50",
+                    "@T": "-10",
+                    "@V": "-25",
+                    "@X": "40",
+                    "@Y": "-40",
+                    "@Z": "20",
+                    "@at": "20",
+                    "@exclam": "10",
+                    "@parenright2": "20",
+                    "@quotedblbase2": "20",
+                    "asterisk": "-40",
+                    "backslash": "-75",
+                    "cent": "20",
+                    "colon": "25",
+                    "comma": "30",
+                    "four": "15",
+                    "question": "-10",
+                    "questiondown": "45",
+                    "semicolon": "25",
+                    "six": "15",
+                    "slash": "60",
+                    "sterling": "45",
+                    "underscore": "39"
+                },
+                "@R": {
+                    "@A": "-10",
+                    "@C": "-10",
+                    "@V": "-15",
+                    "@W": "-10",
+                    "@X": "-20",
+                    "@Y": "-35",
+                    "@at": "-10",
+                    "@parenleft2": "-20",
+                    "@parenright2": "-20",
+                    "ampersand": "-20",
+                    "backslash": "-40",
+                    "comma": "-10",
+                    "eight": "-10",
+                    "ellipsis": "-20",
+                    "five": "-10",
+                    "four": "-10",
+                    "nine": "-10",
+                    "period": "-20",
+                    "questiondown": "20",
+                    "slash": "20"
+                },
+                "@S": {
+                    "@A": "-10",
+                    "@J": "20",
+                    "@U2": "10",
+                    "@V": "-20",
+                    "@X": "-20",
+                    "@Y": "-40",
+                    "@Z": "-10",
+                    "@exclam": "5",
+                    "@parenright2": "-15",
+                    "@quotedblbase2": "-10",
+                    "@quoteleft2": "-10",
+                    "@quoteright2": "-10",
+                    "ampersand": "10",
+                    "backslash": "-40",
+                    "comma": "-10",
+                    "four": "20",
+                    "six": "10",
+                    "slash": "-10",
+                    "underscore": "-20"
+                },
+                "@T2": {
+                    "@A": "-55",
+                    "@J": "-70",
+                    "@T": "50",
+                    "@V": "10",
+                    "@W": "10",
+                    "@X": "10",
+                    "@Y": "10",
+                    "@at": "-30",
+                    "@exclam": "-10",
+                    "@guillemotleft": "-40",
+                    "@guillemotright2": "-30",
+                    "@minus2": "-40",
+                    "@parenleft2": "-20",
+                    "@quotedbl2": "30",
+                    "@quotedblbase2": "-100",
+                    "Euro": "-20",
+                    "ampersand": "-50",
+                    "asterisk": "50",
+                    "backslash": "60",
+                    "bullet": "-30",
+                    "cent": "-40",
+                    "comma": "-110",
+                    "ellipsis": "-30",
+                    "four": "-70",
+                    "numbersign": "-60",
+                    "period": "-90",
+                    "periodcentered": "-40",
+                    "periodcentered.case": "-30",
+                    "questiondown": "-110",
+                    "slash": "-100",
+                    "underscore": "-100",
+                    "yen": "10"
+                },
+                "@U": {
+                    "@A": "-20",
+                    "@C": "-10",
+                    "@X": "-10",
+                    "@Y": "-10",
+                    "@Z": "-10",
+                    "@parenleft2": "-10",
+                    "@parenright2": "-10",
+                    "@quotedbl2": "10",
+                    "@quotedblbase2": "-20",
+                    "ellipsis": "-10",
+                    "nine": "-10",
+                    "questiondown": "-50",
+                    "semicolon": "-10",
+                    "slash": "-30",
+                    "underscore": "-30"
+                },
+                "@V2": {
+                    "@A": "-90",
+                    "@C": "-20",
+                    "@J": "-70",
+                    "@S2": "-20",
+                    "@T": "10",
+                    "@at": "-30",
+                    "@guillemotleft": "-10",
+                    "@minus2": "-10",
+                    "@parenleft2": "-20",
+                    "@quotedbl2": "40",
+                    "@quotedblbase2": "-100",
+                    "Euro": "-10",
+                    "ampersand": "-40",
+                    "asterisk": "50",
+                    "backslash": "60",
+                    "bullet": "-10",
+                    "cent": "-30",
+                    "colon": "-15",
+                    "comma": "-90",
+                    "ellipsis": "-70",
+                    "five": "-20",
+                    "four": "-70",
+                    "numbersign": "-80",
+                    "period": "-40",
+                    "questiondown": "-85",
+                    "semicolon": "-15",
+                    "slash": "-130",
+                    "three": "-20",
+                    "two": "-20",
+                    "underscore": "-90",
+                    "yen": "20"
+                },
+                "@W2": {
+                    "@A": "-100",
+                    "@C": "-10",
+                    "@J": "-80",
+                    "@S2": "-30",
+                    "@at": "-70",
+                    "@guillemotleft": "-50",
+                    "@guillemotright2": "-20",
+                    "@minus2": "-30",
+                    "@parenleft2": "-30",
+                    "@quotedblbase2": "-120",
+                    "@quoteleft2": "-10",
+                    "Euro": "-20",
+                    "ampersand": "-40",
+                    "asterisk": "40",
+                    "backslash": "60",
+                    "bullet": "-40",
+                    "cent": "-70",
+                    "colon": "-40",
+                    "comma": "-80",
+                    "dollar": "-10",
+                    "ellipsis": "-80",
+                    "five": "-20",
+                    "four": "-100",
+                    "numbersign": "-90",
+                    "period": "-80",
+                    "periodcentered": "-30",
+                    "periodcentered.case": "-30",
+                    "plus": "-20",
+                    "question": "-25",
+                    "questiondown": "-130",
+                    "semicolon": "-40",
+                    "six": "-20",
+                    "slash": "-160",
+                    "sterling": "-10",
+                    "three": "-20",
+                    "two": "-20",
+                    "underscore": "-90",
+                    "zero": "-10"
+                },
+                "@X2": {
+                    "@A": "10",
+                    "@C": "-30",
+                    "@at": "-20",
+                    "@guillemotleft": "-50",
+                    "@guillemotright2": "-20",
+                    "@minus2": "-60",
+                    "@parenleft2": "-35",
+                    "@quoteleft2": "-40",
+                    "@quoteright2": "-40",
+                    "Euro": "-40",
+                    "ampersand": "-40",
+                    "asterisk": "30",
+                    "backslash": "45",
+                    "bullet": "-70",
+                    "dollar": "-20",
+                    "eight": "-10",
+                    "nine": "-10",
+                    "numbersign": "-10",
+                    "periodcentered": "-70",
+                    "periodcentered.case": "-80",
+                    "plus": "-60",
+                    "question": "-30",
+                    "questiondown": "30",
+                    "slash": "30",
+                    "underscore": "40",
+                    "zero": "-10"
+                },
+                "@Z2": {
+                    "asterisk": "30",
+                    "bullet": "-20",
+                    "five": "-10",
+                    "periodcentered.case": "-20",
+                    "questiondown": "30",
+                    "six": "-10",
+                    "slash": "40"
+                },
+                "@at2": {
+                    "@A": "-10",
+                    "@V": "-20",
+                    "@X": "-20",
+                    "@Y": "-20"
+                },
+                "@exclam2": {
+                    "@J": "20"
+                },
+                "@guillemotleft2": {
+                    "@V": "-10",
+                    "@W": "-10",
+                    "@X": "-20",
+                    "@Y": "-40"
+                },
+                "@guillemotright": {
+                    "@A": "-50",
+                    "@T": "-20",
+                    "@V": "-20",
+                    "@W": "-20",
+                    "@X": "-40",
+                    "@Y": "-50",
+                    "@Z": "-20"
+                },
+                "@minus": {
+                    "@A": "-30",
+                    "@C": "20",
+                    "@T": "-30",
+                    "@X": "-30",
+                    "@Y": "-20",
+                    "@Z": "-20",
+                    "zero": "20"
+                },
+                "@parenleft": {
+                    "@C": "-30",
+                    "four": "-20",
+                    "six": "-20",
+                    "three": "-20",
+                    "zero": "-30"
+                },
+                "@parenright": {
+                    "@A": "-20",
+                    "@V": "-20",
+                    "@X": "-40",
+                    "@Y": "-40",
+                    "five": "-10"
+                },
+                "@quotedbl": {
+                    "@A": "-110",
+                    "@J": "-120",
+                    "five": "-20",
+                    "four": "-90"
+                },
+                "@quotedblbase": {
+                    "@A": "-10",
+                    "@T": "-100",
+                    "@V": "-70",
+                    "@W": "-70",
+                    "@Y": "-100",
+                    "nine": "-20",
+                    "one": "-70",
+                    "seven": "-40"
+                },
+                "@quoteleft": {
+                    "@A": "-120",
+                    "@C": "-20",
+                    "@J": "-10",
+                    "@T": "30",
+                    "@V": "10",
+                    "@W": "10",
+                    "@X": "10",
+                    "@Y": "10",
+                    "five": "-30",
+                    "four": "-140",
+                    "seven": "10",
+                    "six": "-30"
+                },
+                "@quoteright": {
+                    "@A": "-170",
+                    "@C": "-70",
+                    "@J": "-140",
+                    "@S2": "-20",
+                    "@T": "20",
+                    "@V": "40",
+                    "@W": "20",
+                    "@X": "20",
+                    "@Y": "20",
+                    "eight": "-10",
+                    "five": "-20",
+                    "four": "-170",
+                    "nine": "-10",
+                    "six": "-20"
+                },
+                "Euro": {
+                    "@C": "-10",
+                    "@J": "10"
+                },
+                "ampersand": {
+                    "@A": "20",
+                    "@C": "-10",
+                    "@V": "-60",
+                    "@W": "-40",
+                    "@Y": "-70"
+                },
+                "asterisk": {
+                    "@A": "-170",
+                    "@B": "-20",
+                    "@C": "-50",
+                    "@J": "-130",
+                    "@S2": "-20",
+                    "@at": "-40",
+                    "@exclam": "-20",
+                    "@parenleft2": "-20",
+                    "@quotedblbase2": "-110",
+                    "ampersand": "-70",
+                    "comma": "-100",
+                    "five": "-20",
+                    "four": "-160",
+                    "numbersign": "-170",
+                    "period": "-110",
+                    "question": "-20",
+                    "questiondown": "-150",
+                    "six": "-20",
+                    "slash": "-180",
+                    "three": "-20",
+                    "two": "-20"
+                },
+                "backslash": {
+                    "@A": "60",
+                    "@C": "-10",
+                    "@J": "40",
+                    "@T": "-60",
+                    "@V": "-60",
+                    "@W": "-20",
+                    "@X": "40",
+                    "@Y": "-120",
+                    "@Z": "30",
+                    "four": "10"
+                },
+                "bullet": {
+                    "@A": "-50",
+                    "@V": "-20",
+                    "@W": "-10",
+                    "@X": "-50",
+                    "@Y": "-40"
+                },
+                "cent": {
+                    "@T": "-50",
+                    "@V": "-40",
+                    "@Y": "-100",
+                    "seven": "-20"
+                },
+                "colon": {
+                    "@T": "-20",
+                    "@V": "-20",
+                    "@Y": "-30"
+                },
+                "comma": {
+                    "@C": "-30",
+                    "@J": "20",
+                    "@T": "-80",
+                    "@V": "-90",
+                    "@W": "-40",
+                    "@Y": "-180",
+                    "four": "20",
+                    "one": "-90",
+                    "seven": "-30"
+                },
+                "dollar": {
+                    "@J": "20",
+                    "@Y": "-20"
+                },
+                "eight": {
+                    "@X": "-20",
+                    "@Y": "-20",
+                    "Euro": "20",
+                    "backslash": "-40",
+                    "underscore": "-30",
+                    "yen": "-10"
+                },
+                "ellipsis": {
+                    "@T": "-150",
+                    "@V": "-100",
+                    "@W": "-90",
+                    "@Y": "-200",
+                    "one": "-70"
+                },
+                "equal": {
+                    "four": "30",
+                    "seven": "20"
+                },
+                "five": {
+                    "@A": "-20",
+                    "@J": "20",
+                    "@T": "-30",
+                    "@X": "-20",
+                    "@Y": "-20",
+                    "@Z": "-20",
+                    "@quotedblbase2": "-30",
+                    "@quoteleft2": "-20",
+                    "@quoteright2": "-20",
+                    "backslash": "-10",
+                    "comma": "-20",
+                    "five": "-10",
+                    "numbersign": "20",
+                    "period": "-20",
+                    "seven": "-30",
+                    "slash": "-20",
+                    "two": "-10",
+                    "underscore": "-40"
+                },
+                "four": {
+                    "@T": "-40",
+                    "@V": "-25",
+                    "@X": "-10",
+                    "@Y": "-40",
+                    "backslash": "-30",
+                    "slash": "10"
+                },
+                "nine": {
+                    "@A": "-10",
+                    "@V": "-10",
+                    "@W": "-10",
+                    "@X": "-20",
+                    "@Y": "-20",
+                    "@at": "20",
+                    "backslash": "-40",
+                    "questiondown": "-20",
+                    "slash": "-20",
+                    "underscore": "-70"
+                },
+                "numbersign": {
+                    "@A": "-80",
+                    "@J": "-40",
+                    "@X": "-20",
+                    "@parenright2": "-30",
+                    "@quotedblbase2": "-30",
+                    "ampersand": "-40",
+                    "backslash": "-30",
+                    "comma": "-110",
+                    "ellipsis": "-90",
+                    "period": "-90",
+                    "questiondown": "-100",
+                    "slash": "-110"
+                },
+                "period": {
+                    "@T": "-100",
+                    "@V": "-130",
+                    "@W": "-90",
+                    "@Y": "-160",
+                    "one": "-110"
+                },
+                "periodcentered": {
+                    "@A": "-60",
+                    "@T": "-30",
+                    "@V": "-30",
+                    "@X": "-50",
+                    "@Y": "-30"
+                },
+                "periodcentered.case": {
+                    "@A": "-60",
+                    "@X": "-30",
+                    "@Y": "-30"
+                },
+                "plus": {
+                    "@A": "-20",
+                    "@X": "-30",
+                    "@Y": "-60"
+                },
+                "question": {
+                    "@A": "-40",
+                    "@J": "-30",
+                    "@X": "-20",
+                    "@Y": "-10",
+                    "four": "-30",
+                    "seven": "20"
+                },
+                "questiondown": {
+                    "@B": "-20",
+                    "@C": "-40",
+                    "@T": "-60",
+                    "@U2": "-20",
+                    "@V": "-30",
+                    "@W": "-30",
+                    "@Y": "-140",
+                    "nine": "-20",
+                    "one": "-50",
+                    "zero": "-30"
+                },
+                "semicolon": {
+                    "@J": "30",
+                    "@W": "10"
+                },
+                "seven": {
+                    "@A": "-75",
+                    "@C": "-10",
+                    "@J": "-40",
+                    "@T": "30",
+                    "@V": "20",
+                    "@W": "20",
+                    "@at": "-20",
+                    "@exclam": "10",
+                    "@parenleft2": "-10",
+                    "@quotedbl2": "20",
+                    "@quotedblbase2": "-150",
+                    "ampersand": "-50",
+                    "asterisk": "20",
+                    "backslash": "30",
+                    "cent": "-30",
+                    "colon": "-20",
+                    "comma": "-120",
+                    "ellipsis": "-70",
+                    "four": "-30",
+                    "numbersign": "-80",
+                    "period": "-100",
+                    "questiondown": "-85",
+                    "semicolon": "-20",
+                    "slash": "-125",
+                    "underscore": "-170"
+                },
+                "six": {
+                    "@A": "-20",
+                    "@B": "-10",
+                    "@V": "5",
+                    "@W": "5",
+                    "@X": "-30",
+                    "@Y": "-20",
+                    "@parenright2": "-20",
+                    "backslash": "-30",
+                    "four": "20",
+                    "slash": "-20",
+                    "yen": "-10"
+                },
+                "slash": {
+                    "@A": "-190",
+                    "@C": "-60",
+                    "@J": "-100",
+                    "@S2": "-10",
+                    "@T": "40",
+                    "@V": "50",
+                    "@W": "50",
+                    "@X": "50",
+                    "@Y": "50",
+                    "eight": "-10",
+                    "four": "-90",
+                    "nine": "-10",
+                    "seven": "50",
+                    "six": "-20",
+                    "three": "-20",
+                    "two": "-20"
+                },
+                "sterling": {
+                    "@Y": "-20"
+                },
+                "three": {
+                    "@V": "-10",
+                    "@X": "-20",
+                    "@Y": "-20",
+                    "backslash": "-30"
+                },
+                "two": {
+                    "@V": "-20",
+                    "@W": "-20",
+                    "@X": "-10",
+                    "@Y": "-30",
+                    "backslash": "-30",
+                    "slash": "10",
+                    "two": "-10"
+                },
+                "underscore": {
+                    "@B": "20",
+                    "@T": "-70",
+                    "@V": "-110",
+                    "@W": "-100",
+                    "@X": "20",
+                    "@Y": "-110",
+                    "five": "-30",
+                    "four": "-20",
+                    "one": "-90",
+                    "three": "-30",
+                    "two": "20"
+                },
+                "w": {
+                    "@A": "-35",
+                    "@J": "-20",
+                    "@T": "10",
+                    "@at": "-20",
+                    "@parenleft2": "-10",
+                    "@quotedblbase2": "-100",
+                    "ampersand": "-25",
+                    "backslash": "60",
+                    "cent": "-20",
+                    "comma": "-40",
+                    "ellipsis": "-40",
+                    "five": "-10",
+                    "four": "-35",
+                    "numbersign": "-20",
+                    "period": "-40",
+                    "questiondown": "-60",
+                    "slash": "-50",
+                    "underscore": "-80"
+                },
+                "yen": {
+                    "@A": "-20",
+                    "@C": "-20",
+                    "@W": "10",
+                    "@X": "10",
+                    "@Y": "10",
+                    "five": "-10"
+                },
+                "zero": {
+                    "@X": "-20",
+                    "@Y": "-25",
+                    "@guillemotleft": "20",
+                    "backslash": "-50",
+                    "comma": "-10",
+                    "underscore": "-20"
+                }
+            }
+        }
+    },
+    "metrics": {
+        ".notdef": {
+            "layers": {
+                "Medium": {
+                    "lsb": 39,
+                    "rsb": 40,
+                    "width": 1106,
+                    "xmax": 1066,
+                    "xmin": 39,
+                    "ymax": 761,
+                    "ymin": -1
+                }
+            }
+        },
+        "A": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "AE": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 60,
+                    "width": 1136,
+                    "xmax": 1076,
+                    "xmin": 10,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "Aacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "Acircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 978,
+                    "ymin": 0
+                }
+            }
+        },
+        "Adieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 990,
+                    "ymin": 0
+                }
+            }
+        },
+        "Agrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "Aring": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 1004,
+                    "ymin": 0
+                }
+            }
+        },
+        "Atilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 968,
+                    "ymin": 0
+                }
+            }
+        },
+        "B": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 50,
+                    "width": 734,
+                    "xmax": 684,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "C": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 35,
+                    "width": 822,
+                    "xmax": 787,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "Ccedilla": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 35,
+                    "width": 822,
+                    "xmax": 787,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -210
+                }
+            }
+        },
+        "D": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 35,
+                    "width": 793,
+                    "xmax": 758,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "E": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "Eacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "Ecircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 978,
+                    "ymin": 0
+                }
+            }
+        },
+        "Edieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 990,
+                    "ymin": 0
+                }
+            }
+        },
+        "Egrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "Euro": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 20,
+                    "width": 689,
+                    "xmax": 669,
+                    "xmin": 30,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "F": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 55,
+                    "width": 650,
+                    "xmax": 595,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "G": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 834,
+                    "xmax": 794,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "H": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 821,
+                    "xmax": 731,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 1
+                }
+            }
+        },
+        "I": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 334,
+                    "xmax": 244,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "Iacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 7,
+                    "rsb": 6,
+                    "width": 334,
+                    "xmax": 328,
+                    "xmin": 7,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "Icircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": -10,
+                    "rsb": -6,
+                    "width": 334,
+                    "xmax": 340,
+                    "xmin": -10,
+                    "ymax": 978,
+                    "ymin": 0
+                }
+            }
+        },
+        "Idieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": -25,
+                    "rsb": -24,
+                    "width": 334,
+                    "xmax": 358,
+                    "xmin": -25,
+                    "ymax": 990,
+                    "ymin": 0
+                }
+            }
+        },
+        "Igrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 7,
+                    "rsb": 6,
+                    "width": 334,
+                    "xmax": 328,
+                    "xmin": 7,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "J": {
+            "layers": {
+                "Medium": {
+                    "lsb": 0,
+                    "rsb": 75,
+                    "width": 609,
+                    "xmax": 534,
+                    "xmin": 0,
+                    "ymax": 750,
+                    "ymin": -10
+                }
+            }
+        },
+        "K": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 0,
+                    "width": 719,
+                    "xmax": 719,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "L": {
+            "layers": {
+                "Medium": {
+                    "lsb": 80,
+                    "rsb": 20,
+                    "width": 573,
+                    "xmax": 553,
+                    "xmin": 80,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "M": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 943,
+                    "xmax": 853,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "N": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 839,
+                    "xmax": 749,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "Ntilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 839,
+                    "xmax": 749,
+                    "xmin": 90,
+                    "ymax": 968,
+                    "ymin": 0
+                }
+            }
+        },
+        "O": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "OE": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 70,
+                    "width": 1256,
+                    "xmax": 1186,
+                    "xmin": 45,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "Oacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 1006,
+                    "ymin": -10
+                }
+            }
+        },
+        "Ocircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 978,
+                    "ymin": -10
+                }
+            }
+        },
+        "Odieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 990,
+                    "ymin": -10
+                }
+            }
+        },
+        "Ograve": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 1006,
+                    "ymin": -10
+                }
+            }
+        },
+        "Otilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 968,
+                    "ymin": -10
+                }
+            }
+        },
+        "P": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 35,
+                    "width": 671,
+                    "xmax": 636,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "Q": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 0,
+                    "width": 890,
+                    "xmax": 890,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "R": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 50,
+                    "width": 707,
+                    "xmax": 657,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "S": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 696,
+                    "xmax": 651,
+                    "xmin": 45,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "Scaron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 696,
+                    "xmax": 651,
+                    "xmin": 45,
+                    "ymax": 978,
+                    "ymin": -10
+                }
+            }
+        },
+        "Scedilla": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 696,
+                    "xmax": 651,
+                    "xmin": 45,
+                    "ymax": 760,
+                    "ymin": -210
+                }
+            }
+        },
+        "T": {
+            "layers": {
+                "Medium": {
+                    "lsb": 15,
+                    "rsb": 15,
+                    "width": 666,
+                    "xmax": 651,
+                    "xmin": 15,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "U": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 750,
+                    "ymin": -10
+                }
+            }
+        },
+        "Uacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 1006,
+                    "ymin": -10
+                }
+            }
+        },
+        "Ucircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 978,
+                    "ymin": -10
+                }
+            }
+        },
+        "Udieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 990,
+                    "ymin": -10
+                }
+            }
+        },
+        "Ugrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 1006,
+                    "ymin": -10
+                }
+            }
+        },
+        "V": {
+            "layers": {
+                "Medium": {
+                    "lsb": 5,
+                    "rsb": 5,
+                    "width": 733,
+                    "xmax": 728,
+                    "xmin": 5,
+                    "ymax": 750,
+                    "ymin": 1
+                }
+            }
+        },
+        "W": {
+            "layers": {
+                "Medium": {
+                    "lsb": 5,
+                    "rsb": 5,
+                    "width": 1050,
+                    "xmax": 1045,
+                    "xmin": 5,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "X": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 742,
+                    "xmax": 732,
+                    "xmin": 10,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "Y": {
+            "layers": {
+                "Medium": {
+                    "lsb": 5,
+                    "rsb": 5,
+                    "width": 773,
+                    "xmax": 768,
+                    "xmin": 5,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "Ydieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 5,
+                    "rsb": 5,
+                    "width": 773,
+                    "xmax": 768,
+                    "xmin": 5,
+                    "ymax": 990,
+                    "ymin": 0
+                }
+            }
+        },
+        "Z": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 668,
+                    "xmax": 623,
+                    "xmin": 45,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "Zcaron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 668,
+                    "xmax": 623,
+                    "xmin": 45,
+                    "ymax": 978,
+                    "ymin": 0
+                }
+            }
+        },
+        "a": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "aacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "acircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 978,
+                    "ymin": 0
+                }
+            }
+        },
+        "acute.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": -160,
+                    "rsb": -161,
+                    "width": 0,
+                    "xmax": 161,
+                    "xmin": -160,
+                    "ymax": 1006,
+                    "ymin": 805
+                }
+            }
+        },
+        "adieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 990,
+                    "ymin": 0
+                }
+            }
+        },
+        "ae": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 60,
+                    "width": 1136,
+                    "xmax": 1076,
+                    "xmin": 10,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "agrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "ampersand": {
+            "layers": {
+                "Medium": {
+                    "lsb": 50,
+                    "rsb": 5,
+                    "width": 756,
+                    "xmax": 751,
+                    "xmin": 50,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "aring": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 1004,
+                    "ymin": 0
+                }
+            }
+        },
+        "asciicircum": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 410,
+                    "xmax": 380,
+                    "xmin": 30,
+                    "ymax": 648,
+                    "ymin": 503
+                }
+            }
+        },
+        "asterisk": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 428,
+                    "xmax": 398,
+                    "xmin": 30,
+                    "ymax": 953,
+                    "ymin": 602
+                }
+            }
+        },
+        "at": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 1081,
+                    "xmax": 1041,
+                    "xmin": 40,
+                    "ymax": 800,
+                    "ymin": -174
+                }
+            }
+        },
+        "at.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 50,
+                    "width": 1091,
+                    "xmax": 1041,
+                    "xmin": 40,
+                    "ymax": 801,
+                    "ymin": -173
+                }
+            }
+        },
+        "atilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 968,
+                    "ymin": 0
+                }
+            }
+        },
+        "b": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 50,
+                    "width": 734,
+                    "xmax": 684,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "backslash": {
+            "layers": {
+                "Medium": {
+                    "lsb": -20,
+                    "rsb": -20,
+                    "width": 573,
+                    "xmax": 593,
+                    "xmin": -20,
+                    "ymax": 790,
+                    "ymin": -40
+                }
+            }
+        },
+        "bullet": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 297,
+                    "xmax": 267,
+                    "xmin": 30,
+                    "ymax": 503,
+                    "ymin": 267
+                }
+            }
+        },
+        "bullet.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 60,
+                    "rsb": 60,
+                    "width": 385,
+                    "xmax": 325,
+                    "xmin": 60,
+                    "ymax": 517,
+                    "ymin": 253
+                }
+            }
+        },
+        "c": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 35,
+                    "width": 822,
+                    "xmax": 787,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "caron.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": -175,
+                    "rsb": -175,
+                    "width": 0,
+                    "xmax": 175,
+                    "xmin": -175,
+                    "ymax": 978,
+                    "ymin": 833
+                }
+            }
+        },
+        "ccedilla": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 35,
+                    "width": 822,
+                    "xmax": 787,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -210
+                }
+            }
+        },
+        "cedilla.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": -111,
+                    "rsb": -120,
+                    "width": 0,
+                    "xmax": 120,
+                    "xmin": -111,
+                    "ymax": -60,
+                    "ymin": -210
+                }
+            }
+        },
+        "cent": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 586,
+                    "xmax": 546,
+                    "xmin": 40,
+                    "ymax": 610,
+                    "ymin": -110
+                }
+            }
+        },
+        "circumflex.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": -177,
+                    "rsb": -173,
+                    "width": 0,
+                    "xmax": 173,
+                    "xmin": -177,
+                    "ymax": 978,
+                    "ymin": 833
+                }
+            }
+        },
+        "colon": {
+            "layers": {
+                "Medium": {
+                    "lsb": 60,
+                    "rsb": 60,
+                    "width": 300,
+                    "xmax": 240,
+                    "xmin": 60,
+                    "ymax": 545,
+                    "ymin": 0
+                }
+            }
+        },
+        "comma": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 45,
+                    "width": 312,
+                    "xmax": 267,
+                    "xmin": 20,
+                    "ymax": 164,
+                    "ymin": -110
+                }
+            }
+        },
+        "d": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 35,
+                    "width": 793,
+                    "xmax": 758,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "dieresis.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": -192,
+                    "rsb": -191,
+                    "width": 0,
+                    "xmax": 191,
+                    "xmin": -192,
+                    "ymax": 990,
+                    "ymin": 820
+                }
+            }
+        },
+        "dollar": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 696,
+                    "xmax": 651,
+                    "xmin": 45,
+                    "ymax": 870,
+                    "ymin": -120
+                }
+            }
+        },
+        "e": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "eacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "ecircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 978,
+                    "ymin": 0
+                }
+            }
+        },
+        "edieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 990,
+                    "ymin": 0
+                }
+            }
+        },
+        "egrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 60,
+                    "width": 670,
+                    "xmax": 610,
+                    "xmin": 90,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "eight": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 644,
+                    "xmax": 599,
+                    "xmin": 45,
+                    "ymax": 761,
+                    "ymin": -10
+                }
+            }
+        },
+        "ellipsis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 70,
+                    "width": 968,
+                    "xmax": 898,
+                    "xmin": 70,
+                    "ymax": 183,
+                    "ymin": 0
+                }
+            }
+        },
+        "emdash": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 1060,
+                    "xmax": 1030,
+                    "xmin": 30,
+                    "ymax": 461,
+                    "ymin": 321
+                }
+            }
+        },
+        "emdash.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 1060,
+                    "xmax": 1030,
+                    "xmin": 30,
+                    "ymax": 461,
+                    "ymin": 321
+                }
+            }
+        },
+        "endash": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 560,
+                    "xmax": 530,
+                    "xmin": 30,
+                    "ymax": 461,
+                    "ymin": 321
+                }
+            }
+        },
+        "endash.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 560,
+                    "xmax": 530,
+                    "xmin": 30,
+                    "ymax": 461,
+                    "ymin": 321
+                }
+            }
+        },
+        "equal": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 560,
+                    "xmax": 530,
+                    "xmin": 30,
+                    "ymax": 601,
+                    "ymin": 180
+                }
+            }
+        },
+        "exclam": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 70,
+                    "width": 300,
+                    "xmax": 230,
+                    "xmin": 70,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "exclamdown": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 70,
+                    "width": 300,
+                    "xmax": 230,
+                    "xmin": 70,
+                    "ymax": 500,
+                    "ymin": -250
+                }
+            }
+        },
+        "f": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 55,
+                    "width": 650,
+                    "xmax": 595,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "five": {
+            "layers": {
+                "Medium": {
+                    "lsb": 50,
+                    "rsb": 50,
+                    "width": 654,
+                    "xmax": 604,
+                    "xmin": 50,
+                    "ymax": 750,
+                    "ymin": -10
+                }
+            }
+        },
+        "four": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 40,
+                    "width": 666,
+                    "xmax": 626,
+                    "xmin": 20,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "g": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 834,
+                    "xmax": 794,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "germandbls": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 40,
+                    "width": 727,
+                    "xmax": 687,
+                    "xmin": 75,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "grave.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": -160,
+                    "rsb": -161,
+                    "width": 0,
+                    "xmax": 161,
+                    "xmin": -160,
+                    "ymax": 1006,
+                    "ymin": 805
+                }
+            }
+        },
+        "guillemotleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 35,
+                    "rsb": 45,
+                    "width": 563,
+                    "xmax": 518,
+                    "xmin": 35,
+                    "ymax": 563,
+                    "ymin": 187
+                }
+            }
+        },
+        "guillemotleft.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 38,
+                    "rsb": 52,
+                    "width": 573,
+                    "xmax": 521,
+                    "xmin": 38,
+                    "ymax": 563,
+                    "ymin": 187
+                }
+            }
+        },
+        "guillemotright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 35,
+                    "width": 562,
+                    "xmax": 527,
+                    "xmin": 45,
+                    "ymax": 563,
+                    "ymin": 188
+                }
+            }
+        },
+        "guillemotright.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 58,
+                    "rsb": 32,
+                    "width": 572,
+                    "xmax": 540,
+                    "xmin": 58,
+                    "ymax": 563,
+                    "ymin": 188
+                }
+            }
+        },
+        "guilsinglleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 35,
+                    "width": 336,
+                    "xmax": 301,
+                    "xmin": 45,
+                    "ymax": 562,
+                    "ymin": 187
+                }
+            }
+        },
+        "guilsinglleft.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 37,
+                    "rsb": 50,
+                    "width": 343,
+                    "xmax": 293,
+                    "xmin": 37,
+                    "ymax": 562,
+                    "ymin": 187
+                }
+            }
+        },
+        "guilsinglright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 35,
+                    "rsb": 45,
+                    "width": 336,
+                    "xmax": 291,
+                    "xmin": 35,
+                    "ymax": 563,
+                    "ymin": 188
+                }
+            }
+        },
+        "guilsinglright.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 37,
+                    "rsb": 50,
+                    "width": 343,
+                    "xmax": 293,
+                    "xmin": 37,
+                    "ymax": 563,
+                    "ymin": 188
+                }
+            }
+        },
+        "h": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 821,
+                    "xmax": 731,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 1
+                }
+            }
+        },
+        "hyphen": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 385,
+                    "xmax": 355,
+                    "xmin": 30,
+                    "ymax": 460,
+                    "ymin": 320
+                }
+            }
+        },
+        "hyphen.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 385,
+                    "xmax": 355,
+                    "xmin": 30,
+                    "ymax": 460,
+                    "ymin": 320
+                }
+            }
+        },
+        "i": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 334,
+                    "xmax": 244,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "iacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 7,
+                    "rsb": 6,
+                    "width": 334,
+                    "xmax": 328,
+                    "xmin": 7,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "icircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": -10,
+                    "rsb": -6,
+                    "width": 334,
+                    "xmax": 340,
+                    "xmin": -10,
+                    "ymax": 978,
+                    "ymin": 0
+                }
+            }
+        },
+        "idieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": -25,
+                    "rsb": -24,
+                    "width": 334,
+                    "xmax": 358,
+                    "xmin": -25,
+                    "ymax": 990,
+                    "ymin": 0
+                }
+            }
+        },
+        "igrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 7,
+                    "rsb": 6,
+                    "width": 334,
+                    "xmax": 328,
+                    "xmin": 7,
+                    "ymax": 1006,
+                    "ymin": 0
+                }
+            }
+        },
+        "j": {
+            "layers": {
+                "Medium": {
+                    "lsb": 0,
+                    "rsb": 75,
+                    "width": 609,
+                    "xmax": 534,
+                    "xmin": 0,
+                    "ymax": 750,
+                    "ymin": -10
+                }
+            }
+        },
+        "k": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": -10,
+                    "width": 709,
+                    "xmax": 719,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "l": {
+            "layers": {
+                "Medium": {
+                    "lsb": 80,
+                    "rsb": 20,
+                    "width": 573,
+                    "xmax": 553,
+                    "xmin": 80,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "m": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 943,
+                    "xmax": 853,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "minus": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 560,
+                    "xmax": 530,
+                    "xmin": 30,
+                    "ymax": 461,
+                    "ymin": 321
+                }
+            }
+        },
+        "n": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 839,
+                    "xmax": 749,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "nine": {
+            "layers": {
+                "Medium": {
+                    "lsb": 50,
+                    "rsb": 40,
+                    "width": 660,
+                    "xmax": 620,
+                    "xmin": 50,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "ntilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 839,
+                    "xmax": 749,
+                    "xmin": 90,
+                    "ymax": 968,
+                    "ymin": 0
+                }
+            }
+        },
+        "numbersign": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 967,
+                    "xmax": 947,
+                    "xmin": 20,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "o": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "oacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 1006,
+                    "ymin": -10
+                }
+            }
+        },
+        "ocircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 978,
+                    "ymin": -10
+                }
+            }
+        },
+        "odieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 990,
+                    "ymin": -10
+                }
+            }
+        },
+        "oe": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 70,
+                    "width": 1256,
+                    "xmax": 1186,
+                    "xmin": 45,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "ograve": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 1006,
+                    "ymin": -10
+                }
+            }
+        },
+        "one": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 90,
+                    "width": 435,
+                    "xmax": 345,
+                    "xmin": 40,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "ordfeminine": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 749,
+                    "xmax": 739,
+                    "xmin": 10,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "ordmasculine": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "otilde": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 851,
+                    "xmax": 811,
+                    "xmin": 40,
+                    "ymax": 968,
+                    "ymin": -10
+                }
+            }
+        },
+        "p": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 35,
+                    "width": 671,
+                    "xmax": 636,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "parenleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 25,
+                    "width": 420,
+                    "xmax": 395,
+                    "xmin": 70,
+                    "ymax": 790,
+                    "ymin": -40
+                }
+            }
+        },
+        "parenleft.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 25,
+                    "width": 420,
+                    "xmax": 395,
+                    "xmin": 70,
+                    "ymax": 790,
+                    "ymin": -40
+                }
+            }
+        },
+        "parenright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 25,
+                    "rsb": 70,
+                    "width": 420,
+                    "xmax": 350,
+                    "xmin": 25,
+                    "ymax": 790,
+                    "ymin": -40
+                }
+            }
+        },
+        "parenright.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 25,
+                    "rsb": 70,
+                    "width": 420,
+                    "xmax": 350,
+                    "xmin": 25,
+                    "ymax": 790,
+                    "ymin": -40
+                }
+            }
+        },
+        "percent": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 702,
+                    "xmax": 682,
+                    "xmin": 20,
+                    "ymax": 757,
+                    "ymin": -10
+                }
+            }
+        },
+        "period": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 70,
+                    "width": 319,
+                    "xmax": 249,
+                    "xmin": 70,
+                    "ymax": 183,
+                    "ymin": 0
+                }
+            }
+        },
+        "periodcentered": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 70,
+                    "width": 319,
+                    "xmax": 249,
+                    "xmin": 70,
+                    "ymax": 488,
+                    "ymin": 305
+                }
+            }
+        },
+        "periodcentered.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": 70,
+                    "rsb": 70,
+                    "width": 319,
+                    "xmax": 249,
+                    "xmin": 70,
+                    "ymax": 488,
+                    "ymin": 305
+                }
+            }
+        },
+        "plus": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 560,
+                    "xmax": 530,
+                    "xmin": 30,
+                    "ymax": 655,
+                    "ymin": 135
+                }
+            }
+        },
+        "q": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 0,
+                    "width": 890,
+                    "xmax": 890,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "question": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 573,
+                    "xmax": 543,
+                    "xmin": 30,
+                    "ymax": 760,
+                    "ymin": 0
+                }
+            }
+        },
+        "questiondown": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 573,
+                    "xmax": 543,
+                    "xmin": 30,
+                    "ymax": 510,
+                    "ymin": -250
+                }
+            }
+        },
+        "quotedbl": {
+            "layers": {
+                "Medium": {
+                    "lsb": 60,
+                    "rsb": 60,
+                    "width": 522,
+                    "xmax": 462,
+                    "xmin": 60,
+                    "ymax": 780,
+                    "ymin": 456
+                }
+            }
+        },
+        "quotedblbase": {
+            "layers": {
+                "Medium": {
+                    "lsb": 15,
+                    "rsb": 45,
+                    "width": 542,
+                    "xmax": 497,
+                    "xmin": 15,
+                    "ymax": 164,
+                    "ymin": -110
+                }
+            }
+        },
+        "quotedblleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 15,
+                    "width": 542,
+                    "xmax": 527,
+                    "xmin": 45,
+                    "ymax": 780,
+                    "ymin": 506
+                }
+            }
+        },
+        "quotedblright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 15,
+                    "width": 542,
+                    "xmax": 527,
+                    "xmin": 45,
+                    "ymax": 780,
+                    "ymin": 506
+                }
+            }
+        },
+        "quoteleft": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 15,
+                    "width": 317,
+                    "xmax": 302,
+                    "xmin": 45,
+                    "ymax": 780,
+                    "ymin": 506
+                }
+            }
+        },
+        "quoteright": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 15,
+                    "width": 317,
+                    "xmax": 302,
+                    "xmin": 45,
+                    "ymax": 780,
+                    "ymin": 506
+                }
+            }
+        },
+        "quotesinglbase": {
+            "layers": {
+                "Medium": {
+                    "lsb": 15,
+                    "rsb": 45,
+                    "width": 317,
+                    "xmax": 272,
+                    "xmin": 15,
+                    "ymax": 164,
+                    "ymin": -110
+                }
+            }
+        },
+        "quotesingle": {
+            "layers": {
+                "Medium": {
+                    "lsb": 60,
+                    "rsb": 60,
+                    "width": 282,
+                    "xmax": 222,
+                    "xmin": 60,
+                    "ymax": 780,
+                    "ymin": 456
+                }
+            }
+        },
+        "r": {
+            "layers": {
+                "Medium": {
+                    "lsb": 90,
+                    "rsb": 50,
+                    "width": 707,
+                    "xmax": 657,
+                    "xmin": 90,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "ring.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": -100,
+                    "rsb": -98,
+                    "width": 0,
+                    "xmax": 98,
+                    "xmin": -100,
+                    "ymax": 1004,
+                    "ymin": 806
+                }
+            }
+        },
+        "s": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 696,
+                    "xmax": 651,
+                    "xmin": 45,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "scaron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 696,
+                    "xmax": 651,
+                    "xmin": 45,
+                    "ymax": 978,
+                    "ymin": -10
+                }
+            }
+        },
+        "scedilla": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 696,
+                    "xmax": 651,
+                    "xmin": 45,
+                    "ymax": 760,
+                    "ymin": -210
+                }
+            }
+        },
+        "semicolon": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 45,
+                    "width": 312,
+                    "xmax": 267,
+                    "xmin": 20,
+                    "ymax": 545,
+                    "ymin": -111
+                }
+            }
+        },
+        "seven": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 573,
+                    "xmax": 553,
+                    "xmin": 20,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "six": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 50,
+                    "width": 660,
+                    "xmax": 610,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "slash": {
+            "layers": {
+                "Medium": {
+                    "lsb": -20,
+                    "rsb": -20,
+                    "width": 561,
+                    "xmax": 581,
+                    "xmin": -20,
+                    "ymax": 790,
+                    "ymin": -40
+                }
+            }
+        },
+        "space": {
+            "layers": {
+                "Medium": {
+                    "width": 330
+                }
+            }
+        },
+        "sterling": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 646,
+                    "xmax": 616,
+                    "xmin": 30,
+                    "ymax": 760,
+                    "ymin": 0
+                }
+            }
+        },
+        "t": {
+            "layers": {
+                "Medium": {
+                    "lsb": 15,
+                    "rsb": 15,
+                    "width": 666,
+                    "xmax": 651,
+                    "xmin": 15,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "three": {
+            "layers": {
+                "Medium": {
+                    "lsb": 35,
+                    "rsb": 40,
+                    "width": 632,
+                    "xmax": 592,
+                    "xmin": 35,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "tilde.case": {
+            "layers": {
+                "Medium": {
+                    "lsb": -160,
+                    "rsb": -160,
+                    "width": 0,
+                    "xmax": 160,
+                    "xmin": -160,
+                    "ymax": 968,
+                    "ymin": 843
+                }
+            }
+        },
+        "two": {
+            "layers": {
+                "Medium": {
+                    "lsb": 50,
+                    "rsb": 45,
+                    "width": 629,
+                    "xmax": 584,
+                    "xmin": 50,
+                    "ymax": 760,
+                    "ymin": 0
+                }
+            }
+        },
+        "u": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 750,
+                    "ymin": -10
+                }
+            }
+        },
+        "uacute": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 1006,
+                    "ymin": -10
+                }
+            }
+        },
+        "ucircumflex": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 978,
+                    "ymin": -10
+                }
+            }
+        },
+        "udieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 990,
+                    "ymin": -10
+                }
+            }
+        },
+        "ugrave": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 75,
+                    "width": 765,
+                    "xmax": 690,
+                    "xmin": 75,
+                    "ymax": 1006,
+                    "ymin": -10
+                }
+            }
+        },
+        "underscore": {
+            "layers": {
+                "Medium": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 540,
+                    "xmax": 520,
+                    "xmin": 20,
+                    "ymax": -50,
+                    "ymin": -190
+                }
+            }
+        },
+        "uni1E9E": {
+            "layers": {
+                "Medium": {
+                    "lsb": 75,
+                    "rsb": 40,
+                    "width": 727,
+                    "xmax": 687,
+                    "xmin": 75,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        },
+        "uni2010": {
+            "layers": {
+                "Medium": {
+                    "lsb": 30,
+                    "rsb": 30,
+                    "width": 385,
+                    "xmax": 355,
+                    "xmin": 30,
+                    "ymax": 460,
+                    "ymin": 320
+                }
+            }
+        },
+        "v": {
+            "layers": {
+                "Medium": {
+                    "lsb": 5,
+                    "rsb": 5,
+                    "width": 733,
+                    "xmax": 728,
+                    "xmin": 5,
+                    "ymax": 750,
+                    "ymin": 1
+                }
+            }
+        },
+        "w": {
+            "layers": {
+                "Medium": {
+                    "lsb": 5,
+                    "rsb": 5,
+                    "width": 1050,
+                    "xmax": 1045,
+                    "xmin": 5,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "x": {
+            "layers": {
+                "Medium": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 742,
+                    "xmax": 732,
+                    "xmin": 10,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "y": {
+            "layers": {
+                "Medium": {
+                    "lsb": 5,
+                    "rsb": 5,
+                    "width": 773,
+                    "xmax": 768,
+                    "xmin": 5,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "ydieresis": {
+            "layers": {
+                "Medium": {
+                    "lsb": 5,
+                    "rsb": 5,
+                    "width": 773,
+                    "xmax": 768,
+                    "xmin": 5,
+                    "ymax": 990,
+                    "ymin": 0
+                }
+            }
+        },
+        "yen": {
+            "layers": {
+                "Medium": {
+                    "lsb": 5,
+                    "rsb": 5,
+                    "width": 773,
+                    "xmax": 768,
+                    "xmin": 5,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "z": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 668,
+                    "xmax": 623,
+                    "xmin": 45,
+                    "ymax": 750,
+                    "ymin": 0
+                }
+            }
+        },
+        "zcaron": {
+            "layers": {
+                "Medium": {
+                    "lsb": 45,
+                    "rsb": 45,
+                    "width": 668,
+                    "xmax": 623,
+                    "xmin": 45,
+                    "ymax": 978,
+                    "ymin": 0
+                }
+            }
+        },
+        "zero": {
+            "layers": {
+                "Medium": {
+                    "lsb": 40,
+                    "rsb": 40,
+                    "width": 721,
+                    "xmax": 681,
+                    "xmin": 40,
+                    "ymax": 760,
+                    "ymin": -10
+                }
+            }
+        }
+    },
+    "upm": 1000
+}

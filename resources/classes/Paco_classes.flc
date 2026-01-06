@@ -1,0 +1,10 @@
+%%FONTLAB CLASSES
+
+%%CLASS onum
+%%GLYPHS zero one two three four five six seven eight nine
+%%END
+
+%%CLASS onum2
+%%GLYPHS zero.onum one.onum two.onum three.onum four.onum five.onum six.onum seven.onum eight.onum nine.onum
+%%END
+

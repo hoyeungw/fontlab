@@ -9,8 +9,8 @@ const SRC_VFM = SRC + '/' + BASE + '.vfm'
 const DEST_XLSX = DEST + '/' + BASE + '-pairs.xlsx'
 
 const workflow = async () => {
-  // await PairsIO.originToProcess(SRC_VFM, DEST_XLSX)
-  await PairsIO.processToTarget(SRC_VFM, DEST_XLSX)
+  // await PairsIO.vfmToXlsx(SRC_VFM, DEST_XLSX)
+  await PairsIO.xlsxToVfm(SRC_VFM, DEST_XLSX)
 }
 
 workflow().then()

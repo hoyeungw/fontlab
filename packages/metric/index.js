@@ -1,2 +1,2 @@
 export { Metric }                            from './src/Metric.js'
-export { metricToJson, embedLayerToMetrics } from './src/json.js'
+export { metricToJson, embedLayerToMetrics } from './src/utils/json.js'

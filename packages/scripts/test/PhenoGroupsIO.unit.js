@@ -1,4 +1,4 @@
-import { GroupsIO }                   from '../src/GroupsIO.js'
+import { KerningClassesIO }           from '../src/KerningClassesIO.js'
 import { REGROUPS as GROUPS_CHALENE } from '../../../resources/schemes/GROUPS_CHALENE.js'
 
 const SRC = './resources/metrics'
@@ -7,10 +7,10 @@ const FILE = 'Chalene'
 const VFM = '.vfm'
 const XLSX = '.xlsx'
 
-// GroupsIO
+// KerningClassesIO
 //   .regroup(SRC + '/' + FILE + VFM, DEST + '/' + FILE + '-regrouped' + VFM, GROUPS_CHALENE)
 //   .then()
 
-GroupsIO
+KerningClassesIO
   .exportRegroupsScheme(GROUPS_CHALENE, DEST + '/' + FILE + '-regroups-scheme' + XLSX)
   .then()

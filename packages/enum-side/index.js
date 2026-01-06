@@ -14,7 +14,7 @@ export function checkSide(group) {
   return v
 }
 
-export function createSideCheck(side) {
+export function toSideCheck(side) {
   if (side === Side.Left) return hasLeft
   if (side === Side.Right) return hasRight
   return () => true

@@ -1,0 +1,47 @@
+{
+  "name": "@fontlab/metric-series",
+  "version": "0.1.6",
+  "description": "a function to handle fontlab kerning pairs",
+  "type": "module",
+  "exports": "./index.js",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "test": "node -r @babel/register test/test.index.js"
+  },
+  "dependencies": {
+    "@analys/convert": "^0.7.5",
+    "@fontlab/constants": "workspace:^",
+    "@fontlab/enum-scope": "workspace:^",
+    "@fontlab/enum-side": "workspace:^",
+    "@fontlab/kerning-class": "workspace:^",
+    "@fontlab/kerning-pairs": "workspace:^",
+    "@fontlab/latin": "workspace:^",
+    "@fontlab/metric": "workspace:^",
+    "@vect/object-mapper": "^0.8.6",
+    "@vect/vector-stat": "^0.8.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyeungw/fontlab.git"
+  },
+  "keywords": [
+    "fontlab",
+    "metric",
+    "series"
+  ],
+  "author": "Hoyeung Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoyeungw/fontlab"
+  },
+  "homepage": "https://github.com/hoyeungw/fontlab#readme"
+}

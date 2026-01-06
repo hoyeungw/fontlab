@@ -1,0 +1,3908 @@
+{
+    "dataType": "com.fontlab.metrics",
+    "masters": {
+        "67MediumCondensed": {
+            "kerningClasses": [
+                {
+                    "1st": true,
+                    "name": "a",
+                    "names": [
+                        "a",
+                        "agrave",
+                        "aacute",
+                        "acircumflex",
+                        "atilde",
+                        "adieresis",
+                        "aring",
+                        "ae"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "A",
+                    "names": [
+                        "A",
+                        "Agrave",
+                        "Aacute",
+                        "Acircumflex",
+                        "Atilde",
+                        "Adieresis",
+                        "Aring"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "b",
+                    "names": [
+                        "b",
+                        "thorn"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "c",
+                    "names": [
+                        "c",
+                        "ccedilla"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "C",
+                    "names": [
+                        "C",
+                        "Ccedilla"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "d",
+                    "names": [
+                        "dotlessi",
+                        "d"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "D",
+                    "names": [
+                        "D",
+                        "Eth"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "e",
+                    "names": [
+                        "e",
+                        "egrave",
+                        "eacute",
+                        "ecircumflex",
+                        "edieresis"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "f",
+                    "names": [
+                        "fi",
+                        "fl",
+                        "f"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "L",
+                    "names": [
+                        "Lslash",
+                        "L"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "N",
+                    "names": [
+                        "N",
+                        "Ntilde"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "o",
+                    "names": [
+                        "o",
+                        "oe",
+                        "ograve",
+                        "oacute",
+                        "ocircumflex",
+                        "otilde",
+                        "odieresis",
+                        "oslash"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "O",
+                    "names": [
+                        "O",
+                        "OE",
+                        "Ograve",
+                        "Oacute",
+                        "Ocircumflex",
+                        "Otilde",
+                        "Odieresis",
+                        "Oslash"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "S",
+                    "names": [
+                        "S",
+                        "Scaron"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "U",
+                    "names": [
+                        "U",
+                        "Ugrave",
+                        "Uacute",
+                        "Ucircumflex",
+                        "Udieresis"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "y",
+                    "names": [
+                        "y",
+                        "yacute",
+                        "ydieresis"
+                    ]
+                },
+                {
+                    "1st": true,
+                    "name": "Y",
+                    "names": [
+                        "Y",
+                        "Ydieresis",
+                        "Yacute"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "y2",
+                    "names": [
+                        "y",
+                        "yacute",
+                        "ydieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "Y2",
+                    "names": [
+                        "Y",
+                        "Ydieresis",
+                        "Yacute"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "A2",
+                    "names": [
+                        "A",
+                        "Agrave",
+                        "Aacute",
+                        "Acircumflex",
+                        "Atilde",
+                        "Adieresis",
+                        "Aring",
+                        "AE"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "e2",
+                    "names": [
+                        "e",
+                        "egrave",
+                        "eacute",
+                        "ecircumflex",
+                        "edieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "o2",
+                    "names": [
+                        "o",
+                        "oe",
+                        "ograve",
+                        "oacute",
+                        "ocircumflex",
+                        "otilde",
+                        "odieresis",
+                        "oslash"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "a2",
+                    "names": [
+                        "a",
+                        "agrave",
+                        "aacute",
+                        "acircumflex",
+                        "atilde",
+                        "adieresis",
+                        "aring",
+                        "ae"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "c2",
+                    "names": [
+                        "c",
+                        "ccedilla"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "d2",
+                    "names": [
+                        "dotlessi",
+                        "d"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "n",
+                    "names": [
+                        "n",
+                        "ntilde"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "i",
+                    "names": [
+                        "i",
+                        "igrave",
+                        "iacute",
+                        "icircumflex",
+                        "idieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "O2",
+                    "names": [
+                        "O",
+                        "OE",
+                        "Ograve",
+                        "Oacute",
+                        "Ocircumflex",
+                        "Otilde",
+                        "Odieresis",
+                        "Oslash"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "u",
+                    "names": [
+                        "u",
+                        "ugrave",
+                        "uacute",
+                        "ucircumflex",
+                        "udieresis"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "S2",
+                    "names": [
+                        "S",
+                        "Scaron"
+                    ]
+                },
+                {
+                    "2nd": true,
+                    "name": "s",
+                    "names": [
+                        "s",
+                        "scaron"
+                    ]
+                }
+            ],
+            "pairs": {
+                "@A": {
+                    "@Y2": "-113",
+                    "@y2": "-37",
+                    "T": "-113",
+                    "V": "-61",
+                    "W": "-61",
+                    "quotedblright": "-113",
+                    "quoteright": "-113",
+                    "v": "-37",
+                    "w": "-37"
+                },
+                "@C": {
+                    "comma": "-37",
+                    "period": "-37"
+                },
+                "@D": {
+                    "@Y2": "-37",
+                    "comma": "-82",
+                    "period": "-82"
+                },
+                "@L": {
+                    "@Y2": "-188",
+                    "@y2": "-76",
+                    "T": "-188",
+                    "V": "-152",
+                    "W": "-152",
+                    "quotedblright": "-227",
+                    "quoteright": "-227"
+                },
+                "@N": {
+                    "comma": "-37",
+                    "period": "-37"
+                },
+                "@O": {
+                    "@A2": "-37",
+                    "@Y2": "-82",
+                    "T": "-61",
+                    "V": "-37",
+                    "X": "-37",
+                    "comma": "-82",
+                    "period": "-82"
+                },
+                "@S": {
+                    "comma": "-61",
+                    "period": "-61"
+                },
+                "@U": {
+                    "comma": "-61",
+                    "period": "-61"
+                },
+                "@Y": {
+                    "@A2": "-113",
+                    "@O2": "-82",
+                    "@S2": "-37",
+                    "@a2": "-113",
+                    "@e2": "-113",
+                    "@i": "-37",
+                    "@o2": "-113",
+                    "@u": "-102",
+                    "colon": "-76",
+                    "comma": "-227",
+                    "hyphen": "-152",
+                    "period": "-227",
+                    "semicolon": "-76"
+                },
+                "@a": {
+                    "v": "-12"
+                },
+                "@b": {
+                    "@y2": "-25",
+                    "comma": "-76",
+                    "period": "-76"
+                },
+                "@c": {
+                    "@y2": "-37",
+                    "comma": "-76",
+                    "h": "-12",
+                    "k": "-12",
+                    "period": "-76"
+                },
+                "@d": {
+                    "@y2": "-12"
+                },
+                "@e": {
+                    "comma": "-76",
+                    "period": "-76",
+                    "x": "-12"
+                },
+                "@f": {
+                    "comma": "-76",
+                    "period": "-76",
+                    "quotedblright": "37",
+                    "quoteright": "37"
+                },
+                "@o": {
+                    "@y2": "-12",
+                    "comma": "-37",
+                    "period": "-37",
+                    "v": "-12",
+                    "w": "-12"
+                },
+                "@y": {
+                    "@e2": "-12",
+                    "comma": "-152",
+                    "period": "-152"
+                },
+                "B": {
+                    "comma": "-61",
+                    "period": "-61"
+                },
+                "F": {
+                    "@A2": "-76",
+                    "comma": "-264",
+                    "period": "-264"
+                },
+                "G": {
+                    "comma": "-37",
+                    "period": "-37"
+                },
+                "J": {
+                    "comma": "-82",
+                    "period": "-82"
+                },
+                "P": {
+                    "@A2": "-76",
+                    "comma": "-307",
+                    "period": "-307"
+                },
+                "Q": {
+                    "comma": "-37",
+                    "period": "-37"
+                },
+                "R": {
+                    "@Y2": "-37",
+                    "T": "-37"
+                },
+                "T": {
+                    "@A2": "-113",
+                    "@O2": "-61",
+                    "@a2": "-152",
+                    "@e2": "-152",
+                    "@i": "-37",
+                    "@o2": "-152",
+                    "@u": "-152",
+                    "@y2": "-152",
+                    "acircumflex": "-76",
+                    "adieresis": "-39",
+                    "agrave": "-76",
+                    "aring": "-76",
+                    "atilde": "-76",
+                    "colon": "-152",
+                    "comma": "-188",
+                    "ecircumflex": "-115",
+                    "edieresis": "-76",
+                    "egrave": "-115",
+                    "hyphen": "-152",
+                    "iacute": "-18",
+                    "icircumflex": "8",
+                    "igrave": "18",
+                    "odieresis": "-76",
+                    "ograve": "-76",
+                    "period": "-188",
+                    "r": "-152",
+                    "semicolon": "-152",
+                    "udieresis": "-76",
+                    "w": "-152"
+                },
+                "V": {
+                    "@A2": "-76",
+                    "@a2": "-37",
+                    "@e2": "-37",
+                    "@o2": "-37",
+                    "@u": "-37",
+                    "acircumflex": "-18",
+                    "adieresis": "-18",
+                    "agrave": "-18",
+                    "aring": "-18",
+                    "atilde": "-18",
+                    "colon": "-37",
+                    "comma": "-188",
+                    "ecircumflex": "-18",
+                    "edieresis": "-18",
+                    "egrave": "-18",
+                    "hyphen": "-37",
+                    "ocircumflex": "-29",
+                    "odieresis": "-18",
+                    "period": "-188",
+                    "semicolon": "-37"
+                },
+                "W": {
+                    "@A2": "-61",
+                    "@a2": "-37",
+                    "@e2": "-37",
+                    "@o2": "-37",
+                    "@y2": "-37",
+                    "adieresis": "-29",
+                    "comma": "-152",
+                    "ecircumflex": "-29",
+                    "hyphen": "-37",
+                    "odieresis": "-29",
+                    "period": "-152"
+                },
+                "Y": {
+                    "odieresis": "-84",
+                    "udieresis": "-78"
+                },
+                "colon": {
+                    "space": "-76"
+                },
+                "comma": {
+                    "quotedblright": "-152",
+                    "quoteright": "-152",
+                    "space": "-76"
+                },
+                "g": {
+                    "comma": "-37",
+                    "period": "-37",
+                    "r": "12"
+                },
+                "h": {
+                    "@y2": "-12"
+                },
+                "k": {
+                    "@e2": "-12",
+                    "@o2": "-12",
+                    "@y2": "-12"
+                },
+                "p": {
+                    "@y2": "-12",
+                    "comma": "-37",
+                    "period": "-37"
+                },
+                "period": {
+                    "quotedblright": "-152",
+                    "quoteright": "-152"
+                },
+                "quotedblleft": {
+                    "@A2": "-113"
+                },
+                "quotedblright": {
+                    "space": "-76"
+                },
+                "quoteleft": {
+                    "@A2": "-113",
+                    "quoteleft": "-127"
+                },
+                "quoteright": {
+                    "@d2": "-76",
+                    "@s": "-76",
+                    "quoteright": "-127",
+                    "r": "-37"
+                },
+                "r": {
+                    "@a2": "-12",
+                    "@c2": "-12",
+                    "@d2": "-12",
+                    "@e2": "-12",
+                    "@n": "20",
+                    "@y2": "37",
+                    "comma": "-188",
+                    "g": "-12",
+                    "hyphen": "-113",
+                    "m": "20",
+                    "period": "-188",
+                    "q": "-25",
+                    "quoteright": "20",
+                    "v": "37"
+                },
+                "space": {
+                    "@A2": "-76",
+                    "@Y2": "-76",
+                    "T": "-76",
+                    "V": "-76",
+                    "W": "-76",
+                    "quotedblleft": "-76",
+                    "quoteleft": "-76"
+                },
+                "v": {
+                    "@a2": "-25",
+                    "comma": "-152",
+                    "period": "-152"
+                },
+                "w": {
+                    "@a2": "-25",
+                    "@o2": "-12",
+                    "comma": "-113",
+                    "period": "-113"
+                }
+            }
+        }
+    },
+    "metrics": {
+        ".notdef": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 1024,
+                    "xmax": 1024,
+                    "xmin": 0,
+                    "ymax": 1434,
+                    "ymin": 0
+                }
+            }
+        },
+        "A": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -18,
+                    "rsb": -19,
+                    "width": 1062,
+                    "xmax": 1081,
+                    "xmin": -18,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "AE": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -25,
+                    "rsb": 69,
+                    "width": 1517,
+                    "xmax": 1448,
+                    "xmin": -25,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Aacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -18,
+                    "rsb": -19,
+                    "width": 1062,
+                    "xmax": 1081,
+                    "xmin": -18,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "Acircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -18,
+                    "rsb": -19,
+                    "width": 1062,
+                    "xmax": 1081,
+                    "xmin": -18,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "Adieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -18,
+                    "rsb": -19,
+                    "width": 1062,
+                    "xmax": 1081,
+                    "xmin": -18,
+                    "ymax": 1806,
+                    "ymin": 0
+                }
+            }
+        },
+        "Agrave": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -18,
+                    "rsb": -19,
+                    "width": 1062,
+                    "xmax": 1081,
+                    "xmin": -18,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "Aring": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -18,
+                    "rsb": -19,
+                    "width": 1062,
+                    "xmax": 1081,
+                    "xmin": -18,
+                    "ymax": 1948,
+                    "ymin": 0
+                }
+            }
+        },
+        "Atilde": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -18,
+                    "rsb": -19,
+                    "width": 1062,
+                    "xmax": 1081,
+                    "xmin": -18,
+                    "ymax": 1810,
+                    "ymin": 0
+                }
+            }
+        },
+        "B": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 65,
+                    "width": 1099,
+                    "xmax": 1034,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "C": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 42,
+                    "width": 1062,
+                    "xmax": 1020,
+                    "xmin": 86,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "CR": {
+            "layers": {
+                "67MediumCondensed": {
+                    "width": 682
+                }
+            }
+        },
+        "Ccedilla": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 42,
+                    "width": 1062,
+                    "xmax": 1020,
+                    "xmin": 86,
+                    "ymax": 1491,
+                    "ymin": -442
+                }
+            }
+        },
+        "D": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 85,
+                    "width": 1138,
+                    "xmax": 1053,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Delta": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 53,
+                    "rsb": 55,
+                    "width": 1161,
+                    "xmax": 1106,
+                    "xmin": 53,
+                    "ymax": 1458,
+                    "ymin": 0
+                }
+            }
+        },
+        "E": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 57,
+                    "width": 985,
+                    "xmax": 928,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Eacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 57,
+                    "width": 985,
+                    "xmax": 928,
+                    "xmin": 121,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "Ecircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 57,
+                    "width": 985,
+                    "xmax": 928,
+                    "xmin": 121,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "Edieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 57,
+                    "width": 985,
+                    "xmax": 928,
+                    "xmin": 121,
+                    "ymax": 1806,
+                    "ymin": 0
+                }
+            }
+        },
+        "Egrave": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 57,
+                    "width": 985,
+                    "xmax": 928,
+                    "xmin": 121,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "Eth": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 0,
+                    "rsb": 85,
+                    "width": 1138,
+                    "xmax": 1053,
+                    "xmin": 0,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Euro": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 983,
+                    "xmax": 983,
+                    "xmin": 0,
+                    "ymax": 1450,
+                    "ymin": -29
+                }
+            }
+        },
+        "F": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 47,
+                    "width": 948,
+                    "xmax": 901,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "G": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 79,
+                    "width": 1099,
+                    "xmax": 1020,
+                    "xmin": 86,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "H": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 120,
+                    "width": 1138,
+                    "xmax": 1018,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "I": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 111,
+                    "rsb": 110,
+                    "width": 454,
+                    "xmax": 344,
+                    "xmin": 111,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Iacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 111,
+                    "rsb": -29,
+                    "width": 454,
+                    "xmax": 483,
+                    "xmin": 111,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "Icircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -68,
+                    "rsb": -68,
+                    "width": 454,
+                    "xmax": 522,
+                    "xmin": -68,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "Idieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -41,
+                    "rsb": -42,
+                    "width": 454,
+                    "xmax": 496,
+                    "xmin": -41,
+                    "ymax": 1806,
+                    "ymin": 0
+                }
+            }
+        },
+        "Igrave": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -29,
+                    "rsb": 110,
+                    "width": 454,
+                    "xmax": 344,
+                    "xmin": -29,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "J": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 33,
+                    "rsb": 110,
+                    "width": 909,
+                    "xmax": 799,
+                    "xmin": 33,
+                    "ymax": 1462,
+                    "ymin": -29.03846153846154
+                }
+            }
+        },
+        "K": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": -40,
+                    "width": 1062,
+                    "xmax": 1102,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "L": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 94,
+                    "rsb": 16,
+                    "width": 909,
+                    "xmax": 893,
+                    "xmin": 94,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Lslash": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -20,
+                    "rsb": 16,
+                    "width": 909,
+                    "xmax": 893,
+                    "xmin": -20,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "M": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 120,
+                    "width": 1478,
+                    "xmax": 1358,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "N": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 120,
+                    "width": 1175,
+                    "xmax": 1055,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "NULL": {
+            "layers": {
+                "67MediumCondensed": {
+                    "width": 0
+                }
+            }
+        },
+        "Ntilde": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 120,
+                    "width": 1175,
+                    "xmax": 1055,
+                    "xmin": 121,
+                    "ymax": 1810,
+                    "ymin": 0
+                }
+            }
+        },
+        "O": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 85,
+                    "width": 1138,
+                    "xmax": 1053,
+                    "xmin": 86,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "OE": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 69,
+                    "width": 1630,
+                    "xmax": 1561,
+                    "xmin": 86,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "Oacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 85,
+                    "width": 1138,
+                    "xmax": 1053,
+                    "xmin": 86,
+                    "ymax": 1839,
+                    "ymin": -29
+                }
+            }
+        },
+        "Ocircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 85,
+                    "width": 1138,
+                    "xmax": 1053,
+                    "xmin": 86,
+                    "ymax": 1839,
+                    "ymin": -29
+                }
+            }
+        },
+        "Odieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 85,
+                    "width": 1138,
+                    "xmax": 1053,
+                    "xmin": 86,
+                    "ymax": 1806,
+                    "ymin": -29
+                }
+            }
+        },
+        "Ograve": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 85,
+                    "width": 1138,
+                    "xmax": 1053,
+                    "xmin": 86,
+                    "ymax": 1839,
+                    "ymin": -29
+                }
+            }
+        },
+        "Omega": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 72,
+                    "rsb": 80,
+                    "width": 1245,
+                    "xmax": 1165,
+                    "xmin": 72,
+                    "ymax": 1448,
+                    "ymin": 0
+                }
+            }
+        },
+        "Oslash": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 85,
+                    "width": 1138,
+                    "xmax": 1053,
+                    "xmin": 86,
+                    "ymax": 1567,
+                    "ymin": -106
+                }
+            }
+        },
+        "Otilde": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 85,
+                    "width": 1138,
+                    "xmax": 1053,
+                    "xmin": 86,
+                    "ymax": 1810,
+                    "ymin": -29
+                }
+            }
+        },
+        "P": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 37,
+                    "width": 1024,
+                    "xmax": 987,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Q": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 86,
+                    "rsb": 51,
+                    "width": 1138,
+                    "xmax": 1087,
+                    "xmin": 86,
+                    "ymax": 1491,
+                    "ymin": -131
+                }
+            }
+        },
+        "R": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 28,
+                    "width": 1099,
+                    "xmax": 1071,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "S": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 68,
+                    "rsb": 67,
+                    "width": 1062,
+                    "xmax": 995,
+                    "xmin": 68,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "Scaron": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 68,
+                    "rsb": 67,
+                    "width": 1062,
+                    "xmax": 995,
+                    "xmin": 68,
+                    "ymax": 1839,
+                    "ymin": -29
+                }
+            }
+        },
+        "T": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 12,
+                    "rsb": 12,
+                    "width": 948,
+                    "xmax": 936,
+                    "xmin": 12,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Thorn": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 121,
+                    "rsb": 37,
+                    "width": 1024,
+                    "xmax": 987,
+                    "xmin": 121,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "U": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 102,
+                    "rsb": 102,
+                    "width": 1099,
+                    "xmax": 997,
+                    "xmin": 102,
+                    "ymax": 1462,
+                    "ymin": -29
+                }
+            }
+        },
+        "Uacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 102,
+                    "rsb": 102,
+                    "width": 1099,
+                    "xmax": 997,
+                    "xmin": 102,
+                    "ymax": 1839,
+                    "ymin": -29
+                }
+            }
+        },
+        "Ucircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 102,
+                    "rsb": 102,
+                    "width": 1099,
+                    "xmax": 997,
+                    "xmin": 102,
+                    "ymax": 1839,
+                    "ymin": -29
+                }
+            }
+        },
+        "Udieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 102,
+                    "rsb": 102,
+                    "width": 1099,
+                    "xmax": 997,
+                    "xmin": 102,
+                    "ymax": 1806,
+                    "ymin": -29
+                }
+            }
+        },
+        "Ugrave": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 102,
+                    "rsb": 102,
+                    "width": 1099,
+                    "xmax": 997,
+                    "xmin": 102,
+                    "ymax": 1839,
+                    "ymin": -29
+                }
+            }
+        },
+        "V": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -12,
+                    "rsb": -12,
+                    "width": 985,
+                    "xmax": 997,
+                    "xmin": -12,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "W": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 12,
+                    "rsb": 12,
+                    "width": 1517,
+                    "xmax": 1505,
+                    "xmin": 12,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "X": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 1024,
+                    "xmax": 1024,
+                    "xmin": 0,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Y": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -8,
+                    "rsb": -8,
+                    "width": 985,
+                    "xmax": 993,
+                    "xmin": -8,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Yacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -8,
+                    "rsb": -8,
+                    "width": 985,
+                    "xmax": 993,
+                    "xmin": -8,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "Ydieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -8,
+                    "rsb": -8,
+                    "width": 985,
+                    "xmax": 993,
+                    "xmin": -8,
+                    "ymax": 1806,
+                    "ymin": 0
+                }
+            }
+        },
+        "Z": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 37,
+                    "rsb": 37,
+                    "width": 948,
+                    "xmax": 911,
+                    "xmin": 37,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "Zcaron": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 37,
+                    "rsb": 37,
+                    "width": 948,
+                    "xmax": 911,
+                    "xmin": 37,
+                    "ymax": 1839,
+                    "ymin": 0
+                }
+            }
+        },
+        "a": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 24,
+                    "width": 948,
+                    "xmax": 924,
+                    "xmin": 63,
+                    "ymax": 1130,
+                    "ymin": -29
+                }
+            }
+        },
+        "aacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 24,
+                    "width": 948,
+                    "xmax": 924,
+                    "xmin": 63,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "acircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 24,
+                    "width": 948,
+                    "xmax": 924,
+                    "xmin": 63,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "acute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 115,
+                    "rsb": -29,
+                    "width": 454,
+                    "xmax": 483,
+                    "xmin": 115,
+                    "ymax": 1540,
+                    "ymin": 1245
+                }
+            }
+        },
+        "adieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 24,
+                    "width": 948,
+                    "xmax": 924,
+                    "xmin": 63,
+                    "ymax": 1507,
+                    "ymin": -29
+                }
+            }
+        },
+        "ae": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 75,
+                    "width": 1441,
+                    "xmax": 1366,
+                    "xmin": 63,
+                    "ymax": 1130,
+                    "ymin": -29
+                }
+            }
+        },
+        "afii61289": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 45,
+                    "rsb": 33,
+                    "width": 897,
+                    "xmax": 864,
+                    "xmin": 45,
+                    "ymax": 1565,
+                    "ymin": -20
+                }
+            }
+        },
+        "agrave": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 24,
+                    "width": 948,
+                    "xmax": 924,
+                    "xmin": 63,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "ampersand": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 43,
+                    "rsb": -3,
+                    "width": 1175,
+                    "xmax": 1178,
+                    "xmin": 43,
+                    "ymax": 1462,
+                    "ymin": -29
+                }
+            }
+        },
+        "approxequal": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 74,
+                    "rsb": 77,
+                    "width": 1007,
+                    "xmax": 930,
+                    "xmin": 74,
+                    "ymax": 883,
+                    "ymin": 285
+                }
+            }
+        },
+        "aring": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 24,
+                    "width": 948,
+                    "xmax": 924,
+                    "xmin": 63,
+                    "ymax": 1649,
+                    "ymin": -29
+                }
+            }
+        },
+        "asciicircum": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 117,
+                    "rsb": 116,
+                    "width": 1228,
+                    "xmax": 1112,
+                    "xmin": 117,
+                    "ymax": 1421,
+                    "ymin": 573
+                }
+            }
+        },
+        "asciitilde": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 141,
+                    "rsb": 141,
+                    "width": 1228,
+                    "xmax": 1087,
+                    "xmin": 141,
+                    "ymax": 690,
+                    "ymin": 346
+                }
+            }
+        },
+        "asterisk": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 33,
+                    "rsb": 32,
+                    "width": 757,
+                    "xmax": 725,
+                    "xmin": 33,
+                    "ymax": 1462,
+                    "ymin": 795
+                }
+            }
+        },
+        "at": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 59,
+                    "rsb": 59,
+                    "width": 1638,
+                    "xmax": 1579,
+                    "xmin": 59,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "atilde": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 24,
+                    "width": 948,
+                    "xmax": 924,
+                    "xmin": 63,
+                    "ymax": 1511,
+                    "ymin": -29
+                }
+            }
+        },
+        "b": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 63,
+                    "width": 985,
+                    "xmax": 922,
+                    "xmin": 106,
+                    "ymax": 1462,
+                    "ymin": -29
+                }
+            }
+        },
+        "backslash": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -20,
+                    "rsb": -21,
+                    "width": 606,
+                    "xmax": 627,
+                    "xmin": -20,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "bar": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 139,
+                    "rsb": 139,
+                    "width": 454,
+                    "xmax": 315,
+                    "xmin": 139,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "braceleft": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 14,
+                    "rsb": 14,
+                    "width": 569,
+                    "xmax": 555,
+                    "xmin": 14,
+                    "ymax": 1462,
+                    "ymin": -377
+                }
+            }
+        },
+        "braceright": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 14,
+                    "rsb": 14,
+                    "width": 569,
+                    "xmax": 555,
+                    "xmin": 14,
+                    "ymax": 1462,
+                    "ymin": -377
+                }
+            }
+        },
+        "bracketleft": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 158,
+                    "rsb": -4,
+                    "width": 569,
+                    "xmax": 573,
+                    "xmin": 158,
+                    "ymax": 1462,
+                    "ymin": -377
+                }
+            }
+        },
+        "bracketright": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -4,
+                    "rsb": 157,
+                    "width": 569,
+                    "xmax": 412,
+                    "xmin": -4,
+                    "ymax": 1462,
+                    "ymin": -377
+                }
+            }
+        },
+        "breve": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -45,
+                    "rsb": -46,
+                    "width": 454,
+                    "xmax": 500,
+                    "xmin": -45,
+                    "ymax": 1522,
+                    "ymin": 1245
+                }
+            }
+        },
+        "brokenbar": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 139,
+                    "rsb": 139,
+                    "width": 454,
+                    "xmax": 315,
+                    "xmin": 139,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "bullet": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 147,
+                    "rsb": 147,
+                    "width": 1024,
+                    "xmax": 877,
+                    "xmin": 147,
+                    "ymax": 1096,
+                    "ymin": 367
+                }
+            }
+        },
+        "c": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 57,
+                    "width": 909,
+                    "xmax": 852,
+                    "xmin": 63,
+                    "ymax": 1130.0645161290322,
+                    "ymin": -29
+                }
+            }
+        },
+        "caron": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -68,
+                    "rsb": -68,
+                    "width": 454,
+                    "xmax": 522,
+                    "xmin": -68,
+                    "ymax": 1540,
+                    "ymin": 1245
+                }
+            }
+        },
+        "ccedilla": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 57,
+                    "width": 909,
+                    "xmax": 852,
+                    "xmin": 63,
+                    "ymax": 1130.0645161290322,
+                    "ymin": -442
+                }
+            }
+        },
+        "cedilla": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 10,
+                    "rsb": -3,
+                    "width": 454,
+                    "xmax": 457,
+                    "xmin": 10,
+                    "ymax": 0,
+                    "ymin": -442
+                }
+            }
+        },
+        "cent": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 98,
+                    "rsb": 98,
+                    "width": 983,
+                    "xmax": 885,
+                    "xmin": 98,
+                    "ymax": 1284,
+                    "ymin": -209
+                }
+            }
+        },
+        "circumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -68,
+                    "rsb": -68,
+                    "width": 454,
+                    "xmax": 522,
+                    "xmin": -68,
+                    "ymax": 1540,
+                    "ymin": 1245
+                }
+            }
+        },
+        "colon": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 129,
+                    "rsb": 129,
+                    "width": 491,
+                    "xmax": 362,
+                    "xmin": 129,
+                    "ymax": 1049,
+                    "ymin": 0
+                }
+            }
+        },
+        "comma": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 129,
+                    "rsb": 129,
+                    "width": 491,
+                    "xmax": 362,
+                    "xmin": 129,
+                    "ymax": 270,
+                    "ymin": -315
+                }
+            }
+        },
+        "copyright": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 59,
+                    "rsb": 59,
+                    "width": 1638,
+                    "xmax": 1579,
+                    "xmin": 59,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "currency": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 12,
+                    "rsb": 12,
+                    "width": 983,
+                    "xmax": 971,
+                    "xmin": 12,
+                    "ymax": 1192,
+                    "ymin": 229
+                }
+            }
+        },
+        "d": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 63,
+                    "ymax": 1462,
+                    "ymin": -29
+                }
+            }
+        },
+        "dagger": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 987,
+                    "xmax": 954,
+                    "xmin": 33,
+                    "ymax": 1462,
+                    "ymin": -291
+                }
+            }
+        },
+        "daggerdbl": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 31,
+                    "rsb": 31,
+                    "width": 987,
+                    "xmax": 956,
+                    "xmin": 31,
+                    "ymax": 1462,
+                    "ymin": -291
+                }
+            }
+        },
+        "degree": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 104,
+                    "rsb": 104,
+                    "width": 819,
+                    "xmax": 715,
+                    "xmin": 104,
+                    "ymax": 1450,
+                    "ymin": 840
+                }
+            }
+        },
+        "dieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -41,
+                    "rsb": -42,
+                    "width": 454,
+                    "xmax": 496,
+                    "xmin": -41,
+                    "ymax": 1507,
+                    "ymin": 1286
+                }
+            }
+        },
+        "divide": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 96,
+                    "rsb": 95,
+                    "width": 1228,
+                    "xmax": 1133,
+                    "xmin": 96,
+                    "ymax": 1085,
+                    "ymin": -49
+                }
+            }
+        },
+        "dollar": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 33,
+                    "rsb": 33,
+                    "width": 983,
+                    "xmax": 950,
+                    "xmin": 33,
+                    "ymax": 1593,
+                    "ymin": -205
+                }
+            }
+        },
+        "dotaccent": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 129,
+                    "rsb": 128,
+                    "width": 454,
+                    "xmax": 326,
+                    "xmin": 129,
+                    "ymax": 1507,
+                    "ymin": 1286
+                }
+            }
+        },
+        "dotlessi": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 117,
+                    "rsb": 116,
+                    "width": 454,
+                    "xmax": 338,
+                    "xmin": 117,
+                    "ymax": 1102,
+                    "ymin": 0
+                }
+            }
+        },
+        "e": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 76,
+                    "rsb": 76,
+                    "width": 948,
+                    "xmax": 872,
+                    "xmin": 76,
+                    "ymax": 1130,
+                    "ymin": -29
+                }
+            }
+        },
+        "eacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 76,
+                    "rsb": 76,
+                    "width": 948,
+                    "xmax": 872,
+                    "xmin": 76,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "ecircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 76,
+                    "rsb": 76,
+                    "width": 948,
+                    "xmax": 872,
+                    "xmin": 76,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "edieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 76,
+                    "rsb": 76,
+                    "width": 948,
+                    "xmax": 872,
+                    "xmin": 76,
+                    "ymax": 1507,
+                    "ymin": -29
+                }
+            }
+        },
+        "egrave": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 76,
+                    "rsb": 76,
+                    "width": 948,
+                    "xmax": 872,
+                    "xmin": 76,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "eight": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 53,
+                    "rsb": 53,
+                    "width": 983,
+                    "xmax": 930,
+                    "xmin": 53,
+                    "ymax": 1450,
+                    "ymin": -29
+                }
+            }
+        },
+        "ellipsis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 225,
+                    "rsb": 225,
+                    "width": 2048,
+                    "xmax": 1823,
+                    "xmin": 225,
+                    "ymax": 270,
+                    "ymin": 0
+                }
+            }
+        },
+        "emdash": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 2048,
+                    "xmax": 2048,
+                    "xmin": 0,
+                    "ymax": 690,
+                    "ymin": 494
+                }
+            }
+        },
+        "endash": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 1024,
+                    "xmax": 1024,
+                    "xmin": 0,
+                    "ymax": 690,
+                    "ymin": 494
+                }
+            }
+        },
+        "equal": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 96,
+                    "rsb": 95,
+                    "width": 1228,
+                    "xmax": 1133,
+                    "xmin": 96,
+                    "ymax": 819,
+                    "ymin": 217
+                }
+            }
+        },
+        "estimated": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 70,
+                    "rsb": 69,
+                    "width": 1781,
+                    "xmax": 1712,
+                    "xmin": 70,
+                    "ymax": 1450,
+                    "ymin": -27
+                }
+            }
+        },
+        "eth": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 948,
+                    "xmax": 885,
+                    "xmin": 63,
+                    "ymax": 1589,
+                    "ymin": -29
+                }
+            }
+        },
+        "exclam": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 168,
+                    "rsb": 168,
+                    "width": 569,
+                    "xmax": 401,
+                    "xmin": 168,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "exclamdown": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 168,
+                    "rsb": 168,
+                    "width": 569,
+                    "xmax": 401,
+                    "xmin": 168,
+                    "ymax": 1102,
+                    "ymin": -360
+                }
+            }
+        },
+        "f": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 20,
+                    "rsb": -6,
+                    "width": 569,
+                    "xmax": 575,
+                    "xmin": 20,
+                    "ymax": 1479,
+                    "ymin": 0
+                }
+            }
+        },
+        "fi": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 20,
+                    "rsb": 117,
+                    "width": 1024,
+                    "xmax": 907,
+                    "xmin": 20,
+                    "ymax": 1479,
+                    "ymin": 0
+                }
+            }
+        },
+        "five": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 66,
+                    "rsb": 65,
+                    "width": 983,
+                    "xmax": 918,
+                    "xmin": 66,
+                    "ymax": 1421,
+                    "ymin": -29
+                }
+            }
+        },
+        "fl": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 20,
+                    "rsb": 117,
+                    "width": 1024,
+                    "xmax": 907,
+                    "xmin": 20,
+                    "ymax": 1479,
+                    "ymin": 0
+                }
+            }
+        },
+        "florin": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -53,
+                    "rsb": 25,
+                    "width": 983,
+                    "xmax": 958,
+                    "xmin": -53,
+                    "ymax": 1462,
+                    "ymin": -360
+                }
+            }
+        },
+        "four": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 43,
+                    "rsb": 43,
+                    "width": 983,
+                    "xmax": 940,
+                    "xmin": 43,
+                    "ymax": 1450,
+                    "ymin": 0
+                }
+            }
+        },
+        "fraction": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -336,
+                    "rsb": -336,
+                    "width": 342,
+                    "xmax": 678,
+                    "xmin": -336,
+                    "ymax": 1485,
+                    "ymin": -63
+                }
+            }
+        },
+        "g": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 90,
+                    "rsb": 90,
+                    "width": 985,
+                    "xmax": 895,
+                    "xmin": 90,
+                    "ymax": 1130,
+                    "ymin": -377
+                }
+            }
+        },
+        "germandbls": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 90,
+                    "rsb": 63,
+                    "width": 985,
+                    "xmax": 922,
+                    "xmin": 90,
+                    "ymax": 1479,
+                    "ymin": -12
+                }
+            }
+        },
+        "grave": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -29,
+                    "rsb": 114,
+                    "width": 454,
+                    "xmax": 340,
+                    "xmin": -29,
+                    "ymax": 1540,
+                    "ymin": 1245
+                }
+            }
+        },
+        "greater": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 96,
+                    "rsb": 95,
+                    "width": 1228,
+                    "xmax": 1133,
+                    "xmin": 96,
+                    "ymax": 1057,
+                    "ymin": -20
+                }
+            }
+        },
+        "greaterequal": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 94,
+                    "rsb": 89,
+                    "width": 1007,
+                    "xmax": 918,
+                    "xmin": 94,
+                    "ymax": 1202,
+                    "ymin": 6
+                }
+            }
+        },
+        "guillemotleft": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 102,
+                    "rsb": 102,
+                    "width": 833,
+                    "xmax": 731,
+                    "xmin": 102,
+                    "ymax": 985,
+                    "ymin": 199
+                }
+            }
+        },
+        "guillemotright": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 102,
+                    "rsb": 102,
+                    "width": 833,
+                    "xmax": 731,
+                    "xmin": 102,
+                    "ymax": 985,
+                    "ymin": 199
+                }
+            }
+        },
+        "guilsinglleft": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 98,
+                    "rsb": 98,
+                    "width": 491,
+                    "xmax": 393,
+                    "xmin": 98,
+                    "ymax": 985,
+                    "ymin": 199
+                }
+            }
+        },
+        "guilsinglright": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 98,
+                    "rsb": 98,
+                    "width": 491,
+                    "xmax": 393,
+                    "xmin": 98,
+                    "ymax": 985,
+                    "ymin": 199
+                }
+            }
+        },
+        "h": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "hungarumlaut": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -131,
+                    "rsb": -193,
+                    "width": 454,
+                    "xmax": 647,
+                    "xmin": -131,
+                    "ymax": 1540,
+                    "ymin": 1245
+                }
+            }
+        },
+        "hyphen": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 92,
+                    "rsb": 91,
+                    "width": 720,
+                    "xmax": 629,
+                    "xmin": 92,
+                    "ymax": 696,
+                    "ymin": 487
+                }
+            }
+        },
+        "i": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 117,
+                    "rsb": 116,
+                    "width": 454,
+                    "xmax": 338,
+                    "xmin": 117,
+                    "ymax": 1479,
+                    "ymin": 0
+                }
+            }
+        },
+        "iacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 115,
+                    "rsb": -29,
+                    "width": 454,
+                    "xmax": 483,
+                    "xmin": 115,
+                    "ymax": 1540,
+                    "ymin": 0
+                }
+            }
+        },
+        "icircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -68,
+                    "rsb": -68,
+                    "width": 454,
+                    "xmax": 522,
+                    "xmin": -68,
+                    "ymax": 1540,
+                    "ymin": 0
+                }
+            }
+        },
+        "idieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -41,
+                    "rsb": -42,
+                    "width": 454,
+                    "xmax": 496,
+                    "xmin": -41,
+                    "ymax": 1507,
+                    "ymin": 0
+                }
+            }
+        },
+        "igrave": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -29,
+                    "rsb": 114,
+                    "width": 454,
+                    "xmax": 340,
+                    "xmin": -29,
+                    "ymax": 1540,
+                    "ymin": 0
+                }
+            }
+        },
+        "infinity": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 92,
+                    "rsb": 94,
+                    "width": 1468,
+                    "xmax": 1374,
+                    "xmin": 92,
+                    "ymax": 897,
+                    "ymin": 270
+                }
+            }
+        },
+        "integral": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 43,
+                    "rsb": 46,
+                    "width": 720,
+                    "xmax": 674,
+                    "xmin": 43,
+                    "ymax": 1753,
+                    "ymin": -340
+                }
+            }
+        },
+        "j": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -49,
+                    "rsb": 116,
+                    "width": 454,
+                    "xmax": 338,
+                    "xmin": -49,
+                    "ymax": 1479,
+                    "ymin": -377
+                }
+            }
+        },
+        "k": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": -17,
+                    "width": 948,
+                    "xmax": 965,
+                    "xmin": 106,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "l": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 117,
+                    "rsb": 116,
+                    "width": 454,
+                    "xmax": 338,
+                    "xmin": 117,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "less": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 96,
+                    "rsb": 95,
+                    "width": 1228,
+                    "xmax": 1133,
+                    "xmin": 96,
+                    "ymax": 1057,
+                    "ymin": -20
+                }
+            }
+        },
+        "lessequal": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 92,
+                    "rsb": 89,
+                    "width": 1007,
+                    "xmax": 918,
+                    "xmin": 92,
+                    "ymax": 1202,
+                    "ymin": 6
+                }
+            }
+        },
+        "logicalnot": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 96,
+                    "rsb": 95,
+                    "width": 1228,
+                    "xmax": 1133,
+                    "xmin": 96,
+                    "ymax": 819,
+                    "ymin": 217
+                }
+            }
+        },
+        "lozenge": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 96,
+                    "rsb": 95,
+                    "width": 1064,
+                    "xmax": 969,
+                    "xmin": 96,
+                    "ymax": 1513,
+                    "ymin": -88
+                }
+            }
+        },
+        "lslash": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 0,
+                    "rsb": -1,
+                    "width": 454,
+                    "xmax": 455,
+                    "xmin": 0,
+                    "ymax": 1462,
+                    "ymin": 0
+                }
+            }
+        },
+        "m": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 117,
+                    "rsb": 116,
+                    "width": 1515,
+                    "xmax": 1399,
+                    "xmin": 117,
+                    "ymax": 1130,
+                    "ymin": 0
+                }
+            }
+        },
+        "macron": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -61,
+                    "rsb": -62,
+                    "width": 454,
+                    "xmax": 516,
+                    "xmin": -61,
+                    "ymax": 1462,
+                    "ymin": 1335
+                }
+            }
+        },
+        "minus": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 96,
+                    "rsb": 95,
+                    "width": 1228,
+                    "xmax": 1133,
+                    "xmin": 96,
+                    "ymax": 606,
+                    "ymin": 430
+                }
+            }
+        },
+        "mu": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1102,
+                    "ymin": -360
+                }
+            }
+        },
+        "multiply": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 143,
+                    "rsb": 143,
+                    "width": 1228,
+                    "xmax": 1085,
+                    "xmin": 143,
+                    "ymax": 989,
+                    "ymin": 47
+                }
+            }
+        },
+        "n": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1130,
+                    "ymin": 0
+                }
+            }
+        },
+        "nine": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 51,
+                    "rsb": 51,
+                    "width": 983,
+                    "xmax": 932,
+                    "xmin": 51,
+                    "ymax": 1450,
+                    "ymin": -29
+                }
+            }
+        },
+        "notequal": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 90,
+                    "rsb": 92,
+                    "width": 1007,
+                    "xmax": 915,
+                    "xmin": 90,
+                    "ymax": 1042,
+                    "ymin": 113
+                }
+            }
+        },
+        "ntilde": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1511,
+                    "ymin": 0
+                }
+            }
+        },
+        "numbersign": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -6,
+                    "rsb": -6,
+                    "width": 983,
+                    "xmax": 989,
+                    "xmin": -6,
+                    "ymax": 1421,
+                    "ymin": 0
+                }
+            }
+        },
+        "o": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 948,
+                    "xmax": 885,
+                    "xmin": 63,
+                    "ymax": 1130,
+                    "ymin": -29
+                }
+            }
+        },
+        "oacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 948,
+                    "xmax": 885,
+                    "xmin": 63,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "ocircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 948,
+                    "xmax": 885,
+                    "xmin": 63,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "odieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 948,
+                    "xmax": 885,
+                    "xmin": 63,
+                    "ymax": 1507,
+                    "ymin": -29
+                }
+            }
+        },
+        "oe": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 1478,
+                    "xmax": 1415,
+                    "xmin": 63,
+                    "ymax": 1130,
+                    "ymin": -29
+                }
+            }
+        },
+        "ogonek": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 49,
+                    "rsb": 22,
+                    "width": 454,
+                    "xmax": 432,
+                    "xmin": 49,
+                    "ymax": 0,
+                    "ymin": -442
+                }
+            }
+        },
+        "ograve": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 948,
+                    "xmax": 885,
+                    "xmin": 63,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "one": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 123,
+                    "rsb": 326,
+                    "width": 983,
+                    "xmax": 657,
+                    "xmin": 123,
+                    "ymax": 1450,
+                    "ymin": 0
+                }
+            }
+        },
+        "onehalf": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 20,
+                    "rsb": 61,
+                    "width": 1476,
+                    "xmax": 1415,
+                    "xmin": 20,
+                    "ymax": 1485,
+                    "ymin": -63
+                }
+            }
+        },
+        "onequarter": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 20,
+                    "rsb": 94,
+                    "width": 1476,
+                    "xmax": 1382,
+                    "xmin": 20,
+                    "ymax": 1485,
+                    "ymin": -63
+                }
+            }
+        },
+        "onesuperior": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 82,
+                    "rsb": 199,
+                    "width": 641,
+                    "xmax": 442,
+                    "xmin": 82,
+                    "ymax": 1450,
+                    "ymin": 573
+                }
+            }
+        },
+        "ordfeminine": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 16,
+                    "rsb": 16,
+                    "width": 647,
+                    "xmax": 631,
+                    "xmin": 16,
+                    "ymax": 1450,
+                    "ymin": 752
+                }
+            }
+        },
+        "ordmasculine": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 29,
+                    "rsb": 29,
+                    "width": 647,
+                    "xmax": 618,
+                    "xmin": 29,
+                    "ymax": 1450,
+                    "ymin": 752
+                }
+            }
+        },
+        "oslash": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 948,
+                    "xmax": 885,
+                    "xmin": 63,
+                    "ymax": 1223,
+                    "ymin": -127
+                }
+            }
+        },
+        "otilde": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 948,
+                    "xmax": 885,
+                    "xmin": 63,
+                    "ymax": 1511,
+                    "ymin": -29
+                }
+            }
+        },
+        "p": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 63,
+                    "width": 985,
+                    "xmax": 922,
+                    "xmin": 106,
+                    "ymax": 1130,
+                    "ymin": -360
+                }
+            }
+        },
+        "paragraph": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 109,
+                    "rsb": 134,
+                    "width": 1228,
+                    "xmax": 1094,
+                    "xmin": 109,
+                    "ymax": 1462,
+                    "ymin": -291
+                }
+            }
+        },
+        "parenleft": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 76,
+                    "rsb": 0,
+                    "width": 530,
+                    "xmax": 530,
+                    "xmin": 76,
+                    "ymax": 1462,
+                    "ymin": -377
+                }
+            }
+        },
+        "parenright": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 0,
+                    "rsb": 75,
+                    "width": 530,
+                    "xmax": 455,
+                    "xmin": 0,
+                    "ymax": 1462,
+                    "ymin": -377
+                }
+            }
+        },
+        "partialdiff": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 76,
+                    "rsb": 91,
+                    "width": 1015,
+                    "xmax": 924,
+                    "xmin": 76,
+                    "ymax": 1604,
+                    "ymin": -18
+                }
+            }
+        },
+        "percent": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 74,
+                    "rsb": 73,
+                    "width": 1554,
+                    "xmax": 1481,
+                    "xmin": 74,
+                    "ymax": 1450,
+                    "ymin": -29
+                }
+            }
+        },
+        "period": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 129,
+                    "rsb": 129,
+                    "width": 491,
+                    "xmax": 362,
+                    "xmin": 129,
+                    "ymax": 270,
+                    "ymin": 0
+                }
+            }
+        },
+        "periodcentered": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 98,
+                    "rsb": 98,
+                    "width": 491,
+                    "xmax": 393,
+                    "xmin": 98,
+                    "ymax": 778,
+                    "ymin": 483
+                }
+            }
+        },
+        "perthousand": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 51,
+                    "rsb": 51,
+                    "width": 2162,
+                    "xmax": 2111,
+                    "xmin": 51,
+                    "ymax": 1450,
+                    "ymin": -29
+                }
+            }
+        },
+        "pi": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 14,
+                    "rsb": 30,
+                    "width": 1054,
+                    "xmax": 1024,
+                    "xmin": 14,
+                    "ymax": 1067,
+                    "ymin": 0
+                }
+            }
+        },
+        "plus": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 96,
+                    "rsb": 95,
+                    "width": 1228,
+                    "xmax": 1133,
+                    "xmin": 96,
+                    "ymax": 1036,
+                    "ymin": 0
+                }
+            }
+        },
+        "plusminus": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 96,
+                    "rsb": 95,
+                    "width": 1228,
+                    "xmax": 1133,
+                    "xmin": 96,
+                    "ymax": 1036,
+                    "ymin": 0
+                }
+            }
+        },
+        "product": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 49,
+                    "rsb": 51,
+                    "width": 1282,
+                    "xmax": 1231,
+                    "xmin": 49,
+                    "ymax": 1425,
+                    "ymin": -197
+                }
+            }
+        },
+        "q": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 63,
+                    "ymax": 1130,
+                    "ymin": -360
+                }
+            }
+        },
+        "question": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 72,
+                    "rsb": 71,
+                    "width": 948,
+                    "xmax": 877,
+                    "xmin": 72,
+                    "ymax": 1491,
+                    "ymin": 0
+                }
+            }
+        },
+        "questiondown": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 72,
+                    "rsb": 71,
+                    "width": 948,
+                    "xmax": 877,
+                    "xmin": 72,
+                    "ymax": 1102,
+                    "ymin": -389
+                }
+            }
+        },
+        "quotedbl": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 156,
+                    "rsb": 155,
+                    "width": 872,
+                    "xmax": 717,
+                    "xmin": 156,
+                    "ymax": 1462,
+                    "ymin": 877
+                }
+            }
+        },
+        "quotedblbase": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 137,
+                    "rsb": 137,
+                    "width": 872,
+                    "xmax": 735,
+                    "xmin": 137,
+                    "ymax": 270,
+                    "ymin": -315
+                }
+            }
+        },
+        "quotedblleft": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 137,
+                    "rsb": 137,
+                    "width": 872,
+                    "xmax": 735,
+                    "xmin": 137,
+                    "ymax": 1462,
+                    "ymin": 877
+                }
+            }
+        },
+        "quotedblright": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 137,
+                    "rsb": 137,
+                    "width": 872,
+                    "xmax": 735,
+                    "xmin": 137,
+                    "ymax": 1462,
+                    "ymin": 877
+                }
+            }
+        },
+        "quoteleft": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 129,
+                    "rsb": 129,
+                    "width": 491,
+                    "xmax": 362,
+                    "xmin": 129,
+                    "ymax": 1462,
+                    "ymin": 877
+                }
+            }
+        },
+        "quoteright": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 129,
+                    "rsb": 129,
+                    "width": 491,
+                    "xmax": 362,
+                    "xmin": 129,
+                    "ymax": 1462,
+                    "ymin": 877
+                }
+            }
+        },
+        "quotesinglbase": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 129,
+                    "rsb": 129,
+                    "width": 491,
+                    "xmax": 362,
+                    "xmin": 129,
+                    "ymax": 270,
+                    "ymin": -315
+                }
+            }
+        },
+        "quotesingle": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 158,
+                    "rsb": 157,
+                    "width": 491,
+                    "xmax": 334,
+                    "xmin": 158,
+                    "ymax": 1462,
+                    "ymin": 877
+                }
+            }
+        },
+        "r": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 4,
+                    "width": 645,
+                    "xmax": 641,
+                    "xmin": 106,
+                    "ymax": 1130,
+                    "ymin": 0
+                }
+            }
+        },
+        "radical": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": -1,
+                    "width": 1064,
+                    "xmax": 1065,
+                    "xmin": 63,
+                    "ymax": 1708,
+                    "ymin": -291
+                }
+            }
+        },
+        "registered": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 59,
+                    "rsb": 59,
+                    "width": 1638,
+                    "xmax": 1579,
+                    "xmin": 59,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "ring": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 10,
+                    "rsb": 10,
+                    "width": 454,
+                    "xmax": 444,
+                    "xmin": 10,
+                    "ymax": 1649,
+                    "ymin": 1214
+                }
+            }
+        },
+        "s": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 57,
+                    "rsb": 57,
+                    "width": 872,
+                    "xmax": 815,
+                    "xmin": 57,
+                    "ymax": 1130,
+                    "ymin": -29
+                }
+            }
+        },
+        "scaron": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 57,
+                    "rsb": 57,
+                    "width": 872,
+                    "xmax": 815,
+                    "xmin": 57,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "section": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 49,
+                    "rsb": 49,
+                    "width": 985,
+                    "xmax": 936,
+                    "xmin": 49,
+                    "ymax": 1491,
+                    "ymin": -319
+                }
+            }
+        },
+        "semicolon": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 129,
+                    "rsb": 129,
+                    "width": 491,
+                    "xmax": 362,
+                    "xmin": 129,
+                    "ymax": 1049,
+                    "ymin": -315
+                }
+            }
+        },
+        "seven": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 61,
+                    "rsb": 61,
+                    "width": 983,
+                    "xmax": 922,
+                    "xmin": 61,
+                    "ymax": 1421,
+                    "ymin": 0
+                }
+            }
+        },
+        "six": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 51,
+                    "rsb": 51,
+                    "width": 983,
+                    "xmax": 932,
+                    "xmin": 51,
+                    "ymax": 1450,
+                    "ymin": -29
+                }
+            }
+        },
+        "slash": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -20,
+                    "rsb": -21,
+                    "width": 606,
+                    "xmax": 627,
+                    "xmin": -20,
+                    "ymax": 1491,
+                    "ymin": -29
+                }
+            }
+        },
+        "space": {
+            "layers": {
+                "67MediumCondensed": {
+                    "width": 491
+                }
+            }
+        },
+        "sterling": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 25,
+                    "rsb": 25,
+                    "width": 983,
+                    "xmax": 958,
+                    "xmin": 25,
+                    "ymax": 1450,
+                    "ymin": -29.109756097560975
+                }
+            }
+        },
+        "summation": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 45,
+                    "rsb": 39,
+                    "width": 997,
+                    "xmax": 958,
+                    "xmin": 45,
+                    "ymax": 1425,
+                    "ymin": -197
+                }
+            }
+        },
+        "t": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 8,
+                    "rsb": 8,
+                    "width": 569,
+                    "xmax": 561,
+                    "xmin": 8,
+                    "ymax": 1415,
+                    "ymin": -12
+                }
+            }
+        },
+        "thorn": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 63,
+                    "width": 985,
+                    "xmax": 922,
+                    "xmin": 106,
+                    "ymax": 1462,
+                    "ymin": -360
+                }
+            }
+        },
+        "three": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 63,
+                    "rsb": 63,
+                    "width": 983,
+                    "xmax": 920,
+                    "xmin": 63,
+                    "ymax": 1450,
+                    "ymin": -29
+                }
+            }
+        },
+        "threequarters": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -33,
+                    "rsb": 94,
+                    "width": 1476,
+                    "xmax": 1382,
+                    "xmin": -33,
+                    "ymax": 1485,
+                    "ymin": -63
+                }
+            }
+        },
+        "threesuperior": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 20,
+                    "rsb": 20,
+                    "width": 641,
+                    "xmax": 621,
+                    "xmin": 20,
+                    "ymax": 1450,
+                    "ymin": 559
+                }
+            }
+        },
+        "tilde": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -82,
+                    "rsb": -83,
+                    "width": 454,
+                    "xmax": 537,
+                    "xmin": -82,
+                    "ymax": 1511,
+                    "ymin": 1260
+                }
+            }
+        },
+        "trademark": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 66,
+                    "rsb": 188,
+                    "width": 2048,
+                    "xmax": 1860,
+                    "xmin": 66,
+                    "ymax": 1462,
+                    "ymin": 618
+                }
+            }
+        },
+        "two": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 68,
+                    "rsb": 68,
+                    "width": 983,
+                    "xmax": 915,
+                    "xmin": 68,
+                    "ymax": 1450,
+                    "ymin": 0
+                }
+            }
+        },
+        "twosuperior": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 33,
+                    "rsb": 35,
+                    "width": 641,
+                    "xmax": 606,
+                    "xmin": 33,
+                    "ymax": 1450,
+                    "ymin": 573
+                }
+            }
+        },
+        "u": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1102,
+                    "ymin": -29
+                }
+            }
+        },
+        "uacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "ucircumflex": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "udieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1507,
+                    "ymin": -29
+                }
+            }
+        },
+        "ugrave": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1540,
+                    "ymin": -29
+                }
+            }
+        },
+        "underscore": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 0,
+                    "rsb": 0,
+                    "width": 1024,
+                    "xmax": 1024,
+                    "xmin": 0,
+                    "ymax": -154,
+                    "ymin": -256
+                }
+            }
+        },
+        "uni00A0": {
+            "layers": {
+                "67MediumCondensed": {
+                    "width": 491
+                }
+            }
+        },
+        "uni00AD": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 92,
+                    "rsb": 91,
+                    "width": 720,
+                    "xmax": 629,
+                    "xmin": 92,
+                    "ymax": 696,
+                    "ymin": 487
+                }
+            }
+        },
+        "uni02C9": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -61,
+                    "rsb": -62,
+                    "width": 454,
+                    "xmax": 516,
+                    "xmin": -61,
+                    "ymax": 1462,
+                    "ymin": 1335
+                }
+            }
+        },
+        "uni03A9": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 72,
+                    "rsb": 80,
+                    "width": 1245,
+                    "xmax": 1165,
+                    "xmin": 72,
+                    "ymax": 1448,
+                    "ymin": 0
+                }
+            }
+        },
+        "uni03BC": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 106,
+                    "rsb": 106,
+                    "width": 985,
+                    "xmax": 879,
+                    "xmin": 106,
+                    "ymax": 1102,
+                    "ymin": -360
+                }
+            }
+        },
+        "uni2215": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": -336,
+                    "rsb": -336,
+                    "width": 342,
+                    "xmax": 678,
+                    "xmin": -336,
+                    "ymax": 1485,
+                    "ymin": -63
+                }
+            }
+        },
+        "uni2219": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 98,
+                    "rsb": 98,
+                    "width": 491,
+                    "xmax": 393,
+                    "xmin": 98,
+                    "ymax": 778,
+                    "ymin": 483
+                }
+            }
+        },
+        "v": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 14,
+                    "rsb": 14,
+                    "width": 872,
+                    "xmax": 858,
+                    "xmin": 14,
+                    "ymax": 1102,
+                    "ymin": 0
+                }
+            }
+        },
+        "w": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 31,
+                    "rsb": 30,
+                    "width": 1402,
+                    "xmax": 1372,
+                    "xmin": 31,
+                    "ymax": 1102,
+                    "ymin": 0
+                }
+            }
+        },
+        "x": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 6,
+                    "rsb": 6,
+                    "width": 872,
+                    "xmax": 866,
+                    "xmin": 6,
+                    "ymax": 1102,
+                    "ymin": 0
+                }
+            }
+        },
+        "y": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 16,
+                    "rsb": 16,
+                    "width": 872,
+                    "xmax": 856,
+                    "xmin": 16,
+                    "ymax": 1102,
+                    "ymin": -377.2222222222223
+                }
+            }
+        },
+        "yacute": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 16,
+                    "rsb": 16,
+                    "width": 872,
+                    "xmax": 856,
+                    "xmin": 16,
+                    "ymax": 1540,
+                    "ymin": -377.2222222222223
+                }
+            }
+        },
+        "ydieresis": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 16,
+                    "rsb": 16,
+                    "width": 872,
+                    "xmax": 856,
+                    "xmin": 16,
+                    "ymax": 1507,
+                    "ymin": -377.2222222222223
+                }
+            }
+        },
+        "yen": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 4,
+                    "rsb": 4,
+                    "width": 983,
+                    "xmax": 979,
+                    "xmin": 4,
+                    "ymax": 1421,
+                    "ymin": 0
+                }
+            }
+        },
+        "z": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 51,
+                    "rsb": 51,
+                    "width": 833,
+                    "xmax": 782,
+                    "xmin": 51,
+                    "ymax": 1102,
+                    "ymin": 0
+                }
+            }
+        },
+        "zcaron": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 51,
+                    "rsb": 51,
+                    "width": 833,
+                    "xmax": 782,
+                    "xmin": 51,
+                    "ymax": 1540,
+                    "ymin": 0
+                }
+            }
+        },
+        "zero": {
+            "layers": {
+                "67MediumCondensed": {
+                    "lsb": 57,
+                    "rsb": 57,
+                    "width": 983,
+                    "xmax": 926,
+                    "xmin": 57,
+                    "ymax": 1450,
+                    "ymin": -29
+                }
+            }
+        }
+    },
+    "upm": 2048
+}

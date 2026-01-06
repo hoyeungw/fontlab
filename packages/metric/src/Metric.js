@@ -1,8 +1,8 @@
 import { round }        from '@aryth/math'
 import { parseNum }     from '@typen/num-strict'
 import { isNumeric }    from '@typen/numeral'
-import { calc }         from './calc.js'
-import { metricToJson } from './json.js'
+import { calc }         from './utils/calc.js'
+import { metricToJson } from './utils/json.js'
 
 export class Metric {
   lsb
@@ -31,6 +31,8 @@ export class Metric {
 
   get relLSB() { return this.lpt?.length ? this.lpt : round(this.lsb) }
   get relRSB() { return this.rpt?.length ? this.rpt : round(this.rsb) }
+  get metricsLeft() { return this.lpt }
+  get metricsRight() { return this.rpt }
   set sb(v) { this.lsb = v, this.rsb = v }
   set pt(v) { this.lpt = v, this.rpt = v }
   update(side, expr, dict) {

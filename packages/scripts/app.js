@@ -1,13 +1,13 @@
 import { subFileInfos }                             from '@acq/path'
-import { $ }                                        from '@spare/xr'
-import { GroupsIO, MetricsIO, PairsIO, TypefaceIO } from './index.js'
+import { $ }                                           from '@spare/xr'
+import { KerningClassesIO, MetricsIO, PairsIO, VFMIO } from './index.js'
 
 import { REGROUPS }        from '../../resources/schemes/GROUPS_CHALENE.js'
-import { originToProcess } from './service/originToProcess.js'
-import { processToTarget } from './service/processToTarget.js'
+import { vfmToXlsx } from './service/vfmToXlsx.js'
+import { xlsxToVfm } from './service/xlsxToVfm.js'
 
 const REGROUPED = '-regrouped'
-const GROUPS = '-groups'
+const GROUPS = '-kerningClasses'
 const METRICS = '-metrics'
 const SIDEBEARINGS = '-sidebearings'
 const PAIRS = '-pairs'
@@ -28,27 +28,27 @@ export class Workflow {
     const DEST_SIDEBEARINGS_XLSX = Workflow.DEST + '/' + fontName + REGROUPED + SIDEBEARINGS + XLSX
     const DEST_PAIRS_XLSX = Workflow.DEST + '/' + fontName + REGROUPED + PAIRS + XLSX
     console.log($.fontlab('sourceToProcess').font(fontName).layer(layer).from(SRC_VFM).dest(DEST_VFM))
-    // says[FONTLAB].originToProcess(font)[LAYER](layer)(SRC_VFM)
-    await GroupsIO.regroup(SRC_VFM, DEST_VFM, REGROUPS, layer)
-    await TypefaceIO.sourceToProcessIntoPartition(DEST_VFM)
-    await MetricsIO.sourceToProcess(DEST_VFM, DEST_SIDEBEARINGS_XLSX)
-    await PairsIO.sourceToProcess(DEST_VFM, DEST_PAIRS_XLSX, layer)
+    // says[FONTLAB].vfmToXlsx(font)[LAYER](layer)(SRC_VFM)
+    await KerningClassesIO.regroup(SRC_VFM, DEST_VFM, REGROUPS, layer)
+    await VFMIO.separateVFM(DEST_VFM)
+    await MetricsIO.vfmToXlsx(DEST_VFM, DEST_SIDEBEARINGS_XLSX)
+    await PairsIO.vfmToXlsx(DEST_VFM, DEST_PAIRS_XLSX, layer)
   }
   static async processToTarget(fontName) {
     const DEST_VFM = Workflow.DEST + '/' + fontName + REGROUPED + VFM
     const SRC_SIDEBEARINGS_XLSX = Workflow.DEST + '/' + fontName + REGROUPED + SIDEBEARINGS + XLSX
     const SRC_PAIRS_XLSX = Workflow.DEST + '/' + fontName + REGROUPED + PAIRS + XLSX
 
-    await MetricsIO.processToTarget(SRC_SIDEBEARINGS_XLSX, DEST_VFM)
-    await PairsIO.processToTarget(SRC_PAIRS_XLSX, DEST_VFM)
-    await TypefaceIO.sourceToProcessIntoPartition(DEST_VFM)
+    await MetricsIO.xlsxToVfm(SRC_SIDEBEARINGS_XLSX, DEST_VFM)
+    await PairsIO.xlsxToVfm(SRC_PAIRS_XLSX, DEST_VFM)
+    await VFMIO.separateVFM(DEST_VFM)
   }
 }
 
 
 // await Workflow.groupExport('SemiBold')
-// await Workflow.originToProcess('DolceFut', 'Regular')
-// await Workflow.processToTarget('Chalene')
+// await Workflow.vfmToXlsx('DolceFut', 'Regular')
+// await Workflow.xlsxToVfm('Chalene')
 const FONT_NAME = 'DolceFut'
-await originToProcess(FONT_NAME)
-// await processToTarget(FONT_NAME)
+await vfmToXlsx(FONT_NAME)
+// await xlsxToVfm(FONT_NAME)

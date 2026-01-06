@@ -27,11 +27,15 @@ export class Typeface {
 
   /** @param {FontlabJson} profile */
   constructor(profile) {
-    const { dataType, masters, metrics, upm } = profile
-    this.dataType = dataType
-    if (masters) this.layerToMaster = mapKeyVal(masters, Master.fromVFM)
-    if (metrics) this.layerToMetrics = transpose(mapVal(metrics, ({ layers }) => mapVal(layers, Metric.build)))
-    this.upm = upm
+    this.dataType = profile.dataType
+    if (profile.masters) {
+      this.layerToMaster = mapKeyVal(profile.masters, Master.from)
+    }
+    if (profile.metrics) {
+      const glyphToLayerToMetrics = mapVal(profile.metrics, ({ layers }) => mapVal(layers, Metric.build))
+      this.layerToMetrics = transpose(glyphToLayerToMetrics) // layerToGlyphToMetrics
+    }
+    this.upm = profile.upm
   }
   static build(fontlabJson) { return new Typeface(fontlabJson) }
 
@@ -52,12 +56,13 @@ export class Typeface {
   metrics(layer) { return this.layerToMetrics[layer ?? this.face] }
   glyphs(layer) { return Object.keys(this.metrics(layer ?? this.face)).sort(asc) }
 
-  alphabetGrouped(layer) {
-    let grouped = {}, x
-    for (let g of this.glyphs(layer)) if ((x = Latin.letterOrNull(g))) appendValue.call(grouped, x, g)
-    for (let x in grouped) grouped[x].sort(asc)
-    return grouped
+  alphabetGroups(layer) {
+    let groups = {}, x
+    for (let g of this.glyphs(layer)) if ((x = Latin.letterOrNull(g))) appendValue.call(groups, x, g)
+    for (let x in groups) groups[x].sort(asc)
+    return groups
   }
+
   sidebearingTable(scope = Scope.Upper) {
     const nameToHead = name => [ GLYPH, name + '.' + L, name + '.' + R ]
     const kvToRow = (glyph, metric) => [ glyph, metric.relLSB, metric.relRSB ]
@@ -70,12 +75,12 @@ export class Typeface {
     return table.mutateKeys(weightToShort)
   }
 
-  updateMaster(regroups) {
+  updateMaster(groups) {
     for (let layer in this.layerToMaster) {
       const master = this.layerToMaster[layer], glyphs = this.glyphs(layer)
       const xGlyphs = distinct(acquire(master.glyphs(Side.Left), glyphs))
       const yGlyphs = distinct(acquire(master.glyphs(Side.Left), glyphs))
-      this.layerToMaster[layer] = master.regroup(regroups, xGlyphs, yGlyphs)
+      this.layerToMaster[layer] = master.regroup(groups, xGlyphs, yGlyphs)
     }
     return this
   }

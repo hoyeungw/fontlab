@@ -18,14 +18,29 @@
     "test": "node -r @babel/register test/test.index.js"
   },
   "dependencies": {
+    "@analys/convert": "^0.7.5",
     "@analys/enum-pivot-mode": "^0.7.5",
     "@analyz/sparse": "^0.1.3",
+    "@analyz/crostab": "^0.1.3",
     "@aryth/math": "^0.7.8",
+    "@fontlab/constants": "workspace:^",
+    "@fontlab/enum-scope": "workspace:^",
+    "@fontlab/enum-side": "workspace:^",
+    "@fontlab/kerning-class": "workspace:^",
+    "@fontlab/latin": "workspace:^",
+    "@palett/presets": "^0.12.28",
     "@spare/logger": "^0.16.29",
     "@spare/xr": "^0.16.29",
+    "@texting/enum-chars": "^0.2.6",
+    "@texting/splitter": "^0.2.6",
+    "@typen/enum-data-types": "^0.2.0",
     "@typen/nullish": "^0.2.0",
     "@typen/num-strict": "^0.2.0",
-    "@vect/nested": "^0.8.6"
+    "@vect/nested": "^0.8.6",
+    "@vect/object-init": "^0.8.6",
+    "@vect/object-mapper": "^0.8.6",
+    "@vect/vector-algebra": "^0.8.6",
+    "@vect/vector-stat": "^0.8.6"
   },
   "devDependencies": {
     "@analys/enum-pivot-mode": "^0.7.5",

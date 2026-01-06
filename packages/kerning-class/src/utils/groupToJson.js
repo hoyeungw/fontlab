@@ -1,6 +1,5 @@
 import { hasLeft, hasRight } from '@fontlab/enum-side'
 
-
 export function groupToJson(group) {
   // group |> deco|> says['group']
   const o = {}

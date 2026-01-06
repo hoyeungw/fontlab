@@ -1,4 +1,4 @@
-import { calc } from '../src/calc.js'
+import { calc } from '../src/utils/calc.js'
 
 const dict = {
   A: 4, C: 30, E: 36, F: 30, H: 54, I: 86, L: 24, O: 24, P: 36, R: 36, S: 36, T: 24,

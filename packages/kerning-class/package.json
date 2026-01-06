@@ -21,8 +21,12 @@
     "@analys/convert": "^0.7.5",
     "@fontlab/enum-side": "workspace:^",
     "@fontlab/latin": "workspace:^",
+    "@spare/deco-vector": "^0.16.29",
+    "@typen/enum-data-types": "^0.2.0",
     "@typen/nullish": "^0.2.0",
-    "@vect/object-select": "^0.8.6"
+    "@vect/object-mapper": "^0.8.6",
+    "@vect/object-select": "^0.8.6",
+    "@vect/vector-mapper": "^0.8.6"
   },
   "devDependencies": {
     "@acq/path": "^0.4.0",

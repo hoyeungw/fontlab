@@ -1,3 +1,4 @@
-export { Group }                  from './src/Group.js'
-export { LetterGrouped, Grouped } from './src/Grouped.js'
-export { groupToJson }            from './src/groupToJson.js'
+export { KerningClass }   from './src/KerningClass.js'
+export { KerningClasses } from './src/KerningClasses.js'
+export { groupToJson }                                                        from './src/utils/groupToJson.js'
+export { glyphGroupedToSurject, glyphGroupsToGrouped, glyphGroupsSelectSide } from './src/utils/transform.js'

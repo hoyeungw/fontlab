@@ -46,7 +46,7 @@ $ npm install @fontlab/metric
 #### Usage
 
 ```js
-processToTarget { metrics } from '@fontlab/metric'
+xlsxToVfm { metrics } from '@fontlab/metric'
 
 metrics() // undefined
 ```

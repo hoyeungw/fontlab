@@ -3,11 +3,13 @@ import { says } from '@spare/xr'
 
 export const AT = /^@+/
 
-export const glyphTrim = name => name
+export const trimGlyph = name => name
   .replace(AT, '')
   .replace(/\d+$/, '')
 
-export const offAT = name => {
+export const hasAT = name => AT.test(name)
+
+export const trimAT = name => {
   try {
     return name.replace(AT, '')
   } catch (e) {
@@ -15,4 +17,4 @@ export const offAT = name => {
   }
 }
 
-export const getGlyph = x => x.replace(/@?([A-Za-z_]+)\d*/, (_, ph) => ph)
+export const baseGlyph = x => x.replace(/@?([A-Za-z_]+)\d*/, (_, ph) => ph)
