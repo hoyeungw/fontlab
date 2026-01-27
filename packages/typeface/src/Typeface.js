@@ -64,11 +64,15 @@ export class Typeface {
   }
 
   sidebearingTable(scope = Scope.Upper) {
-    const nameToHead = name => [ GLYPH, name + '.' + L, name + '.' + R ]
-    const kvToRow = (glyph, metric) => [ glyph, metric.relLSB, metric.relRSB ]
-    const tables = indexedTo(this.layerToMetrics, (k, ms) => Table.build(nameToHead(k), null, k)
-      .collect(indexed(ms, Latin.factory(scope), kvToRow)))
-    const table = Algebra.joins(UNION, [ GLYPH ], '', ...tables)
+    const initHead = name => [ GLYPH, name + '.' + L, name + '.' + R ]
+    const initRow = (glyph, metric) => [ glyph, metric.relLSB, metric.relRSB ]
+    const iterTables = indexedTo(
+      this.layerToMetrics,
+      (layer, metrics) => Table
+        .build(initHead(layer), null, layer)
+        .collect(indexed(metrics, Latin.factory(scope), initRow)),
+    )
+    const table = Algebra.joins(UNION, [ GLYPH ], '', ...iterTables)
     table.headward
       .grow(GLYPH, glyphToLabel, LABEL, GLYPH)
       .grow(GLYPH, Latin.letterOrEmpty, LETTER, LABEL)

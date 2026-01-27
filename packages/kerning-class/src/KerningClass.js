@@ -40,6 +40,7 @@ export class KerningClass extends Array {
     }
   }
 
+  clone() { return new KerningClass(this.side, this.name, this) }
   toObject() { return { side: this.side, name: this.name, names: this.slice() } }
   toJson() {
     const o = {}

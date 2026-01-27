@@ -23,7 +23,7 @@ export class VFMIO {
    *
    * @param {Typeface} typeface
    * @param {string} destVFM
-   * @param {{[kerningClasses],[pairs],[metrics]}} options
+   * @param {{[kerningClasses],[kerningPairs],[metrics]}} options
    * @returns {Promise<void>}
    */
   static async saveTypeface(typeface, destVFM, options = CONVERT_OPTIONS) {
@@ -49,14 +49,14 @@ export class VFMIO {
     if (!destDir) destDir = dir + '/' + base
     if (!await exists(destDir)) await mkdir(destDir, { recursive: true })
     await VFMIO.saveTypeface(typeface, destDir + '/' + base + '-kerningClasses' + ext, { kerningClasses: true })
-    await VFMIO.saveTypeface(typeface, destDir + '/' + base + '-pairs' + ext, { pairs: true })
+    await VFMIO.saveTypeface(typeface, destDir + '/' + base + '-kerningPairs' + ext, { pairs: true })
     await VFMIO.saveTypeface(typeface, destDir + '/' + base + '-metrics' + ext, { metrics: true })
   }
 
   /***
    * @param {Typeface} typeface
-   * @param {{kerningClasses:*,pairs:*,metrics:*}} options
-   * @returns {{dataType:string,[masters]:Object<string,{kerningClasses:KerningClass[],pairs}>,[metrics]:{},upm:number}} .vfm
+   * @param {{kerningClasses:*,kerningPairs:*,metrics:*}} options
+   * @returns {{dataType:string,[masters]:Object<string,{kerningClasses:KerningClass[],kerningPairs}>,[metrics]:{},upm:number}} .vfm
    */
   static typefaceToVFM(typeface, options = CONVERT_OPTIONS) {
     const vfm = {}, { groups, pairs, metrics } = options

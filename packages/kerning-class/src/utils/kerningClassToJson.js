@@ -1,6 +1,6 @@
 import { hasLeft, hasRight } from '@fontlab/enum-side'
 
-export function groupToJson(group) {
+export function kerningClassToJson(group) {
   // group |> deco|> says['group']
   const o = {}
   if (hasLeft(group)) o['1st'] = true

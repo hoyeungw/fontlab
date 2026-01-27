@@ -23,7 +23,7 @@ export const decoCrostabTitle = crostab => {
 export const decoCrostabLocal = crostab => {
   const options = { pres: PRESETS }
   if (crostab.width > 24 || crostab.height > 26) { Object.assign(options, { top: 18, bottom: 8, left: 16, right: 8 }) }
-  const title = $.fontlab('kerning pairs').scope(decoCrostabTitle(crostab)).size(`${crostab.height} x ${crostab.width}`)
+  const title = $.fontlab('kerning kerningPairs').scope(decoCrostabTitle(crostab)).size(`${crostab.height} x ${crostab.width}`)
   const body = crostab.height && crostab.width ? decoCrostab.call(options, crostab) : '(ø)'
   return title + LF + body
 }
@@ -32,7 +32,7 @@ export const decoCrostabIterable = crostabIterable => {
   let result = ''
   for (const [ key, crostab ] of indexed(crostabIterable)) {
     const [ labelX, labelY ] = splitCamel(key)
-    result += $.fontlab('kerning pairs').scope(decoXY(labelX, labelY)).size(`${crostab.height} x ${crostab.width}`) + LF
+    result += $.fontlab('kerning kerningPairs').scope(decoXY(labelX, labelY)).size(`${crostab.height} x ${crostab.width}`) + LF
     result += ((crostab.height && crostab.width) ? decoCrostabLocal(crostab) : '(ø)') + LF
   }
   return result

@@ -4,8 +4,8 @@ import { readFile }               from 'fs/promises'
 import { $ }                      from '@spare/xr'
 import { decoObject, decoVector } from '@spare/logger'
 import { VFM }                    from '../../vfm/index.js'
-import { KerningClasses }   from '@fontlab/kerning-class'
-import { decoCrostabLocal } from '@fontlab/kerning-pairs'
+import { KerningClasses }         from '@fontlab/kerning-class'
+import { decoCrostabLocal }       from '@fontlab/kerning-pairs'
 
 config({ path: '../../.env' })
 
@@ -44,7 +44,7 @@ test('metricSeries regroup test', async () => {
 
   // console.log($.fontlab('read').metricSeries(deco(metricSeries2)))
 
-  const crostab = metricSeries2.pairs.crostab(null, '')
+  const crostab = metricSeries2.kerningPairs.crostab(null, '')
 
   // $.fontlab('read').group
   for (const group of metricSeries2.kerningClasses) {

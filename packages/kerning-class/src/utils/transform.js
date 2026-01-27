@@ -1,10 +1,10 @@
-import { groupedToSurject }    from '@analys/convert'
-import { toSideCheck }         from '@fontlab/enum-side'
-import { Latin }               from '@fontlab/latin'
-import { nullish, valid }      from '@typen/nullish'
-import { filterByValue }       from '@vect/object-select'
-import { glyphGroupAscending } from './glyphGroupAscending.js'
-import { KerningClass }        from '../KerningClass.js'
+import { groupedToSurject } from '@analys/convert'
+import { validator }        from '@fontlab/enum-side'
+import { Latin }            from '@fontlab/latin'
+import { nullish, valid }        from '@typen/nullish'
+import { filterByValue }         from '@vect/object-select'
+import { kerningClassAscending } from './kerningClassAscending.js'
+import { KerningClass }          from '../KerningClass.js'
 
 
 /**
@@ -13,17 +13,20 @@ import { KerningClass }        from '../KerningClass.js'
  * @param {number} [side]
  * @returns {{}}
  */
-export function glyphGroupsToGrouped(side) {
-  let groups = this
-  if (valid(side)) groups = groups.filter(toSideCheck(side))
-  const o = {}
-  for (let group of groups.sort(glyphGroupAscending)) o[group.name] = KerningClass.build(group)
-  return o
+export function kerningClassesToMultimap(side) {
+  /** @type {KerningClass[]} */
+  const kerningClasses = (valid(side)) ? this.filter(validator(side)) : this
+  const groups = {}
+  for (let kerningClass of kerningClasses.sort(kerningClassAscending)) {
+    groups[kerningClass.name] = KerningClass.build(kerningClass)
+  }
+  return groups
 }
 
-export function glyphGroupsSelectSide(side) {
-  const groups = this
-  return filterByValue(groups, toSideCheck(side))
+export function kerningClassesSelectSide(side) {
+  /** @type {KerningClass[]} */
+  const kerningClasses = this
+  return filterByValue(kerningClasses, validator(side))
 }
 
 /**
@@ -31,21 +34,24 @@ export function glyphGroupsSelectSide(side) {
  * @param {...string} inputGlyphs - List of glyph names to be mapped to classes
  * @returns {Object} Surjective mapping of input glyphs to class names
  */
-export function glyphGroupedToSurject(...inputGlyphs) {
-  const grouped = this
-  const localSurject = groupedToSurject(grouped), surject = {}
+export function kerningGroupsToSurject(...inputGlyphs) {
+  /** @type {Object<string,string[]>} */
+  const kerningGroups = this
+  const surject = groupedToSurject(kerningGroups), target = {}
   let letter, group
   for (let glyph of inputGlyphs) {
-    if (nullish(letter = Latin.letterOrNull(glyph)) || nullish(group = localSurject[letter])) continue
-    surject[glyph] = '@' + group
+    if (nullish(letter = Latin.letterOrNull(glyph)) || nullish(group = surject[letter])) continue
+    target[glyph] = '@' + group
   }
-  return surject
+  return target
 }
 
-export function glyphGroupsToSurject(side) {
-  let groups = this
-  if (valid(side)) groups = groups.filter(toSideCheck(side))
-  const o = {}
-  for (let group of groups.sort(glyphGroupAscending)) o[group.name] = KerningClass.build(group)
-  return o
+export function kerningClassesToSurject(side) {
+  /** @type {KerningClass[]} */
+  const kerningClasses = (valid(side)) ? this.filter(validator(side)) : this
+  const surject = {}
+  for (let kerningClass of kerningClasses.sort(kerningClassAscending)) {
+    surject[kerningClass.name] = KerningClass.build(kerningClass)
+  }
+  return surject
 }

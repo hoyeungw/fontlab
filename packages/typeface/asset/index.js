@@ -30,7 +30,7 @@ export {
  *
  * @typedef {{
  *     master: FontlabKerningDefinition[],
- *     pairs: GlyphToFontlabKerningPair
+ *     kerningPairs: GlyphToFontlabKerningPair
  * }} FontlabKerning
  *
  * @typedef {{

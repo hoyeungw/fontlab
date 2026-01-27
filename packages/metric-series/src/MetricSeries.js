@@ -1,17 +1,17 @@
-import { surjectToGrouped }      from '@analys/convert'
-import { Metric }                       from '@fontlab/metric'
-import { KerningClass, KerningClasses } from '@fontlab/kerning-class'
-import { KerningPairs }                 from '@fontlab/kerning-pairs'
-import { asc }                          from '@fontlab/latin'
-import { Side }                  from '@fontlab/enum-side'
-import { indexed }               from '@vect/object-mapper'
-import { distinct }              from './utils/distinct.js'
-import  { GROUP_SCHEME_LOWER, GROUP_SCHEME_UPPER }  from '@fontlab/latin'
+import { surjectToGrouped }                            from '@analys/convert'
+import { Metric }                                      from '@fontlab/metric'
+import { KerningClass, KerningClasses }                from '@fontlab/kerning-class'
+import { KerningPairs }                                from '@fontlab/kerning-pairs'
+import { asc, GROUP_SCHEME_LOWER, GROUP_SCHEME_UPPER } from '@fontlab/latin'
+import { Side }                                        from '@fontlab/enum-side'
+import { indexed, mapper }                             from '@vect/object-mapper'
+import { distinct }                                    from './utils/distinct.js'
+import { intersect }                                   from '@vect/vector-algebra'
 
 export class MetricSeries {
   /** @type {Object<string,Metric>} */ metrics
   /** @type {KerningClasses}        */ kerningClasses
-  /** @type {KerningPairs}          */ pairs
+  /** @type {KerningPairs}          */ kerningPairs
 
   /**
    * @param {Object<string,Metric>} metrics
@@ -21,7 +21,7 @@ export class MetricSeries {
   constructor(metrics, kerningClasses, kerningPairs) {
     this.metrics = metrics
     this.kerningClasses = kerningClasses
-    this.pairs = kerningPairs
+    this.kerningPairs = kerningPairs
   }
 
   static build(metrics, kerningClasses, kerningPairs) {
@@ -30,27 +30,42 @@ export class MetricSeries {
     return new MetricSeries(metrics, kerningClasses, kerningPairs)
   }
 
-  get kerningClasses() { return this.kerningClasses }
+  get pairs() { return this.kerningPairs }
+  set pairs(kerningPairs) { this.kerningPairs = kerningPairs }
 
   metricGlyphs() { return Object.keys(this.metrics).sort(asc) }
 
-  kerningGlyphs(side) {
+  collectGlyphs(side) {
     const metricGlyphs = this.metricGlyphs()
-    const groupGlyphs = this.kerningClasses.collectGlyphs(side)
-    const pairGlyphs = this.pairs.collectGlyphs(side)
-    return distinct(...metricGlyphs, ...groupGlyphs, ...pairGlyphs)
+    const classGlyphs = this.kerningClasses.collectGlyphs(side)
+    const pairGlyphs = this.kerningPairs.collectGlyphs(side)
+    return distinct(...metricGlyphs, ...classGlyphs, ...pairGlyphs)
+  }
+
+  /**
+   *
+   * @param {KerningClasses} [leanClasses]
+   * @param {Object<string,string[]>} [glyphMultimap]
+   */
+  remap(leanClasses, glyphMultimap) {
+    const glyphs = this.collectGlyphs()
+    let kerningClasses = leanClasses.clone()
+    if (glyphMultimap) glyphMultimap = mapper(glyphMultimap, vec => intersect(vec, glyphs))
+    if (glyphMultimap) kerningClasses = kerningClasses.expand(glyphMultimap)
+    const kerningPairs = this.kerningPairs.regroup(kerningClasses)
+    return MetricSeries.build(this.metrics, kerningClasses, kerningPairs)
   }
 
   /**
    * Roll-up current kerningClasses(kerning classes) to cover the glyphs in the metrics, return a grouped mapping of class names to element glyphs.
    * @param {number} side
-   * @param {KerningClasses|[KerningClass]} [externGroups]
-   * @returns {Object<string,[string]>} Mapping of class names to element glyphs
+   * @param {KerningClasses|KerningClass[]} [kerningClasses]
+   * @returns {Object<string,string[]>} Mapping of class names to element glyphs
    */
-  merge(side, externGroups) {
-    const kerningGlyphs = this.kerningGlyphs(side)
+  merge(side, kerningClasses) {
+    const kerningGlyphs = this.collectGlyphs(side)
     const sourceSurject = this.kerningClasses.toSurject(side)
-    const externSurject = externGroups?.toSurject(side) ?? {}
+    const externSurject = kerningClasses?.toSurject(side) ?? {}
     const targetSurject = {}
     let baseGlyph, groupName
     // force mapping of internalGroups based on @fontlab/latin glyph set
@@ -76,15 +91,15 @@ export class MetricSeries {
     return surjectToGrouped(targetSurject)
   }
 
-  refactorGroups(externGroups) {
-    function predicate(name, list) { return list?.length } // AT.test(name) &&
-    externGroups = externGroups.expand(GROUP_SCHEME_LOWER).expand(GROUP_SCHEME_UPPER)
-    const groupedX = this.merge(Side.Left, externGroups)
-    const groupedY = this.merge(Side.Right, externGroups)
+  refactorGroups(kerningClasses) {
+    function lengthy(name, list) { return list?.length } // AT.test(name) &&
+    kerningClasses = kerningClasses.expand(GROUP_SCHEME_LOWER).expand(GROUP_SCHEME_UPPER)
+    const groupedX = this.merge(Side.Left, kerningClasses)
+    const groupedY = this.merge(Side.Right, kerningClasses)
     const groups = KerningClasses.collect(
-      ...indexed(groupedX, predicate, KerningClass.entryToGroupX),
-      ...indexed(groupedY, predicate, KerningClass.entryToGroupY),
+      ...indexed(groupedX, lengthy, KerningClass.entryToGroupX),
+      ...indexed(groupedY, lengthy, KerningClass.entryToGroupY),
     )
-    return MetricSeries.build(this.metrics, groups, this.pairs.regroup(groups))
+    return MetricSeries.build(this.metrics, groups, this.kerningPairs.regroup(groups))
   }
 }

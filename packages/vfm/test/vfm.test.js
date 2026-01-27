@@ -1,6 +1,6 @@
-import { config }     from 'dotenv'
-import { test }       from 'node:test'
-import { readFile }   from 'fs/promises'
+import { config }           from 'dotenv'
+import { test }             from 'node:test'
+import { readFile }         from 'fs/promises'
 import { $ }                from '@spare/xr'
 import { deco, decoObject } from '@spare/logger'
 import { VFM }              from '../src/VFM.js'
@@ -21,7 +21,7 @@ test('vfm test', async () => {
 
   const vfm = VFM.build(json)
 
-  const LAYER='Regular'
+  const LAYER = 'Regular'
 
   console.log($.fontlab('read').vfm(decoObject(vfm)))
 

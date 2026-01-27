@@ -37,7 +37,7 @@ test('metricSeries test', async () => {
 
   console.log($.fontlab('read').metricSeries(deco(metricSeries2)))
 
-  console.log(decoCrostabLocal(metricSeries2.pairs.crostab(null, '')))
+  console.log(decoCrostabLocal(metricSeries2.kerningPairs.crostab(null, '')))
 })
 
 await test()

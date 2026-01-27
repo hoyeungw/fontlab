@@ -6,7 +6,7 @@ import { Algebra }                   from '@analyz/table-algebra'
 import { GLYPH }                     from '@fontlab/constants'
 import { Scope }                     from '@fontlab/enum-scope'
 import { Side, sideName } from '@fontlab/enum-side'
-import { baseGlyph }      from '@fontlab/kerning-pairs'
+import { baseGlyph }      from '@fontlab/kerning-kerningPairs'
 import { asc, Latin }     from '@fontlab/latin'
 import { pathToInfo }                from '@iohub/pathinfo'
 import { decoString, decoTable }     from '@spare/logger'
@@ -26,7 +26,7 @@ export class KerningClassesIO {
     const layer = logLayer in typeface.layerToMaster ? logLayer : typeface.face
     typeface.updateMaster(groupSpec)
     console.log($.fontlab(CLASS).export('regrouped').br('kerning classes').pr(logLayer)(decoKerningClasses(typeface.master(layer).kerningClasses)))
-    // typeface.master(layer).pairs |> deco |> console.log($.fontlab(CLASS).calling('regroup').br('pairs').pr(logLayer)
+    // typeface.master(layer).kerningPairs |> deco |> console.log($.fontlab(CLASS).calling('regroup').br('kerningPairs').pr(logLayer)
     await VFMIO.saveTypeface(typeface, destVFM, { kerningClasses: true, pairs: true, metrics: true })
     const { dir, doc } = pathToInfo(destVFM)
     await VFMIO.typefaceToMasters(typeface, dir + '/' + doc + '.json')

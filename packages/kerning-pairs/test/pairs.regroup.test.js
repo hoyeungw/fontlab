@@ -1,20 +1,20 @@
 import { config }                                 from 'dotenv'
 import { readFile }                               from 'fs/promises'
 import { test }                                   from 'node:test'
+import { KerningClasses }                         from '@fontlab/kerning-class'
+import { GROUP_SCHEME_LOWER, GROUP_SCHEME_UPPER } from '@fontlab/latin'
 import { $ }                                      from '@spare/xr'
 import { KerningPairs }                           from '../src/KerningPairs.js'
 import { decoCrostabLocal }                       from '../src/utils/decoCrostabLocal.js'
-import { KerningClasses }                         from '@fontlab/kerning-class'
-import { GROUP_SCHEME_LOWER, GROUP_SCHEME_UPPER } from '@fontlab/latin'
 import { decoXY }                                 from '../src/utils/decoXY.js'
 
 config({ path: '../../.env' })
 
-const FONT_PATH = process.env.RES_FONT
+const FONT_PATH = process.env.RES_FONT_PATH
 const KERNING_CLASSES_PATH = process.env.KERNING_CLASSES_PATH
 const LAYER = 'Regular'
 
-test('pairs regroup gest', async () => {
+test('kerningPairs regroup gest', async () => {
   console.log($.fontlab('VFM').path(FONT_PATH))
   const vfm = await JSON.parse(await readFile(FONT_PATH, 'utf8'))
 
@@ -31,6 +31,6 @@ test('pairs regroup gest', async () => {
   const pairs2 = pairs.regroup(kerningClasses)
   for (const crostab of pairs2.intoCrostabs()) { console.log(decoCrostabLocal(crostab)) }
 
-  console.log($.fontlab('kerning pairs').size1(decoXY(pairs.size())).size2(decoXY(pairs2.size())))
+  console.log($.fontlab('kerning kerningPairs').size1(decoXY(pairs.size())).size2(decoXY(pairs2.size())))
 })
 

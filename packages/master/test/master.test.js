@@ -1,9 +1,9 @@
-import { config }                  from 'dotenv'
-import { readFile }                from 'fs/promises'
-import { test }                    from 'node:test'
-import { decoCrostab, decoObject } from '@spare/logger'
-import { $ }                       from '@spare/xr'
-import { Master }                  from '../src/Master.js'
+import { config }     from 'dotenv'
+import { readFile }   from 'fs/promises'
+import { test }       from 'node:test'
+import { decoObject } from '@spare/logger'
+import { $ }          from '@spare/xr'
+import { Master }     from '../src/Master.js'
 
 config({ path: '../../.env' })
 
@@ -14,7 +14,7 @@ function decoMaster(master) {
   return ({
     name: master.name,
     kerningClasses: master.kerningClasses,
-    pairs: master.pairs,
+    pairs: master.kerningPairs,
   })
 }
 test('master test', async () => {
@@ -30,7 +30,7 @@ test('master test', async () => {
   })
 })
 
-test('master pairs test', async () => {
+test('master kerningPairs test', async () => {
   console.log($.fontlab('vfm').path(FONT_PATH))
   const vfm = await JSON.parse(await readFile(FONT_PATH, 'utf8'))
   const master = Master.from(LAYER, vfm.masters[LAYER])
@@ -41,7 +41,7 @@ test('master pairs test', async () => {
 
   // console.log($.fontlab('read').grouped(deco(vfm.masters[LAYER].kerningClasses)))
   // const kerningClasses = KerningClasses.build(vfm.masters[LAYER].kerningClasses)
-  // const grouped = kerningClasses.toGrouped()
+  // const grouped = kerningClasses.toMultimap()
   // console.log($.fontlab('read').grouped(deco(grouped)))
 })
 

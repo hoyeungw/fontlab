@@ -5,11 +5,11 @@ import { Scope }                                          from '@fontlab/enum-sc
 import { deco, decoFlat, decoString, decoTable }          from '@spare/logger'
 import { $ }                                              from '@spare/xr'
 import { indexed, indexedBy, mapKey, mutate }             from '@vect/object-mapper'
-import xlsx      from 'xlsx'
-import { VFMIO } from './VFMIO.js'
+import xlsx                                               from 'xlsx'
+import { VFMIO }                                          from './VFMIO.js'
 
 const CLASS = 'MetricsIO'
-const steL3 = g => g.length <= 3
+const l3andBelow = g => g.length <= 3
 
 export class MetricsIO {
   static async vfmToXlsx(srcVFM, destXLSX) {
@@ -20,9 +20,9 @@ export class MetricsIO {
       other: typeface.sidebearingTable(Scope.Other),
     }
     const briefCollection = {
-      upper_brief: tableCollection.upper.filter(GLYPH, steL3),
-      lower_brief: tableCollection.lower.filter(GLYPH, steL3),
-      other_brief: tableCollection.other.filter(LABEL, steL3),
+      upper_brief: tableCollection.upper.filter(GLYPH, l3andBelow),
+      lower_brief: tableCollection.lower.filter(GLYPH, l3andBelow),
+      other_brief: tableCollection.other.filter(LABEL, l3andBelow),
     }
     for (let [ title, table ] of indexed(briefCollection)) {
       console.log($.fontlab('task')[CLASS]('vfmToXlsx')[title](decoTable(table)))
@@ -30,7 +30,6 @@ export class MetricsIO {
     const collection = mapKey({ ...tableCollection, ...briefCollection }, k => k.replace(/_/g, '-'))
     const workbook = tableCollectionToWorkbook(collection)
     xlsx.writeFile(workbook, destXLSX)
-
     console.log($.fontlab('task')[CLASS]('vfmToXlsx sidebearings').dest(decoString(destXLSX)))
   }
 
@@ -45,14 +44,14 @@ export class MetricsIO {
       console.log($.fontlab('->')[CLASS]('xlsxToVfm sidebearings')[scope]('changed').p(decoFlat(stat)))
     }
     const briefCollection = {
-      upper_brief: typeface.sidebearingTable(Scope.Upper).filter(GLYPH, steL3),
-      lower_brief: typeface.sidebearingTable(Scope.Lower).filter(GLYPH, steL3),
-      other_brief: typeface.sidebearingTable(Scope.Other).filter(LABEL, steL3),
+      upper_brief: typeface.sidebearingTable(Scope.Upper).filter(GLYPH, l3andBelow),
+      lower_brief: typeface.sidebearingTable(Scope.Lower).filter(GLYPH, l3andBelow),
+      other_brief: typeface.sidebearingTable(Scope.Other).filter(LABEL, l3andBelow),
     }
     for (let [ title, table ] of indexed(briefCollection)) {
       console.log($.fontlab('task')[CLASS]('xlsxToVfm sidebearings')[title](decoTable(table)))
     }
-    await VFMIO.saveTypeface(typeface, destVFM, { kerningClasses: true, pairs: true, metrics: true })
+    await VFMIO.saveFile(typeface, destVFM, { kerningClasses: true, pairs: true, metrics: true })
   }
 
   static async readAlphabetGroups(srcVFM) {

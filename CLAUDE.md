@@ -36,10 +36,10 @@ This is a Node.js monorepo for FontLab helpers - tools for working with FontLab 
 - All packages use ES modules (`"type": "module"`)
 
 ### Core Packages
-- **master** - Main Master class for FontLab data processing, handles kerning classes and pairs
+- **master** - Main Master class for FontLab data processing, handles kerning classes and kerningPairs
 - **metric** - Metric class for font metrics data (left/right sidebearings, width, bounds)
 - **kerning-class** - KerningClass and Utils classes for kerning class management
-- **kerning-pairs** - KerningPairs class for kerning pairs data
+- **kerning-kerningPairs** - KerningPairs class for kerning kerningPairs data
 - **latin** - Latin alphabet utilities and character classification
 - **enum-checkSide** - Side enumeration (Left/Right for left/right)
 - **enum-scope** - Scope enumeration utilities
@@ -48,7 +48,7 @@ This is a Node.js monorepo for FontLab helpers - tools for working with FontLab 
 - **constants** - Shared constants across packages
 
 ### Key Classes and Relationships
-- `Master` class (packages/master) - Central class that combines kerning classes and pairs
+- `Master` class (packages/master) - Central class that combines kerning classes and kerningPairs
 - `Utils` class manages collections of kerning kerningClasses by checkSide (left/right)
 - `KerningPairs` class handles kerning pair data with flattening and regrouping capabilities
 - `Metric` class handles font metrics with left/right sidebearing calculations

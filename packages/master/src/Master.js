@@ -1,81 +1,89 @@
-import { surjectToGrouped }                                                   from '@analys/convert'
-import { MIN }                                                                from '@analys/enum-pivot-mode'
-import { indexed as indexedNested, Stat as SparseStat }                       from '@analyz/sparse'
-import { CONVERT_OPTIONS }                                                    from '@fontlab/constants'
-import { Side }                                                                      from '@fontlab/enum-side'
-import { glyphGroupedToSurject, glyphGroupsToGrouped, KerningClass, KerningClasses } from '@fontlab/kerning-class'
-import { AT, baseGlyph, KerningPairs, trimAT }                                       from '@fontlab/kerning-pairs'
-import { Latin }                                                                     from '@fontlab/latin'
-import { parseNum }                                                           from '@typen/numeral'
-import { ob }                                                                 from '@vect/object-init'
-import { indexed }                                                            from '@vect/object-mapper'
-import { union }                                                              from '@vect/vector-algebra'
-import { Stat }                                                               from '@vect/vector-stat'
-import { masterToJson }                                                       from './masterToJson.js'
+import { surjectToGrouped }                             from '@analys/convert'
+import { MIN }                                          from '@analys/enum-pivot-mode'
+import { indexed as indexedNested, Stat as SparseStat } from '@analyz/sparse'
+import { CONVERT_OPTIONS }                              from '@fontlab/constants'
+import { Side }                                         from '@fontlab/enum-side'
+import { KerningClass, KerningClasses }                 from '@fontlab/kerning-class'
+import { AT, baseGlyph, KerningPairs, trimAT }          from '@fontlab/kerning-pairs'
+import { Latin }                                        from '@fontlab/latin'
+import { parseNum }                                     from '@typen/numeral'
+import { ob }                                           from '@vect/object-init'
+import { indexed }                                      from '@vect/object-mapper'
+import { union }                                        from '@vect/vector-algebra'
+import { Stat }                                         from '@vect/vector-stat'
+import { masterToJson }                                 from './masterToJson.js'
 
 export class Master {
   /** @type {string}         */ name
   /** @type {KerningClasses} */ kerningClasses
-  /** @type {KerningPairs}          */ pairs
+  /** @type {KerningPairs}   */ kerningPairs
 
-  constructor(name, kerningClasses, pairs) {
+  constructor(name, kerningClasses, kerningPairs) {
     this.name = name
     this.kerningClasses = kerningClasses
-    this.pairs = pairs
+    this.kerningPairs = kerningPairs
   }
-  static build(name, kerningClasses, pairs) {
-    return new Master(name, kerningClasses, pairs)
+  static build(name, kerningClasses, kerningPairs) {
+    return new Master(name, kerningClasses, kerningPairs)
   }
   static from(name, master) {
     const kerningClasses = KerningClasses.from(master.kerningClasses)
-    const pairs = KerningPairs.from(master.pairs ?? {})
+    const pairs = KerningPairs.from(master.kerningPairs ?? {})
     return new Master(name, kerningClasses, pairs)
   }
 
-  get groups() { return this.kerningClasses }
+  slice({ kerningClasses, kerningPairs } = CONVERT_OPTIONS) {
+    return new Master(
+      this.name,
+      kerningClasses ? this.kerningClasses : null,
+      kerningPairs ? this.kerningPairs : null,
+    )
+  }
+
+  get pairs() { return this.kerningPairs}
+  set pairs(kerningPairs) { this.kerningPairs = kerningPairs }
 
   collectGlyphs(side) {
-    const groupGlyphs = this.kerningClasses.collectGlyphs(side)
-    const pairsGlyphs = this.pairs.collectGlyphs(side)
-    return union(groupGlyphs, pairsGlyphs)
+    const definedGlyphs = this.kerningClasses.collectGlyphs(side)
+    const pairedGlyphs = this.kerningPairs.collectGlyphs(side)
+    return union(definedGlyphs, pairedGlyphs)
   }
 
   /**
-   * Gets flattened kerning pairs by combining individual pairs with class-based pairs.
+   * Gets flattened kerning kerningPairs by combining individual kerningPairs with class-based kerningPairs.
    * For left-side kerningClasses, it uses glyph kerningClasses selected by Side.Left.
    * For right-side kerningClasses, it uses glyph kerningClasses selected by Side.Right.
-   * @returns {KerningPairs} Flattened kerning pairs combining individual and class-based pairs
+   * @returns {KerningPairs} Flattened kerning kerningPairs combining individual and class-based kerningPairs
    */
-  get flatPairs() {
-    return this.pairs.flatten(this.kerningClasses)
-  }
+  get flatPairs() { return this.kerningPairs.flat(this.kerningClasses) }
 
-  updatePairs(nextPairs) {
-    return this.pairs.overwrite(nextPairs)
-  }
+  updatePairs(kerningPairs) { return this.kerningPairs.overwrite(kerningPairs) }
 
-  regroup(groups, xGlyphs, yGlyphs) {
-    if (!xGlyphs) xGlyphs = this.collectGlyphs(Side.Left)
-    if (!yGlyphs) yGlyphs = this.collectGlyphs(Side.Right)
-    const groupedLeft = glyphGroupsToGrouped.call(groups, Side.Left)
-    const groupedRight = glyphGroupsToGrouped.call(groups, Side.Right)
-    const surjectLeft = glyphGroupedToSurject.apply(groupedLeft, xGlyphs)  // ...master.glyphs(Left), ...typeface.glyphs(layer)
-    const surjectRight = glyphGroupedToSurject.apply(groupedRight, yGlyphs)  // ...master.glyphs(Right), ...typeface.glyphs(layer)
-    const groupedX = surjectToGrouped(surjectLeft)
-    const groupedY = surjectToGrouped(surjectRight)
+  /**
+   * @param {KerningClasses} kerningClasses
+   */
+  regroup(kerningClasses) {
+    const xGlyphs = this.collectGlyphs(Side.Left)
+    const yGlyphs = this.collectGlyphs(Side.Right)
+    const xMap = kerningClasses.toMultimap(Side.Left)
+    const yMap = kerningClasses.toMultimap(Side.Right)
+    const xtc = kerningClasses.toSurject(Side.Left, true)
+    const ytc = kerningClasses.toSurject(Side.Right, true)
+    const groupedX = surjectToGrouped(xtc)
+    const groupedY = surjectToGrouped(ytc)
     const filter = (k, v) => AT.test(k) && v?.length
     const toLeft = (k, v) => [ k = trimAT(k), KerningClass.left(k, v) ]
     const toRight = (k, v) => [ k = trimAT(k), KerningClass.right(k, v) ]
     return Master.build(
       this.name,
       ob(...indexed(groupedX, filter, toLeft), ...indexed(groupedY, filter, toRight)),
-      this.flatPairs.regroup(surjectLeft, surjectRight, Stat.min),
+      this.flatPairs.regroup(kerningClasses, Stat.min),
     )
   }
 
   groupCrostab(mode = MIN, scopeX, scopeY, into) {
     const filterX = Latin.factory(scopeX), filterY = Latin.factory(scopeY)
-    const iter = indexedNested(this.pairs, (x, y) => filterX(baseGlyph(x)) && filterY(baseGlyph(y)), coordToNum)
+    const iter = indexedNested(this.kerningPairs, (x, y) => filterX(baseGlyph(x)) && filterY(baseGlyph(y)), coordToNum)
     return SparseStat.of(mode).collect(iter).crostab(into, '')
   }
 

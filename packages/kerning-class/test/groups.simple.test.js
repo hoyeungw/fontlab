@@ -1,13 +1,13 @@
-import { config }          from 'dotenv'
-import { decoObject }      from '@spare/logger'
-import { deco }            from '@spare/deco'
-import { $ }               from '@spare/xr'
-import { BESQUE }          from '@palett/presets'
-import { readFile }        from 'fs/promises'
+import { config }         from 'dotenv'
+import { decoObject }     from '@spare/logger'
+import { deco }           from '@spare/deco'
+import { $ }              from '@spare/xr'
+import { BESQUE }         from '@palett/presets'
+import { readFile }       from 'fs/promises'
 import { test }           from 'node:test'
 import { KerningClasses } from '../src/KerningClasses.js'
 import { len }            from '@vect/object-index'
-import { Side }            from '@fontlab/enum-side'
+import { Side }           from '@fontlab/enum-side'
 
 config({ path: '../../.env' })
 
@@ -25,8 +25,8 @@ test('kerningClasses simple test', async () => {
 
   console.log($.fontlab('group-collection').iterable(deco.call({ thres: 256 }, groups)))
 
-  const groupedLeft = groups.toGrouped(Side.Left)
-  const groupedRight = groups.toGrouped(Side.Right)
+  const groupedLeft = groups.toMultimap(Side.Left)
+  const groupedRight = groups.toMultimap(Side.Right)
 
   console.log($.fontlab('group-collection').grouped('-').left(deco.call({ pres: BESQUE }, groupedLeft)))
   console.log($.fontlab('group-collection').grouped('-').right(deco.call({ pres: BESQUE }, groupedRight)))

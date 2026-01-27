@@ -27,6 +27,10 @@
     "@fontlab/latin": "workspace:^",
     "@fontlab/master": "workspace:^",
     "@fontlab/metric": "workspace:^",
+    "@analys/enum-join-modes": "^0.7.5",
+    "@analyz/table": "^0.1.3",
+    "@analyz/table-algebra": "^0.1.3",
+    "@vect/vector-init": "^0.8.6",
     "@vect/nested": "^0.8.6",
     "@vect/object-mapper": "^0.8.6"
   },

@@ -27,6 +27,7 @@
     "@fontlab/latin": "workspace:^",
     "@fontlab/metric": "workspace:^",
     "@vect/object-mapper": "^0.8.6",
+    "@vect/vector-algebra": "^0.8.6",
     "@vect/vector-stat": "^0.8.6"
   },
   "repository": {

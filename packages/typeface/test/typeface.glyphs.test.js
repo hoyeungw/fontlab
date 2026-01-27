@@ -1,7 +1,7 @@
 import { config }     from 'dotenv' // Add this at the top
-import { test }  from 'node:test'
-import { VFMIO } from '@fontlab/scripts'
-import { says }  from '@spare/xr'
+import { test }       from 'node:test'
+import { VFMIO }      from '@fontlab/scripts'
+import { says }       from '@spare/xr'
 import { decoObject } from '@spare/logger'
 
 config({ path: '../../.env' })

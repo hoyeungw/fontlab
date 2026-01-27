@@ -6,7 +6,7 @@ const REGROUPED = '-regrouped'
 const GROUPS = '-kerningClasses'
 const METRICS = '-metrics'
 const SIDEBEARINGS = '-sidebearings'
-const PAIRS = '-pairs'
+const PAIRS = '-kerningPairs'
 const VFM = '.vfm'
 const XLSX = '.xlsx'
 const SRC = './playground/origin'
@@ -20,5 +20,5 @@ export async function xlsxToVfm(fontName) {
 
   await MetricsIO.xlsxToVfm(PROC_SIDEBEARINGS_XLSX, DEST_VFM)
   await PairsIO.xlsxToVfm(PROC_PAIRS_XLSX, DEST_VFM)
-  // await VFMIO.separateVFM(DEST_VFM)
+  // await VFMIO.separate(DEST_VFM)
 }

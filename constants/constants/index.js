@@ -15,4 +15,4 @@ export const
   R = 'R'
 
 export const JOIN_SPEC = { fields: [ GLYPH ], joinType: UNION, fillEmpty: '' }
-export const CONVERT_OPTIONS = { kerningClasses: true, pairs: true, metrics: true }
+export const CONVERT_OPTIONS = { kerningClasses: true, kerningPairs: true, metrics: true }

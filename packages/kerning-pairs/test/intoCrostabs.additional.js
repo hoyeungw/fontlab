@@ -16,7 +16,7 @@ class KPairs extends KerningPairs {
     for (const scopeX of SCOPES) {
       for (const scopeY of SCOPES) {
         const labelX = scopeName(scopeX), labelY = scopeName(scopeY)
-        const crostab = this.subCrostab(MIN, scopeX, scopeY, format).mutateKeys(glyphToLabel)
+        const crostab = this.sliceCrostab(MIN, scopeX, scopeY, format).mutateKeys(glyphToLabel)
         crostab.sideward.sortKeys(labelAsc)
         crostab.headward.sortKeys(labelAsc)
         // console.log($.fontlab('crostabCollection').scope(decoXY(labelX, labelY)).size(`${crostab.height} x ${crostab.width}`))

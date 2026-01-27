@@ -11,6 +11,7 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
+    "@iohub/pathinfo": "^0.0.4",
     "@acq/path": "^0.4.0",
     "@analys/convert": "^0.7.5",
     "@analys/enum-join-modes": "^0.7.5",
@@ -26,6 +27,7 @@
     "@fontlab/enum-side": "workspace:^",
     "@fontlab/kerning-class": "workspace:^",
     "@fontlab/kerning-pairs": "workspace:^",
+    "@fontlab/vfm": "workspace:^",
     "@fontlab/latin": "workspace:^",
     "@fontlab/master": "workspace:^",
     "@fontlab/metric": "workspace:^",

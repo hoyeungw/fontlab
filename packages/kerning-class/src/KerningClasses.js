@@ -1,9 +1,10 @@
-import { groupedToSurject }    from '@analys/convert'
-import { toSideCheck }         from '@fontlab/enum-side'
-import { valid }               from '@typen/nullish'
-import { mapKey }              from '@vect/object-mapper'
-import { KerningClass }        from './KerningClass.js'
-import { glyphGroupAscending } from './utils/glyphGroupAscending.js'
+import { groupedToSurject }      from '@analys/convert'
+import { validator }             from '@fontlab/enum-side'
+import { valid }                 from '@typen/nullish'
+import { mapKey }                from '@vect/object-mapper'
+import { KerningClass }          from './KerningClass.js'
+import { kerningClassAscending } from './utils/kerningClassAscending.js'
+import { intersect }             from '@vect/vector-algebra'
 
 export class KerningClasses extends Array {
   /**
@@ -20,65 +21,46 @@ export class KerningClasses extends Array {
   static build(kerningClasses) { return new KerningClasses(...kerningClasses) }
   static from(kerningClasses) { return new KerningClasses(...kerningClasses.map(KerningClass.build)) }
 
-  selectSide(side) {
-    return new KerningClasses(...this.filter(toSideCheck(side)))
-  }
+  clone() { return new KerningClasses(...this.map(v => v.clone())) }
 
-  collectGlyphs(side) {
-    return Object.keys(this.toSurject(side))
-  }
+  selectSide(side) { return new KerningClasses(...this.filter(validator(side))) }
+
+  collectGlyphs(side) { return Object.keys(this.toSurject(side)) }
 
   /**
-   * Expands each kerning class in the collection by adding glyphs from a provided group scheme.
-   * For each glyph key in every kerning class, if the key exists in the group scheme, all glyphs
-   * from the corresponding group scheme entry are added to the kerning class.
-   * 
-   * This method is useful for expanding abbreviated or base glyph references into complete sets
-   * of related glyphs based on a predefined grouping scheme (e.g., expanding 'A' to include
-   * 'Aacute', 'Acircumflex', etc.).
-   * 
-   * @param {Object<string, Array<string>>} expandable - A mapping of base glyphs or keys to arrays of glyphs.
-   *        For example: { 'A': ['A', 'Aacute', 'Acircumflex', 'Adieresis'], 'B': ['B', 'Bhook'] }
-   * @returns {KerningClasses} The current KerningClasses instance, modified in place for method chaining.
-   * 
-   * @example
-   * // Create a simple KerningClasses collection
-   * const kerningClasses = KerningClasses.build([
-   *   new KerningClass(Side.Left, '@A_GROUP', ['A']),
-   *   new KerningClass(Side.Right, '@B_GROUP', ['B'])
-   * ]);
-   * 
-   * // Define a group scheme for expansion
-   * const groupScheme = {
-   *   'A': ['A', 'Aacute', 'Acircumflex', 'Adieresis'],
-   *   'B': ['B', 'Bhook', 'Bmacron']
-   * };
-   * 
-   * // Expand the kerning classes
-   * const expandedClasses = kerningClasses.expand(groupScheme);
-   * 
-   * // Result: Each kerning class now contains all related glyphs from the group scheme
-   * // @A_GROUP will contain: ['A', 'Aacute', 'Acircumflex', 'Adieresis']
-   * // @B_GROUP will contain: ['B', 'Bhook', 'Bmacron']
+   * Expands abbreviated or base glyph listed in kerning class into related glyphs
+   * based on the input multimap (of base glyph to related glyphs),
+   * e.g., expand 'A' to include 'A','À','Á','Â','Ã','Ä','Å'; 'E' to include 'È','É','Ê','Ë'.
+   *
+   * @param {Object<string, string[]>} multimap - Mapping of base glyph to related glyphs.
+   * @returns {KerningClasses} This KerningClasses instance.
+   *
+   * @example multimap = {
+   *   A: ['A','Agrave','Aacute,'Acircumflex','Atilde','Adieresis','Aring'],
+   *   E: ['E','Egrave','Eacute',Ecircumflex','Edieresis']
+   * }
    */
-  expand(expandable) {
+  expand(multimap) {
     for (const kerningClass of this) {
       for (const key of kerningClass) {
-        if (key in expandable) kerningClass.union(expandable[key])
+        if (key in multimap) kerningClass.union(multimap[key])
       }
     }
     return this
   }
 
-  toGrouped(side) {
-    const groups = valid(side) ? this.filter(toSideCheck(side)) : this
-    const target = {}
-    for (let group of groups.sort(glyphGroupAscending)) target[group.name] = KerningClass.build(group)
-    return target
+  toMultimap(side) {
+    /** @type {KerningClass[]} */
+    const kerningClasses = valid(side) ? this.filter(validator(side)) : this
+    const multimap = {}
+    for (let kerningClass of kerningClasses.sort(kerningClassAscending)) {
+      multimap[kerningClass.name] = KerningClass.build(kerningClass)
+    }
+    return multimap
   }
 
   toSurject(side, addAT = false) {
-    const grouped = this.toGrouped(side, addAT)
+    const grouped = this.toMultimap(side, addAT)
     return groupedToSurject(addAT ? mapKey(grouped, k => '@' + k) : grouped)
   }
 }

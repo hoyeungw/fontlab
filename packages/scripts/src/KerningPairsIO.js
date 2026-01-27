@@ -13,14 +13,14 @@ import { indexed, mutate }                                    from '@vect/object
 import xlsx                                                   from 'xlsx'
 import { decoPairsCrostab }                                   from '../utils/decoPairsCrostab.js'
 import { decoXY }                                             from '../utils/decoXY.js'
-import { labelAsc } from '../utils/labelAsc.js'
-import { VFMIO }    from './VFMIO.js'
+import { labelAsc }                                           from '../utils/labelAsc.js'
+import { VFMIO }                                              from './VFMIO.js'
 
 const REGULAR = 'Regular'
-const CLASS = 'PairsIO'
+const CLASS = 'KerningPairsIO'
 
 // noinspection CommaExpressionJS
-export class PairsIO {
+export class KerningPairsIO {
   static async vfmToXlsx(srcVFM, destXLSX, layer = REGULAR) {
     const typeface = await VFMIO.readFile(srcVFM)
     function ro(x) { return isNaN(x) ? '' : round(x) }
@@ -54,7 +54,7 @@ export class PairsIO {
     for (let [ side_head, stat ] of indexed(statCollection)) {
       console.log($.fontlab(CLASS).import('pairs')[decoXY(side_head)](decoFlat(stat)))
     }
-    await VFMIO.saveTypeface(typeface, destVFM, { kerningClasses: true, pairs: true, metrics: true })
+    await VFMIO.saveFile(typeface, destVFM, { kerningClasses: true, pairs: true, metrics: true })
   }
 }
 

@@ -21,7 +21,7 @@
     "@analys/crostab": "^0.7.5",
     "@aryth/math": "^0.7.8",
     "@aryth/rand": "^0.7.8",
-    "@babel/core": "^7.28.5",
+    "@babel/core": "^7.28.6",
     "@changesets/cli": "^2.29.8",
     "@foba/foo": "^0.6.1",
     "@foba/object": "^0.6.1",
@@ -43,7 +43,7 @@
     "@valjoux/timestamp-pretty": "^0.4.4",
     "@vect/object-index": "^0.8.6",
     "dotenv": "^17.2.3",
-    "rollup": "^4.54.0",
-    "rollup-plugin-fileinfo": "^0.3.4"
+    "rollup": "^4.55.1",
+    "rollup-plugin-fileinfo": "^0.3.8"
   }
 }
